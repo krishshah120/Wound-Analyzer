@@ -1,0 +1,6 @@
+#Ignore raw dataset downloads
+data/raw_downloads/
+
+#Ignore local Python environment folders or cache
+__pycache__/
+.venv/
