@@ -1,5 +1,6 @@
 import os
 import csv
+import shutil
 import cv2
 import numpy as np
 from PIL import Image
@@ -44,6 +45,13 @@ BRIGHT_THRESHOLD = 215.0
 MANIFEST_PATH = os.path.join(output_dir, "manifest.csv")
 BAD_IMAGES_DIR = os.path.join(output_dir, "bad_images")
 
+# Wipe wound_dataset entirely before rebuilding, so re-running this script
+# after changing a threshold, fixing a source path, etc. always produces a
+# clean result instead of mixing old and new images together.
+if os.path.exists(output_dir):
+    print(f"Clearing existing data in {output_dir}\n")
+    shutil.rmtree(output_dir)
+
 for cls in target_classes:
     os.makedirs(os.path.join(output_dir, cls), exist_ok=True)
 os.makedirs(BAD_IMAGES_DIR, exist_ok=True)
@@ -58,7 +66,6 @@ def slugify_reason(reason):
 def save_bad_image(src_path, target_class, dataset_prefix, reason, index):
     """Copies a quality-rejected image into bad_images/ (unmodified) so it can
     be reviewed manually to sanity-check the quality thresholds."""
-    import shutil
     reason_slug = slugify_reason(reason)
     ext = os.path.splitext(src_path)[1] or ".jpg"
     dest_filename = f"{target_class}_{dataset_prefix}_{index}_{reason_slug}{ext}"

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Injury Detection AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    form {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      display: inline-block;
+    }
+
+    input[type="file"] {
+      margin: 10px;
+    }
+
+    input[type="submit"] {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+
+    input[type="submit"]:disabled {
+      background-color: #95a5a6;
+      cursor: not-allowed;
+    }
+
+    #results {
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 500px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    #results:empty {
+      display: none;
+    }
+
+    #results h3 {
+      text-transform: capitalize;
+      color: #2c3e50;
+      margin-top: 0;
+    }
+
+    #results .error {
+      color: #c0392b;
+    }
+
+    #results .disclaimer {
+      font-size: 0.85em;
+      color: #7f8c8d;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Wound Analyzer</h1>
+  <h2>Pod 2 Mednovators</h2>
+  <h3>Upload Injury Photo</h3>
+  <p>Select an image of your injury to get analysis and first aid tips.</p>
+
+  <form id="uploadForm" action="/predict" method="post" enctype="multipart/form-data">
+    <input type="file" name="injuryImage" accept="image/*" required>
+    <br><br>
+    <input type="submit" value="Analyze" id="submitBtn">
+  </form>
+
+  <h2>Results</h2>
+  <div id="results">
+    <!-- Populated by JavaScript after the model responds -->
+  </div>
+
+  <script>
+    const form = document.getElementById('uploadForm');
+    const resultsDiv = document.getElementById('results');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.value = 'Analyzing...';
+      resultsDiv.innerHTML = '<p>Analyzing your image...</p>';
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch('/predict', {
+          method: 'POST',
+          body: formData,
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          resultsDiv.innerHTML = `<p class="error">${data.error || 'Something went wrong. Please try again.'}</p>`;
+          return;
+        }
+
+        const displayLabel = data.label.replace(/_/g, ' ');
+        const tipsHtml = data.tips.map((tip) => `<li>${tip}</li>`).join('');
+
+        resultsDiv.innerHTML = `
+          <h3>${displayLabel}</h3>
+          <p><strong>Confidence:</strong> ${data.confidence}%</p>
+          <ul>${tipsHtml}</ul>
+          <p class="disclaimer">${data.disclaimer}</p>
+        `;
+      } catch (err) {
+        resultsDiv.innerHTML = '<p class="error">Could not reach the server. Please check your connection and try again.</p>';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.value = 'Analyze';
+      }
+    });
+  </script>
+</body>
+</html>
