@@ -21,8 +21,7 @@ import tempfile
 
 from flask import Flask, request, jsonify, render_template
 
-# Make src/ importable so we can reuse model.py's build/load/predict logic
-# instead of duplicating it here.
+# Make src/ importable so we can reuse model.py's build/load/predict logic instead of duplicating it here.
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))   # project root
 SRC_DIR = os.path.join(SCRIPT_DIR, "src")
 sys.path.insert(0, SRC_DIR)

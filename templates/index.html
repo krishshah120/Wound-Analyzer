@@ -3,88 +3,189 @@
 <head>
   <title>Injury Detection AI</title>
   <style>
+    :root {
+      --accent: #58c2ff;
+      --accent-dark: #2f9be0;
+      --navy: #0b3d5c;
+      --navy-soft: #285a7a;
+      --bg: #eaf6ff;
+      --card: #ffffff;
+      --border: #cfe9fb;
+      --error: #d64550;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
+      font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--navy);
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--accent-dark) 65%, var(--accent) 100%);
+      padding: 40px 20px 56px;
+      text-align: center;
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(11, 61, 92, 0.18);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.1rem;
+      letter-spacing: 0.02em;
+    }
+
+    header p.tagline {
+      margin: 8px 0 0;
+      font-size: 0.95rem;
+      color: #eaf6ff;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 560px;
+      margin: -32px auto 40px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(11, 61, 92, 0.08);
+      padding: 28px 24px;
       text-align: center;
     }
 
-    h1 {
-      color: #2c3e50;
+    .card + .card {
+      margin-top: 24px;
     }
 
-    form {
-      margin: 20px;
-      padding: 20px;
-      border: 1px solid #ccc;
-      background-color: #fff;
-      display: inline-block;
+    h3 {
+      color: var(--navy);
+      margin-top: 0;
+    }
+
+    main > .card > p {
+      color: var(--navy-soft);
+      font-size: 0.95rem;
     }
 
     input[type="file"] {
-      margin: 10px;
+      display: block;
+      width: 100%;
+      margin: 16px 0;
+      padding: 10px;
+      border: 1px dashed var(--accent);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--navy-soft);
+      font-size: 0.9rem;
     }
 
     input[type="submit"] {
-      background-color: #3498db;
-      color: white;
+      background: var(--accent);
+      color: #ffffff;
       border: none;
-      padding: 10px 20px;
+      border-radius: 8px;
+      padding: 12px 28px;
+      font-size: 1rem;
+      font-weight: 600;
       cursor: pointer;
+      transition: background 0.15s ease, transform 0.15s ease;
     }
 
-    input[type="submit"]:hover {
-      background-color: #2980b9;
+    input[type="submit"]:hover:not(:disabled) {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
     }
 
     input[type="submit"]:disabled {
-      background-color: #95a5a6;
+      background: #a9c9dc;
       cursor: not-allowed;
+      transform: none;
     }
 
     #results {
-      margin: 20px auto;
-      padding: 20px;
-      max-width: 500px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      text-align: left;
+      max-width: 560px;
+      margin: 24px auto 0;
+      padding: 0 20px;
     }
 
     #results:empty {
       display: none;
     }
 
+    #results .card {
+      text-align: left;
+      animation: fade-in 0.2s ease;
+    }
+
     #results h3 {
       text-transform: capitalize;
-      color: #2c3e50;
-      margin-top: 0;
+      display: inline-block;
+      background: var(--bg);
+      color: var(--accent-dark);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 1rem;
+    }
+
+    #results ul {
+      padding-left: 20px;
+      color: var(--navy-soft);
+      line-height: 1.6;
     }
 
     #results .error {
-      color: #c0392b;
+      color: var(--error);
+      font-weight: 600;
     }
 
     #results .disclaimer {
-      font-size: 0.85em;
-      color: #7f8c8d;
-      margin-top: 15px;
+      font-size: 0.82em;
+      color: #7a97a8;
+      border-top: 1px solid var(--border);
+      margin-top: 16px;
+      padding-top: 12px;
+    }
+
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      input[type="submit"], #results .card {
+        transition: none;
+        animation: none;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Wound Analyzer</h1>
-  <h2>Pod 2 Mednovators</h2>
-  <h3>Upload Injury Photo</h3>
-  <p>Select an image of your injury to get analysis and first aid tips.</p>
+  <header>
+    <h1>Wound Analyzer</h1>
+    <p class="tagline">Pod 2 Mednovators</p>
+  </header>
 
-  <form id="uploadForm" action="/predict" method="post" enctype="multipart/form-data">
-    <input type="file" name="injuryImage" accept="image/*" required>
-    <br><br>
-    <input type="submit" value="Analyze" id="submitBtn">
-  </form>
+  <main>
+    <div class="card">
+      <h3>Upload Injury Photo</h3>
+      <p>Select an image of your injury to get analysis and first aid tips.</p>
 
-  <h2>Results</h2>
+      <form id="uploadForm" action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="injuryImage" accept="image/*" required>
+        <input type="submit" value="Analyze" id="submitBtn">
+      </form>
+    </div>
+  </main>
+
   <div id="results">
     <!-- Populated by JavaScript after the model responds -->
   </div>
@@ -99,7 +200,7 @@
 
       submitBtn.disabled = true;
       submitBtn.value = 'Analyzing...';
-      resultsDiv.innerHTML = '<p>Analyzing your image...</p>';
+      resultsDiv.innerHTML = '<div class="card"><p>Analyzing your image...</p></div>';
 
       const formData = new FormData(form);
 
@@ -112,7 +213,7 @@
         const data = await response.json();
 
         if (!response.ok) {
-          resultsDiv.innerHTML = `<p class="error">${data.error || 'Something went wrong. Please try again.'}</p>`;
+          resultsDiv.innerHTML = `<div class="card"><p class="error">${data.error || 'Something went wrong. Please try again.'}</p></div>`;
           return;
         }
 
@@ -120,13 +221,15 @@
         const tipsHtml = data.tips.map((tip) => `<li>${tip}</li>`).join('');
 
         resultsDiv.innerHTML = `
-          <h3>${displayLabel}</h3>
-          <p><strong>Confidence:</strong> ${data.confidence}%</p>
-          <ul>${tipsHtml}</ul>
-          <p class="disclaimer">${data.disclaimer}</p>
+          <div class="card">
+            <h3>${displayLabel}</h3>
+            <p><strong>Confidence:</strong> ${data.confidence}%</p>
+            <ul>${tipsHtml}</ul>
+            <p class="disclaimer">${data.disclaimer}</p>
+          </div>
         `;
       } catch (err) {
-        resultsDiv.innerHTML = '<p class="error">Could not reach the server. Please check your connection and try again.</p>';
+        resultsDiv.innerHTML = '<div class="card"><p class="error">Could not reach the server. Please check your connection and try again.</p></div>';
       } finally {
         submitBtn.disabled = false;
         submitBtn.value = 'Analyze';

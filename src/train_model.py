@@ -23,6 +23,8 @@ import os
 import json
 import random
 import shutil
+import stat
+import time
 
 import tensorflow as tf
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
@@ -49,6 +51,45 @@ IGNORE_DIRS = {"bad_images"}
 
 # Just a heads-up in the console output - doesn't stop training.
 MIN_IMAGES_PER_CLASS_WARNING = 20
+
+
+def robust_rmtree(path, retries=4, delay_seconds=1.5):
+    """
+    Deletes a directory tree, retrying on Windows PermissionError (WinError
+    5), which almost always means a file was transiently locked - e.g. by
+    OneDrive syncing, an image viewer, or File Explorer's preview pane -
+    rather than an actual permissions problem. Also clears the read-only
+    flag if that's what's blocking deletion.
+    """
+    def clear_readonly_and_retry(func, target_path, exc_info):
+        try:
+            os.chmod(target_path, stat.S_IWRITE)
+            func(target_path)
+        except Exception:
+            pass  # let the outer retry loop handle it
+
+    last_error = None
+    for attempt in range(1, retries + 1):
+        try:
+            shutil.rmtree(path, onerror=clear_readonly_and_retry)
+            return
+        except PermissionError as e:
+            last_error = e
+            if attempt < retries:
+                print(
+                    f"  Could not delete {path} yet (attempt {attempt}/{retries}) - "
+                    f"a file may be in use (e.g. OneDrive syncing, an image viewer, "
+                    f"or File Explorer previewing a file inside it). Retrying in "
+                    f"{delay_seconds}s..."
+                )
+                time.sleep(delay_seconds)
+
+    raise PermissionError(
+        f"Could not delete {path} after {retries} attempts. Close any program that "
+        f"might have a file open inside this folder (File Explorer, an image viewer, "
+        f"VS Code), pause OneDrive syncing if this project is inside a OneDrive folder, "
+        f"then run the script again.\nOriginal error: {last_error}"
+    )
 
 
 def discover_classes(root_dir):
@@ -83,9 +124,9 @@ def split_and_copy(classes):
     """Splits each class's images into train/test and copies them into
     data/train/<class>/ and data/test/<class>/."""
     if os.path.exists(TRAIN_DIR):
-        shutil.rmtree(TRAIN_DIR)
+        robust_rmtree(TRAIN_DIR)
     if os.path.exists(TEST_DIR):
-        shutil.rmtree(TEST_DIR)
+        robust_rmtree(TEST_DIR)
 
     rng = random.Random(RANDOM_SEED)
 
