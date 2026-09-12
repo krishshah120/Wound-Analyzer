@@ -33,14 +33,16 @@ CONFIDENCE_THRESHOLD = 0.60
 
 
 def build_model(num_classes):
-    """Transfer learning on MobileNetV2 - frozen ImageNet-pretrained base
-    plus a small trainable classifier head. Good fit for a small/medium
-    dataset, since the pretrained convolutional features do most of the
-    work and only the head needs to learn wound-specific patterns."""
+    """Transfer learning on MobileNetV2 - ImageNet-pretrained base plus a
+    small classifier head. The base starts frozen so the head can be trained
+    first; train_model.py then calls unfreeze_top_layers() to fine-tune the
+    top of the base at a low learning rate."""
     base_model = MobileNetV2(input_shape=IMG_SIZE + (3,), include_top=False, weights="imagenet")
     base_model.trainable = False
 
     inputs = layers.Input(shape=IMG_SIZE + (3,))
+    # training=False keeps the base's BatchNormalization layers in inference
+    # mode even after unfreezing, which is what keeps fine-tuning stable.
     x = base_model(inputs, training=False)
     x = layers.GlobalAveragePooling2D()(x)
     x = layers.Dropout(0.3)(x)
@@ -49,6 +51,19 @@ def build_model(num_classes):
     model = models.Model(inputs, outputs)
     model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
     return model
+
+
+def unfreeze_top_layers(model, num_layers):
+    """Makes the last num_layers layers of the nested MobileNetV2 base
+    trainable (BatchNormalization layers stay frozen). The caller must
+    re-compile the model afterwards for this to take effect."""
+    base_model = next(layer for layer in model.layers if isinstance(layer, tf.keras.Model))
+    base_model.trainable = True
+    for layer in base_model.layers[:-num_layers]:
+        layer.trainable = False
+    for layer in base_model.layers:
+        if isinstance(layer, layers.BatchNormalization):
+            layer.trainable = False
 
 
 def load_trained_model():
