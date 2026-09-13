@@ -15,9 +15,11 @@ train_model.py
        applied on the fly to TRAINING batches only, so every epoch sees new
        variations and validation/test are never augmented;
      - class weights compensate for the uneven number of photos per class;
+     - label smoothing (LABEL_SMOOTHING) keeps the model from becoming
+       overconfident on noisy, partly contradictory labels;
      - phase 1 trains only the classifier head on the frozen MobileNetV2
-       base, phase 2 fine-tunes the top FINETUNE_LAYERS layers of the base
-       at a low learning rate.
+       base (width BACKBONE_ALPHA), phase 2 fine-tunes the top
+       FINETUNE_LAYERS layers of the base at a low learning rate.
    Both phases early-stop on data/val. data/test is not looked at until the
    final evaluation.
    Extra photos from additional Kaggle downloads (data/extra_dataset) are
@@ -118,12 +120,28 @@ EXTRA_MAX_SIMILARITY_TO_TRAIN = 0.80
 # 0.628 vs 0.622, while 3.6% of real wound photos were rejected as out of scope.
 USE_OUT_OF_SCOPE_CLASS = True
 
+# The chronic-wound photos include several photos of the same patient or wound
+# that score 0.75-0.80 (checked by eye: pairs at 0.80-0.81 were often the same
+# wound). At the wound photos' 0.80 threshold those ended up on both sides of
+# the split and flattered the out-of-scope test result, so out-of-scope photos
+# use a stricter threshold.
+OUT_OF_SCOPE_CROSS_SPLIT_SIMILARITY = 0.75
+
 # Training schedule. See README.md for the experiments behind these choices.
 HEAD_EPOCHS = 15
 HEAD_LEARNING_RATE = 1e-3
 FINETUNE_LAYERS = 100
 FINETUNE_EPOCHS = 40
 FINETUNE_LEARNING_RATE = 1e-5
+
+# Wider MobileNetV2 (width multiplier 1.4) with label smoothing 0.1. On the
+# validation split (6 seeds each, compared with width 1.0 and no smoothing):
+# balanced accuracy 0.602 -> 0.662, out-of-scope photos confidently labelled
+# 26.3% -> 7.6%, 3rd degree burns shown a wrong wound label 3.3 -> 2.7 of 31.
+# The wider network alone was more accurate but more often confidently wrong
+# about 3rd degree burns; label smoothing reins that in.
+BACKBONE_ALPHA = 1.4
+LABEL_SMOOTHING = 0.1
 
 # Extra multiplier applied on top of the balanced class weights. A missed
 # 3rd degree burn is the most consequential error this model can make (the
@@ -355,24 +373,24 @@ def assign_splits(rows, group_ids):
     return split_of
 
 
-def separate_similar_across_splits(rows, group_ids, split_of, sim):
+def separate_similar_across_splits(classes, group_ids, split_of, sim, threshold=CROSS_SPLIT_SIMILARITY):
     """
-    Groups are only merged at SAME_PHOTO_SIMILARITY, because merging at the
-    lower CROSS_SPLIT_SIMILARITY chains look-alike photos (e.g. sunburnt skin)
-    into groups of hundreds. This closes that gap without chaining:
-      1. while a test or val image has a match >= CROSS_SPLIT_SIMILARITY in
-         a split it could leak into (test->train, val->train, test->val), its
-         whole group moves into that split;
+    Groups are only merged at SAME_PHOTO_SIMILARITY, because merging at a
+    lower threshold chains look-alike photos (e.g. sunburnt skin) into groups
+    of hundreds. This closes that gap without chaining (classes and group_ids
+    are parallel lists, one entry per image):
+      1. while a test or val image has a match >= threshold in a split it
+         could leak into (test->train, val->train, test->val), its whole
+         group moves into that split;
       2. each class's test and val splits are then topped back up to their
          target size with train groups that have no such match outside
          themselves.
     Modifies and returns split_of.
     """
-    classes = [class_name_for(r) for r in rows]
     members = defaultdict(list)
     for i, g in enumerate(group_ids):
         members[g].append(i)
-    close = sim >= CROSS_SPLIT_SIMILARITY
+    close = sim >= threshold
 
     def in_split(split):
         return np.array([split_of[g] == split for g in group_ids])
@@ -516,7 +534,9 @@ def add_out_of_scope_images(split_rows, split_paths, split_features):
     another split is moved into that split. Photos that resemble a wound photo
     (split_paths/split_features, parallel to split_rows) in a different split
     are skipped - some of this download re-uses photos labelled as burns or
-    bruises here. Appends to split_rows and returns {split: number_added}.
+    bruises here. The cross-split threshold is OUT_OF_SCOPE_CROSS_SPLIT_SIMILARITY
+    (stricter than for wound photos). Appends to split_rows and returns
+    {split: number_added}.
     """
     manifest_path = os.path.join(OUT_OF_SCOPE_DATASET_DIR, "manifest.csv")
     if not os.path.exists(manifest_path):
@@ -570,17 +590,10 @@ def add_out_of_scope_images(split_rows, split_paths, split_features):
                     filled[split] += len(members[g])
                     break
 
-    close = sim >= CROSS_SPLIT_SIMILARITY
-    changed = True
-    while changed:
-        changed = False
-        for source, destination in (("test", "train"), ("val", "train"), ("test", "val")):
-            splits = np.array([split_of[g] for g in group_ids])
-            for i in np.nonzero((splits == source) & close[:, splits == destination].any(axis=1))[0]:
-                if split_of[group_ids[i]] == source:
-                    split_of[group_ids[i]] = destination
-                    changed = True
-    splits = np.array([str(split_of[g]) for g in group_ids])
+    split_of = separate_similar_across_splits(photo_types, group_ids, split_of, sim,
+                                              threshold=OUT_OF_SCOPE_CROSS_SPLIT_SIMILARITY)
+    splits = [str(split_of[g]) for g in group_ids]
+    split_array = np.array(splits)
 
     wound_splits = np.array([r[0] for r in split_rows])
     wound_hashes = np.array([difference_hash(p) for p in split_paths])
@@ -590,11 +603,12 @@ def add_out_of_scope_images(split_rows, split_paths, split_features):
     skip = np.zeros(len(ood), dtype=bool)
     for split in ("train", "val", "test"):
         other = wound_splits != split
-        skip |= (splits == split) & ((to_wounds[:, other] >= CROSS_SPLIT_SIMILARITY).any(axis=1) | hash_near[:, other].any(axis=1))
+        skip |= (split_array == split) & ((to_wounds[:, other] >= CROSS_SPLIT_SIMILARITY).any(axis=1) | hash_near[:, other].any(axis=1))
 
     for a, b in (("train", "val"), ("train", "test"), ("val", "test")):
-        worst = sim[np.ix_((splits == a) & ~skip, (splits == b) & ~skip)].max()
-        if worst >= CROSS_SPLIT_SIMILARITY:
+        worst = sim[np.ix_((split_array == a) & ~skip, (split_array == b) & ~skip)].max()
+        print(f"  highest out-of-scope {a}/{b} similarity: {worst:.3f}")
+        if worst >= OUT_OF_SCOPE_CROSS_SPLIT_SIMILARITY:
             raise RuntimeError(f"Out-of-scope photos in {a} and {b} have similarity {worst:.3f} - refusing to continue.")
 
     split_dirs = {"train": TRAIN_DIR, "val": VAL_DIR, "test": TEST_DIR}
@@ -628,7 +642,7 @@ def split_and_copy(rows):
     group_ids = group_by_source(rows, sim)
     print(f"  {len(rows)} real images -> {len(set(group_ids))} source groups")
     split_of = assign_splits(rows, group_ids)
-    split_of = separate_similar_across_splits(rows, group_ids, split_of, sim)
+    split_of = separate_similar_across_splits([class_name_for(r) for r in rows], group_ids, split_of, sim)
 
     split_dirs = {"train": TRAIN_DIR, "val": VAL_DIR, "test": TEST_DIR}
     split_rows = []
@@ -745,14 +759,15 @@ def train():
     class_weight = compute_class_weights(class_names)
     print("Class weights: " + ", ".join(f"{class_names[i]}={w:.2f}" for i, w in class_weight.items()) + "\n")
 
-    model = build_model(num_classes=len(class_names))
+    model = build_model(num_classes=len(class_names), alpha=BACKBONE_ALPHA)
+    loss = tf.keras.losses.CategoricalCrossentropy(label_smoothing=LABEL_SMOOTHING)
 
     # Early stopping watches the VALIDATION split in both phases. The test
     # split is never used to make any training decision.
     print("Phase 1: training the classifier head (base frozen)...")
     model.compile(
         optimizer=tf.keras.optimizers.Adam(HEAD_LEARNING_RATE),
-        loss="categorical_crossentropy",
+        loss=loss,
         metrics=["accuracy"],
     )
     model.fit(
@@ -767,7 +782,7 @@ def train():
     unfreeze_top_layers(model, FINETUNE_LAYERS)
     model.compile(
         optimizer=tf.keras.optimizers.Adam(FINETUNE_LEARNING_RATE),
-        loss="categorical_crossentropy",
+        loss=loss,
         metrics=["accuracy"],
     )
     model.fit(

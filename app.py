@@ -79,10 +79,14 @@ TREATMENT_TIPS = {
         "Cover loosely with a clean, dry cloth while waiting for help.",
         "Watch for signs of shock (pale skin, rapid breathing) until help arrives.",
     ],
+    # Returned both when the photo is unclear and when the injury looks like
+    # something this tool doesn't cover (e.g. a long-lasting sore or ulcer),
+    # so the wording has to fit both.
     "unknown": [
-        "The model wasn't confident enough to classify this image reliably.",
-        "Try a clearer, well-lit, close-up photo of the injury.",
-        "If you're concerned about an injury, consult a medical professional regardless of what this app says.",
+        "This tool couldn't identify the injury. Either the photo was unclear, or the injury isn't one it covers (it only recognizes cuts, scrapes, bruises, and burns).",
+        "If the photo was blurry, dark, or taken from far away, you can try again with a clear, well-lit close-up.",
+        "A wound that isn't healing, keeps getting bigger, or shows signs of infection (spreading redness, swelling, warmth, pus, or fever) should be checked by a medical professional, especially if you have diabetes or poor circulation.",
+        "If you're worried about an injury, see a medical professional regardless of what this tool says.",
     ],
 }
 

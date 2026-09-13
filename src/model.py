@@ -37,12 +37,13 @@ CONFIDENCE_THRESHOLD = 0.60
 OUT_OF_SCOPE_CLASS = "out_of_scope"
 
 
-def build_model(num_classes):
+def build_model(num_classes, alpha=1.0):
     """Transfer learning on MobileNetV2 - ImageNet-pretrained base plus a
-    small classifier head. The base starts frozen so the head can be trained
-    first; train_model.py then calls unfreeze_top_layers() to fine-tune the
-    top of the base at a low learning rate."""
-    base_model = MobileNetV2(input_shape=IMG_SIZE + (3,), include_top=False, weights="imagenet")
+    small classifier head. alpha is MobileNetV2's width multiplier (1.0 is
+    the standard network, 1.4 is wider). The base starts frozen so the head
+    can be trained first; train_model.py then calls unfreeze_top_layers() to
+    fine-tune the top of the base at a low learning rate."""
+    base_model = MobileNetV2(input_shape=IMG_SIZE + (3,), include_top=False, weights="imagenet", alpha=alpha)
     base_model.trainable = False
 
     inputs = layers.Input(shape=IMG_SIZE + (3,))
