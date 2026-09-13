@@ -3,11 +3,13 @@ train_model.py
 
 1. Reads the REAL (non-augmented) images listed in
    data/wound_dataset/manifest.csv, groups together every image that comes
-   from the same source photo - including visually identical copies saved
-   under different filenames - and splits whole groups into
+   from the same source photo - including copies saved under different
+   filenames, cropped, rotated, mirrored or re-watermarked - and splits whole
+   groups into
    data/train/<class>/, data/val/<class>/ and data/test/<class>/. No source
-   photo ever appears in more than one split, and all three splits hold
-   real photos only.
+   photo ever appears in more than one split, no two images in different
+   splits are visually near-identical, and all three splits hold real photos
+   only.
 2. Trains the classifier defined in model.py on data/train:
      - random augmentation (flip/rotate/zoom/shift/brightness/contrast) is
        applied on the fly to TRAINING batches only, so every epoch sees new
@@ -43,7 +45,7 @@ import numpy as np
 import tensorflow as tf
 from PIL import Image
 from tensorflow.keras import layers
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input
 
 from model import build_model, unfreeze_top_layers, IMG_SIZE, MODEL_DIR, MODEL_PATH, CLASS_NAMES_PATH
 from evaluate_model import evaluate, print_report
@@ -61,6 +63,7 @@ VAL_DIR = os.path.join(DATA_DIR, "val")              # sibling of wound_dataset
 TEST_DIR = os.path.join(DATA_DIR, "test")            # sibling of wound_dataset
 MANIFEST_PATH = os.path.join(WOUND_DATASET_DIR, "manifest.csv")
 SPLIT_MANIFEST_PATH = os.path.join(DATA_DIR, "split_manifest.csv")
+EXTRA_DATASET_DIR = os.path.join(DATA_DIR, "extra_dataset")      # built by collate_extra_data.py
 METRICS_PATH = os.path.join(MODEL_DIR, "metrics.json")
 
 BATCH_SIZE = 32
@@ -75,6 +78,30 @@ RANDOM_SEED = 42
 # alone would leak across the split. Grouping unrelated look-alikes together
 # is harmless, so this errs on the generous side.
 DUPLICATE_HASH_DISTANCE = 6
+
+# Hashing misses copies of a photo that were cropped, rotated, mirrored or
+# re-watermarked, and this data contains many. So images are also compared by
+# visual similarity (see similarity_matrix). Pairs at or above
+# SAME_PHOTO_SIMILARITY are merged into one group. Merging at a lower
+# threshold chains look-alike photos into huge groups, so instead no image may
+# have a match at or above CROSS_SPLIT_SIMILARITY in a different split (see
+# separate_similar_across_splits). Both thresholds were set by looking at
+# sample pairs: pairs >= 0.80 were mostly the same photo, pairs below 0.75
+# were different photos.
+SAME_PHOTO_SIMILARITY = 0.85
+CROSS_SPLIT_SIMILARITY = 0.80
+
+# Extra training images from additional Kaggle downloads (see
+# collate_extra_data.py). They are only ever added to TRAIN, and only if they
+# are not near-duplicates of an existing photo: these downloads re-upload much
+# of the same web-scraped data, including rotated and cropped copies of
+# test photos. The threshold against val/test is stricter than the one
+# against train, because a miss there would inflate the test score. On the
+# validation split (3 seeds each) adding them raised balanced accuracy from
+# 0.615 to 0.648.
+USE_EXTRA_TRAINING_DATA = True
+EXTRA_MAX_SIMILARITY_TO_VAL_TEST = 0.75
+EXTRA_MAX_SIMILARITY_TO_TRAIN = 0.80
 
 # Training schedule. See README.md for the experiments behind these choices.
 HEAD_EPOCHS = 15
@@ -172,22 +199,86 @@ def load_real_images():
     return real
 
 
-def difference_hash(image_path, hash_size=8):
+def difference_hash(image_path, hash_size=8, mirrored=False):
     """64-bit perceptual hash: compares each pixel of a tiny grayscale copy
     to its right-hand neighbour. Re-saved or re-compressed copies of the same
     photo produce identical or near-identical hashes."""
     with Image.open(image_path) as img:
-        small = img.convert("L").resize((hash_size + 1, hash_size), Image.LANCZOS)
+        gray = img.convert("L")
+        if mirrored:
+            gray = gray.transpose(Image.FLIP_LEFT_RIGHT)
+        small = gray.resize((hash_size + 1, hash_size), Image.LANCZOS)
     pixels = np.asarray(small, dtype=np.int16)
     return (pixels[:, 1:] > pixels[:, :-1]).flatten()
 
 
-def group_by_source(rows):
+def image_views(img):
+    """12 views of a 224x224 image: the original, a centre crop, and the centre
+    crop rotated by -30/-15/+15/+30 degrees, each also mirrored. Comparing
+    views catches copies of a photo that were cropped, rotated or flipped."""
+    views = []
+    for mirrored in (False, True):
+        base = img.transpose(Image.FLIP_LEFT_RIGHT) if mirrored else img
+        views.append(np.asarray(base))
+        views.append(np.asarray(base.crop((34, 34, 190, 190)).resize(IMG_SIZE)))
+        for angle in (-30, -15, 15, 30):
+            rotated = base.rotate(angle, resample=Image.BILINEAR)
+            views.append(np.asarray(rotated.crop((34, 34, 190, 190)).resize(IMG_SIZE)))
+    return views
+
+
+def view_features(paths):
+    """L2-normalised ImageNet MobileNetV2 features for the 12 views of every
+    image. Returns an (n, 12, d) array."""
+    extractor = MobileNetV2(input_shape=IMG_SIZE + (3,), include_top=False, weights="imagenet", pooling="avg")
+    n_views = 12
+    features = np.zeros((len(paths), n_views, extractor.output_shape[-1]), dtype=np.float32)
+    for start in range(0, len(paths), 16):
+        chunk = paths[start:start + 16]
+        views = []
+        for path in chunk:
+            with Image.open(path) as img:
+                views.extend(image_views(img.convert("RGB").resize(IMG_SIZE)))
+        f = extractor.predict(preprocess_input(np.stack(views).astype("float32")), verbose=0)
+        f /= np.linalg.norm(f, axis=1, keepdims=True)
+        features[start:start + len(chunk)] = f.reshape(len(chunk), n_views, -1)
+    return features
+
+
+def cross_similarity(features_a, features_b):
+    """
+    Visual similarity between every image in a and every image in b: cosine
+    similarity taking the best match between one image's original/centre-crop
+    view and any of the other image's 12 views, in both directions.
+    Returns an (len(a), len(b)) array.
+    """
+    sim = np.zeros((len(features_a), len(features_b)), dtype=np.float32)
+    for anchor_view in (0, 1):  # original and centre crop, against every view
+        for start in range(0, len(features_a), 128):
+            block = np.einsum("id,jvd->ijv", features_a[start:start + 128, anchor_view], features_b).max(axis=2)
+            sim[start:start + 128] = np.maximum(sim[start:start + 128], block)
+        for start in range(0, len(features_b), 128):
+            block = np.einsum("jd,ivd->ijv", features_b[start:start + 128, anchor_view], features_a).max(axis=2)
+            sim[:, start:start + 128] = np.maximum(sim[:, start:start + 128], block)
+    return sim
+
+
+def similarity_matrix(paths):
+    """Visual similarity between every pair of images in paths (see
+    cross_similarity). Returns (symmetric (n, n) array with zeros on the
+    diagonal, the view features)."""
+    features = view_features(paths)
+    sim = cross_similarity(features, features)
+    np.fill_diagonal(sim, 0)
+    return sim, features
+
+
+def group_by_source(rows, sim):
     """
     Returns a source-group id for every row (parallel list), such that all
     copies of one source photo share a group. Each real manifest row is its
-    own source photo; near-identical hashes then merge rows that are the same
-    photo saved under different filenames.
+    own source photo; rows are merged when their difference hashes are nearly
+    identical or their visual similarity is >= SAME_PHOTO_SIMILARITY.
     """
     hashes = np.array([difference_hash(dataset_path_for(r)) for r in rows])
     parent = list(range(len(rows)))
@@ -200,7 +291,8 @@ def group_by_source(rows):
 
     for i in range(len(rows)):
         distances = (hashes[i + 1:] != hashes[i]).sum(axis=1)
-        for offset in np.nonzero(distances <= DUPLICATE_HASH_DISTANCE)[0]:
+        same_photo = (distances <= DUPLICATE_HASH_DISTANCE) | (sim[i, i + 1:] >= SAME_PHOTO_SIMILARITY)
+        for offset in np.nonzero(same_photo)[0]:
             parent[find(i)] = find(i + 1 + int(offset))
 
     # Readable, stable ids: the alphabetically first filename in each group.
@@ -209,6 +301,10 @@ def group_by_source(rows):
         members[find(i)].append(row["filename"])
     root_to_id = {root: min(names) for root, names in members.items()}
     return [root_to_id[find(i)] for i in range(len(rows))]
+
+
+def primary_class(classes):
+    return sorted(Counter(classes).items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
 
 
 def assign_splits(rows, group_ids):
@@ -224,8 +320,7 @@ def assign_splits(rows, group_ids):
 
     groups_by_class = defaultdict(list)
     for gid, classes in group_classes.items():
-        primary = sorted(Counter(classes).items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
-        groups_by_class[primary].append(gid)
+        groups_by_class[primary_class(classes)].append(gid)
 
     rng = random.Random(RANDOM_SEED)
     split_of = {}
@@ -245,7 +340,68 @@ def assign_splits(rows, group_ids):
     return split_of
 
 
-def verify_no_group_crosses_splits(split_rows):
+def separate_similar_across_splits(rows, group_ids, split_of, sim):
+    """
+    Groups are only merged at SAME_PHOTO_SIMILARITY, because merging at the
+    lower CROSS_SPLIT_SIMILARITY chains look-alike photos (e.g. sunburnt skin)
+    into groups of hundreds. This closes that gap without chaining:
+      1. while a test or val image has a match >= CROSS_SPLIT_SIMILARITY in
+         a split it could leak into (test->train, val->train, test->val), its
+         whole group moves into that split;
+      2. each class's test and val splits are then topped back up to their
+         target size with train groups that have no such match outside
+         themselves.
+    Modifies and returns split_of.
+    """
+    classes = [class_name_for(r) for r in rows]
+    members = defaultdict(list)
+    for i, g in enumerate(group_ids):
+        members[g].append(i)
+    close = sim >= CROSS_SPLIT_SIMILARITY
+
+    def in_split(split):
+        return np.array([split_of[g] == split for g in group_ids])
+
+    moved = Counter()
+    changed = True
+    while changed:
+        changed = False
+        for source, destination in (("test", "train"), ("val", "train"), ("test", "val")):
+            in_source, in_destination = in_split(source), in_split(destination)
+            for i in np.nonzero(in_source & close[:, in_destination].any(axis=1))[0]:
+                group = group_ids[i]
+                if split_of[group] == source:
+                    split_of[group] = destination
+                    moved[(source, destination)] += len(members[group])
+                    changed = True
+
+    topped_up = Counter()
+    rng = random.Random(RANDOM_SEED)
+    class_totals = Counter(classes)
+    group_primary = {g: primary_class([classes[i] for i in m]) for g, m in members.items()}
+    for split, fraction, must_not_match in (("test", TEST_FRACTION, ("train", "val")),
+                                             ("val", VAL_FRACTION, ("train", "test"))):
+        for class_name in sorted(class_totals):
+            target = class_totals[class_name] * fraction
+            candidates = sorted(g for g in members if split_of[g] == "train" and group_primary[g] == class_name)
+            rng.shuffle(candidates)
+            for group in candidates:
+                have = sum(1 for i, c in enumerate(classes) if c == class_name and split_of[group_ids[i]] == split)
+                if have >= target:
+                    break
+                others = [j for j, g in enumerate(group_ids) if g != group and split_of[g] in must_not_match]
+                if not close[np.ix_(members[group], others)].any():
+                    split_of[group] = split
+                    topped_up[split] += len(members[group])
+
+    print(f"  moved out of test/val for near-matches across splits: {dict(moved) or 'none'}")
+    print(f"  topped back up with unmatched train groups: {dict(topped_up) or 'none'}")
+    return split_of
+
+
+def verify_split(split_rows, sim):
+    """Raises if any source group appears in two splits, or if any two images
+    in different splits are visually similar >= CROSS_SPLIT_SIMILARITY."""
     splits_per_group = defaultdict(set)
     for split, _class_name, _filename, group_id, _source in split_rows:
         splits_per_group[group_id].add(split)
@@ -256,19 +412,101 @@ def verify_no_group_crosses_splits(split_rows):
             f"{list(crossing.items())[:3]}. The split would leak - refusing to continue."
         )
 
+    splits = np.array([r[0] for r in split_rows])
+    for a, b in (("train", "val"), ("train", "test"), ("val", "test")):
+        worst = sim[np.ix_(splits == a, splits == b)].max()
+        if worst >= CROSS_SPLIT_SIMILARITY:
+            raise RuntimeError(
+                f"Images in {a} and {b} have visual similarity {worst:.3f} >= {CROSS_SPLIT_SIMILARITY}. "
+                f"The split would leak - refusing to continue."
+            )
+        print(f"  highest {a}/{b} similarity: {worst:.3f}")
+
+
+def add_extra_training_images(split_rows, rows, features):
+    """
+    Adds images from data/extra_dataset to data/train, skipping any that are
+    near-duplicates of an existing val/test photo (similarity >=
+    EXTRA_MAX_SIMILARITY_TO_VAL_TEST or near-identical hash, mirrored or not),
+    of an existing train photo (>= EXTRA_MAX_SIMILARITY_TO_TRAIN), or of an
+    extra image already added. Extra images that duplicate one another under
+    different labels are all skipped. Appends to split_rows and returns
+    {class_name: number_added}.
+    """
+    manifest_path = os.path.join(EXTRA_DATASET_DIR, "manifest.csv")
+    if not os.path.exists(manifest_path):
+        raise FileNotFoundError(
+            f"{manifest_path} not found. Run collate_extra_data.py first, or set "
+            f"USE_EXTRA_TRAINING_DATA = False to train on the original data only."
+        )
+    with open(manifest_path, newline="") as f:
+        extra = list(csv.DictReader(f))
+    extra_paths = [os.path.join(EXTRA_DATASET_DIR, r["class"], r["filename"]) for r in extra]
+
+    print(f"\nChecking {len(extra)} extra training candidates against every existing photo...")
+    splits = np.array([r[0] for r in split_rows])
+    extra_features = view_features(extra_paths)
+    sim = cross_similarity(extra_features, features)
+    existing_hashes = np.array([difference_hash(dataset_path_for(r)) for r in rows])
+    extra_hashes = np.array([difference_hash(p) for p in extra_paths])
+    extra_hashes_mirrored = np.array([difference_hash(p, mirrored=True) for p in extra_paths])
+    hash_distance = np.minimum((extra_hashes[:, None, :] != existing_hashes[None, :, :]).sum(-1),
+                               (extra_hashes_mirrored[:, None, :] != existing_hashes[None, :, :]).sum(-1))
+    near_hash = hash_distance <= DUPLICATE_HASH_DISTANCE
+    is_eval = splits != "train"
+    near_eval = (sim[:, is_eval] >= EXTRA_MAX_SIMILARITY_TO_VAL_TEST).any(1) | near_hash[:, is_eval].any(1)
+    near_train = (sim[:, ~is_eval] >= EXTRA_MAX_SIMILARITY_TO_TRAIN).any(1) | near_hash[:, ~is_eval].any(1)
+    candidates = [i for i in range(len(extra)) if not near_eval[i] and not near_train[i]]
+
+    # Greedy de-duplication among the remaining extras (no chaining).
+    within = cross_similarity(extra_features[candidates], extra_features[candidates])
+    kept, duplicate_of = [], {}
+    for position, i in enumerate(candidates):
+        matches = [k for k in kept if within[position, candidates.index(k)] >= SAME_PHOTO_SIMILARITY
+                   or min((extra_hashes[i] != extra_hashes[k]).sum(), (extra_hashes_mirrored[i] != extra_hashes[k]).sum()) <= 4]
+        if matches:
+            duplicate_of[i] = matches[0]
+        else:
+            kept.append(i)
+    conflicted = {k for i, k in duplicate_of.items() if extra[i]["class"] != extra[k]["class"]}
+
+    added = Counter()
+    for i in kept:
+        if i in conflicted:
+            continue
+        row = extra[i]
+        shutil.copy2(extra_paths[i], os.path.join(TRAIN_DIR, row["class"], row["filename"]))
+        split_rows.append(["train", row["class"], row["filename"], f"extra:{row['filename']}",
+                           f"{row['source']}:{row['original_path']}"])
+        added[row["class"]] += 1
+
+    added_idx = [i for i in kept if i not in conflicted]
+    if added_idx:
+        worst = sim[np.ix_(added_idx, np.nonzero(is_eval)[0])].max()
+        if worst >= EXTRA_MAX_SIMILARITY_TO_VAL_TEST:
+            raise RuntimeError(f"An added extra image has similarity {worst:.3f} to a val/test photo - refusing to continue.")
+        print(f"  highest similarity of an added extra image to any val/test photo: {worst:.3f}")
+    print(f"  skipped {int(near_eval.sum())} near val/test photos, {int((near_train & ~near_eval).sum())} near train photos, "
+          f"{len(duplicate_of)} repeats among extras, {len(conflicted)} with conflicting labels among extras")
+    print(f"  added to train: {dict(sorted(added.items()))}")
+    return added
+
 
 def split_and_copy(rows):
     """Groups real images by source photo, splits the groups into
-    data/train, data/val and data/test, and writes data/split_manifest.csv
-    recording where every file went."""
+    data/train, data/val and data/test with no near-duplicates across
+    splits, and writes data/split_manifest.csv recording where every file
+    went."""
     for directory in (TRAIN_DIR, VAL_DIR, TEST_DIR):
         if os.path.exists(directory):
             robust_rmtree(directory)
 
-    print("Grouping images by source photo (manifest + near-duplicate hashing)...")
-    group_ids = group_by_source(rows)
-    print(f"  {len(rows)} real images -> {len(set(group_ids))} source groups\n")
+    print("Comparing every pair of images (hash + rotation/crop/mirror-robust features)...")
+    sim, features = similarity_matrix([dataset_path_for(r) for r in rows])
+    group_ids = group_by_source(rows, sim)
+    print(f"  {len(rows)} real images -> {len(set(group_ids))} source groups")
     split_of = assign_splits(rows, group_ids)
+    split_of = separate_similar_across_splits(rows, group_ids, split_of, sim)
 
     split_dirs = {"train": TRAIN_DIR, "val": VAL_DIR, "test": TEST_DIR}
     split_rows = []
@@ -287,14 +525,17 @@ def split_and_copy(rows):
         empty = [s for s in split_dirs if c[s] == 0]
         if empty:
             raise RuntimeError(f"Class '{class_name}' has no images in split(s) {empty}.")
-    verify_no_group_crosses_splits(split_rows)
+    verify_split(split_rows, sim)
 
-    print("Split (real photos only, grouped by source photo):\n")
+    added = add_extra_training_images(split_rows, rows, features) if USE_EXTRA_TRAINING_DATA else Counter()
+
+    print("\nSplit (real photos grouped by source photo; extra images go to train only):\n")
     for class_name in sorted(counts):
         c = counts[class_name]
         total = sum(c.values())
         warning = "  <-- LOW: consider gathering more data for this class" if total < MIN_IMAGES_PER_CLASS_WARNING else ""
-        print(f"  {class_name}: {c['train']} train / {c['val']} val / {c['test']} test ({total} total){warning}")
+        print(f"  {class_name}: {c['train']} train (+{added[class_name]} extra) / {c['val']} val / {c['test']} test "
+              f"({total} original){warning}")
     print()
 
     with open(SPLIT_MANIFEST_PATH, "w", newline="") as f:

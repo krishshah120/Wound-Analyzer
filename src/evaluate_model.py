@@ -15,6 +15,7 @@ Usage:
 import os
 import json
 import argparse
+from collections import Counter
 
 import numpy as np
 import tensorflow as tf
@@ -173,11 +174,39 @@ def print_report(r):
         print(f"  3rd degree CONFIDENTLY predicted as anything other than 3rd: {b['burn_3rd_confidently_predicted_as_anything_but_3rd']}")
 
 
+def evaluate_out_of_scope(model, class_names, ood_dir):
+    """For photos that belong to none of the model's classes (laid out as
+    <ood_dir>/<group>/<image>), reports how often the model still gives a
+    confident label instead of "unknown", and which labels it gives."""
+    results = {}
+    for group in sorted(d for d in os.listdir(ood_dir) if os.path.isdir(os.path.join(ood_dir, d))):
+        folder = os.path.join(ood_dir, group)
+        images = [np.asarray(tf.keras.utils.load_img(os.path.join(folder, f), target_size=IMG_SIZE), dtype="float32")
+                  for f in sorted(os.listdir(folder)) if f.lower().endswith((".png", ".jpg", ".jpeg"))]
+        probs = model.predict(preprocess_input(np.stack(images)), batch_size=64, verbose=0)
+        confident = probs.max(axis=1) >= CONFIDENCE_THRESHOLD
+        labels = Counter(class_names[i] for i in probs.argmax(axis=1)[confident])
+        results[group] = {"n_images": len(images), "fraction_confidently_labelled": float(confident.mean()),
+                          "confident_labels": dict(labels.most_common())}
+    return results
+
+
+def print_out_of_scope_report(results):
+    print(f"\nOut-of-scope photos (should ideally come back 'unknown'):")
+    total = sum(r["n_images"] for r in results.values())
+    confident = sum(r["n_images"] * r["fraction_confidently_labelled"] for r in results.values())
+    for group, r in results.items():
+        top = ", ".join(f"{k} {v}" for k, v in list(r["confident_labels"].items())[:3])
+        print(f"  {group:<16} {r['n_images']:>4} photos, confidently labelled: {r['fraction_confidently_labelled']:6.1%}  ({top})")
+    print(f"  overall: {confident / total:.1%} of {total} out-of-scope photos got a confident wound label")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", default=MODEL_PATH)
     parser.add_argument("--class-names", default=CLASS_NAMES_PATH)
     parser.add_argument("--data-dir", default=DEFAULT_DATA_DIR)
+    parser.add_argument("--ood-dir", help="optional folder of out-of-scope photos, e.g. ../data/ood_dataset")
     parser.add_argument("--json", help="optional path to write the full results as JSON")
     args = parser.parse_args()
 
@@ -187,6 +216,10 @@ def main():
 
     results = evaluate(model, class_names, args.data_dir)
     print_report(results)
+
+    if args.ood_dir:
+        results["out_of_scope"] = evaluate_out_of_scope(model, class_names, args.ood_dir)
+        print_out_of_scope_report(results["out_of_scope"])
 
     if args.json:
         with open(args.json, "w") as f:
