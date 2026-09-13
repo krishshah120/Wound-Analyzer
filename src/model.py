@@ -31,6 +31,11 @@ IMG_SIZE = (224, 224)
 # Below this confidence, predict() reports "unknown" instead of guessing.
 CONFIDENCE_THRESHOLD = 0.60
 
+# Extra class trained on photos that are none of the wound classes (normal
+# skin, chronic wounds). It is never returned as a label: when it wins,
+# predict() reports "unknown", and best_guess stays a wound class.
+OUT_OF_SCOPE_CLASS = "out_of_scope"
+
 
 def build_model(num_classes):
     """Transfer learning on MobileNetV2 - ImageNet-pretrained base plus a
@@ -79,6 +84,25 @@ def load_trained_model():
     return model, class_names
 
 
+def decide(probabilities, class_names):
+    """
+    Turns one image's class probabilities into (label, confidence,
+    best_guess) - the single decision rule used by predict() and by
+    evaluate_model.py:
+      - best_guess is the most likely WOUND class (never OUT_OF_SCOPE_CLASS)
+      - confidence is the probability of best_guess
+      - label is "unknown" if OUT_OF_SCOPE_CLASS is the most likely class or
+        confidence is below CONFIDENCE_THRESHOLD, otherwise best_guess
+    """
+    wound_indices = [i for i, name in enumerate(class_names) if name != OUT_OF_SCOPE_CLASS]
+    best_wound = max(wound_indices, key=lambda i: probabilities[i])
+    best_guess = class_names[best_wound]
+    confidence = float(probabilities[best_wound])
+    out_of_scope = class_names[int(np.argmax(probabilities))] == OUT_OF_SCOPE_CLASS
+    label = "unknown" if out_of_scope or confidence < CONFIDENCE_THRESHOLD else best_guess
+    return label, confidence, best_guess
+
+
 def predict(image_path, model=None, class_names=None):
     """
     Predicts a category for a single image.
@@ -87,12 +111,12 @@ def predict(image_path, model=None, class_names=None):
     (slower for repeated calls - pass them in yourself if calling this in
     a loop or from a server, so the model only loads once).
 
-    Returns (label, confidence, best_guess):
-      - label is the predicted class name, or "unknown" if confidence is
-        below CONFIDENCE_THRESHOLD
-      - confidence is the model's probability for its top prediction
-      - best_guess is the top class name regardless of confidence, useful
-        for logging even when label is "unknown"
+    Returns (label, confidence, best_guess), as defined by decide():
+      - label is the predicted wound class, or "unknown" if the photo looks
+        out of scope or confidence is below CONFIDENCE_THRESHOLD
+      - confidence is the model's probability for best_guess
+      - best_guess is the most likely wound class regardless, useful for
+        logging even when label is "unknown"
     """
     if not os.path.exists(image_path):
         raise FileNotFoundError(f"Image not found: {image_path}")
@@ -106,12 +130,7 @@ def predict(image_path, model=None, class_names=None):
     img_array = np.expand_dims(img_array, axis=0)
 
     predictions = model.predict(img_array, verbose=0)[0]
-    best_index = int(np.argmax(predictions))
-    confidence = float(predictions[best_index])
-    best_guess = class_names[best_index]
-
-    label = best_guess if confidence >= CONFIDENCE_THRESHOLD else "unknown"
-    return label, confidence, best_guess
+    return decide(predictions, class_names)
 
 
 if __name__ == "__main__":
@@ -121,9 +140,8 @@ if __name__ == "__main__":
 
     label, confidence, best_guess = predict(sys.argv[1])
     if label == "unknown":
-        print(
-            f"unknown (best guess was '{best_guess}' at {confidence:.1%} confidence, "
-            f"below the {CONFIDENCE_THRESHOLD:.0%} threshold)"
-        )
+        reason = (f"below the {CONFIDENCE_THRESHOLD:.0%} threshold" if confidence < CONFIDENCE_THRESHOLD
+                  else "the photo looks like none of the wound classes")
+        print(f"unknown (best guess was '{best_guess}' at {confidence:.1%} confidence; {reason})")
     else:
         print(f"{label} ({confidence:.1%} confidence)")

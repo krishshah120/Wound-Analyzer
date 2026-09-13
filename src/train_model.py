@@ -20,6 +20,10 @@ train_model.py
        at a low learning rate.
    Both phases early-stop on data/val. data/test is not looked at until the
    final evaluation.
+   Extra photos from additional Kaggle downloads (data/extra_dataset) are
+   added to train only, and out-of-scope photos (data/ood_dataset: normal
+   skin, chronic wounds) are split into all three as an extra
+   "out_of_scope" class that predict() reports as "unknown".
 3. Saves the trained model, class label list and test metrics to models/.
 
 This file only handles data splitting and training. The model architecture
@@ -47,7 +51,7 @@ from PIL import Image
 from tensorflow.keras import layers
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input
 
-from model import build_model, unfreeze_top_layers, IMG_SIZE, MODEL_DIR, MODEL_PATH, CLASS_NAMES_PATH
+from model import build_model, unfreeze_top_layers, IMG_SIZE, MODEL_DIR, MODEL_PATH, CLASS_NAMES_PATH, OUT_OF_SCOPE_CLASS
 from evaluate_model import evaluate, print_report
 
 # ---------------------------------------------------------------------------
@@ -64,6 +68,7 @@ TEST_DIR = os.path.join(DATA_DIR, "test")            # sibling of wound_dataset
 MANIFEST_PATH = os.path.join(WOUND_DATASET_DIR, "manifest.csv")
 SPLIT_MANIFEST_PATH = os.path.join(DATA_DIR, "split_manifest.csv")
 EXTRA_DATASET_DIR = os.path.join(DATA_DIR, "extra_dataset")      # built by collate_extra_data.py
+OUT_OF_SCOPE_DATASET_DIR = os.path.join(DATA_DIR, "ood_dataset")  # built by collate_extra_data.py
 METRICS_PATH = os.path.join(MODEL_DIR, "metrics.json")
 
 BATCH_SIZE = 32
@@ -102,6 +107,16 @@ CROSS_SPLIT_SIMILARITY = 0.80
 USE_EXTRA_TRAINING_DATA = True
 EXTRA_MAX_SIMILARITY_TO_VAL_TEST = 0.75
 EXTRA_MAX_SIMILARITY_TO_TRAIN = 0.80
+
+# A model trained only on the six wound classes gave a confident wound label
+# to about two thirds of photos that are none of them (normal skin, diabetic,
+# pressure, surgical and venous wounds), because the confidence threshold alone
+# cannot recognise something it was never shown. So those photos are added as
+# a seventh class, OUT_OF_SCOPE_CLASS, which predict() turns into "unknown".
+# On the validation split (3 seeds each) this cut out-of-scope photos
+# confidently labelled from 66.7% to 8.5%, with in-scope balanced accuracy
+# 0.628 vs 0.622, while 3.6% of real wound photos were rejected as out of scope.
+USE_OUT_OF_SCOPE_CLASS = True
 
 # Training schedule. See README.md for the experiments behind these choices.
 HEAD_EPOCHS = 15
@@ -431,7 +446,8 @@ def add_extra_training_images(split_rows, rows, features):
     of an existing train photo (>= EXTRA_MAX_SIMILARITY_TO_TRAIN), or of an
     extra image already added. Extra images that duplicate one another under
     different labels are all skipped. Appends to split_rows and returns
-    {class_name: number_added}.
+    ({class_name: number_added}, view features of the added images in the
+    order they were appended).
     """
     manifest_path = os.path.join(EXTRA_DATASET_DIR, "manifest.csv")
     if not os.path.exists(manifest_path):
@@ -489,6 +505,112 @@ def add_extra_training_images(split_rows, rows, features):
     print(f"  skipped {int(near_eval.sum())} near val/test photos, {int((near_train & ~near_eval).sum())} near train photos, "
           f"{len(duplicate_of)} repeats among extras, {len(conflicted)} with conflicting labels among extras")
     print(f"  added to train: {dict(sorted(added.items()))}")
+    return added, extra_features[added_idx]
+
+
+def add_out_of_scope_images(split_rows, split_paths, split_features):
+    """
+    Adds data/ood_dataset photos as OUT_OF_SCOPE_CLASS to all three splits.
+    They are grouped and split like the wound photos: near-duplicates stay
+    together, and a val/test group with a match >= CROSS_SPLIT_SIMILARITY in
+    another split is moved into that split. Photos that resemble a wound photo
+    (split_paths/split_features, parallel to split_rows) in a different split
+    are skipped - some of this download re-uses photos labelled as burns or
+    bruises here. Appends to split_rows and returns {split: number_added}.
+    """
+    manifest_path = os.path.join(OUT_OF_SCOPE_DATASET_DIR, "manifest.csv")
+    if not os.path.exists(manifest_path):
+        raise FileNotFoundError(
+            f"{manifest_path} not found. Run collate_extra_data.py first, or set "
+            f"USE_OUT_OF_SCOPE_CLASS = False to train a six-class model."
+        )
+    with open(manifest_path, newline="") as f:
+        ood = list(csv.DictReader(f))
+    photo_types = [r["class"].split("/", 1)[1] for r in ood]   # e.g. "ood/diabetic_wound" -> "diabetic_wound"
+    paths = [os.path.join(OUT_OF_SCOPE_DATASET_DIR, t, r["filename"]) for t, r in zip(photo_types, ood)]
+
+    print(f"\nSplitting {len(ood)} out-of-scope photos...")
+    sim, features = similarity_matrix(paths)
+    hashes = np.array([difference_hash(p) for p in paths])
+    hashes_mirrored = np.array([difference_hash(p, mirrored=True) for p in paths])
+
+    parent = list(range(len(ood)))
+
+    def find(i):
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    for i in range(len(ood)):
+        distances = (hashes[i + 1:] != hashes[i]).sum(axis=1)
+        same_photo = (distances <= DUPLICATE_HASH_DISTANCE) | (sim[i, i + 1:] >= SAME_PHOTO_SIMILARITY)
+        for offset in np.nonzero(same_photo)[0]:
+            parent[find(i)] = find(i + 1 + int(offset))
+    group_ids = [find(i) for i in range(len(ood))]
+    members = defaultdict(list)
+    for i, g in enumerate(group_ids):
+        members[g].append(i)
+
+    rng = random.Random(RANDOM_SEED)
+    groups_by_type = defaultdict(list)
+    for g, m in members.items():
+        groups_by_type[primary_class([photo_types[i] for i in m])].append(g)
+    split_of = {}
+    for photo_type in sorted(groups_by_type):
+        gids = sorted(groups_by_type[photo_type], key=lambda g: min(members[g]))
+        rng.shuffle(gids)
+        total = sum(len(members[g]) for g in gids)
+        filled = {"test": 0, "val": 0}
+        for g in gids:
+            split_of[g] = "train"
+            for split, fraction in (("test", TEST_FRACTION), ("val", VAL_FRACTION)):
+                if filled[split] < total * fraction:
+                    split_of[g] = split
+                    filled[split] += len(members[g])
+                    break
+
+    close = sim >= CROSS_SPLIT_SIMILARITY
+    changed = True
+    while changed:
+        changed = False
+        for source, destination in (("test", "train"), ("val", "train"), ("test", "val")):
+            splits = np.array([split_of[g] for g in group_ids])
+            for i in np.nonzero((splits == source) & close[:, splits == destination].any(axis=1))[0]:
+                if split_of[group_ids[i]] == source:
+                    split_of[group_ids[i]] = destination
+                    changed = True
+    splits = np.array([str(split_of[g]) for g in group_ids])
+
+    wound_splits = np.array([r[0] for r in split_rows])
+    wound_hashes = np.array([difference_hash(p) for p in split_paths])
+    to_wounds = cross_similarity(features, split_features)
+    hash_near = np.minimum((hashes[:, None, :] != wound_hashes[None, :, :]).sum(-1),
+                           (hashes_mirrored[:, None, :] != wound_hashes[None, :, :]).sum(-1)) <= DUPLICATE_HASH_DISTANCE
+    skip = np.zeros(len(ood), dtype=bool)
+    for split in ("train", "val", "test"):
+        other = wound_splits != split
+        skip |= (splits == split) & ((to_wounds[:, other] >= CROSS_SPLIT_SIMILARITY).any(axis=1) | hash_near[:, other].any(axis=1))
+
+    for a, b in (("train", "val"), ("train", "test"), ("val", "test")):
+        worst = sim[np.ix_((splits == a) & ~skip, (splits == b) & ~skip)].max()
+        if worst >= CROSS_SPLIT_SIMILARITY:
+            raise RuntimeError(f"Out-of-scope photos in {a} and {b} have similarity {worst:.3f} - refusing to continue.")
+
+    split_dirs = {"train": TRAIN_DIR, "val": VAL_DIR, "test": TEST_DIR}
+    added = Counter()
+    for i, row in enumerate(ood):
+        if skip[i]:
+            continue
+        dest_dir = os.path.join(split_dirs[splits[i]], OUT_OF_SCOPE_CLASS)
+        os.makedirs(dest_dir, exist_ok=True)
+        shutil.copy2(paths[i], os.path.join(dest_dir, row["filename"]))
+        group_name = os.path.basename(paths[min(members[group_ids[i]])])
+        split_rows.append([splits[i], OUT_OF_SCOPE_CLASS, row["filename"], f"out_of_scope:{group_name}",
+                           f"{row['source']}:{row['original_path']}"])
+        added[splits[i]] += 1
+    print(f"  {len(members)} groups; skipped {int(skip.sum())} that resemble a wound photo in another split")
+    print(f"  added: {dict(added)}")
     return added
 
 
@@ -527,7 +649,14 @@ def split_and_copy(rows):
             raise RuntimeError(f"Class '{class_name}' has no images in split(s) {empty}.")
     verify_split(split_rows, sim)
 
-    added = add_extra_training_images(split_rows, rows, features) if USE_EXTRA_TRAINING_DATA else Counter()
+    split_paths = [dataset_path_for(r) for r in rows]
+    split_features = features
+    added = Counter()
+    if USE_EXTRA_TRAINING_DATA:
+        added, extra_features = add_extra_training_images(split_rows, rows, features)
+        split_paths += [os.path.join(TRAIN_DIR, r[1], r[2]) for r in split_rows[len(rows):]]
+        split_features = np.concatenate([features, extra_features])
+    out_of_scope = add_out_of_scope_images(split_rows, split_paths, split_features) if USE_OUT_OF_SCOPE_CLASS else Counter()
 
     print("\nSplit (real photos grouped by source photo; extra images go to train only):\n")
     for class_name in sorted(counts):
@@ -536,6 +665,8 @@ def split_and_copy(rows):
         warning = "  <-- LOW: consider gathering more data for this class" if total < MIN_IMAGES_PER_CLASS_WARNING else ""
         print(f"  {class_name}: {c['train']} train (+{added[class_name]} extra) / {c['val']} val / {c['test']} test "
               f"({total} original){warning}")
+    if USE_OUT_OF_SCOPE_CLASS:
+        print(f"  {OUT_OF_SCOPE_CLASS}: {out_of_scope['train']} train / {out_of_scope['val']} val / {out_of_scope['test']} test")
     print()
 
     with open(SPLIT_MANIFEST_PATH, "w", newline="") as f:

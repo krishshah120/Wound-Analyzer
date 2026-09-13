@@ -6,6 +6,8 @@ data/raw_downloads/
 data/extra_dataset/
 data/ood_dataset/
 data/train/*/extra_*
+data/val/*/extra_*
+data/test/*/extra_*
 
 #Ignore local Python environment folders or cache
 __pycache__/
