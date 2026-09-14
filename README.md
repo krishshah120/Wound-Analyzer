@@ -90,9 +90,9 @@ The app routes `burn_3rd_degree` to "call emergency services", so the errors
 that matter most are 3rd degree burns shown something milder. Of 40 test
 3rd degree burns, the app would return:
 
-- `burn_3rd_degree` for 16;
+- `burn_3rd_degree` for 17;
 - **`burn_1st_degree` for 1**;
-- another wound label for 3;
+- a non-burn wound label for 2 (one `cut`, one `bruise`);
 - `unknown` for 20 (4 of them because the photo looked out of scope). Those
   users see the `unknown` tips (see a professional), not "call emergency
   services".
@@ -245,7 +245,16 @@ standard deviation, it does not raise the validation out-of-scope rate by
 more than 2 photos, and it does not raise the number of validation 3rd degree
 burns shown a wrong wound label.
 
-| Run | Change | Val balanced acc | Val out-of-scope confidently labelled | Val 3rd shown wrong wound label | Test acc | Test balanced acc | Test out-of-scope confidently labelled | Test 3rd shown 1st / other wound / `unknown` | Test 2nd degree recall |
+Correction (found after publishing): `evaluate_model.py`'s
+`burn_3rd_app_says_other_wound` already includes burns shown "1st degree", but
+the "wrong wound label" check below added the "1st degree" count on top, so a
+3rd degree burn shown "1st degree" was counted twice. The same sum was used
+for every run, so the comparisons are consistent, but the column overstates
+the count. The per-run files needed to recompute it were lost, so the numbers
+are left as measured. In the last column, "any other wound" includes the "1st
+degree" cases.
+
+| Run | Change | Val balanced acc | Val out-of-scope confidently labelled | Val 3rd shown wrong wound label (1st degree counted twice) | Test acc | Test balanced acc | Test out-of-scope confidently labelled | Test 3rd shown 1st / any other wound (incl. 1st) / `unknown` | Test 2nd degree recall |
 |---|---|---|---|---|---|---|---|---|---|
 | G0 (6 seeds) | Baseline: previous recipe (width 1.0, 3rd degree weight ×2) | 0.602 ± 0.034 | 26.3% | 3.3 | 51.2 ± 1.5% | 54.3% | 22.6% | 0.3 / 4.2 / 14.7 | 24.3% |
 | G1 | + label smoothing 0.1 | 0.636 ± 0.021 | 14.1% | 1.7 | 52.4 ± 1.6% | 54.6% | 13.0% | 0.0 / 1.7 / 22.0 | 29.3% |
