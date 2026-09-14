@@ -15,9 +15,10 @@ import sys
 import json
 
 import numpy as np
-import tensorflow as tf
-from tensorflow.keras import layers, models
-from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input
+
+# TensorFlow is imported inside the functions that use it, not here, so the
+# Cloud Run server (litert_model.py) can import decide() and the constants
+# without TensorFlow. Importing TensorFlow made a cold start take ~25 s.
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)          # .../Wound-Analyzer
@@ -43,6 +44,9 @@ def build_model(num_classes, alpha=1.0):
     the standard network, 1.4 is wider). The base starts frozen so the head
     can be trained first; train_model.py then calls unfreeze_top_layers() to
     fine-tune the top of the base at a low learning rate."""
+    from tensorflow.keras import layers, models
+    from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2
+
     base_model = MobileNetV2(input_shape=IMG_SIZE + (3,), include_top=False, weights="imagenet", alpha=alpha)
     base_model.trainable = False
 
@@ -63,6 +67,9 @@ def unfreeze_top_layers(model, num_layers):
     """Makes the last num_layers layers of the nested MobileNetV2 base
     trainable (BatchNormalization layers stay frozen). The caller must
     re-compile the model afterwards for this to take effect."""
+    import tensorflow as tf
+    from tensorflow.keras import layers
+
     base_model = next(layer for layer in model.layers if isinstance(layer, tf.keras.Model))
     base_model.trainable = True
     for layer in base_model.layers[:-num_layers]:
@@ -79,6 +86,8 @@ def load_trained_model():
         raise FileNotFoundError(
             "No trained model found. Run 'python train_model.py' first to train one."
         )
+    import tensorflow as tf
+
     model = tf.keras.models.load_model(MODEL_PATH)
     with open(CLASS_NAMES_PATH, "r") as f:
         class_names = json.load(f)
@@ -124,6 +133,9 @@ def predict(image_path, model=None, class_names=None):
 
     if model is None or class_names is None:
         model, class_names = load_trained_model()
+
+    import tensorflow as tf
+    from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
     img = tf.keras.utils.load_img(image_path, target_size=IMG_SIZE)
     img_array = tf.keras.utils.img_to_array(img)

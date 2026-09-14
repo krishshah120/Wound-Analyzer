@@ -26,7 +26,16 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))   # project root
 SRC_DIR = os.path.join(SCRIPT_DIR, "src")
 sys.path.insert(0, SRC_DIR)
 
-from model import load_trained_model, predict  # noqa: E402
+# The Cloud Run container sets WOUND_MODEL_FORMAT=tflite to serve the
+# TensorFlow Lite copy without importing TensorFlow (see src/litert_model.py).
+# Locally it defaults to the Keras model, as before.
+MODEL_FORMAT = os.environ.get("WOUND_MODEL_FORMAT", "keras")
+if MODEL_FORMAT == "keras":
+    from model import load_trained_model, predict  # noqa: E402
+elif MODEL_FORMAT == "tflite":
+    from litert_model import load_trained_model, predict  # noqa: E402
+else:
+    raise ValueError(f"WOUND_MODEL_FORMAT must be 'keras' or 'tflite', not {MODEL_FORMAT!r}")
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024  # 10 MB upload limit

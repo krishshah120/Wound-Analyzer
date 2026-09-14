@@ -7,9 +7,10 @@
 !src/
 src/*
 !src/model.py
+!src/litert_model.py
 !models/
 models/*
-!models/wound_model.keras
+!models/wound_model.tflite
 !models/class_names.json
 !templates/
 !templates/**
