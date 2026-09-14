@@ -16,7 +16,7 @@ COPY templates templates
 
 # Cloud Run sends requests to $PORT. One process, so the model is loaded into
 # memory once; a few threads so a slow upload does not block other requests.
-# --preload loads TensorFlow and the model BEFORE the port opens. Without it
-# the port opened at once, Cloud Run counted the instance as ready, and the
-# first request waited ~20s for the model to load.
-CMD exec gunicorn --preload --bind :$PORT --workers 1 --threads 4 --timeout 60 app:app
+# Do NOT add --preload: it loads TensorFlow in the parent process before the
+# worker is forked, and TensorFlow does not survive a fork - every /predict
+# then hangs until the 60 s timeout (seen on Cloud Run and reproduced locally).
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 4 --timeout 60 app:app
