@@ -1,26 +1,35 @@
 """
 collate_extra_data.py
 
-Cleans three additional Kaggle downloads into:
+Cleans additional Kaggle downloads into:
   - data/extra_dataset/<class>/  : candidate EXTRA TRAINING images for the six
-    model classes. train_model.py only adds the ones that are not
+    wound classes. train_model.py only adds the ones that are not
     near-duplicates of any existing photo, and only to the training split.
   - data/ood_dataset/<group>/     : out-of-scope photos (normal skin, chronic
-    wounds) the model was never trained on, used only to measure how often it
-    confidently mislabels something it should answer "unknown" to
-    (python evaluate_model.py --ood-dir ../data/ood_dataset).
+    wounds, rashes and other skin conditions, insect bites). train_model.py
+    splits them into train/val/test as the "out_of_scope" class, which the app
+    reports as "unknown".
 
-Expected layout (unzip each Kaggle archive into data/raw_downloads/):
-  data/raw_downloads/kaggle_burn_fares/burn dataset/{1st,2nd,3rd} degree burn/
+Expected downloads in data/raw_downloads/ (folders unzipped, or the .zip itself
+- a symlink to the downloaded file is fine):
+  kaggle_burn_fares/burn dataset/{1st,2nd,3rd} degree burn/
       https://www.kaggle.com/datasets/faresabbasai2022/burn-dataset (Apache 2.0)
-  data/raw_downloads/kaggle_wound_ibrahim/Wound_dataset copy/<class folders>/
+  kaggle_wound_ibrahim/Wound_dataset copy/<class folders>/
       https://www.kaggle.com/datasets/ibrahimfateen/wound-classification (licence: unknown)
-  data/raw_downloads/kaggle_wound_yasin/Wound_dataset/<class folders>/
+  kaggle_wound_yasin/Wound_dataset/<class folders>/
       https://www.kaggle.com/datasets/yasinpratomo/wound-dataset (licence: unknown)
+  kaggle_skin_disease_normal.zip
+      https://www.kaggle.com/datasets/lysaapriani/skin-disease-and-normal-skin-dataset (licence: unknown)
+  kaggle_bug_bites.zip
+      https://www.kaggle.com/datasets/moonfallidk/bug-bite-images (Apache 2.0)
+  kaggle_skin_diseases.zip
+      https://www.kaggle.com/datasets/ismailpromus/skin-diseases-image-dataset (© original authors)
+  kaggle_dermnet.zip
+      https://www.kaggle.com/datasets/shubhamgoel27/dermnet (DermNet images, copyrighted)
 
-Both output folders are gitignored because two of the sources have no stated
-licence. Classes these sources label ambiguously for this model (un-graded
-"Burns", "Laceration", "Stab_wound", "Ingrown_nails") are not used.
+Both output folders are gitignored: several sources have no stated licence or
+are copyrighted. Classes the wound downloads label ambiguously for this model
+(un-graded "Burns", "Laceration", "Stab_wound", "Ingrown_nails") are not used.
 
 Usage:
     python collate_extra_data.py
@@ -28,9 +37,14 @@ Usage:
 Requires: pip install pillow opencv-python numpy
 """
 
+import io
 import os
+import re
 import csv
+import random
 import shutil
+import zipfile
+from collections import defaultdict
 
 import cv2
 import numpy as np
@@ -41,6 +55,7 @@ PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 RAW_DIR = os.path.join(PROJECT_ROOT, "data", "raw_downloads")
 EXTRA_DIR = os.path.join(PROJECT_ROOT, "data", "extra_dataset")
 OOD_DIR = os.path.join(PROJECT_ROOT, "data", "ood_dataset")
+RANDOM_SEED = 42
 
 SOURCES = [
     ("fares", os.path.join(RAW_DIR, "kaggle_burn_fares", "burn dataset"), {
@@ -64,6 +79,31 @@ SOURCES = [
         "Cut": "cut",
     }),
 ]
+
+# Out-of-scope photos read straight from the downloaded zips (two of them are
+# several GB). Every image's parent folder becomes one photo group, e.g.
+# "dermnet_eczema_photos"; train/test folders of the same category are merged.
+OOD_ZIP_SOURCES = [
+    ("skindis", os.path.join(RAW_DIR, "kaggle_skin_disease_normal.zip")),
+    ("bites", os.path.join(RAW_DIR, "kaggle_bug_bites.zip")),
+    ("skinimg", os.path.join(RAW_DIR, "kaggle_skin_diseases.zip")),
+    ("dermnet", os.path.join(RAW_DIR, "kaggle_dermnet.zip")),
+]
+
+# At most this many photos per group, sampled at random. The two large
+# downloads alone hold ~46,000 photos; using all of them would swamp the ~1,200
+# wound photos and make training impractically slow on a CPU. Groups that fill
+# the biggest gaps (normal skin, bite-free skin) are kept whole.
+OUT_OF_SCOPE_PER_GROUP = 100
+UNCAPPED_GROUPS = {"skindis_normal", "bites_no_bites"}
+
+# Some skin-condition photos are actually in-scope injuries or look like them:
+# sunburn, chemical/cement burns, scalded-skin syndrome, blistering (bullous)
+# conditions, and bruise-like purpura or haematomas. Teaching the model those
+# are "out of scope" would teach it to reject real burns and bruises.
+EXCLUDE_GROUPS = {"dermnet_bullous_disease_photos"}   # blistering conditions: look like 2nd degree burn blisters
+EXCLUDE_FILENAME = re.compile(r"burn|scald|bullous|blister|pemphig|hematoma|haematoma|purpura|bruis|wound|lacerat|abrasion",
+                              re.IGNORECASE)
 
 # Exposure thresholds match collate_data.py. Sharpness is measured on the
 # 224x224 image the model actually sees: many of these downloads are small web
@@ -97,12 +137,22 @@ def mirror_aware_hashes(image, hash_size=8):
     return hashes
 
 
-def main():
-    for directory in (EXTRA_DIR, OOD_DIR):
-        if os.path.exists(directory):
-            shutil.rmtree(directory)
+def is_repeat(image, kept_hashes):
+    """True if image (or its mirror image) nearly matches an already kept one."""
+    original, mirrored = mirror_aware_hashes(image)
+    if any(min((h != original).sum(), (h != mirrored).sum()) <= 4 for h in kept_hashes):
+        return True
+    kept_hashes.append(original)
+    return False
 
-    manifest_rows = []
+
+def slug(text):
+    text = re.sub(r"^\d+\.\s*", "", text)          # "1. Eczema 1677" -> "Eczema 1677"
+    text = re.sub(r"[\s-]*[\d.]+k?$", "", text)     # drop trailing counts like "1677" or "- 1.25k"
+    return re.sub(r"[^a-z0-9]+", "_", text.lower()).strip("_")
+
+
+def collate_folder_sources(manifest_rows):
     for source, root, mapping in SOURCES:
         if not os.path.isdir(root):
             raise FileNotFoundError(f"Missing download for '{source}': expected {root}")
@@ -121,16 +171,12 @@ def main():
                     continue
                 with Image.open(os.path.join(folder_path, filename)) as img:
                     image = img.convert("RGB").resize((224, 224))
-                # Out-of-scope photos are evaluation-only, so no quality filter
-                # (real users upload imperfect photos too), but this download
-                # contains mirrored copies of its own photos, which would
-                # double-count results.
-                if is_ood:
-                    original, mirrored = mirror_aware_hashes(image)
-                    if any(min((h != original).sum(), (h != mirrored).sum()) <= 4 for h in kept_hashes):
-                        repeats += 1
-                        continue
-                    kept_hashes.append(original)
+                # Out-of-scope photos get no quality filter (real users upload
+                # imperfect photos too), but this download contains mirrored
+                # copies of its own photos, which would double-count results.
+                if is_ood and is_repeat(image, kept_hashes):
+                    repeats += 1
+                    continue
                 problem = None if is_ood else quality_problem(image)
                 if problem:
                     rejected += 1
@@ -142,14 +188,73 @@ def main():
             print(f"  {source:<8} {folder:<18} -> {target:<22} kept {kept}, rejected {rejected} for quality, "
                   f"skipped {repeats} repeated/mirrored copies")
 
+
+def collate_zip_sources(manifest_rows):
+    rng = random.Random(RANDOM_SEED)
+    for source, zip_path in OOD_ZIP_SOURCES:
+        if not os.path.exists(zip_path):
+            raise FileNotFoundError(f"Missing download for '{source}': expected {zip_path}")
+        with zipfile.ZipFile(zip_path) as archive:
+            groups = defaultdict(list)
+            excluded = 0
+            for name in archive.namelist():
+                parts = name.split("/")
+                if (name.endswith("/") or not name.lower().endswith((".png", ".jpg", ".jpeg"))
+                        or any(p.startswith(".") or p == "__MACOSX" for p in parts) or len(parts) < 2):
+                    continue
+                if EXCLUDE_FILENAME.search(parts[-1]):
+                    excluded += 1
+                    continue
+                group = f"{source}_{slug(parts[-2])}"
+                if group in EXCLUDE_GROUPS:
+                    excluded += 1
+                    continue
+                groups[group].append(name)
+
+            for group in sorted(groups):
+                names = sorted(groups[group])
+                if group not in UNCAPPED_GROUPS and len(names) > OUT_OF_SCOPE_PER_GROUP:
+                    names = sorted(rng.sample(names, OUT_OF_SCOPE_PER_GROUP))
+                dest_dir = os.path.join(OOD_DIR, group)
+                os.makedirs(dest_dir, exist_ok=True)
+                kept = repeats = unreadable = 0
+                kept_hashes = []
+                for name in names:
+                    try:
+                        with Image.open(io.BytesIO(archive.read(name))) as img:
+                            image = img.convert("RGB").resize((224, 224))
+                    except OSError:
+                        unreadable += 1
+                        continue
+                    if is_repeat(image, kept_hashes):
+                        repeats += 1
+                        continue
+                    new_name = f"extra_{group}_{kept}.jpg"
+                    image.save(os.path.join(dest_dir, new_name), "JPEG")
+                    manifest_rows.append([new_name, f"ood/{group}", source, name])
+                    kept += 1
+                print(f"  {group:<70} kept {kept:>3} of {len(groups[group]):>5}, skipped {repeats} repeats, {unreadable} unreadable")
+            print(f"  {source}: excluded {excluded} photos that are, or look like, an in-scope injury (by filename or group)\n")
+
+
+def main():
+    for directory in (EXTRA_DIR, OOD_DIR):
+        if os.path.exists(directory):
+            shutil.rmtree(directory)
+
+    manifest_rows = []
+    collate_folder_sources(manifest_rows)
+    print()
+    collate_zip_sources(manifest_rows)
+
     for directory, rows in ((EXTRA_DIR, [r for r in manifest_rows if not r[1].startswith("ood/")]),
                             (OOD_DIR, [r for r in manifest_rows if r[1].startswith("ood/")])):
         with open(os.path.join(directory, "manifest.csv"), "w", newline="") as f:
             writer = csv.writer(f)
             writer.writerow(["filename", "class", "source", "original_path"])
             writer.writerows(rows)
-    print(f"\nExtra training candidates written to {EXTRA_DIR}")
-    print(f"Out-of-scope evaluation photos written to {OOD_DIR}")
+    print(f"Extra training candidates written to {EXTRA_DIR}")
+    print(f"Out-of-scope photos written to {OOD_DIR}")
 
 
 if __name__ == "__main__":

@@ -22,7 +22,8 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
-from model import IMG_SIZE, MODEL_PATH, CLASS_NAMES_PATH, CONFIDENCE_THRESHOLD, OUT_OF_SCOPE_CLASS, decide
+from model import (IMG_SIZE, MODEL_PATH, CLASS_NAMES_PATH, GATE_MODEL_PATH, CONFIDENCE_THRESHOLD, GATE_THRESHOLD,
+                   OUT_OF_SCOPE_CLASS, decide)
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
@@ -85,23 +86,26 @@ def format_matrix(cm, row_names, col_names):
     return "\n".join(lines)
 
 
-def evaluate(model, class_names, data_dir):
+def evaluate(model, class_names, data_dir, gate_model=None):
     """
     Metrics for a folder of labelled images. If the model has an
     OUT_OF_SCOPE_CLASS and data_dir has that folder, "in-scope" metrics are
     computed on the wound photos only (a wound photo rejected as out of scope
     counts as wrong), and the out-of-scope photos are scored on how often they
     still get a confident wound label. App-level numbers use model.decide(),
-    the same rule the web app uses.
+    the same rule the web app uses. Pass gate_model to score the app with its
+    out-of-scope gate (as it runs live); the most-likely-class metrics
+    (accuracy, balanced accuracy, confusion matrix) are the classifier's alone.
     """
     y_true, probs, _ = predict_directory(model, data_dir, class_names)
+    gate_probs = predict_directory(gate_model, data_dir, class_names)[1] if gate_model is not None else [None] * len(y_true)
     n = len(class_names)
     y_pred = probs.argmax(axis=1)
     ood_index = class_names.index(OUT_OF_SCOPE_CLASS) if OUT_OF_SCOPE_CLASS in class_names else None
     wound_names = [c for c in class_names if c != OUT_OF_SCOPE_CLASS]
     in_scope = y_true != ood_index if ood_index is not None else np.ones(len(y_true), dtype=bool)
 
-    decisions = [decide(p, class_names) for p in probs]
+    decisions = [decide(p, class_names, g) for p, g in zip(probs, gate_probs)]
     app_label = np.array([d[0] for d in decisions])
     answered = app_label != "unknown"
     true_names = np.array([class_names[i] for i in y_true])
@@ -136,6 +140,7 @@ def evaluate(model, class_names, data_dir):
         "confusion_matrix": cm.tolist(),
         "app": {
             "confidence_threshold": CONFIDENCE_THRESHOLD,
+            "gate_threshold": GATE_THRESHOLD if gate_model is not None else None,
             "in_scope_fraction_answered": float(answered[in_scope].mean()),
             "in_scope_accuracy_when_answered": float((app_label[in_scope & answered] == true_names[in_scope & answered]).mean())
             if (in_scope & answered).any() else None,
@@ -193,11 +198,12 @@ def print_report(r):
     print(format_matrix(np.array(r["confusion_matrix"]), names, names))
 
     a = r["app"]
-    print(f"\nWhat the app returns (CONFIDENCE_THRESHOLD = {a['confidence_threshold']:.2f}), wound photos:")
+    gate = f", gate GATE_THRESHOLD = {a['gate_threshold']:.2f}" if a.get("gate_threshold") is not None else ", no gate"
+    print(f"\nWhat the app returns (CONFIDENCE_THRESHOLD = {a['confidence_threshold']:.2f}{gate}), wound photos:")
     print(f"  answered (not 'unknown'):     {a['in_scope_fraction_answered']:.1%}")
     if a["in_scope_accuracy_when_answered"] is not None:
         print(f"  accuracy when answered:       {a['in_scope_accuracy_when_answered']:.1%}")
-    print(f"  rejected as out of scope:     {a['in_scope_fraction_rejected_as_out_of_scope']:.1%}")
+    print(f"  rejected as out of scope by the classifier: {a['in_scope_fraction_rejected_as_out_of_scope']:.1%}")
     if "out_of_scope" in r:
         o = r["out_of_scope"]
         print(f"Out-of-scope photos ({o['n_images']}): confidently given a wound label: {o['fraction_confidently_labelled']:.1%} "
@@ -213,10 +219,10 @@ def print_report(r):
         print(f"  app tells a 3rd degree burn it is 1st degree: {b['burn_3rd_app_says_1st']}")
         print(f"  app gives a 3rd degree burn any other wound label: {b['burn_3rd_app_says_other_wound']}")
         print(f"  app says 'unknown' for a 3rd degree burn: {b['burn_3rd_app_says_unknown']} "
-              f"({b['burn_3rd_rejected_as_out_of_scope']} of them rejected as out of scope)")
+              f"({b['burn_3rd_rejected_as_out_of_scope']} of them rejected as out of scope by the classifier)")
 
 
-def evaluate_out_of_scope(model, class_names, ood_dir):
+def evaluate_out_of_scope(model, class_names, ood_dir, gate_model=None):
     """For photos that belong to none of the wound classes (laid out as
     <ood_dir>/<group>/<image>), reports how often the app would still give a
     confident wound label instead of "unknown", and which labels it gives."""
@@ -225,8 +231,10 @@ def evaluate_out_of_scope(model, class_names, ood_dir):
         folder = os.path.join(ood_dir, group)
         images = [tf.keras.utils.img_to_array(tf.keras.utils.load_img(os.path.join(folder, f), target_size=IMG_SIZE))
                   for f in sorted(os.listdir(folder)) if f.lower().endswith((".png", ".jpg", ".jpeg"))]
-        probs = model.predict(preprocess_input(np.stack(images)), batch_size=64, verbose=0)
-        labels = [decide(p, class_names)[0] for p in probs]
+        x = preprocess_input(np.stack(images))
+        probs = model.predict(x, batch_size=64, verbose=0)
+        gate_probs = gate_model.predict(x, batch_size=64, verbose=0) if gate_model is not None else [None] * len(probs)
+        labels = [decide(p, class_names, g)[0] for p, g in zip(probs, gate_probs)]
         confident = Counter(label for label in labels if label != "unknown")
         results[group] = {"n_images": len(images), "fraction_confidently_labelled": sum(confident.values()) / len(images),
                           "confident_labels": dict(confident.most_common())}
@@ -247,6 +255,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", default=MODEL_PATH)
     parser.add_argument("--class-names", default=CLASS_NAMES_PATH)
+    parser.add_argument("--gate-model", default=GATE_MODEL_PATH, help="out-of-scope gate model, as the app uses it")
+    parser.add_argument("--no-gate", action="store_true", help="score the classifier alone, without the gate")
     parser.add_argument("--data-dir", default=DEFAULT_DATA_DIR)
     parser.add_argument("--ood-dir", help="optional folder of out-of-scope photos, e.g. ../data/ood_dataset")
     parser.add_argument("--json", help="optional path to write the full results as JSON")
@@ -255,12 +265,13 @@ def main():
     model = tf.keras.models.load_model(args.model)
     with open(args.class_names) as f:
         class_names = json.load(f)
+    gate_model = None if args.no_gate else tf.keras.models.load_model(args.gate_model)
 
-    results = evaluate(model, class_names, args.data_dir)
+    results = evaluate(model, class_names, args.data_dir, gate_model)
     print_report(results)
 
     if args.ood_dir:
-        results["out_of_scope"] = evaluate_out_of_scope(model, class_names, args.ood_dir)
+        results["out_of_scope"] = evaluate_out_of_scope(model, class_names, args.ood_dir, gate_model)
         print_out_of_scope_report(results["out_of_scope"])
 
     if args.json:

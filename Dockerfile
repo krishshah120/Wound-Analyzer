@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir -r requirements-server.txt
 
 COPY app.py .
 COPY src/model.py src/litert_model.py src/
-COPY models/wound_model.tflite models/class_names.json models/
+COPY models/wound_model.tflite models/out_of_scope_gate.tflite models/class_names.json models/
 COPY templates templates
 
 # Cloud Run sends requests to $PORT. One process, so the model is loaded into

@@ -31,9 +31,9 @@ sys.path.insert(0, SRC_DIR)
 # Locally it defaults to the Keras model, as before.
 MODEL_FORMAT = os.environ.get("WOUND_MODEL_FORMAT", "keras")
 if MODEL_FORMAT == "keras":
-    from model import load_trained_model, predict  # noqa: E402
+    from model import load_trained_model, load_gate_model, predict  # noqa: E402
 elif MODEL_FORMAT == "tflite":
-    from litert_model import load_trained_model, predict  # noqa: E402
+    from litert_model import load_trained_model, load_gate_model, predict  # noqa: E402
 else:
     raise ValueError(f"WOUND_MODEL_FORMAT must be 'keras' or 'tflite', not {MODEL_FORMAT!r}")
 
@@ -46,7 +46,8 @@ ALLOWED_EXTENSIONS = {".png", ".jpg", ".jpeg"}
 # Keras model from disk is slow, so this makes /predict fast per-request.
 print("Loading trained model...")
 MODEL, CLASS_NAMES = load_trained_model()
-print(f"Model loaded. Classes: {CLASS_NAMES}")
+GATE_MODEL = load_gate_model()   # out-of-scope gate; see decide() in src/model.py
+print(f"Model and out-of-scope gate loaded. Classes: {CLASS_NAMES}")
 
 # General first-aid pointers per category. This is intentionally basic,
 # widely-known first aid information, NOT medical advice - severe cases are
@@ -136,7 +137,7 @@ def predict_route():
         file.save(temp_path)
 
     try:
-        label, confidence, best_guess = predict(temp_path, model=MODEL, class_names=CLASS_NAMES)
+        label, confidence, best_guess = predict(temp_path, model=MODEL, class_names=CLASS_NAMES, gate_model=GATE_MODEL)
     except Exception as e:
         return jsonify({"error": f"Could not process image: {e}"}), 500
     finally:

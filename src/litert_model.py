@@ -9,8 +9,9 @@ timeout.
 
 It gives the same answers as model.predict(): images are loaded the way
 tf.keras.utils.load_img + MobileNetV2 preprocess_input load them, and the
-decision rule is model.decide() itself. export_tflite.py writes the .tflite
-file only after checking that on every val and test photo.
+decision rule is model.decide() itself, including the out-of-scope gate
+(models/out_of_scope_gate.tflite). export_tflite.py writes the .tflite files
+only after checking that on every val and test photo.
 
 Requires: pip install ai-edge-litert pillow numpy
 """
@@ -26,6 +27,7 @@ from ai_edge_litert.interpreter import Interpreter
 from model import IMG_SIZE, MODEL_DIR, CLASS_NAMES_PATH, decide
 
 TFLITE_MODEL_PATH = os.path.join(MODEL_DIR, "wound_model.tflite")
+GATE_TFLITE_MODEL_PATH = os.path.join(MODEL_DIR, "out_of_scope_gate.tflite")
 
 
 def load_image(image_path):
@@ -77,11 +79,24 @@ def load_trained_model():
     return LiteRTModel(), class_names
 
 
-def predict(image_path, model=None, class_names=None):
+def load_gate_model():
+    """Loads the .tflite out-of-scope gate model."""
+    if not os.path.exists(GATE_TFLITE_MODEL_PATH):
+        raise FileNotFoundError(
+            f"No TensorFlow Lite gate model found at {GATE_TFLITE_MODEL_PATH}. "
+            "Run 'python export_tflite.py' to create it from the trained gate model."
+        )
+    return LiteRTModel(GATE_TFLITE_MODEL_PATH)
+
+
+def predict(image_path, model=None, class_names=None, gate_model=None):
     """Same arguments and return value as model.predict():
     (label, confidence, best_guess) from model.decide()."""
     if not os.path.exists(image_path):
         raise FileNotFoundError(f"Image not found: {image_path}")
     if model is None or class_names is None:
         model, class_names = load_trained_model()
-    return decide(model.probabilities(load_image(image_path)), class_names)
+    if gate_model is None:
+        gate_model = load_gate_model()
+    image = load_image(image_path)
+    return decide(model.probabilities(image), class_names, gate_model.probabilities(image))

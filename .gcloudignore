@@ -11,6 +11,7 @@ src/*
 !models/
 models/*
 !models/wound_model.tflite
+!models/out_of_scope_gate.tflite
 !models/class_names.json
 !templates/
 !templates/**

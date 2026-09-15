@@ -27,19 +27,25 @@ train_model.py
    skin, chronic wounds) are split into all three as an extra
    "out_of_scope" class that predict() reports as "unknown".
 3. Saves the trained model, class label list and test metrics to models/.
+   With --gate it saves the model as the out-of-scope gate
+   (models/out_of_scope_gate.keras) instead, leaving the wound classifier,
+   class list and metrics untouched, and skips the test evaluation: the gate
+   is only judged together with the classifier (see model.decide()).
 
 This file only handles data splitting and training. The model architecture
 and prediction logic live in model.py - see that file for running
 predictions once a model has been trained.
 
 Usage:
-    python train_model.py
+    python train_model.py          # wound classifier
+    python train_model.py --gate   # out-of-scope gate
 
 Requires: pip install tensorflow pillow numpy
 """
 
 import os
 import csv
+import argparse
 import json
 import random
 import shutil
@@ -53,7 +59,7 @@ from PIL import Image
 from tensorflow.keras import layers
 from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input
 
-from model import build_model, unfreeze_top_layers, IMG_SIZE, MODEL_DIR, MODEL_PATH, CLASS_NAMES_PATH, OUT_OF_SCOPE_CLASS
+from model import build_model, unfreeze_top_layers, IMG_SIZE, MODEL_DIR, MODEL_PATH, CLASS_NAMES_PATH, GATE_MODEL_PATH, OUT_OF_SCOPE_CLASS
 from evaluate_model import evaluate, print_report
 
 # ---------------------------------------------------------------------------
@@ -531,10 +537,9 @@ def add_out_of_scope_images(split_rows, split_paths, split_features):
     Adds data/ood_dataset photos as OUT_OF_SCOPE_CLASS to all three splits.
     They are grouped and split like the wound photos: near-duplicates stay
     together, and a val/test group with a match >= CROSS_SPLIT_SIMILARITY in
-    another split is moved into that split. Photos that resemble a wound photo
-    (split_paths/split_features, parallel to split_rows) in a different split
-    are skipped - some of this download re-uses photos labelled as burns or
-    bruises here. The cross-split threshold is OUT_OF_SCOPE_CROSS_SPLIT_SIMILARITY
+    another split is moved into that split. Photos that resemble any wound
+    photo (split_paths/split_features, parallel to split_rows) are skipped -
+    some of these downloads re-use photos labelled as burns or bruises here. The cross-split threshold is OUT_OF_SCOPE_CROSS_SPLIT_SIMILARITY
     (stricter than for wound photos). Appends to split_rows and returns
     {split: number_added}.
     """
@@ -595,15 +600,17 @@ def add_out_of_scope_images(split_rows, split_paths, split_features):
     splits = [str(split_of[g]) for g in group_ids]
     split_array = np.array(splits)
 
-    wound_splits = np.array([r[0] for r in split_rows])
+    # Skip out-of-scope photos that resemble ANY wound photo, in any split:
+    # across splits that would leak, and within a split it would teach the
+    # model contradictory labels for the same picture.
     wound_hashes = np.array([difference_hash(p) for p in split_paths])
     to_wounds = cross_similarity(features, split_features)
-    hash_near = np.minimum((hashes[:, None, :] != wound_hashes[None, :, :]).sum(-1),
-                           (hashes_mirrored[:, None, :] != wound_hashes[None, :, :]).sum(-1)) <= DUPLICATE_HASH_DISTANCE
-    skip = np.zeros(len(ood), dtype=bool)
-    for split in ("train", "val", "test"):
-        other = wound_splits != split
-        skip |= (split_array == split) & ((to_wounds[:, other] >= CROSS_SPLIT_SIMILARITY).any(axis=1) | hash_near[:, other].any(axis=1))
+    skip = (to_wounds >= CROSS_SPLIT_SIMILARITY).any(axis=1)
+    for start in range(0, len(ood), 256):   # chunked: the full hash comparison would need gigabytes
+        chunk = slice(start, start + 256)
+        distance = np.minimum((hashes[chunk, None, :] != wound_hashes[None, :, :]).sum(-1),
+                              (hashes_mirrored[chunk, None, :] != wound_hashes[None, :, :]).sum(-1))
+        skip[chunk] |= (distance <= DUPLICATE_HASH_DISTANCE).any(axis=1)
 
     for a, b in (("train", "val"), ("train", "test"), ("val", "test")):
         worst = sim[np.ix_((split_array == a) & ~skip, (split_array == b) & ~skip)].max()
@@ -623,7 +630,7 @@ def add_out_of_scope_images(split_rows, split_paths, split_features):
         split_rows.append([splits[i], OUT_OF_SCOPE_CLASS, row["filename"], f"out_of_scope:{group_name}",
                            f"{row['source']}:{row['original_path']}"])
         added[splits[i]] += 1
-    print(f"  {len(members)} groups; skipped {int(skip.sum())} that resemble a wound photo in another split")
+    print(f"  {len(members)} groups; skipped {int(skip.sum())} that resemble a wound photo")
     print(f"  added: {dict(added)}")
     return added
 
@@ -746,7 +753,7 @@ def compute_class_weights(class_names):
     return {i: float(w) for i, w in enumerate(weights)}
 
 
-def train():
+def train(gate=False):
     tf.keras.utils.set_random_seed(RANDOM_SEED)
 
     print("Loading real images from the manifest...\n")
@@ -793,16 +800,25 @@ def train():
         callbacks=[tf.keras.callbacks.EarlyStopping(monitor="val_loss", patience=4, restore_best_weights=True)],
     )
 
-    print("\nEvaluating on the held-out test set...")
-    results = evaluate(model, class_names, TEST_DIR)
-    print_report(results)
-
     # Save an uncompiled copy (same layers and weights) so the file doesn't
     # carry ~17 MB of Adam state that inference never uses, and loading it
     # doesn't warn about mismatched optimizer variables.
     inference_model = tf.keras.Model(model.inputs, model.outputs, name=model.name)
-
     os.makedirs(MODEL_DIR, exist_ok=True)
+
+    if gate:
+        with open(CLASS_NAMES_PATH) as f:
+            classifier_class_names = json.load(f)
+        if class_names != classifier_class_names:
+            raise RuntimeError(f"Gate classes {class_names} differ from the classifier's {classifier_class_names}.")
+        inference_model.save(GATE_MODEL_PATH)
+        print(f"\nOut-of-scope gate saved to {GATE_MODEL_PATH} (not evaluated on test here)")
+        return
+
+    print("\nEvaluating on the held-out test set...")
+    results = evaluate(model, class_names, TEST_DIR)
+    print_report(results)
+
     inference_model.save(MODEL_PATH)
     with open(CLASS_NAMES_PATH, "w") as f:
         json.dump(class_names, f)
@@ -815,4 +831,7 @@ def train():
 
 
 if __name__ == "__main__":
-    train()
+    parser = argparse.ArgumentParser(description="Split the data and train the wound classifier or the out-of-scope gate.")
+    parser.add_argument("--gate", action="store_true",
+                        help=f"save the model as the out-of-scope gate ({GATE_MODEL_PATH}) instead of the wound classifier")
+    train(gate=parser.parse_args().gate)

@@ -26,6 +26,10 @@ PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)          # .../Wound-Analyzer
 MODEL_DIR = os.path.join(PROJECT_ROOT, "models")
 MODEL_PATH = os.path.join(MODEL_DIR, "wound_model.keras")
 CLASS_NAMES_PATH = os.path.join(MODEL_DIR, "class_names.json")
+# Second model, trained on many more kinds of out-of-scope photo (rashes, bites,
+# other skin conditions). It is used only to say "this is not a wound": see
+# decide(). Created with `python train_model.py --gate`.
+GATE_MODEL_PATH = os.path.join(MODEL_DIR, "out_of_scope_gate.keras")
 
 IMG_SIZE = (224, 224)
 
@@ -36,6 +40,11 @@ CONFIDENCE_THRESHOLD = 0.60
 # skin, chronic wounds). It is never returned as a label: when it wins,
 # predict() reports "unknown", and best_guess stays a wound class.
 OUT_OF_SCOPE_CLASS = "out_of_scope"
+
+# The gate model (GATE_MODEL_PATH) turns an answer into "unknown" when it gives
+# OUT_OF_SCOPE_CLASS at least this probability. Chosen on the validation split:
+# the lowest value that cost at most 5 correct validation wound answers.
+GATE_THRESHOLD = 0.5
 
 
 def build_model(num_classes, alpha=1.0):
@@ -94,36 +103,55 @@ def load_trained_model():
     return model, class_names
 
 
-def decide(probabilities, class_names):
+def load_gate_model():
+    """Loads the out-of-scope gate model (same classes as the classifier)."""
+    if not os.path.exists(GATE_MODEL_PATH):
+        raise FileNotFoundError(
+            f"No gate model found at {GATE_MODEL_PATH}. Run 'python train_model.py --gate' to train one."
+        )
+    import tensorflow as tf
+
+    return tf.keras.models.load_model(GATE_MODEL_PATH)
+
+
+def decide(probabilities, class_names, gate_probabilities=None):
     """
     Turns one image's class probabilities into (label, confidence,
     best_guess) - the single decision rule used by predict() and by
     evaluate_model.py:
       - best_guess is the most likely WOUND class (never OUT_OF_SCOPE_CLASS)
       - confidence is the probability of best_guess
-      - label is "unknown" if OUT_OF_SCOPE_CLASS is the most likely class or
-        confidence is below CONFIDENCE_THRESHOLD, otherwise best_guess
+      - label is "unknown" if OUT_OF_SCOPE_CLASS is the most likely class,
+        confidence is below CONFIDENCE_THRESHOLD, or the gate model gives
+        OUT_OF_SCOPE_CLASS at least GATE_THRESHOLD; otherwise best_guess
+    gate_probabilities are the gate model's probabilities for the same image
+    (same class order as class_names), or None to use the classifier alone.
+    The gate only ever adds "unknown"; it never changes best_guess.
     """
     wound_indices = [i for i, name in enumerate(class_names) if name != OUT_OF_SCOPE_CLASS]
     best_wound = max(wound_indices, key=lambda i: probabilities[i])
     best_guess = class_names[best_wound]
     confidence = float(probabilities[best_wound])
     out_of_scope = class_names[int(np.argmax(probabilities))] == OUT_OF_SCOPE_CLASS
-    label = "unknown" if out_of_scope or confidence < CONFIDENCE_THRESHOLD else best_guess
+    gated = (gate_probabilities is not None
+             and float(gate_probabilities[class_names.index(OUT_OF_SCOPE_CLASS)]) >= GATE_THRESHOLD)
+    label = "unknown" if out_of_scope or gated or confidence < CONFIDENCE_THRESHOLD else best_guess
     return label, confidence, best_guess
 
 
-def predict(image_path, model=None, class_names=None):
+def predict(image_path, model=None, class_names=None, gate_model=None):
     """
     Predicts a category for a single image.
 
     If model/class_names aren't passed in, loads the saved model from disk
     (slower for repeated calls - pass them in yourself if calling this in
-    a loop or from a server, so the model only loads once).
+    a loop or from a server, so the model only loads once). The same goes
+    for gate_model (see load_gate_model()).
 
     Returns (label, confidence, best_guess), as defined by decide():
       - label is the predicted wound class, or "unknown" if the photo looks
-        out of scope or confidence is below CONFIDENCE_THRESHOLD
+        out of scope (to the classifier or the gate) or confidence is below
+        CONFIDENCE_THRESHOLD
       - confidence is the model's probability for best_guess
       - best_guess is the most likely wound class regardless, useful for
         logging even when label is "unknown"
@@ -133,6 +161,8 @@ def predict(image_path, model=None, class_names=None):
 
     if model is None or class_names is None:
         model, class_names = load_trained_model()
+    if gate_model is None:
+        gate_model = load_gate_model()
 
     import tensorflow as tf
     from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
@@ -143,7 +173,8 @@ def predict(image_path, model=None, class_names=None):
     img_array = np.expand_dims(img_array, axis=0)
 
     predictions = model.predict(img_array, verbose=0)[0]
-    return decide(predictions, class_names)
+    gate_predictions = gate_model.predict(img_array, verbose=0)[0]
+    return decide(predictions, class_names, gate_predictions)
 
 
 if __name__ == "__main__":
