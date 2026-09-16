@@ -14,8 +14,9 @@ Those photos are all already 224x224, which would skip the resize step every
 real upload goes through, so each one is also checked as a copy saved at a
 different size (lossless PNG, alternately smaller and larger than 224). It
 refuses to write the files if any image gets a different label or best_guess,
-or if any class probability of either model differs by more than
-MAX_PROBABILITY_DIFFERENCE.
+if any class probability of either model differs by more than
+MAX_PROBABILITY_DIFFERENCE, or if the gate changed no answer at all (which
+would mean shipping a gate that does nothing).
 
 Re-run this after every retrain, then redeploy.
 
@@ -76,7 +77,7 @@ def main():
                 paths += [os.path.join(folder, name) for name in sorted(os.listdir(folder))
                           if name.lower().endswith((".png", ".jpg", ".jpeg"))]
 
-        mismatches, worst_difference, checked = [], 0.0, 0
+        mismatches, worst_difference, checked, gate_changed = [], 0.0, 0, 0
         with tempfile.TemporaryDirectory() as resized_dir:
             for index, path in enumerate(paths):
                 resized_path = os.path.join(resized_dir, "resized.png")
@@ -95,13 +96,20 @@ def main():
                                            float(np.abs(keras_gate - lite_gate_probs).max()))
                     keras_answer = keras_model.decide(keras_probs, class_names, keras_gate)
                     lite_answer = keras_model.decide(lite_probs, class_names, lite_gate_probs)
+                    # Does the gate still do anything? Without this, a gate that
+                    # changed no answer at all would sail through the comparison
+                    # (thanks to the MRC App session for the idea).
+                    gate_changed += keras_answer[0] != keras_model.decide(keras_probs, class_names)[0]
                     if (keras_answer[0], keras_answer[2]) != (lite_answer[0], lite_answer[2]):
                         label = path if image_path == path else f"{path} resized to {resized_size}"
                         mismatches.append((label, keras_answer, lite_answer))
                     checked += 1
 
         print(f"Checked {checked} images ({len(paths)} photos in {', '.join(CHECK_SPLITS)}, each also resized), "
-              f"classifier + gate: {len(mismatches)} different answers, largest probability difference {worst_difference:.2e}")
+              f"classifier + gate: {len(mismatches)} different answers, largest probability difference {worst_difference:.2e}; "
+              f"the gate turned {gate_changed} answers into 'unknown'")
+        if gate_changed == 0:
+            raise RuntimeError("The gate changed no answer on any checked image - it would ship doing nothing.")
         if mismatches or worst_difference > MAX_PROBABILITY_DIFFERENCE:
             for path, k, t in mismatches[:10]:
                 print(f"  {path}: keras {k} vs tflite {t}")
