@@ -39,10 +39,9 @@ So `/predict` returns the same fields and the same possible `label` values as
 before: `{label, confidence, best_guess, tips, disclaimer}`. Because `unknown`
 no longer means "low confidence" - the gate can return it at any confidence -
 `templates/index.html` shows that number as the *closest guess*, not as the
-confidence in an answer. The `unknown`
-tips cover both cases (an unclear photo, or an injury the tool doesn't cover)
-and advise seeing a professional for wounds that aren't healing or look
-infected.
+confidence in an answer. The `unknown` tips cover both cases (an unclear photo,
+or an injury the tool doesn't cover) and advise seeing a professional for
+wounds that aren't healing or look infected.
 
 ## Current performance (honest, held-out test set)
 
