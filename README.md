@@ -10,8 +10,10 @@ confidence is below `CONFIDENCE_THRESHOLD` (0.60, in `src/model.py`).
 current model's most likely class is right about 6 times in 10, and it
 answers `unknown` for about half of them. It still gives a confident wound
 label to about 1 in 7 photos that are not a wound at all (details below).
-Anyone who might have a serious injury, especially a burn, should seek
-medical care regardless of what this app says.
+It needs a close-up: when the wound fills only half the frame, as in a photo
+taken at arm's length, it answers for just 1 photo in 5. Anyone who might have
+a serious injury, especially a burn, should seek medical care regardless of
+what this app says.
 
 ## How a prediction is made
 
@@ -171,6 +173,56 @@ Limits of this result:
 - Every source is web-scraped, and some groups (for example normal skin) come
   from one or two sources, so the models may partly recognise a source's
   photo style.
+
+### Photos taken from further away
+
+**This is the biggest weakness of the model, and the thing a reader can
+actually control.** Every photo in `data/` is a tight crop of a wound. Someone
+photographing their own arm holds the phone at arm's length, so the wound
+fills a fraction of the frame - and the model mostly answers `unknown` for
+those. Reported by the MRC App session from real use of the deployed tool, and
+reproduced here with `python src/framing_check.py`, which shrinks each wound
+photo into part of the frame (surround: a blurred copy of the photo itself,
+re-encoded as JPEG like a browser upload) and leaves out-of-scope photos alone:
+
+| Wound fills | Test photos answered | Correct when answered | Validation answered |
+|---|---|---|---|
+| 100% (as stored) | 159/331 (48.0%) | 75.5% | 116/251 (46.2%) |
+| 70% | 117/331 (35.3%) | 70.9% | 78/251 (31.1%) |
+| 50% | 65/331 (19.6%) | 64.6% | 49/251 (19.5%) |
+| 35% | 27/331 (8.2%) | 59.3% | 17/251 (6.8%) |
+
+Almost all of the loss is low confidence, not the out-of-scope class or the
+gate: at 50% fill on test the gate blocks 7.6% of wound photos and the
+classifier's own `out_of_scope` wins on 3.3%, while 232 of 331 simply fall
+below the 0.60 threshold.
+
+**Cause:** `make_augmenter` only ever zoomed *in* (`RandomZoom((-0.15, 0.0))`),
+so the model was never shown a wound filling part of the frame.
+
+**Four attempts to fix it in training all failed their rule** (each 3 seeds,
+judged on validation against the shipped model, rule fixed before the runs:
+the 50%-fill answered share had to rise by at least 15 points, from 19.5%):
+
+| Change | 50%-fill answered (val) | Close-up answered | Correct when answered |
+|---|---|---|---|
+| shipped | 19.5% | 46.2% | 85.3% |
+| `ZOOM_OUT` 0.4 | 23.8% | 47.0% | 83.5% |
+| `ZOOM_OUT` 0.8 | 25.8% | 53.7% | 82.0% |
+| `ZOOM_OUT` 1.0 | 24.4% | 47.7% | 80.5% |
+| `MIN_FRAME_FILL` 0.3 (`RandomFrameShrink`) | 25.9% | 46.6% | 81.5% |
+
+Zoom-out augmentation buys about 5 points of framing robustness and costs 4-5
+points of accuracy when the app answers. `ZOOM_OUT` and `MIN_FRAME_FILL` are
+left in `train_model.py` (both off) for whoever tries again. What is left to
+try: **real photos taken at realistic distances** (which need consent and a
+collection route, so they are not a thing this repository can simply scrape),
+and cropping at serving time - the MRC site retries a centred 70% crop of the
+full-resolution upload when the answer is `unknown` and accepts it only above
+0.80 confidence, which it measured lifting arm's-length photos from 18.7% to
+30.5% answered. The same retry measured on *this* repository's data gains only
+1.2 points, because every photo here is 224x224, so cropping one discards
+detail that a real upload still has.
 
 ### Real uploads: resized photos
 
@@ -480,6 +532,10 @@ three models (0.634; 0.665 with mirror averaging, not adopted because of the
 - **Answers depend on how the photo is resized or cropped.** Resampling alone
   changed about 1 in 9 answers (see
   [Real uploads](#real-uploads-resized-photos)).
+- **Photos taken from further away mostly get `unknown`** - answered falls from
+  48.0% to 19.6% when the wound fills half the frame (see
+  [Photos taken from further away](#photos-taken-from-further-away)). Four
+  training fixes were tried and none passed.
 - **The classifier cannot be retrained exactly from the current code and
   data.** It was trained at commit b84b7b4, before the four extra out-of-scope
   downloads were added; `python src/train_model.py` now trains on all of them
@@ -509,6 +565,7 @@ python src/train_model.py         # split -> add extras and out-of-scope photos 
 python src/train_model.py --gate  # same split and recipe, saved as models/out_of_scope_gate.keras
 python src/evaluate_model.py      # classifier + gate on data/test, as the app runs (--no-gate: classifier alone)
 python src/evaluate_model.py --ood-dir some/folder   # optional: any folder of <group>/<image> out-of-scope photos
+python src/framing_check.py       # how the answers change when the wound fills less of the frame
 python src/export_tflite.py       # both models -> models/*.tflite, only if every val/test answer matches
 python src/model.py path/to/image.jpg
 python app.py                     # web app on http://127.0.0.1:5000

@@ -149,6 +149,18 @@ FINETUNE_LEARNING_RATE = 1e-5
 BACKBONE_ALPHA = 1.4
 LABEL_SMOOTHING = 0.1
 
+# Every training photo is a tight crop, but a phone photo of someone's own arm
+# is not: the wound fills much less of the frame, and the model was brittle to
+# that (on validation, wound photos given an answer fell 46.2% -> 19.5% when
+# the photo filled half the frame). Zooming OUT during training (positive
+# RandomZoom) is what teaches the model to cope: 0.5 means the photo may be
+# shrunk to two thirds of the frame.
+ZOOM_OUT = 0.0
+
+# The smallest part of the frame a training photo may be shrunk into by
+# RandomFrameShrink (1.0 = off). RandomZoom cannot go below half the frame.
+MIN_FRAME_FILL = 1.0
+
 # Extra multiplier applied on top of the balanced class weights. A missed
 # 3rd degree burn is the most consequential error this model can make (the
 # app routes 3rd degree to "call emergency services"), so it is weighted up.
@@ -697,14 +709,44 @@ def split_and_copy(rows):
     print(f"Split manifest written to {SPLIT_MANIFEST_PATH}\n")
 
 
-def make_augmenter():
+class RandomFrameShrink(layers.Layer):
+    """Puts the photo, shrunk to a random part of the frame, on a stretched
+    copy of itself - the training counterpart of standing further back. Keras's
+    RandomZoom cannot shrink past half the frame (its factor stops at 1.0), so
+    this layer handles the smaller sizes. The surround is deliberately not
+    blurred: the evaluation sets use a blurred surround, and training on the
+    same trick would measure the trick rather than the model."""
+
+    def __init__(self, min_fill, **kwargs):
+        super().__init__(**kwargs)
+        self.min_fill = min_fill
+
+    def call(self, inputs, training=False):
+        if not training or self.min_fill >= 1.0:
+            return inputs
+        size = tf.shape(inputs)[1]
+        fill = tf.random.uniform([], self.min_fill, 1.0)
+        inner = tf.cast(tf.round(tf.cast(size, tf.float32) * fill), tf.int32)
+        pad = size - inner
+        top = tf.random.uniform([], 0, pad + 1, dtype=tf.int32)
+        left = tf.random.uniform([], 0, pad + 1, dtype=tf.int32)
+        padding = [[0, 0], [top, pad - top], [left, pad - left], [0, 0]]
+        small = tf.image.resize(inputs, (inner, inner))
+        mask = tf.pad(tf.ones_like(small), padding)
+        return tf.pad(small, padding) + inputs * (1.0 - mask)
+
+
+def make_augmenter(zoom_out=ZOOM_OUT, min_frame_fill=MIN_FRAME_FILL):
     """Realistic, mild augmentations applied to raw [0, 255] training images
     on the fly - no color inversion or extreme distortion that wouldn't be
-    plausible for a real wound photo."""
+    plausible for a real wound photo. zoom_out is how far the image may be
+    zoomed OUT (0.5 = the photo shrunk to two thirds of the frame), which
+    teaches the model to cope with wounds photographed from further away."""
     return tf.keras.Sequential([
+        RandomFrameShrink(min_frame_fill),
         layers.RandomFlip("horizontal"),
         layers.RandomRotation(0.05, fill_mode="reflect"),        # up to +-18 degrees
-        layers.RandomZoom((-0.15, 0.0), fill_mode="reflect"),   # zoom in up to 15%
+        layers.RandomZoom((-0.15, zoom_out), fill_mode="reflect"),   # zoom in up to 15%, out by zoom_out
         layers.RandomTranslation(0.05, 0.05, fill_mode="reflect"),
         layers.RandomBrightness(0.15, value_range=(0, 255)),
         layers.RandomContrast(0.15),
