@@ -224,6 +224,26 @@ full-resolution upload when the answer is `unknown` and accepts it only above
 1.2 points, because every photo here is 224x224, so cropping one discards
 detail that a real upload still has.
 
+**Finding the injury first, then cropping to it, was also tried and not
+adopted.** A small segmentation model (U-Net on MobileNetV2 0.35, 3.9 MB) was
+trained to mark injuries using the masks in two chronic-wound datasets - the
+[Lower Limb and Feet Wound Image Dataset](https://data.mendeley.com/datasets/hsj38fwnvr/3)
+(CC BY 4.0) and a segmentation set combining FUSeg (from
+[uwm-bigdata/wound-segmentation](https://github.com/uwm-bigdata/wound-segmentation)),
+WSNet and Medetec - after removing 804 photos that resembled any
+classification validation or test photo. On its own held-out photos it found
+an injury in 98.5% of them. Used as a retry when the answer is `unknown`, on
+full-resolution validation photos with the wound off-centre and filling half
+the frame, it beat a centre crop on every measure (26.7% vs 25.5% answered,
+79.1% vs 75.0% correct when answered, fewer out-of-scope photos labelled) but
+not by the 5 points required to justify a third model. Two reasons: it was
+trained on chronic ulcers, so it marks bruises and open burns but not thin
+cuts, sunburn or pink first degree burns; and even a perfect crop reaches the
+0.80 confidence the retry needs on only 14% of these photos, because the
+classifier is unsure about most of them as close-ups too. The binding
+constraint is the classifier's own confidence on these injuries, which more
+and better photos of *these* injuries would address.
+
 ### Real uploads: resized photos
 
 Every photo in `data/` is already 224×224 (made with PIL's default bicubic
