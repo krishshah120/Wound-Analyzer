@@ -29,6 +29,7 @@ p.add_argument("--train-dir", default=None, help="training folder (default: the 
 p.add_argument("--zoom-out", type=float, default=0.0, help="RandomZoom upper bound: how far training photos may be zoomed OUT")
 p.add_argument("--val-dir", default=None, help="early-stopping folder (default: the repo's data/val); evaluation always uses data/val and data/test")
 p.add_argument("--min-fill", type=float, default=1.0, help="smallest part of the frame a training photo may be shrunk into (1.0 = off)")
+p.add_argument("--save-model", default=None, help="also save the trained model (uncompiled) to this .keras path")
 a = p.parse_args()
 tf.keras.utils.set_random_seed(a.seed)
 
@@ -99,6 +100,8 @@ np.savez(f"{EXP}/runs/{tag}_probs.npz", names=names, y_val=yv, p_val=pv, f_val=f
 out = dict(config=vars(a), epochs=[len(h1.history["loss"]), len(h2.history["loss"])], minutes=(time.time() - t0) / 60,
            val=summary(val), test=summary(test), framed=framed, val_full=val, test_full=test)
 json.dump(out, open(f"{EXP}/runs/{tag}.json", "w"), indent=1)
+if a.save_model:
+    tf.keras.Model(model.inputs, model.outputs, name=model.name).save(a.save_model)
 v, te = out["val"], out["test"]
 print(f"RESULT {tag}: VAL bal {v['bal']:.3f} ood {v['ood_labelled']:.3f} rej {v['rejected']:.3f} b3 other {v['b3_app_other']} 1st {v['b3_app_1st']} | "
       f"TEST acc {te['acc']:.3f} bal {te['bal']:.3f} ood {te['ood_labelled']:.3f} | "

@@ -109,3 +109,10 @@ and trained on 204 copies of our val/test. No claim of "better than Roboflow" ca
 A candidate that passes goes into an EXPERIMENTAL preview only: model-set version file with sha256,
 production set kept as the default and one-switch rollback, TFLite export checked against Keras.
 Nothing is deployed to the MRC site from reused development benchmarks alone.
+
+## Clarifications fixed before the numbers they affect were computed
+- 2026-09-26, before any X2 number: X2's primary input is 'browser' (what the MRC site sends);
+  stored-file ('raw') results are reported alongside.
+- 2026-09-26, before any X5 gate existed: X5 is scored through the production pipeline (C1 crop
+  retry) with only the gate swapped, and every X5 pass condition must hold on BOTH browser and raw
+  inputs for val.
