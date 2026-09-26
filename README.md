@@ -462,6 +462,29 @@ more 3rd degree burns a wrong label.
   `unknown` counted as wrong, because the gate never changes the most likely
   class.)
 
+**Rounds O and P: stronger backbones, the new Roboflow photos** (validation,
+3 seeds each, scored with the gate; rule fixed before each round; shipped
+classifier: 46.2% of wound photos answered, 85.3% correct when answered, 16 of
+94 out-of-scope photos labelled, 1 3rd degree burn shown a wrong label).
+
+| Run | Answered | Correct when answered | Out-of-scope labelled | 3rd wrong label |
+|---|---|---|---|---|
+| O: frozen ConvNeXt-Tiny + head | 36.1% | 79.8% | 6.7/94 | 1.33 |
+| O: frozen EfficientNetV2-S + head | 35.2% | 80.1% | 9.7/94 | 3.67 |
+| O: frozen MobileNetV2 1.4 + head (control) | 36.8% | 77.8% | 6.3/94 | 2.00 |
+| P0: shipped recipe under the shipped model's own data conditions | 36.4% | 77.4% | 8.0/94 | 1.33 |
+| P1: P0 + 105 new Roboflow abrasion/bruise/cut photos | 37.2% | 80.4% | 11.0/94 | 1.67 |
+
+None was adopted. Frozen ConvNeXt did no better than frozen MobileNetV2, so the
+pretrained backbone is not the bottleneck. Dropping the classifier's own
+`out_of_scope` class (letting the gate alone reject non-wounds) made it answer
+more but mostly wrongly (about 75% correct), so that class is doing useful
+work. The Roboflow photos raised accuracy-when-answered by 3 points over their
+control, but with large run-to-run variation (one of three runs answered only
+19%). P0 also shows the shipped classifier is an above-average single training
+run: the same recipe averages well below it, which is why every candidate here
+is compared as a 3-run mean.
+
 **Round G: training recipe on the previous out-of-scope split** (app image loader; test:
 331 wound photos, 40 of them 3rd degree burns, and 138 out-of-scope photos;
 validation: 31 3rd degree burns, 33 out-of-scope photos).
