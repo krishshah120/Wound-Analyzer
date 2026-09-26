@@ -26,7 +26,16 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))   # project root
 SRC_DIR = os.path.join(SCRIPT_DIR, "src")
 sys.path.insert(0, SRC_DIR)
 
-from model import load_trained_model, predict  # noqa: E402
+# The Cloud Run container sets WOUND_MODEL_FORMAT=tflite to serve the
+# TensorFlow Lite copy without importing TensorFlow (see src/litert_model.py).
+# Locally it defaults to the Keras model, as before.
+MODEL_FORMAT = os.environ.get("WOUND_MODEL_FORMAT", "keras")
+if MODEL_FORMAT == "keras":
+    from model import load_trained_model, load_gate_model, predict  # noqa: E402
+elif MODEL_FORMAT == "tflite":
+    from litert_model import load_trained_model, load_gate_model, predict  # noqa: E402
+else:
+    raise ValueError(f"WOUND_MODEL_FORMAT must be 'keras' or 'tflite', not {MODEL_FORMAT!r}")
 
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 10 * 1024 * 1024  # 10 MB upload limit
@@ -37,7 +46,8 @@ ALLOWED_EXTENSIONS = {".png", ".jpg", ".jpeg"}
 # Keras model from disk is slow, so this makes /predict fast per-request.
 print("Loading trained model...")
 MODEL, CLASS_NAMES = load_trained_model()
-print(f"Model loaded. Classes: {CLASS_NAMES}")
+GATE_MODEL = load_gate_model()   # out-of-scope gate; see decide() in src/model.py
+print(f"Model and out-of-scope gate loaded. Classes: {CLASS_NAMES}")
 
 # General first-aid pointers per category. This is intentionally basic,
 # widely-known first aid information, NOT medical advice - severe cases are
@@ -79,10 +89,14 @@ TREATMENT_TIPS = {
         "Cover loosely with a clean, dry cloth while waiting for help.",
         "Watch for signs of shock (pale skin, rapid breathing) until help arrives.",
     ],
+    # Returned both when the photo is unclear and when the injury looks like
+    # something this tool doesn't cover (e.g. a long-lasting sore or ulcer),
+    # so the wording has to fit both.
     "unknown": [
-        "The model wasn't confident enough to classify this image reliably.",
-        "Try a clearer, well-lit, close-up photo of the injury.",
-        "If you're concerned about an injury, consult a medical professional regardless of what this app says.",
+        "This tool couldn't identify the injury. Either the photo was unclear, or the injury isn't one it covers (it only recognizes cuts, scrapes, bruises, and burns).",
+        "If the photo was blurry, dark, or taken from far away, you can try again with a clear, well-lit close-up.",
+        "A wound that isn't healing, keeps getting bigger, or shows signs of infection (spreading redness, swelling, warmth, pus, or fever) should be checked by a medical professional, especially if you have diabetes or poor circulation.",
+        "If you're worried about an injury, see a medical professional regardless of what this tool says.",
     ],
 }
 
@@ -123,7 +137,7 @@ def predict_route():
         file.save(temp_path)
 
     try:
-        label, confidence, best_guess = predict(temp_path, model=MODEL, class_names=CLASS_NAMES)
+        label, confidence, best_guess = predict(temp_path, model=MODEL, class_names=CLASS_NAMES, gate_model=GATE_MODEL)
     except Exception as e:
         return jsonify({"error": f"Could not process image: {e}"}), 500
     finally:
