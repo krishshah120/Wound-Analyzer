@@ -244,6 +244,17 @@ classifier is unsure about most of them as close-ups too. The binding
 constraint is the classifier's own confidence on these injuries, which more
 and better photos of *these* injuries would address.
 
+Retrained with boxes around everyday injuries from the
+[Roboflow wound set](https://app.roboflow.com) (CC BY 4.0) and the Shubham Baid
+burn set - after removing 1,287 photos resembling a classification
+validation or test photo - the injury finder did better: at half-frame 29.9%
+answered and 80.0% correct, against 25.5% and 75.0% for the centre crop. That
+still misses the 5-point margin set in advance (by 0.6 points), so it was not
+adopted. An audit of those two downloads also found that the Baid burn set is
+almost entirely photos already in this project (43 new of 1,136) with
+unreliable degree labels, and the Roboflow set adds 134 new labelled
+abrasion/bruise/cut photos.
+
 ### Real uploads: resized photos
 
 Every photo in `data/` is already 224×224 (made with PIL's default bicubic
