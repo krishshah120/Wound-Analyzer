@@ -111,8 +111,8 @@ production set kept as the default and one-switch rollback, TFLite export checke
 Nothing is deployed to the MRC site from reused development benchmarks alone.
 
 ## Clarifications fixed before the numbers they affect were computed
-- 2026-09-26, before any X2 number: X2's primary input is 'browser' (what the MRC site sends);
-  stored-file ('raw') results are reported alongside.
+- X2's primary input is 'browser' (what the MRC site sends); stored-file ('raw') results are reported
+  alongside. Written into x2_crop.py's docstring before it was first run; copied here only afterwards.
 - 2026-09-26, before any X5 gate existed: X5 is scored through the production pipeline (C1 crop
   retry) with only the gate swapped, and every X5 pass condition must hold on BOTH browser and raw
   inputs for val.
