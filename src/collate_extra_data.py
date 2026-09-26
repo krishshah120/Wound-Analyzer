@@ -90,6 +90,18 @@ OOD_ZIP_SOURCES = [
     ("dermnet", os.path.join(RAW_DIR, "kaggle_dermnet.zip")),
 ]
 
+# The top-level folders each download is known to contain. Kaggle downloads
+# all arrive named "archive (N).zip", and a different download reusing an old
+# name once left one of these links pointing at a wound segmentation set: every
+# photo in it would have been filed as out of scope, teaching the model that
+# wounds are not wounds. So a zip whose folders don't match is refused.
+EXPECTED_TOP_FOLDERS = {
+    "skindis": {"Dataset Gambar Penyakit Kulit + Normal"},
+    "bites": {"training", "testing", "skin_of_color_testing"},
+    "skinimg": {"IMG_CLASSES"},
+    "dermnet": {"train", "test"},
+}
+
 # At most this many photos per group, sampled at random. The two large
 # downloads alone hold ~46,000 photos; using all of them would swamp the ~1,200
 # wound photos and make training impractically slow on a CPU. Groups that fill
@@ -237,7 +249,30 @@ def collate_zip_sources(manifest_rows):
             print(f"  {source}: excluded {excluded} photos that are, or look like, an in-scope injury (by filename or group)\n")
 
 
+def check_downloads():
+    """Raises before anything is touched if a download is missing or is not
+    the dataset it should be. main() deletes the previous output first, and
+    several of these downloads are no longer on this machine, so failing half
+    way through would lose data that cannot be rebuilt."""
+    for source, root, mapping in SOURCES:
+        for folder in mapping:
+            if not os.path.isdir(os.path.join(root, folder)):
+                raise FileNotFoundError(f"Missing download for '{source}': expected {os.path.join(root, folder)}")
+    for source, zip_path in OOD_ZIP_SOURCES:
+        if not os.path.exists(zip_path):
+            raise FileNotFoundError(f"Missing download for '{source}': expected {zip_path}")
+        with zipfile.ZipFile(zip_path) as archive:
+            top_folders = {n.split("/")[0] for n in archive.namelist() if "/" in n and not n.startswith("__MACOSX")}
+        if top_folders != EXPECTED_TOP_FOLDERS[source]:
+            raise ValueError(
+                f"{zip_path} is not the '{source}' download: its top-level folders are {sorted(top_folders)}, "
+                f"expected {sorted(EXPECTED_TOP_FOLDERS[source])}. Re-download it (see the URL at the top of this "
+                f"file) and point the link at the right file. Nothing has been changed."
+            )
+
+
 def main():
+    check_downloads()
     for directory in (EXTRA_DIR, OOD_DIR):
         if os.path.exists(directory):
             shutil.rmtree(directory)
