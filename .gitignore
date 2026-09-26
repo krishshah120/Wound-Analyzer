@@ -1,6 +1,14 @@
 #Ignore raw dataset downloads
 data/raw_downloads/
 
+#Ignore images from the extra Kaggle downloads (two have no stated licence);
+#rebuild them with src/collate_extra_data.py
+data/extra_dataset/
+data/ood_dataset/
+data/train/*/extra_*
+data/val/*/extra_*
+data/test/*/extra_*
+
 #Ignore local Python environment folders or cache
 __pycache__/
 .venv/

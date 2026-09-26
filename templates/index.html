@@ -217,13 +217,24 @@
           return;
         }
 
-        const displayLabel = data.label.replace(/_/g, ' ');
         const tipsHtml = data.tips.map((tip) => `<li>${tip}</li>`).join('');
+
+        /* "unknown" does not mean low confidence any more: it is also returned
+           when the classifier or the out-of-scope gate decides the photo is
+           not one of the six injuries. The confidence belongs to the closest
+           wound guess, so say so rather than printing it under "unknown",
+           which reads as a contradiction when that number is high. */
+        const isUnknown = data.label === 'unknown';
+        const heading = isUnknown ? 'Not sure' : data.label.replace(/_/g, ' ');
+        const detail = isUnknown
+          ? `<p>The photo may be unclear, or it may not be one of the six injuries this tool covers.</p>
+             <p><strong>Closest guess:</strong> ${data.best_guess.replace(/_/g, ' ')} (${data.confidence}% confidence)</p>`
+          : `<p><strong>Confidence:</strong> ${data.confidence}%</p>`;
 
         resultsDiv.innerHTML = `
           <div class="card">
-            <h3>${displayLabel}</h3>
-            <p><strong>Confidence:</strong> ${data.confidence}%</p>
+            <h3>${heading}</h3>
+            ${detail}
             <ul>${tipsHtml}</ul>
             <p class="disclaimer">${data.disclaimer}</p>
           </div>
