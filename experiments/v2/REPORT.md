@@ -99,8 +99,9 @@ endpoint the MRC backend may call.
   needs ~300 3rd-degree burns. Current val: 251 wound photos (25-67 per class, 31 3rd degree).
 - **Training data.** The learning curve on the deployed recipe (521 -> 1,039 -> 2,071 photos) gave
   top-1 53.8 -> 61.6 -> 64.1% and accuracy at matched coverage 64.4 -> 77.0 -> 82.2%. Returns
-  are diminishing, so another ~1,200 wound photos of the same web-scraped kind would plausibly
-  add only a point or two.
+  diminish within the CURRENT data; three points with 3 seeds each cannot support a firm forecast
+  for new data, least of all data of a different kind (corrected in v3: an earlier wording here
+  said new photos would "plausibly add only a point or two" - that was an over-extrapolation).
 - **What would change the result:** new held-out and training photos of the six injuries that are
   not web re-uploads. By capture condition: >= ~100 per class where the injury fills < 15% of the
   frame (the reserved test has 32 in total), phone photos of healthy skin and limbs (the source of

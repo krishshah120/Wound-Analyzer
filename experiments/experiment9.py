@@ -54,7 +54,7 @@ val_ds = load(a.val_dir or f"{WT}/data/val", False).map(lambda x, y: (preprocess
 
 counts = np.array([len(os.listdir(f"{TRAIN}/{c}")) for c in names], dtype=float)
 w = counts.sum() / (len(names) * counts)
-w[names.index("burn_3rd_degree")] *= a.b3_weight
+if "burn_3rd_degree" in names: w[names.index("burn_3rd_degree")] *= a.b3_weight   # absent in the merged-burn taxonomy (v3 X4b)
 cw = {i: float(v) for i, v in enumerate(w)}
 
 inputs = layers.Input(shape=(224, 224, 3))
@@ -80,6 +80,13 @@ unfreeze_top_layers(model, a.finetune_layers)
 model.compile(optimizer=tf.keras.optimizers.Adam(a.finetune_lr), loss=loss, metrics=["accuracy"])
 h2 = model.fit(train_ds, validation_data=val_ds, epochs=40, class_weight=cw, verbose=2,
                callbacks=[tf.keras.callbacks.EarlyStopping(monitor="val_loss", patience=4, restore_best_weights=True)])
+
+if names != sorted(os.listdir(f"{WT}/data/val")):   # a different taxonomy (v3 X4b): the app-level evaluation below assumes the 7 classes
+    tag = f"{a.name}_s{a.seed}"
+    if a.save_model: tf.keras.Model(model.inputs, model.outputs, name=model.name).save(a.save_model)
+    json.dump(dict(config=vars(a), names=names, epochs=[len(h1.history["loss"]), len(h2.history["loss"])], minutes=(time.time() - t0) / 60),
+              open(f"{EXP}/runs/{tag}.json", "w"), indent=1)
+    print(f"RESULT {tag}: taxonomy {names}; model saved, evaluate with experiments/v3/views.py | {(time.time() - t0) / 60:.1f} min"); sys.exit(0)
 
 def summary(r):
     b, o, ap = r["burn"], r.get("out_of_scope", {}), r["app"]

@@ -27,7 +27,9 @@ def labels(clf, gate, mode, crop):
     """clf/gate (n, 2, 7). mode 'after' or 'summed'. crop: C0 or C1. Returns merged labels, -1 = unknown."""
     views = []
     for v in (0, 1):
-        if mode == "after":
+        if mode == "native":   # a model trained on the merged taxonomy (X4b): outputs are already M
+            lab, b, c = decide_m(clf[:, v], gate[:, v]); views.append((lab, c))
+        elif mode == "after":
             a, b, c = decide(clf[:, v], gate[:, v]); views.append((np.where(a, TO_M[b], -1), c))
         else:
             lab, b, c = decide_m(merge_probs(clf[:, v]), gate[:, v]); views.append((lab, c))
@@ -47,23 +49,34 @@ def score_m(lab, y7):
                 deg3_shown_other_injury=int((a & (y7 == B3) & (lab != 2)).sum()),
                 per_class={M[k]: dict(n=int((y == k).sum()), answered=int((a & (y == k)).sum()), correct=int((c & (y == k)).sum())) for k in MW})
 
+NATIVE = V["val_browser_clf"].shape[-1] == 5
+MODES = ("native",) if NATIVE else ("after", "summed")
+def aurc_m(pm, gate, y7):
+    y = TO_M[y7]; wound = y != MOOD; conf = pm[:, MW].max(1); best = pm[:, MW].argmax(1)
+    ok = (pm.argmax(1) != MOOD) & (gate[:, OOD] < 0.5)
+    c = np.where(ok & wound, conf, -1.0)[wound]; r = (best != y)[wound].astype(float)
+    order = np.argsort(-c); risks = np.cumsum(r[order]) / np.arange(1, len(r) + 1)
+    return round(float(risks[: int((c >= 0).sum())].mean()), 3)
 out = {}
+for split in ("val", "test"):
+    pm = V[f"{split}_browser_clf"][:, 0] if NATIVE else merge_probs(V[f"{split}_browser_clf"][:, 0])
+    out[f"{split}_browser_aurc_merged_task"] = aurc_m(pm, VG[f"{split}_browser_gate"][:, 0], V[f"{split}_y"])
 for split in ("val", "test"):
     y = V[f"{split}_y"]
     for inp in ("browser", "raw"):
         clf, gate = V[f"{split}_{inp}_clf"], VG[f"{split}_{inp}_gate"]
-        for mode in ("after", "summed"):
+        for mode in MODES:
             for crop in ("C0", "C1"):
                 out[f"{split}_{inp}_{mode}_{crop}"] = score_m(labels(clf, gate, mode, crop), y)
 # X4b justification (fixed rule): share of val (browser, summed, C0) answered-wound errors that involve burn
-y = V["val_y"]; lab = labels(V["val_browser_clf"], VG["val_browser_gate"], "summed", "C0"); ym = TO_M[y]
+y = V["val_y"]; lab = labels(V["val_browser_clf"], VG["val_browser_gate"], MODES[-1], "C0"); ym = TO_M[y]
 err = (lab >= 0) & (ym != MOOD) & (lab != ym); inv = err & ((ym == 2) | (lab == 2))
 out["x4b_rule"] = dict(val_errors=int(err.sum()), involving_burn=int(inv.sum()), justified=bool(err.sum() and inv.sum() >= err.sum() / 2),
                        confusions=dict(collections.Counter(f"{M[a]}->{M[b]}" for a, b in zip(ym[err], lab[err]))))
 # RIT
 rows = list(csv.DictReader(open(f"{WT}/experiments/v2/rit/manifest.csv")))
 clf, gate = V["rit_browser_clf"], VG["rit_browser_gate"]
-for mode in ("after", "summed"):
+for mode in MODES:
     for crop in ("C0", "C1"):
         lab = labels(clf, gate, mode, crop); s = {}
         ins = [i for i, r in enumerate(rows) if r["eval_role"] == "in_scope"]
@@ -77,7 +90,8 @@ for mode in ("after", "summed"):
         out[f"rit_browser_{mode}_{crop}"] = s
 json.dump(out, open(f"{V3}/x4_burn_{NAME}{'' if GNAME == NAME else '_gate-' + GNAME}.json", "w"), indent=1, default=lambda o: o.item() if hasattr(o, "item") else str(o))
 for k, s in out.items():
-    if k.startswith(("val", "test")):
+    if "aurc" in k: print(k, s)
+    elif k.startswith(("val", "test")):
         print(f"{k:24s} cov {s['coverage']:5.1f}% ({s['answered']}/{s['eligible']}) acc {s['acc_answered']:5.1f}% corr/elig {s['correct_of_eligible']:5.1f}% non-wound {s['nonwound_labelled']}/{s['nonwound']} "
               f"| burns {s['burns_as_burn']}/{s['burns']} as burn, {s['burn_shown_other_injury']} as other injury (3rd: {s['deg3_shown_other_injury']}); other injury shown burn {s['other_injury_shown_burn']}")
     elif k.startswith("rit"):
