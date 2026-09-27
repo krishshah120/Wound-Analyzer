@@ -53,3 +53,11 @@ Passing makes P1 an experimental preview candidate with rollback, not an automat
 cd experiments/v3
 ../../.venv/bin/python ebis_eval.py --images /path/to/EBIS/images --masks /path/to/EBIS/masks [--splits splits.csv]
 ```
+
+## Clarifications added at close-out (2026-09-27; nothing above changed)
+- "0.60 (site contract)" in the table means the threshold in production today. It is a configurable
+  operating threshold, not a safety standard.
+- Report generic-burn recognition (this protocol) separately from burn-degree classification (not
+  measurable on EBIS) and from non-burn false alarms (not measurable on EBIS; use existing sets).
+- An improvement on EBIS alone does not show that the whole analyzer improved: it only covers
+  whether burns are recognised.

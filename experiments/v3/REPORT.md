@@ -154,3 +154,39 @@ for s in 1 2 3; do ../../.venv/bin/python views.py RE3_s$s --clf models/RE3_s$s.
 ../../.venv/bin/python x6c_eval.py && ../../.venv/bin/python x3_eval.py X6C
 ```
 Not committed: model files (models/*.keras), views_*.npz, image folders, symlink training folders.
+
+## Close-out clarifications (2026-09-27, existing results only)
+**1. Current pipeline (with crop retry) vs no crop retry** - deployed models, 0.60, browser input,
+each quantity separately (from x6_ensemble.json and x4_burn_deployed.json):
+
+| | No crop retry | Current pipeline (crop retry) |
+|---|---|---|
+| Val wound photos (251): right / wrong / abstained | 100 / 17 / 134 | 106 / 20 / 125 |
+| Test wound photos (331): right / wrong / abstained | 116 / 40 / 175 | 119 / 41 / 171 |
+| 3rd-degree burns shown a milder injury (val 31 + test 40) | 2 + 4 = 6 | 2 + 5 = 7 |
+| 2nd-degree shown 1st degree / abrasion / bruise (val + test) | 3 + 7 = 10 | 4 + 7 = 11 |
+| Val non-wounds labelled (94) | 12 | 13 |
+| Test non-wounds labelled (450) | 56 | 61 |
+| RIT everyday injuries (48): right / wrong / abstained | 23 / 0 / 25 | 24 / 0 / 24 |
+| RIT burns, degree unknown (67): burn / other injury / unknown | 23 / 1 / 43 | 23 / 1 / 43 |
+| RIT healthy feet labelled (1,613), of which 3rd degree | 175 (12) | 183 (12) |
+| RIT chronic wounds labelled (1,313) | 131 | 133 |
+| RIT healthy close-ups labelled (22) | 6 | 6 |
+
+The retry adds 9 correct answers and 1 RIT everyday answer; it also adds 4 wrong injury names -
+including one extra 3rd-degree burn shown as an abrasion and one 2nd shown as 1st - and 6 val/test
+plus 8 RIT-feet and 2 chronic-wound false labels. Whether that is worth it depends on how much a
+missed answer costs against a wrong or reassuring one; the pooled counts alone do not decide it.
+
+**2. Wording corrections.**
+- The ensemble's healthy-foot advantage (94 vs 154 feet labelled at matched val coverage) was
+  measured on ONE dataset: Lower Limb "Nomal" feet, one clinic setting and camera. It is specific to
+  that dataset; it is not evidence about healthy skin in general.
+- 0.60 is a configurable operating threshold that the site currently uses, not an established safety
+  standard. Earlier text calling it "the site contract" (PLAN.md, EBIS_PROTOCOL.md) means only "the
+  value in production today". Keeping or changing it should follow measured trade-offs between
+  answers given, wrong and reassuring labels, and false alarms on non-wounds.
+
+## Round closed
+Production unchanged. No further training or threshold searches on these benchmarks. Next step is the
+frozen EBIS evaluation (EBIS_PROTOCOL.md; handoff in HANDOFF.md).
