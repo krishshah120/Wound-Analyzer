@@ -116,3 +116,31 @@ Nothing is deployed to the MRC site from reused development benchmarks alone.
 - 2026-09-26, before any X5 gate existed: X5 is scored through the production pipeline (C1 crop
   retry) with only the gate swapped, and every X5 pass condition must hold on BOTH browser and raw
   inputs for val.
+
+## X6 addendum (2026-09-26, written before any X6 model was trained or scored)
+Context: the user asked to validate the saved predictions, treat the missing ensemble weights as a
+reproducibility gap, narrow label cleanup to identical decoded images, and finish with deployable
+artifacts and a preview for any promising candidate. Disclosure: X1's saved-prediction ensemble
+numbers were already seen; they are exploratory and are NOT carried over.
+X6a validation (x6_validate.py): done before this addendum - rows keyed by file name, class order,
+probabilities (not logits/labels), no evaluated image in any member's training data. Finding: all
+251 val wound photos (and 3 val / 22 test non-wound photos) are the members' early-stopping set.
+X6b retrained ensemble RE3. Member rule (unchanged from X1, no search): the deployed recipe
+(experiment9, alpha 1.4, label smoothing 0.1, b84_train, early stop b84_val) with seeds 1, 2, 3 - all
+three, whatever they score. Each member saves its checkpoint, TFLite export, class list,
+preprocessing config, data manifest (sha256 of every training/early-stop file), seed and
+dependency versions. Ensemble = mean of the members' 7-class probabilities per view; shipped gate;
+production crop retry evaluated on the AVERAGED probabilities. Compared with the complete deployed
+pipeline (gate + crop retry) on the same images: 0.60 operating point (primary, the site contract),
+matched coverage and matched error (thresholds from val), paired grouped CIs; browser input primary.
+"Promising" (all, 0.60, complete pipeline C1, browser, val + test + RIT):
+  1. fewer wrong labels in total (wrong injury labels + non-wound photos labelled) than deployed;
+  2. correct answers (val + test wound photos + RIT in-scope) not fewer than deployed's minus 5;
+  3. 3rd-degree burns shown another injury, val + test: not more than deployed (7);
+  4. RIT healthy feet labelled: not more than deployed (183).
+Promising -> deployable artifacts + experimental preview with rollback; never auto-deployed, and
+two+ classifiers on the site needs Vihaan's OK. Not promising -> artifacts kept, no preview.
+X6c narrow exclusion: T1-only conflicts (identical decoded pixels, incompatible labels) = 24 b84_train
+photos (x6_t1_quarantine.txt, all within X3's 86). Pilot seed 1, same recipe; continue to seeds 2-3
+only if val AURC <= 0.183 (as X3).
+Budget: 4 runs used; X6 adds 3 (RE3) + 1-3 (X6c) -> at most 10 in total.
