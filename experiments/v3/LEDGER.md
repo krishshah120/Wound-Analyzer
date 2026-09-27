@@ -138,3 +138,47 @@ the val threshold / val AURC): 83.9 / 75.8 / 0.168 vs 82.2 / 76.4 / 0.183. 3-mem
 
 ## Budget used (final)
 10 training runs (X3B 1, X4B 3, RE3 3, X6C 3), about 3.3 h of training - the declared maximum of runs.
+
+## X7 FOLLOW-UP ANALYSIS (2026-09-27; saved predictions only; RE3's "not promising" verdict stands)
+Question: does RE3 beat making the deployed model more selective? (x7_followup.py -> x7_followup.json)
+Complete pipelines (gate + crop retry), browser input; thresholds chosen on val only.
+Deployed made more selective to RE3's val wound coverage (120 answered -> t = 0.625):
+                               deployed @0.625        RE3 @0.60        RE3 - deployed, paired 95% CI (counts)
+  test wound: answered/right/wrong   148/113/35        144/111/33       right -14..+10, wrong -11..+7
+  test other non-wound (of 450)      52                57               -7..+16
+  RIT everyday injuries (of 48)      23 right, 0 wrong 24 right, 1 wrong  (too few to test)
+  RIT burns, any burn label (of 67)  23                23
+  RIT healthy feet (of 1,613)        154 (10 as 3rd)   94 (4 as 3rd)    -106..-25
+  RIT chronic wounds (of 1,313)      116               112              -24..+17
+  RIT other healthy close-ups (/22)  3                 5
+Matched val wrong-injury count (18 -> deployed t = 0.635): test 141/110/31, feet 141, chronic 112.
+Matched val non-wound false labels (9/94 -> deployed t = 0.735, coarse: 94 photos): deployed answers
+far fewer (val 87, test 112 wound photos) with feet 69 - lower than RE3's 94.
+Descriptive curve (thresholds swept on the reported sets themselves - NOT an operating-point choice):
+for every healthy-feet level from 60 to 183, RE3 reaches more correct test answers (e.g. feet <= 94:
+RE3 111 vs deployed 95; feet <= 150: 124 vs 113).
+Verdict of the follow-up: on acute injuries and on other non-wounds, raising the deployed threshold
+gives a similar trade-off (CIs include 0); RE3 keeps a clear advantage only on healthy feet - one
+dataset, one camera setting, the population that motivated the round.
+What "457 wrong labels overall" contained (deployed, 0.60): val wrong injury 20 + val non-wound 13 +
+test wrong injury 41 + test non-wound 61 + RIT everyday wrong 0 + RIT healthy feet 183 + RIT chronic
+133 + RIT close-ups 6 = 457 (RE3: 18 + 9 + 33 + 57 + 1 + 94 + 112 + 5 = 329). Healthy feet were 40% of
+it; the pooled number should not be used as a single score.
+
+## Crop statement reconciled (x7_crop_reconcile.py -> x7_crop_reconcile.json)
+Deployed, browser, val + test: the retry gives 19 new labels, never changes an existing answer:
+13 on wound photos (9 right, 4 wrong: 1st->cut x2, 2nd->1st, 3rd->abrasion) + 6 on non-wound photos.
+So 9 right vs 10 wrong labels. "13 extra answers, 9 right" counted wound photos only; "about one
+right per wrong label" also counted the 6 non-wound labels. Both are now stated with this breakdown.
+
+## Artifacts backed up (2026-09-27)
+~/Downloads/wound-analyzer-artifacts/v3-2026-09-27/ (outside the repo and every worktree), 159 files,
+341 MB, SHA256SUMS verified after copying, byte-compared with the originals: all 10 v3 checkpoints,
+the 3 RE3 TFLite members + manifests, data manifests, all saved predictions and run records, the
+production snapshot (hashes eef2f3d3... / 49201744... verified) and the deployed Keras pair. The
+repo's own models/ files are tracked in Git. One copy on one disk: not an off-machine backup.
+
+## EBIS evaluation frozen (EBIS_PROTOCOL.md, ebis_frozen.json, ebis_eval.py)
+Candidates P0 deployed / P1 deployed summed burn (0.7637) / P2 RE3 / P3 RE3 summed burn (0.7886,
+chosen on val 2026-09-27); primary metric burn recognised; primary comparison P1 - P0. Smoke test on
+the 67 RIT burns: all 67 flagged as overlap; counts reproduced (23 / 35 / 23 / 34).

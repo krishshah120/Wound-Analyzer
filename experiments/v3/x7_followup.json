@@ -1,0 +1,388 @@
+{
+ "at_0.60": {
+  "deployed": {
+   "val_acute": {
+    "n": 251,
+    "answered": 126,
+    "right": 106,
+    "wrong": 20,
+    "tierA": 2
+   },
+   "val_other_nonwound": {
+    "n": 94,
+    "labelled": 13
+   },
+   "test_acute": {
+    "n": 331,
+    "answered": 160,
+    "right": 119,
+    "wrong": 41,
+    "tierA": 5
+   },
+   "test_other_nonwound": {
+    "n": 450,
+    "labelled": 61
+   },
+   "rit_acute_everyday": {
+    "n": 48,
+    "answered": 24,
+    "right": 24,
+    "wrong": 0
+   },
+   "rit_acute_burns_degree_unknown": {
+    "n": 67,
+    "any_burn": 23,
+    "other_injury": 1
+   },
+   "rit_healthy_feet": {
+    "n": 1613,
+    "labelled": 183,
+    "as_3rd": 12
+   },
+   "rit_chronic_wounds": {
+    "n": 1313,
+    "labelled": 133,
+    "as_3rd": 65
+   },
+   "rit_other_nonwound_closeups": {
+    "n": 22,
+    "labelled": 6,
+    "as_3rd": 0
+   }
+  },
+  "RE3": {
+   "val_acute": {
+    "n": 251,
+    "answered": 120,
+    "right": 102,
+    "wrong": 18,
+    "tierA": 3
+   },
+   "val_other_nonwound": {
+    "n": 94,
+    "labelled": 9
+   },
+   "test_acute": {
+    "n": 331,
+    "answered": 144,
+    "right": 111,
+    "wrong": 33,
+    "tierA": 3
+   },
+   "test_other_nonwound": {
+    "n": 450,
+    "labelled": 57
+   },
+   "rit_acute_everyday": {
+    "n": 48,
+    "answered": 25,
+    "right": 24,
+    "wrong": 1
+   },
+   "rit_acute_burns_degree_unknown": {
+    "n": 67,
+    "any_burn": 23,
+    "other_injury": 2
+   },
+   "rit_healthy_feet": {
+    "n": 1613,
+    "labelled": 94,
+    "as_3rd": 4
+   },
+   "rit_chronic_wounds": {
+    "n": 1313,
+    "labelled": 112,
+    "as_3rd": 52
+   },
+   "rit_other_nonwound_closeups": {
+    "n": 22,
+    "labelled": 5,
+    "as_3rd": 0
+   }
+  }
+ },
+ "composition_of_overall_wrong": {
+  "deployed": {
+   "val_wrong_injury": 20,
+   "val_nonwound": 13,
+   "test_wrong_injury": 41,
+   "test_nonwound": 61,
+   "rit_everyday_wrong": 0,
+   "rit_feet": 183,
+   "rit_chronic": 133,
+   "rit_closeups": 6,
+   "total": 457
+  },
+  "RE3": {
+   "val_wrong_injury": 18,
+   "val_nonwound": 9,
+   "test_wrong_injury": 33,
+   "test_nonwound": 57,
+   "rit_everyday_wrong": 1,
+   "rit_feet": 94,
+   "rit_chronic": 112,
+   "rit_closeups": 5,
+   "total": 329
+  }
+ },
+ "val_matched_operating_points": {
+  "deployed_matched_to_RE3_val_wound_coverage": {
+   "pipeline": "deployed",
+   "threshold": 0.625,
+   "results": {
+    "val_acute": {
+     "n": 251,
+     "answered": 120,
+     "right": 101,
+     "wrong": 19,
+     "tierA": 1
+    },
+    "val_other_nonwound": {
+     "n": 94,
+     "labelled": 13
+    },
+    "test_acute": {
+     "n": 331,
+     "answered": 148,
+     "right": 113,
+     "wrong": 35,
+     "tierA": 4
+    },
+    "test_other_nonwound": {
+     "n": 450,
+     "labelled": 52
+    },
+    "rit_acute_everyday": {
+     "n": 48,
+     "answered": 23,
+     "right": 23,
+     "wrong": 0
+    },
+    "rit_acute_burns_degree_unknown": {
+     "n": 67,
+     "any_burn": 23,
+     "other_injury": 1
+    },
+    "rit_healthy_feet": {
+     "n": 1613,
+     "labelled": 154,
+     "as_3rd": 10
+    },
+    "rit_chronic_wounds": {
+     "n": 1313,
+     "labelled": 116,
+     "as_3rd": 59
+    },
+    "rit_other_nonwound_closeups": {
+     "n": 22,
+     "labelled": 3,
+     "as_3rd": 0
+    }
+   }
+  },
+  "deployed_matched_to_RE3_val_nonwound_fp": {
+   "pipeline": "deployed",
+   "threshold": 0.735,
+   "results": {
+    "val_acute": {
+     "n": 251,
+     "answered": 87,
+     "right": 75,
+     "wrong": 12,
+     "tierA": 0
+    },
+    "val_other_nonwound": {
+     "n": 94,
+     "labelled": 9
+    },
+    "test_acute": {
+     "n": 331,
+     "answered": 112,
+     "right": 89,
+     "wrong": 23,
+     "tierA": 3
+    },
+    "test_other_nonwound": {
+     "n": 450,
+     "labelled": 34
+    },
+    "rit_acute_everyday": {
+     "n": 48,
+     "answered": 22,
+     "right": 22,
+     "wrong": 0
+    },
+    "rit_acute_burns_degree_unknown": {
+     "n": 67,
+     "any_burn": 19,
+     "other_injury": 0
+    },
+    "rit_healthy_feet": {
+     "n": 1613,
+     "labelled": 69,
+     "as_3rd": 4
+    },
+    "rit_chronic_wounds": {
+     "n": 1313,
+     "labelled": 54,
+     "as_3rd": 33
+    },
+    "rit_other_nonwound_closeups": {
+     "n": 22,
+     "labelled": 2,
+     "as_3rd": 0
+    }
+   }
+  },
+  "deployed_matched_to_RE3_val_wrong_injury": {
+   "pipeline": "deployed",
+   "threshold": 0.635,
+   "results": {
+    "val_acute": {
+     "n": 251,
+     "answered": 117,
+     "right": 99,
+     "wrong": 18,
+     "tierA": 1
+    },
+    "val_other_nonwound": {
+     "n": 94,
+     "labelled": 13
+    },
+    "test_acute": {
+     "n": 331,
+     "answered": 141,
+     "right": 110,
+     "wrong": 31,
+     "tierA": 3
+    },
+    "test_other_nonwound": {
+     "n": 450,
+     "labelled": 48
+    },
+    "rit_acute_everyday": {
+     "n": 48,
+     "answered": 23,
+     "right": 23,
+     "wrong": 0
+    },
+    "rit_acute_burns_degree_unknown": {
+     "n": 67,
+     "any_burn": 23,
+     "other_injury": 1
+    },
+    "rit_healthy_feet": {
+     "n": 1613,
+     "labelled": 141,
+     "as_3rd": 10
+    },
+    "rit_chronic_wounds": {
+     "n": 1313,
+     "labelled": 112,
+     "as_3rd": 57
+    },
+    "rit_other_nonwound_closeups": {
+     "n": 22,
+     "labelled": 3,
+     "as_3rd": 0
+    }
+   }
+  }
+ },
+ "RE3_at_0.60_minus_deployed_at_pickA_95ci_counts": {
+  "test_wrong_injury_count": [
+   -11.0,
+   7.0
+  ],
+  "test_right_count": [
+   -14.0,
+   10.0
+  ],
+  "test_nonwound_count": [
+   -7.0,
+   16.0
+  ],
+  "rit_feet_labelled_count": [
+   -106.0,
+   -25.0
+  ],
+  "rit_chronic_labelled_count": [
+   -24.0,
+   17.0
+  ]
+ },
+ "curve_test_right_vs_rit_feet": {
+  "60": {
+   "deployed": [
+    84,
+    22,
+    0.765
+   ],
+   "RE3": [
+    103,
+    23,
+    0.64
+   ]
+  },
+  "80": {
+   "deployed": [
+    93,
+    22,
+    0.72
+   ],
+   "RE3": [
+    109,
+    23,
+    0.615
+   ]
+  },
+  "94": {
+   "deployed": [
+    95,
+    22,
+    0.715
+   ],
+   "RE3": [
+    111,
+    24,
+    0.6
+   ]
+  },
+  "120": {
+   "deployed": [
+    107,
+    22,
+    0.66
+   ],
+   "RE3": [
+    115,
+    24,
+    0.585
+   ]
+  },
+  "150": {
+   "deployed": [
+    113,
+    23,
+    0.63
+   ],
+   "RE3": [
+    124,
+    25,
+    0.56
+   ]
+  },
+  "183": {
+   "deployed": [
+    119,
+    24,
+    0.6
+   ],
+   "RE3": [
+    130,
+    25,
+    0.55
+   ]
+  }
+ }
+}

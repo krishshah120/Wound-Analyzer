@@ -84,13 +84,33 @@ Runtime on this Mac (not Vercel): deployed pair 7.0 ms median per photo, 166 MB,
   7.4e-6 with 0 decision changes; manifest with seeds, hashes, class list, preprocessing, data
   manifest, library versions). The .tflite/.keras files are not committed (17-18 MB each).
 - **Crop policies** on the same photos (answered / right, val + test): deployed no-retry 273 / 216,
-  retry 286 / 225, agree-only 282 / 223; the retry adds 13 answers of which 9 right, and the
+  retry 286 / 225, agree-only 282 / 223; the retry adds 13 wound-photo answers (9 right, 4 wrong) plus 6 non-wound labels, and the
   agree-only rule gives up 4 answers (2 right) without removing the 3rd-degree error. For RE3 the
   retry adds 6 wound answers (5 right), 2 val/test non-wound labels and 6 RIT healthy-foot labels.
   Fewer errors do come at the cost of fewer answers in every case; all photos stay in the denominators.
 - **Narrow label cleanup:** only 24 training photos are identical decoded images with incompatible
   labels. Excluding them (3 seeds): val 83.9 vs 82.2%, test 75.8 vs 76.4% at matched coverage;
   3-model CIs -3.0..+8.9 (val), -5.9..+3.4 (test) -> inconclusive.
+
+## Follow-up analysis (2026-09-27, saved predictions only) - the RE3 verdict above stands
+**Does the ensemble beat simply raising the deployed model's threshold?** Deployed raised to 0.625 so
+it answers the same 120 val wound photos as RE3 (threshold chosen on val):
+
+| Population | Deployed @0.625 | RE3 @0.60 | RE3 - deployed, 95% CI |
+|---|---|---|---|
+| Test wound photos (331): answered / right / wrong | 148 / 113 / 35 | 144 / 111 / 33 | right -14..+10, wrong -11..+7 |
+| Test other non-wounds labelled (450) | 52 | 57 | -7..+16 |
+| RIT everyday injuries (48): right / wrong | 23 / 0 | 24 / 1 | too few |
+| RIT burns given a burn label (67) | 23 | 23 | - |
+| **RIT healthy feet labelled (1,613)** | **154** | **94** | **-106..-25** |
+| RIT chronic wounds labelled (1,313) | 116 | 112 | -24..+17 |
+
+Raising the threshold matches RE3 on injuries and other non-wounds; RE3's advantage is confined to
+healthy feet (one dataset, one setting). "457 wrong labels" pooled 8 populations, 40% of it healthy
+feet - see LEDGER.md; it should not be read as one score. Crop retry, reconciled per photo: 19 new
+labels on val + test, 9 right and 10 wrong (4 injury names, 6 non-wound photos); no existing answer
+changes. Artifacts: ~/Downloads/wound-analyzer-artifacts/v3-2026-09-27 (checksummed). EBIS evaluation
+frozen in EBIS_PROTOCOL.md.
 
 ## Recommendation
 - Keep production as it is. Nothing met its rule. If you prefer fewer false alarms over a few more
