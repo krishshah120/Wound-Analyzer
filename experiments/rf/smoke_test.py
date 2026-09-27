@@ -40,7 +40,8 @@ assert isinstance(out, list) and len(out) == 1 and isinstance(out[0], dict), f"u
 with tempfile.TemporaryDirectory() as tdir:
     rc.save_image_outputs(out[0], tdir, "smoke")          # decode image blobs to disk, never print them
 def shape(v):
-    if isinstance(v, dict): return {k: shape(x) for k, x in v.items()} if "predictions" not in v else {k: (f"list[{len(x)}] of {sorted(x[0].keys()) if x else []}" if k == "predictions" else shape(x)) for k, x in v.items()}
+    if isinstance(v, dict):   # a detection list is summarised by its item keys; nested dicts are walked
+        return {k: (f"list[{len(x)}] of {sorted(x[0].keys()) if x else []}" if k == "predictions" and isinstance(x, list) else shape(x)) for k, x in v.items()}
     if isinstance(v, list): return f"list[{len(v)}]" + (f" of {shape(v[0])}" if v and isinstance(v[0], (dict, list)) else "")
     return type(v).__name__
 json.dump(shape(out), open(f"{RF}/workflow_response_shape.json", "w"), indent=1)
