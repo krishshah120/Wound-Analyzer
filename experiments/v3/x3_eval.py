@@ -3,7 +3,7 @@ objective-conflict photos). Same recipe, shipped gate, same val/test photos and 
 Continuation rule: pilot B seed 1 val AURC <= 0.183 (A mean). Verdict: 3-seed means and 3-member
 ensembles, rule MC thresholds (>= +3 points accuracy at 46.2% val coverage, non-wound <= 16/94,
 tier A <= 1); else inconclusive. Writes x3_eval.json."""
-import glob, json
+import sys, glob, json
 import numpy as np
 from common import *
 S = SHIPPED; gv, gt, yv, yt = S["val_gate"], S["test_gate"], S["val_y"], S["test_y"]
@@ -11,7 +11,8 @@ TARGET = 116
 def load(tag):
     d = np.load(f"{RUNS}/{tag}_probs.npz"); assert list(d["names"]) == NAMES and (d["y_val"] == yv).all(); return d["p_val"], d["p_test"]
 A = {s: load(f"R_exact_s{s}") for s in (1, 2, 3)}
-B = {int(f.split("_s")[-1].split("_")[0]): load(f"X3B_s{f.split('_s')[-1].split('_')[0]}") for f in sorted(glob.glob(f"{RUNS}/X3B_s*_probs.npz"))}
+RUN = sys.argv[1] if len(sys.argv) > 1 else "X3B"   # X6C = the narrow (identical-image) exclusion
+B = {int(f.split("_s")[-1].split("_")[0]): load(f"{RUN}_s{f.split('_s')[-1].split('_')[0]}") for f in sorted(glob.glob(f"{RUNS}/{RUN}_s*_probs.npz"))}
 def row(pv, pt):
     t = matched_threshold(pv, gv, yv, TARGET)
     m = score(*decide(pv, gv, t)[:2], yv); mt = score(*decide(pt, gt, t)[:2], yt)
@@ -35,7 +36,7 @@ if len(B) == 3:
     out["ensemble_B_minus_A_val_acc_95ci"] = paired_bootstrap(groups("val"), acc_stat(bb[0], bb[1], yv), acc_stat(ab[0], ab[1], yv))
     at_, bt_ = decide(ea[1], gt, ta), decide(eb[1], gt, tb)
     out["ensemble_B_minus_A_test_acc_95ci"] = paired_bootstrap(groups("test"), acc_stat(bt_[0], bt_[1], yt), acc_stat(at_[0], at_[1], yt))
-json.dump(out, open(f"{V3}/x3_eval.json", "w"), indent=1, default=lambda o: o.item() if hasattr(o, "item") else str(o))
+json.dump(out, open(f"{V3}/x3_eval{'' if RUN == 'X3B' else '_' + RUN}.json", "w"), indent=1, default=lambda o: o.item() if hasattr(o, "item") else str(o))
 for g in ("A", "B"):
     for s, r in out[g].items(): print(g, s, {k: r[k] for k in KEYS})
 print("means", out["mean"]); print("pilot continue:", out["pilot_continue"])

@@ -1,0 +1,3526 @@
+{
+ "deployed": {
+  "val_browser_C0": {
+   "eligible": 251,
+   "answered": 117,
+   "correct": 100,
+   "coverage": 46.6,
+   "acc_answered": 85.5,
+   "correct_of_eligible": 39.8,
+   "nonwound": 94,
+   "nonwound_labelled": 12,
+   "tierA": 2,
+   "n_3rd": 31,
+   "tierB": 3,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 15,
+     "correct": 10,
+     "abstained": 15
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 14,
+     "correct": 14,
+     "abstained": 11
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 36,
+     "correct": 34,
+     "abstained": 31
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 15,
+     "correct": 8,
+     "abstained": 48
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 18,
+     "correct": 16,
+     "abstained": 13
+    },
+    "cut": {
+     "n": 35,
+     "answered": 19,
+     "correct": 18,
+     "abstained": 16
+    }
+   }
+  },
+  "val_raw_C0": {
+   "eligible": 251,
+   "answered": 116,
+   "correct": 99,
+   "coverage": 46.2,
+   "acc_answered": 85.3,
+   "correct_of_eligible": 39.4,
+   "nonwound": 94,
+   "nonwound_labelled": 16,
+   "tierA": 1,
+   "n_3rd": 31,
+   "tierB": 3,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 14,
+     "correct": 10,
+     "abstained": 16
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 12,
+     "correct": 11,
+     "abstained": 13
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 37,
+     "correct": 35,
+     "abstained": 30
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 15,
+     "correct": 7,
+     "abstained": 48
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 18,
+     "correct": 17,
+     "abstained": 13
+    },
+    "cut": {
+     "n": 35,
+     "answered": 20,
+     "correct": 19,
+     "abstained": 15
+    }
+   }
+  },
+  "test_browser_C0": {
+   "eligible": 331,
+   "answered": 156,
+   "correct": 116,
+   "coverage": 47.1,
+   "acc_answered": 74.4,
+   "correct_of_eligible": 35.0,
+   "nonwound": 450,
+   "nonwound_labelled": 56,
+   "tierA": 4,
+   "n_3rd": 40,
+   "tierB": 7,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 20,
+     "correct": 14,
+     "abstained": 21
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 14,
+     "correct": 10,
+     "abstained": 19
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 48,
+     "correct": 41,
+     "abstained": 40
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 27,
+     "correct": 9,
+     "abstained": 56
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 22,
+     "correct": 18,
+     "abstained": 18
+    },
+    "cut": {
+     "n": 46,
+     "answered": 25,
+     "correct": 24,
+     "abstained": 21
+    }
+   }
+  },
+  "test_raw_C0": {
+   "eligible": 331,
+   "answered": 159,
+   "correct": 120,
+   "coverage": 48.0,
+   "acc_answered": 75.5,
+   "correct_of_eligible": 36.3,
+   "nonwound": 450,
+   "nonwound_labelled": 68,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 20,
+     "correct": 14,
+     "abstained": 21
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 16,
+     "correct": 11,
+     "abstained": 17
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 51,
+     "correct": 45,
+     "abstained": 37
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 27,
+     "correct": 9,
+     "abstained": 56
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 20,
+     "correct": 17,
+     "abstained": 20
+    },
+    "cut": {
+     "n": 46,
+     "answered": 25,
+     "correct": 24,
+     "abstained": 21
+    }
+   }
+  },
+  "rit_C0": {
+   "inscope_answered": 23,
+   "inscope_correct": 23,
+   "inscope_wrong": 0,
+   "feet_labelled": 175,
+   "feet_3rd": 12,
+   "chronic_labelled": 131,
+   "closeups_labelled": 6,
+   "burns_any_burn": 23,
+   "burns_n": 67
+  },
+  "val_browser_C1": {
+   "eligible": 251,
+   "answered": 126,
+   "correct": 106,
+   "coverage": 50.2,
+   "acc_answered": 84.1,
+   "correct_of_eligible": 42.2,
+   "nonwound": 94,
+   "nonwound_labelled": 13,
+   "tierA": 2,
+   "n_3rd": 31,
+   "tierB": 4,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 16,
+     "correct": 11,
+     "abstained": 14
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 16,
+     "correct": 16,
+     "abstained": 9
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 40,
+     "correct": 36,
+     "abstained": 27
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 16,
+     "correct": 8,
+     "abstained": 47
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 18,
+     "correct": 16,
+     "abstained": 13
+    },
+    "cut": {
+     "n": 35,
+     "answered": 20,
+     "correct": 19,
+     "abstained": 15
+    }
+   }
+  },
+  "val_raw_C1": {
+   "eligible": 251,
+   "answered": 127,
+   "correct": 105,
+   "coverage": 50.6,
+   "acc_answered": 82.7,
+   "correct_of_eligible": 41.8,
+   "nonwound": 94,
+   "nonwound_labelled": 18,
+   "tierA": 1,
+   "n_3rd": 31,
+   "tierB": 4,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 18,
+     "correct": 12,
+     "abstained": 12
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 14,
+     "correct": 13,
+     "abstained": 11
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 40,
+     "correct": 36,
+     "abstained": 27
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 16,
+     "correct": 7,
+     "abstained": 47
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 19,
+     "correct": 18,
+     "abstained": 12
+    },
+    "cut": {
+     "n": 35,
+     "answered": 20,
+     "correct": 19,
+     "abstained": 15
+    }
+   }
+  },
+  "test_browser_C1": {
+   "eligible": 331,
+   "answered": 160,
+   "correct": 119,
+   "coverage": 48.3,
+   "acc_answered": 74.4,
+   "correct_of_eligible": 36.0,
+   "nonwound": 450,
+   "nonwound_labelled": 61,
+   "tierA": 5,
+   "n_3rd": 40,
+   "tierB": 7,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 20,
+     "correct": 14,
+     "abstained": 21
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 16,
+     "correct": 12,
+     "abstained": 17
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 49,
+     "correct": 42,
+     "abstained": 39
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 27,
+     "correct": 9,
+     "abstained": 56
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 23,
+     "correct": 18,
+     "abstained": 17
+    },
+    "cut": {
+     "n": 46,
+     "answered": 25,
+     "correct": 24,
+     "abstained": 21
+    }
+   }
+  },
+  "test_raw_C1": {
+   "eligible": 331,
+   "answered": 162,
+   "correct": 122,
+   "coverage": 48.9,
+   "acc_answered": 75.3,
+   "correct_of_eligible": 36.9,
+   "nonwound": 450,
+   "nonwound_labelled": 70,
+   "tierA": 4,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 20,
+     "correct": 14,
+     "abstained": 21
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 17,
+     "correct": 12,
+     "abstained": 16
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 52,
+     "correct": 46,
+     "abstained": 36
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 27,
+     "correct": 9,
+     "abstained": 56
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 21,
+     "correct": 17,
+     "abstained": 19
+    },
+    "cut": {
+     "n": 46,
+     "answered": 25,
+     "correct": 24,
+     "abstained": 21
+    }
+   }
+  },
+  "rit_C1": {
+   "inscope_answered": 24,
+   "inscope_correct": 24,
+   "inscope_wrong": 0,
+   "feet_labelled": 183,
+   "feet_3rd": 12,
+   "chronic_labelled": 133,
+   "closeups_labelled": 6,
+   "burns_any_burn": 23,
+   "burns_n": 67
+  },
+  "val_browser_C2": {
+   "eligible": 251,
+   "answered": 122,
+   "correct": 104,
+   "coverage": 48.6,
+   "acc_answered": 85.2,
+   "correct_of_eligible": 41.4,
+   "nonwound": 94,
+   "nonwound_labelled": 13,
+   "tierA": 2,
+   "n_3rd": 31,
+   "tierB": 4,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 15,
+     "correct": 10,
+     "abstained": 15
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 16,
+     "correct": 16,
+     "abstained": 9
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 37,
+     "correct": 35,
+     "abstained": 30
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 16,
+     "correct": 8,
+     "abstained": 47
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 18,
+     "correct": 16,
+     "abstained": 13
+    },
+    "cut": {
+     "n": 35,
+     "answered": 20,
+     "correct": 19,
+     "abstained": 15
+    }
+   }
+  },
+  "val_raw_C2": {
+   "eligible": 251,
+   "answered": 122,
+   "correct": 102,
+   "coverage": 48.6,
+   "acc_answered": 83.6,
+   "correct_of_eligible": 40.6,
+   "nonwound": 94,
+   "nonwound_labelled": 18,
+   "tierA": 1,
+   "n_3rd": 31,
+   "tierB": 4,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 16,
+     "correct": 10,
+     "abstained": 14
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 14,
+     "correct": 13,
+     "abstained": 11
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 37,
+     "correct": 35,
+     "abstained": 30
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 16,
+     "correct": 7,
+     "abstained": 47
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 19,
+     "correct": 18,
+     "abstained": 12
+    },
+    "cut": {
+     "n": 35,
+     "answered": 20,
+     "correct": 19,
+     "abstained": 15
+    }
+   }
+  },
+  "test_browser_C2": {
+   "eligible": 331,
+   "answered": 160,
+   "correct": 119,
+   "coverage": 48.3,
+   "acc_answered": 74.4,
+   "correct_of_eligible": 36.0,
+   "nonwound": 450,
+   "nonwound_labelled": 58,
+   "tierA": 5,
+   "n_3rd": 40,
+   "tierB": 7,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 20,
+     "correct": 14,
+     "abstained": 21
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 16,
+     "correct": 12,
+     "abstained": 17
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 49,
+     "correct": 42,
+     "abstained": 39
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 27,
+     "correct": 9,
+     "abstained": 56
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 23,
+     "correct": 18,
+     "abstained": 17
+    },
+    "cut": {
+     "n": 46,
+     "answered": 25,
+     "correct": 24,
+     "abstained": 21
+    }
+   }
+  },
+  "test_raw_C2": {
+   "eligible": 331,
+   "answered": 162,
+   "correct": 122,
+   "coverage": 48.9,
+   "acc_answered": 75.3,
+   "correct_of_eligible": 36.9,
+   "nonwound": 450,
+   "nonwound_labelled": 69,
+   "tierA": 4,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 20,
+     "correct": 14,
+     "abstained": 21
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 17,
+     "correct": 12,
+     "abstained": 16
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 52,
+     "correct": 46,
+     "abstained": 36
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 27,
+     "correct": 9,
+     "abstained": 56
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 21,
+     "correct": 17,
+     "abstained": 19
+    },
+    "cut": {
+     "n": 46,
+     "answered": 25,
+     "correct": 24,
+     "abstained": 21
+    }
+   }
+  },
+  "rit_C2": {
+   "inscope_answered": 24,
+   "inscope_correct": 24,
+   "inscope_wrong": 0,
+   "feet_labelled": 183,
+   "feet_3rd": 12,
+   "chronic_labelled": 133,
+   "closeups_labelled": 6,
+   "burns_any_burn": 23,
+   "burns_n": 67
+  }
+ },
+ "RE3": {
+  "val_browser_C0": {
+   "eligible": 251,
+   "answered": 117,
+   "correct": 99,
+   "coverage": 46.6,
+   "acc_answered": 84.6,
+   "correct_of_eligible": 39.4,
+   "nonwound": 94,
+   "nonwound_labelled": 8,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 4,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 15,
+     "correct": 12,
+     "abstained": 15
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 13,
+     "correct": 12,
+     "abstained": 12
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 30,
+     "correct": 30,
+     "abstained": 37
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 24,
+     "correct": 15,
+     "abstained": 39
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 13
+    },
+    "cut": {
+     "n": 35,
+     "answered": 17,
+     "correct": 15,
+     "abstained": 18
+    }
+   }
+  },
+  "val_raw_C0": {
+   "eligible": 251,
+   "answered": 115,
+   "correct": 98,
+   "coverage": 45.8,
+   "acc_answered": 85.2,
+   "correct_of_eligible": 39.0,
+   "nonwound": 94,
+   "nonwound_labelled": 13,
+   "tierA": 2,
+   "n_3rd": 31,
+   "tierB": 3,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 15,
+     "correct": 12,
+     "abstained": 15
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 12,
+     "correct": 11,
+     "abstained": 13
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 33,
+     "correct": 31,
+     "abstained": 34
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 22,
+     "correct": 14,
+     "abstained": 41
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 17,
+     "correct": 15,
+     "abstained": 14
+    },
+    "cut": {
+     "n": 35,
+     "answered": 16,
+     "correct": 15,
+     "abstained": 19
+    }
+   }
+  },
+  "test_browser_C0": {
+   "eligible": 331,
+   "answered": 141,
+   "correct": 109,
+   "coverage": 42.6,
+   "acc_answered": 77.3,
+   "correct_of_eligible": 32.9,
+   "nonwound": 450,
+   "nonwound_labelled": 56,
+   "tierA": 2,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 20,
+     "correct": 13,
+     "abstained": 21
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 8,
+     "correct": 6,
+     "abstained": 25
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 43,
+     "correct": 37,
+     "abstained": 45
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 27,
+     "correct": 13,
+     "abstained": 56
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 17,
+     "correct": 15,
+     "abstained": 23
+    },
+    "cut": {
+     "n": 46,
+     "answered": 26,
+     "correct": 25,
+     "abstained": 20
+    }
+   }
+  },
+  "test_raw_C0": {
+   "eligible": 331,
+   "answered": 141,
+   "correct": 111,
+   "coverage": 42.6,
+   "acc_answered": 78.7,
+   "correct_of_eligible": 33.5,
+   "nonwound": 450,
+   "nonwound_labelled": 63,
+   "tierA": 2,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 19,
+     "correct": 13,
+     "abstained": 22
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 9,
+     "correct": 7,
+     "abstained": 24
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 44,
+     "correct": 39,
+     "abstained": 44
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 28,
+     "correct": 14,
+     "abstained": 55
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 17,
+     "correct": 15,
+     "abstained": 23
+    },
+    "cut": {
+     "n": 46,
+     "answered": 24,
+     "correct": 23,
+     "abstained": 22
+    }
+   }
+  },
+  "rit_C0": {
+   "inscope_answered": 23,
+   "inscope_correct": 22,
+   "inscope_wrong": 1,
+   "feet_labelled": 88,
+   "feet_3rd": 4,
+   "chronic_labelled": 112,
+   "closeups_labelled": 5,
+   "burns_any_burn": 23,
+   "burns_n": 67
+  },
+  "val_browser_C1": {
+   "eligible": 251,
+   "answered": 120,
+   "correct": 102,
+   "coverage": 47.8,
+   "acc_answered": 85.0,
+   "correct_of_eligible": 40.6,
+   "nonwound": 94,
+   "nonwound_labelled": 9,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 4,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 16,
+     "correct": 13,
+     "abstained": 14
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 13,
+     "correct": 12,
+     "abstained": 12
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 31,
+     "correct": 31,
+     "abstained": 36
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 24,
+     "correct": 15,
+     "abstained": 39
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 13
+    },
+    "cut": {
+     "n": 35,
+     "answered": 18,
+     "correct": 16,
+     "abstained": 17
+    }
+   }
+  },
+  "val_raw_C1": {
+   "eligible": 251,
+   "answered": 119,
+   "correct": 102,
+   "coverage": 47.4,
+   "acc_answered": 85.7,
+   "correct_of_eligible": 40.6,
+   "nonwound": 94,
+   "nonwound_labelled": 14,
+   "tierA": 2,
+   "n_3rd": 31,
+   "tierB": 3,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 17,
+     "correct": 14,
+     "abstained": 13
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 13,
+     "correct": 12,
+     "abstained": 12
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 33,
+     "correct": 31,
+     "abstained": 34
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 22,
+     "correct": 14,
+     "abstained": 41
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 17,
+     "correct": 15,
+     "abstained": 14
+    },
+    "cut": {
+     "n": 35,
+     "answered": 17,
+     "correct": 16,
+     "abstained": 18
+    }
+   }
+  },
+  "test_browser_C1": {
+   "eligible": 331,
+   "answered": 144,
+   "correct": 111,
+   "coverage": 43.5,
+   "acc_answered": 77.1,
+   "correct_of_eligible": 33.5,
+   "nonwound": 450,
+   "nonwound_labelled": 57,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 21,
+     "correct": 14,
+     "abstained": 20
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 8,
+     "correct": 6,
+     "abstained": 25
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 44,
+     "correct": 38,
+     "abstained": 44
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 27,
+     "correct": 13,
+     "abstained": 56
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 22
+    },
+    "cut": {
+     "n": 46,
+     "answered": 26,
+     "correct": 25,
+     "abstained": 20
+    }
+   }
+  },
+  "test_raw_C1": {
+   "eligible": 331,
+   "answered": 145,
+   "correct": 114,
+   "coverage": 43.8,
+   "acc_answered": 78.6,
+   "correct_of_eligible": 34.4,
+   "nonwound": 450,
+   "nonwound_labelled": 64,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 21,
+     "correct": 15,
+     "abstained": 20
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 9,
+     "correct": 7,
+     "abstained": 24
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 45,
+     "correct": 40,
+     "abstained": 43
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 28,
+     "correct": 14,
+     "abstained": 55
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 22
+    },
+    "cut": {
+     "n": 46,
+     "answered": 24,
+     "correct": 23,
+     "abstained": 22
+    }
+   }
+  },
+  "rit_C1": {
+   "inscope_answered": 25,
+   "inscope_correct": 24,
+   "inscope_wrong": 1,
+   "feet_labelled": 94,
+   "feet_3rd": 4,
+   "chronic_labelled": 112,
+   "closeups_labelled": 5,
+   "burns_any_burn": 23,
+   "burns_n": 67
+  },
+  "val_browser_C2": {
+   "eligible": 251,
+   "answered": 119,
+   "correct": 101,
+   "coverage": 47.4,
+   "acc_answered": 84.9,
+   "correct_of_eligible": 40.2,
+   "nonwound": 94,
+   "nonwound_labelled": 9,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 4,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 15,
+     "correct": 12,
+     "abstained": 15
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 13,
+     "correct": 12,
+     "abstained": 12
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 31,
+     "correct": 31,
+     "abstained": 36
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 24,
+     "correct": 15,
+     "abstained": 39
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 13
+    },
+    "cut": {
+     "n": 35,
+     "answered": 18,
+     "correct": 16,
+     "abstained": 17
+    }
+   }
+  },
+  "val_raw_C2": {
+   "eligible": 251,
+   "answered": 118,
+   "correct": 101,
+   "coverage": 47.0,
+   "acc_answered": 85.6,
+   "correct_of_eligible": 40.2,
+   "nonwound": 94,
+   "nonwound_labelled": 14,
+   "tierA": 2,
+   "n_3rd": 31,
+   "tierB": 3,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 16,
+     "correct": 13,
+     "abstained": 14
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 13,
+     "correct": 12,
+     "abstained": 12
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 33,
+     "correct": 31,
+     "abstained": 34
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 22,
+     "correct": 14,
+     "abstained": 41
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 17,
+     "correct": 15,
+     "abstained": 14
+    },
+    "cut": {
+     "n": 35,
+     "answered": 17,
+     "correct": 16,
+     "abstained": 18
+    }
+   }
+  },
+  "test_browser_C2": {
+   "eligible": 331,
+   "answered": 144,
+   "correct": 111,
+   "coverage": 43.5,
+   "acc_answered": 77.1,
+   "correct_of_eligible": 33.5,
+   "nonwound": 450,
+   "nonwound_labelled": 57,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 21,
+     "correct": 14,
+     "abstained": 20
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 8,
+     "correct": 6,
+     "abstained": 25
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 44,
+     "correct": 38,
+     "abstained": 44
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 27,
+     "correct": 13,
+     "abstained": 56
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 22
+    },
+    "cut": {
+     "n": 46,
+     "answered": 26,
+     "correct": 25,
+     "abstained": 20
+    }
+   }
+  },
+  "test_raw_C2": {
+   "eligible": 331,
+   "answered": 145,
+   "correct": 114,
+   "coverage": 43.8,
+   "acc_answered": 78.6,
+   "correct_of_eligible": 34.4,
+   "nonwound": 450,
+   "nonwound_labelled": 64,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 21,
+     "correct": 15,
+     "abstained": 20
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 9,
+     "correct": 7,
+     "abstained": 24
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 45,
+     "correct": 40,
+     "abstained": 43
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 28,
+     "correct": 14,
+     "abstained": 55
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 22
+    },
+    "cut": {
+     "n": 46,
+     "answered": 24,
+     "correct": 23,
+     "abstained": 22
+    }
+   }
+  },
+  "rit_C2": {
+   "inscope_answered": 25,
+   "inscope_correct": 24,
+   "inscope_wrong": 1,
+   "feet_labelled": 92,
+   "feet_3rd": 4,
+   "chronic_labelled": 112,
+   "closeups_labelled": 5,
+   "burns_any_burn": 23,
+   "burns_n": 67
+  }
+ },
+ "RE3_member_s1": {
+  "val_browser_C0": {
+   "eligible": 251,
+   "answered": 128,
+   "correct": 109,
+   "coverage": 51.0,
+   "acc_answered": 85.2,
+   "correct_of_eligible": 43.4,
+   "nonwound": 94,
+   "nonwound_labelled": 10,
+   "tierA": 2,
+   "n_3rd": 31,
+   "tierB": 5,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 15,
+     "correct": 11,
+     "abstained": 15
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 14,
+     "correct": 13,
+     "abstained": 11
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 30,
+     "correct": 30,
+     "abstained": 37
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 27,
+     "correct": 16,
+     "abstained": 36
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 21,
+     "correct": 19,
+     "abstained": 10
+    },
+    "cut": {
+     "n": 35,
+     "answered": 21,
+     "correct": 20,
+     "abstained": 14
+    }
+   }
+  },
+  "val_raw_C0": {
+   "eligible": 251,
+   "answered": 124,
+   "correct": 103,
+   "coverage": 49.4,
+   "acc_answered": 83.1,
+   "correct_of_eligible": 41.0,
+   "nonwound": 94,
+   "nonwound_labelled": 15,
+   "tierA": 2,
+   "n_3rd": 31,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 14,
+     "correct": 10,
+     "abstained": 16
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 11,
+     "correct": 10,
+     "abstained": 14
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 30,
+     "correct": 30,
+     "abstained": 37
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 26,
+     "correct": 13,
+     "abstained": 37
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 21,
+     "correct": 19,
+     "abstained": 10
+    },
+    "cut": {
+     "n": 35,
+     "answered": 22,
+     "correct": 21,
+     "abstained": 13
+    }
+   }
+  },
+  "test_browser_C0": {
+   "eligible": 331,
+   "answered": 148,
+   "correct": 114,
+   "coverage": 44.7,
+   "acc_answered": 77.0,
+   "correct_of_eligible": 34.4,
+   "nonwound": 450,
+   "nonwound_labelled": 65,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 15,
+     "correct": 9,
+     "abstained": 26
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 11,
+     "correct": 10,
+     "abstained": 22
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 48,
+     "correct": 40,
+     "abstained": 40
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 29,
+     "correct": 14,
+     "abstained": 54
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 22
+    },
+    "cut": {
+     "n": 46,
+     "answered": 27,
+     "correct": 26,
+     "abstained": 19
+    }
+   }
+  },
+  "test_raw_C0": {
+   "eligible": 331,
+   "answered": 161,
+   "correct": 125,
+   "coverage": 48.6,
+   "acc_answered": 77.6,
+   "correct_of_eligible": 37.8,
+   "nonwound": 450,
+   "nonwound_labelled": 71,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 5,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 17,
+     "correct": 9,
+     "abstained": 24
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 12,
+     "correct": 11,
+     "abstained": 21
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 50,
+     "correct": 41,
+     "abstained": 38
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 31,
+     "correct": 17,
+     "abstained": 52
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 22,
+     "correct": 19,
+     "abstained": 18
+    },
+    "cut": {
+     "n": 46,
+     "answered": 29,
+     "correct": 28,
+     "abstained": 17
+    }
+   }
+  },
+  "rit_C0": {
+   "inscope_answered": 25,
+   "inscope_correct": 23,
+   "inscope_wrong": 2,
+   "feet_labelled": 191,
+   "feet_3rd": 4,
+   "chronic_labelled": 120,
+   "closeups_labelled": 3,
+   "burns_any_burn": 26,
+   "burns_n": 67
+  },
+  "val_browser_C1": {
+   "eligible": 251,
+   "answered": 133,
+   "correct": 112,
+   "coverage": 53.0,
+   "acc_answered": 84.2,
+   "correct_of_eligible": 44.6,
+   "nonwound": 94,
+   "nonwound_labelled": 12,
+   "tierA": 2,
+   "n_3rd": 31,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 16,
+     "correct": 12,
+     "abstained": 14
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 14,
+     "correct": 13,
+     "abstained": 11
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 31,
+     "correct": 31,
+     "abstained": 36
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 28,
+     "correct": 16,
+     "abstained": 35
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 21,
+     "correct": 19,
+     "abstained": 10
+    },
+    "cut": {
+     "n": 35,
+     "answered": 23,
+     "correct": 21,
+     "abstained": 12
+    }
+   }
+  },
+  "val_raw_C1": {
+   "eligible": 251,
+   "answered": 129,
+   "correct": 107,
+   "coverage": 51.4,
+   "acc_answered": 82.9,
+   "correct_of_eligible": 42.6,
+   "nonwound": 94,
+   "nonwound_labelled": 17,
+   "tierA": 2,
+   "n_3rd": 31,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 16,
+     "correct": 12,
+     "abstained": 14
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 12,
+     "correct": 11,
+     "abstained": 13
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 31,
+     "correct": 31,
+     "abstained": 36
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 26,
+     "correct": 13,
+     "abstained": 37
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 21,
+     "correct": 19,
+     "abstained": 10
+    },
+    "cut": {
+     "n": 35,
+     "answered": 23,
+     "correct": 21,
+     "abstained": 12
+    }
+   }
+  },
+  "test_browser_C1": {
+   "eligible": 331,
+   "answered": 151,
+   "correct": 115,
+   "coverage": 45.6,
+   "acc_answered": 76.2,
+   "correct_of_eligible": 34.7,
+   "nonwound": 450,
+   "nonwound_labelled": 69,
+   "tierA": 4,
+   "n_3rd": 40,
+   "tierB": 7,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 15,
+     "correct": 9,
+     "abstained": 26
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 11,
+     "correct": 10,
+     "abstained": 22
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 49,
+     "correct": 41,
+     "abstained": 39
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 30,
+     "correct": 14,
+     "abstained": 53
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 19,
+     "correct": 15,
+     "abstained": 21
+    },
+    "cut": {
+     "n": 46,
+     "answered": 27,
+     "correct": 26,
+     "abstained": 19
+    }
+   }
+  },
+  "test_raw_C1": {
+   "eligible": 331,
+   "answered": 164,
+   "correct": 126,
+   "coverage": 49.5,
+   "acc_answered": 76.8,
+   "correct_of_eligible": 38.1,
+   "nonwound": 450,
+   "nonwound_labelled": 75,
+   "tierA": 4,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 17,
+     "correct": 9,
+     "abstained": 24
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 12,
+     "correct": 11,
+     "abstained": 21
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 51,
+     "correct": 42,
+     "abstained": 37
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 32,
+     "correct": 17,
+     "abstained": 51
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 23,
+     "correct": 19,
+     "abstained": 17
+    },
+    "cut": {
+     "n": 46,
+     "answered": 29,
+     "correct": 28,
+     "abstained": 17
+    }
+   }
+  },
+  "rit_C1": {
+   "inscope_answered": 27,
+   "inscope_correct": 25,
+   "inscope_wrong": 2,
+   "feet_labelled": 202,
+   "feet_3rd": 4,
+   "chronic_labelled": 120,
+   "closeups_labelled": 4,
+   "burns_any_burn": 26,
+   "burns_n": 67
+  },
+  "val_browser_C2": {
+   "eligible": 251,
+   "answered": 132,
+   "correct": 111,
+   "coverage": 52.6,
+   "acc_answered": 84.1,
+   "correct_of_eligible": 44.2,
+   "nonwound": 94,
+   "nonwound_labelled": 12,
+   "tierA": 2,
+   "n_3rd": 31,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 15,
+     "correct": 11,
+     "abstained": 15
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 14,
+     "correct": 13,
+     "abstained": 11
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 31,
+     "correct": 31,
+     "abstained": 36
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 28,
+     "correct": 16,
+     "abstained": 35
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 21,
+     "correct": 19,
+     "abstained": 10
+    },
+    "cut": {
+     "n": 35,
+     "answered": 23,
+     "correct": 21,
+     "abstained": 12
+    }
+   }
+  },
+  "val_raw_C2": {
+   "eligible": 251,
+   "answered": 128,
+   "correct": 106,
+   "coverage": 51.0,
+   "acc_answered": 82.8,
+   "correct_of_eligible": 42.2,
+   "nonwound": 94,
+   "nonwound_labelled": 17,
+   "tierA": 2,
+   "n_3rd": 31,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 15,
+     "correct": 11,
+     "abstained": 15
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 12,
+     "correct": 11,
+     "abstained": 13
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 31,
+     "correct": 31,
+     "abstained": 36
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 26,
+     "correct": 13,
+     "abstained": 37
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 21,
+     "correct": 19,
+     "abstained": 10
+    },
+    "cut": {
+     "n": 35,
+     "answered": 23,
+     "correct": 21,
+     "abstained": 12
+    }
+   }
+  },
+  "test_browser_C2": {
+   "eligible": 331,
+   "answered": 151,
+   "correct": 115,
+   "coverage": 45.6,
+   "acc_answered": 76.2,
+   "correct_of_eligible": 34.7,
+   "nonwound": 450,
+   "nonwound_labelled": 67,
+   "tierA": 4,
+   "n_3rd": 40,
+   "tierB": 7,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 15,
+     "correct": 9,
+     "abstained": 26
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 11,
+     "correct": 10,
+     "abstained": 22
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 49,
+     "correct": 41,
+     "abstained": 39
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 30,
+     "correct": 14,
+     "abstained": 53
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 19,
+     "correct": 15,
+     "abstained": 21
+    },
+    "cut": {
+     "n": 46,
+     "answered": 27,
+     "correct": 26,
+     "abstained": 19
+    }
+   }
+  },
+  "test_raw_C2": {
+   "eligible": 331,
+   "answered": 164,
+   "correct": 126,
+   "coverage": 49.5,
+   "acc_answered": 76.8,
+   "correct_of_eligible": 38.1,
+   "nonwound": 450,
+   "nonwound_labelled": 74,
+   "tierA": 4,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 17,
+     "correct": 9,
+     "abstained": 24
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 12,
+     "correct": 11,
+     "abstained": 21
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 51,
+     "correct": 42,
+     "abstained": 37
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 32,
+     "correct": 17,
+     "abstained": 51
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 23,
+     "correct": 19,
+     "abstained": 17
+    },
+    "cut": {
+     "n": 46,
+     "answered": 29,
+     "correct": 28,
+     "abstained": 17
+    }
+   }
+  },
+  "rit_C2": {
+   "inscope_answered": 27,
+   "inscope_correct": 25,
+   "inscope_wrong": 2,
+   "feet_labelled": 200,
+   "feet_3rd": 4,
+   "chronic_labelled": 120,
+   "closeups_labelled": 4,
+   "burns_any_burn": 26,
+   "burns_n": 67
+  }
+ },
+ "RE3_member_s2": {
+  "val_browser_C0": {
+   "eligible": 251,
+   "answered": 128,
+   "correct": 102,
+   "coverage": 51.0,
+   "acc_answered": 79.7,
+   "correct_of_eligible": 40.6,
+   "nonwound": 94,
+   "nonwound_labelled": 10,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 5,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 15,
+     "correct": 12,
+     "abstained": 15
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 9,
+     "correct": 6,
+     "abstained": 16
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 38,
+     "correct": 35,
+     "abstained": 29
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 32,
+     "correct": 22,
+     "abstained": 31
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 17,
+     "correct": 14,
+     "abstained": 14
+    },
+    "cut": {
+     "n": 35,
+     "answered": 17,
+     "correct": 13,
+     "abstained": 18
+    }
+   }
+  },
+  "val_raw_C0": {
+   "eligible": 251,
+   "answered": 127,
+   "correct": 100,
+   "coverage": 50.6,
+   "acc_answered": 78.7,
+   "correct_of_eligible": 39.8,
+   "nonwound": 94,
+   "nonwound_labelled": 10,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 5,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 17,
+     "correct": 13,
+     "abstained": 13
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 7,
+     "correct": 5,
+     "abstained": 18
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 39,
+     "correct": 34,
+     "abstained": 28
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 29,
+     "correct": 20,
+     "abstained": 34
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 17,
+     "correct": 14,
+     "abstained": 14
+    },
+    "cut": {
+     "n": 35,
+     "answered": 18,
+     "correct": 14,
+     "abstained": 17
+    }
+   }
+  },
+  "test_browser_C0": {
+   "eligible": 331,
+   "answered": 146,
+   "correct": 108,
+   "coverage": 44.1,
+   "acc_answered": 74.0,
+   "correct_of_eligible": 32.6,
+   "nonwound": 450,
+   "nonwound_labelled": 65,
+   "tierA": 2,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 19,
+     "correct": 13,
+     "abstained": 22
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 10,
+     "correct": 6,
+     "abstained": 23
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 46,
+     "correct": 40,
+     "abstained": 42
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 33,
+     "correct": 17,
+     "abstained": 50
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 12,
+     "correct": 10,
+     "abstained": 28
+    },
+    "cut": {
+     "n": 46,
+     "answered": 26,
+     "correct": 22,
+     "abstained": 20
+    }
+   }
+  },
+  "test_raw_C0": {
+   "eligible": 331,
+   "answered": 155,
+   "correct": 112,
+   "coverage": 46.8,
+   "acc_answered": 72.3,
+   "correct_of_eligible": 33.8,
+   "nonwound": 450,
+   "nonwound_labelled": 76,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 7,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 23,
+     "correct": 15,
+     "abstained": 18
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 11,
+     "correct": 7,
+     "abstained": 22
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 47,
+     "correct": 39,
+     "abstained": 41
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 33,
+     "correct": 17,
+     "abstained": 50
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 17,
+     "correct": 14,
+     "abstained": 23
+    },
+    "cut": {
+     "n": 46,
+     "answered": 24,
+     "correct": 20,
+     "abstained": 22
+    }
+   }
+  },
+  "rit_C0": {
+   "inscope_answered": 23,
+   "inscope_correct": 20,
+   "inscope_wrong": 3,
+   "feet_labelled": 134,
+   "feet_3rd": 9,
+   "chronic_labelled": 140,
+   "closeups_labelled": 4,
+   "burns_any_burn": 21,
+   "burns_n": 67
+  },
+  "val_browser_C1": {
+   "eligible": 251,
+   "answered": 133,
+   "correct": 105,
+   "coverage": 53.0,
+   "acc_answered": 78.9,
+   "correct_of_eligible": 41.8,
+   "nonwound": 94,
+   "nonwound_labelled": 11,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 16,
+     "correct": 13,
+     "abstained": 14
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 11,
+     "correct": 7,
+     "abstained": 14
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 39,
+     "correct": 36,
+     "abstained": 28
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 33,
+     "correct": 22,
+     "abstained": 30
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 17,
+     "correct": 14,
+     "abstained": 14
+    },
+    "cut": {
+     "n": 35,
+     "answered": 17,
+     "correct": 13,
+     "abstained": 18
+    }
+   }
+  },
+  "val_raw_C1": {
+   "eligible": 251,
+   "answered": 131,
+   "correct": 103,
+   "coverage": 52.2,
+   "acc_answered": 78.6,
+   "correct_of_eligible": 41.0,
+   "nonwound": 94,
+   "nonwound_labelled": 11,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 5,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 18,
+     "correct": 14,
+     "abstained": 12
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 9,
+     "correct": 6,
+     "abstained": 16
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 39,
+     "correct": 34,
+     "abstained": 28
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 29,
+     "correct": 20,
+     "abstained": 34
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 13
+    },
+    "cut": {
+     "n": 35,
+     "answered": 18,
+     "correct": 14,
+     "abstained": 17
+    }
+   }
+  },
+  "test_browser_C1": {
+   "eligible": 331,
+   "answered": 151,
+   "correct": 110,
+   "coverage": 45.6,
+   "acc_answered": 72.8,
+   "correct_of_eligible": 33.2,
+   "nonwound": 450,
+   "nonwound_labelled": 70,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 21,
+     "correct": 14,
+     "abstained": 20
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 10,
+     "correct": 6,
+     "abstained": 23
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 48,
+     "correct": 41,
+     "abstained": 40
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 33,
+     "correct": 17,
+     "abstained": 50
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 13,
+     "correct": 10,
+     "abstained": 27
+    },
+    "cut": {
+     "n": 46,
+     "answered": 26,
+     "correct": 22,
+     "abstained": 20
+    }
+   }
+  },
+  "test_raw_C1": {
+   "eligible": 331,
+   "answered": 159,
+   "correct": 114,
+   "coverage": 48.0,
+   "acc_answered": 71.7,
+   "correct_of_eligible": 34.4,
+   "nonwound": 450,
+   "nonwound_labelled": 80,
+   "tierA": 4,
+   "n_3rd": 40,
+   "tierB": 7,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 25,
+     "correct": 16,
+     "abstained": 16
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 11,
+     "correct": 7,
+     "abstained": 22
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 48,
+     "correct": 40,
+     "abstained": 40
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 33,
+     "correct": 17,
+     "abstained": 50
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 18,
+     "correct": 14,
+     "abstained": 22
+    },
+    "cut": {
+     "n": 46,
+     "answered": 24,
+     "correct": 20,
+     "abstained": 22
+    }
+   }
+  },
+  "rit_C1": {
+   "inscope_answered": 25,
+   "inscope_correct": 21,
+   "inscope_wrong": 4,
+   "feet_labelled": 146,
+   "feet_3rd": 9,
+   "chronic_labelled": 140,
+   "closeups_labelled": 4,
+   "burns_any_burn": 21,
+   "burns_n": 67
+  },
+  "val_browser_C2": {
+   "eligible": 251,
+   "answered": 131,
+   "correct": 104,
+   "coverage": 52.2,
+   "acc_answered": 79.4,
+   "correct_of_eligible": 41.4,
+   "nonwound": 94,
+   "nonwound_labelled": 11,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 15,
+     "correct": 12,
+     "abstained": 15
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 10,
+     "correct": 7,
+     "abstained": 15
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 39,
+     "correct": 36,
+     "abstained": 28
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 33,
+     "correct": 22,
+     "abstained": 30
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 17,
+     "correct": 14,
+     "abstained": 14
+    },
+    "cut": {
+     "n": 35,
+     "answered": 17,
+     "correct": 13,
+     "abstained": 18
+    }
+   }
+  },
+  "val_raw_C2": {
+   "eligible": 251,
+   "answered": 129,
+   "correct": 102,
+   "coverage": 51.4,
+   "acc_answered": 79.1,
+   "correct_of_eligible": 40.6,
+   "nonwound": 94,
+   "nonwound_labelled": 11,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 5,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 17,
+     "correct": 13,
+     "abstained": 13
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 8,
+     "correct": 6,
+     "abstained": 17
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 39,
+     "correct": 34,
+     "abstained": 28
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 29,
+     "correct": 20,
+     "abstained": 34
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 13
+    },
+    "cut": {
+     "n": 35,
+     "answered": 18,
+     "correct": 14,
+     "abstained": 17
+    }
+   }
+  },
+  "test_browser_C2": {
+   "eligible": 331,
+   "answered": 150,
+   "correct": 110,
+   "coverage": 45.3,
+   "acc_answered": 73.3,
+   "correct_of_eligible": 33.2,
+   "nonwound": 450,
+   "nonwound_labelled": 69,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 20,
+     "correct": 14,
+     "abstained": 21
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 10,
+     "correct": 6,
+     "abstained": 23
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 48,
+     "correct": 41,
+     "abstained": 40
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 33,
+     "correct": 17,
+     "abstained": 50
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 13,
+     "correct": 10,
+     "abstained": 27
+    },
+    "cut": {
+     "n": 46,
+     "answered": 26,
+     "correct": 22,
+     "abstained": 20
+    }
+   }
+  },
+  "test_raw_C2": {
+   "eligible": 331,
+   "answered": 159,
+   "correct": 114,
+   "coverage": 48.0,
+   "acc_answered": 71.7,
+   "correct_of_eligible": 34.4,
+   "nonwound": 450,
+   "nonwound_labelled": 80,
+   "tierA": 4,
+   "n_3rd": 40,
+   "tierB": 7,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 25,
+     "correct": 16,
+     "abstained": 16
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 11,
+     "correct": 7,
+     "abstained": 22
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 48,
+     "correct": 40,
+     "abstained": 40
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 33,
+     "correct": 17,
+     "abstained": 50
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 18,
+     "correct": 14,
+     "abstained": 22
+    },
+    "cut": {
+     "n": 46,
+     "answered": 24,
+     "correct": 20,
+     "abstained": 22
+    }
+   }
+  },
+  "rit_C2": {
+   "inscope_answered": 25,
+   "inscope_correct": 21,
+   "inscope_wrong": 4,
+   "feet_labelled": 143,
+   "feet_3rd": 9,
+   "chronic_labelled": 140,
+   "closeups_labelled": 4,
+   "burns_any_burn": 21,
+   "burns_n": 67
+  }
+ },
+ "RE3_member_s3": {
+  "val_browser_C0": {
+   "eligible": 251,
+   "answered": 118,
+   "correct": 94,
+   "coverage": 47.0,
+   "acc_answered": 79.7,
+   "correct_of_eligible": 37.5,
+   "nonwound": 94,
+   "nonwound_labelled": 14,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 5,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 15,
+     "correct": 13,
+     "abstained": 15
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 9,
+     "correct": 8,
+     "abstained": 16
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 35,
+     "correct": 30,
+     "abstained": 32
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 20,
+     "correct": 9,
+     "abstained": 43
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 21,
+     "correct": 18,
+     "abstained": 10
+    },
+    "cut": {
+     "n": 35,
+     "answered": 18,
+     "correct": 16,
+     "abstained": 17
+    }
+   }
+  },
+  "val_raw_C0": {
+   "eligible": 251,
+   "answered": 123,
+   "correct": 100,
+   "coverage": 49.0,
+   "acc_answered": 81.3,
+   "correct_of_eligible": 39.8,
+   "nonwound": 94,
+   "nonwound_labelled": 16,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 5,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 14,
+     "correct": 13,
+     "abstained": 16
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 11,
+     "correct": 10,
+     "abstained": 14
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 37,
+     "correct": 31,
+     "abstained": 30
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 22,
+     "correct": 11,
+     "abstained": 41
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 21,
+     "correct": 18,
+     "abstained": 10
+    },
+    "cut": {
+     "n": 35,
+     "answered": 18,
+     "correct": 17,
+     "abstained": 17
+    }
+   }
+  },
+  "test_browser_C0": {
+   "eligible": 331,
+   "answered": 150,
+   "correct": 114,
+   "coverage": 45.3,
+   "acc_answered": 76.0,
+   "correct_of_eligible": 34.4,
+   "nonwound": 450,
+   "nonwound_labelled": 67,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 21,
+     "correct": 15,
+     "abstained": 20
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 13,
+     "correct": 9,
+     "abstained": 20
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 44,
+     "correct": 36,
+     "abstained": 44
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 27,
+     "correct": 14,
+     "abstained": 56
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 19,
+     "correct": 16,
+     "abstained": 21
+    },
+    "cut": {
+     "n": 46,
+     "answered": 26,
+     "correct": 24,
+     "abstained": 20
+    }
+   }
+  },
+  "test_raw_C0": {
+   "eligible": 331,
+   "answered": 159,
+   "correct": 116,
+   "coverage": 48.0,
+   "acc_answered": 73.0,
+   "correct_of_eligible": 35.0,
+   "nonwound": 450,
+   "nonwound_labelled": 77,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 10,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 21,
+     "correct": 15,
+     "abstained": 20
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 14,
+     "correct": 10,
+     "abstained": 19
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 47,
+     "correct": 39,
+     "abstained": 41
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 33,
+     "correct": 13,
+     "abstained": 50
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 22
+    },
+    "cut": {
+     "n": 46,
+     "answered": 26,
+     "correct": 24,
+     "abstained": 20
+    }
+   }
+  },
+  "rit_C0": {
+   "inscope_answered": 21,
+   "inscope_correct": 21,
+   "inscope_wrong": 0,
+   "feet_labelled": 129,
+   "feet_3rd": 11,
+   "chronic_labelled": 160,
+   "closeups_labelled": 5,
+   "burns_any_burn": 25,
+   "burns_n": 67
+  },
+  "val_browser_C1": {
+   "eligible": 251,
+   "answered": 123,
+   "correct": 98,
+   "coverage": 49.0,
+   "acc_answered": 79.7,
+   "correct_of_eligible": 39.0,
+   "nonwound": 94,
+   "nonwound_labelled": 15,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 5,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 12
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 9,
+     "correct": 8,
+     "abstained": 16
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 36,
+     "correct": 31,
+     "abstained": 31
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 20,
+     "correct": 9,
+     "abstained": 43
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 21,
+     "correct": 18,
+     "abstained": 10
+    },
+    "cut": {
+     "n": 35,
+     "answered": 19,
+     "correct": 17,
+     "abstained": 16
+    }
+   }
+  },
+  "val_raw_C1": {
+   "eligible": 251,
+   "answered": 130,
+   "correct": 106,
+   "coverage": 51.8,
+   "acc_answered": 81.5,
+   "correct_of_eligible": 42.2,
+   "nonwound": 94,
+   "nonwound_labelled": 17,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 5,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 18,
+     "correct": 16,
+     "abstained": 12
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 12,
+     "correct": 11,
+     "abstained": 13
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 38,
+     "correct": 32,
+     "abstained": 29
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 22,
+     "correct": 11,
+     "abstained": 41
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 21,
+     "correct": 18,
+     "abstained": 10
+    },
+    "cut": {
+     "n": 35,
+     "answered": 19,
+     "correct": 18,
+     "abstained": 16
+    }
+   }
+  },
+  "test_browser_C1": {
+   "eligible": 331,
+   "answered": 156,
+   "correct": 117,
+   "coverage": 47.1,
+   "acc_answered": 75.0,
+   "correct_of_eligible": 35.3,
+   "nonwound": 450,
+   "nonwound_labelled": 69,
+   "tierA": 4,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 22,
+     "correct": 16,
+     "abstained": 19
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 13,
+     "correct": 9,
+     "abstained": 20
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 47,
+     "correct": 38,
+     "abstained": 41
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 28,
+     "correct": 14,
+     "abstained": 55
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 20,
+     "correct": 16,
+     "abstained": 20
+    },
+    "cut": {
+     "n": 46,
+     "answered": 26,
+     "correct": 24,
+     "abstained": 20
+    }
+   }
+  },
+  "test_raw_C1": {
+   "eligible": 331,
+   "answered": 168,
+   "correct": 121,
+   "coverage": 50.8,
+   "acc_answered": 72.0,
+   "correct_of_eligible": 36.6,
+   "nonwound": 450,
+   "nonwound_labelled": 79,
+   "tierA": 4,
+   "n_3rd": 40,
+   "tierB": 10,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 25,
+     "correct": 18,
+     "abstained": 16
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 14,
+     "correct": 10,
+     "abstained": 19
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 50,
+     "correct": 41,
+     "abstained": 38
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 34,
+     "correct": 13,
+     "abstained": 49
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 19,
+     "correct": 15,
+     "abstained": 21
+    },
+    "cut": {
+     "n": 46,
+     "answered": 26,
+     "correct": 24,
+     "abstained": 20
+    }
+   }
+  },
+  "rit_C1": {
+   "inscope_answered": 22,
+   "inscope_correct": 22,
+   "inscope_wrong": 0,
+   "feet_labelled": 140,
+   "feet_3rd": 11,
+   "chronic_labelled": 165,
+   "closeups_labelled": 6,
+   "burns_any_burn": 25,
+   "burns_n": 67
+  },
+  "val_browser_C2": {
+   "eligible": 251,
+   "answered": 123,
+   "correct": 98,
+   "coverage": 49.0,
+   "acc_answered": 79.7,
+   "correct_of_eligible": 39.0,
+   "nonwound": 94,
+   "nonwound_labelled": 15,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 5,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 12
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 9,
+     "correct": 8,
+     "abstained": 16
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 36,
+     "correct": 31,
+     "abstained": 31
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 20,
+     "correct": 9,
+     "abstained": 43
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 21,
+     "correct": 18,
+     "abstained": 10
+    },
+    "cut": {
+     "n": 35,
+     "answered": 19,
+     "correct": 17,
+     "abstained": 16
+    }
+   }
+  },
+  "val_raw_C2": {
+   "eligible": 251,
+   "answered": 129,
+   "correct": 105,
+   "coverage": 51.4,
+   "acc_answered": 81.4,
+   "correct_of_eligible": 41.8,
+   "nonwound": 94,
+   "nonwound_labelled": 17,
+   "tierA": 3,
+   "n_3rd": 31,
+   "tierB": 5,
+   "per_class": {
+    "abrasion": {
+     "n": 30,
+     "answered": 18,
+     "correct": 16,
+     "abstained": 12
+    },
+    "bruise": {
+     "n": 25,
+     "answered": 11,
+     "correct": 10,
+     "abstained": 14
+    },
+    "burn_1st_degree": {
+     "n": 67,
+     "answered": 38,
+     "correct": 32,
+     "abstained": 29
+    },
+    "burn_2nd_degree": {
+     "n": 63,
+     "answered": 22,
+     "correct": 11,
+     "abstained": 41
+    },
+    "burn_3rd_degree": {
+     "n": 31,
+     "answered": 21,
+     "correct": 18,
+     "abstained": 10
+    },
+    "cut": {
+     "n": 35,
+     "answered": 19,
+     "correct": 18,
+     "abstained": 16
+    }
+   }
+  },
+  "test_browser_C2": {
+   "eligible": 331,
+   "answered": 154,
+   "correct": 116,
+   "coverage": 46.5,
+   "acc_answered": 75.3,
+   "correct_of_eligible": 35.0,
+   "nonwound": 450,
+   "nonwound_labelled": 68,
+   "tierA": 4,
+   "n_3rd": 40,
+   "tierB": 6,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 22,
+     "correct": 16,
+     "abstained": 19
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 13,
+     "correct": 9,
+     "abstained": 20
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 45,
+     "correct": 37,
+     "abstained": 43
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 28,
+     "correct": 14,
+     "abstained": 55
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 20,
+     "correct": 16,
+     "abstained": 20
+    },
+    "cut": {
+     "n": 46,
+     "answered": 26,
+     "correct": 24,
+     "abstained": 20
+    }
+   }
+  },
+  "test_raw_C2": {
+   "eligible": 331,
+   "answered": 167,
+   "correct": 121,
+   "coverage": 50.5,
+   "acc_answered": 72.5,
+   "correct_of_eligible": 36.6,
+   "nonwound": 450,
+   "nonwound_labelled": 79,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 10,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 25,
+     "correct": 18,
+     "abstained": 16
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 14,
+     "correct": 10,
+     "abstained": 19
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 50,
+     "correct": 41,
+     "abstained": 38
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 34,
+     "correct": 13,
+     "abstained": 49
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 18,
+     "correct": 15,
+     "abstained": 22
+    },
+    "cut": {
+     "n": 46,
+     "answered": 26,
+     "correct": 24,
+     "abstained": 20
+    }
+   }
+  },
+  "rit_C2": {
+   "inscope_answered": 21,
+   "inscope_correct": 21,
+   "inscope_wrong": 0,
+   "feet_labelled": 139,
+   "feet_3rd": 11,
+   "chronic_labelled": 164,
+   "closeups_labelled": 6,
+   "burns_any_burn": 25,
+   "burns_n": 67
+  }
+ },
+ "matched": {
+  "matched_coverage": {
+   "threshold": 0.5825,
+   "val": {
+    "eligible": 251,
+    "answered": 126,
+    "correct": 105,
+    "coverage": 50.2,
+    "acc_answered": 83.3,
+    "correct_of_eligible": 41.8,
+    "nonwound": 94,
+    "nonwound_labelled": 12,
+    "tierA": 3,
+    "n_3rd": 31,
+    "tierB": 5,
+    "per_class": {
+     "abrasion": {
+      "n": 30,
+      "answered": 16,
+      "correct": 13,
+      "abstained": 14
+     },
+     "bruise": {
+      "n": 25,
+      "answered": 14,
+      "correct": 13,
+      "abstained": 11
+     },
+     "burn_1st_degree": {
+      "n": 67,
+      "answered": 34,
+      "correct": 32,
+      "abstained": 33
+     },
+     "burn_2nd_degree": {
+      "n": 63,
+      "answered": 26,
+      "correct": 16,
+      "abstained": 37
+     },
+     "burn_3rd_degree": {
+      "n": 31,
+      "answered": 18,
+      "correct": 15,
+      "abstained": 13
+     },
+     "cut": {
+      "n": 35,
+      "answered": 18,
+      "correct": 16,
+      "abstained": 17
+     }
+    }
+   },
+   "test": {
+    "eligible": 331,
+    "answered": 149,
+    "correct": 115,
+    "coverage": 45.0,
+    "acc_answered": 77.2,
+    "correct_of_eligible": 34.7,
+    "nonwound": 450,
+    "nonwound_labelled": 60,
+    "tierA": 3,
+    "n_3rd": 40,
+    "tierB": 6,
+    "per_class": {
+     "abrasion": {
+      "n": 41,
+      "answered": 21,
+      "correct": 14,
+      "abstained": 20
+     },
+     "bruise": {
+      "n": 33,
+      "answered": 9,
+      "correct": 7,
+      "abstained": 24
+     },
+     "burn_1st_degree": {
+      "n": 88,
+      "answered": 47,
+      "correct": 40,
+      "abstained": 41
+     },
+     "burn_2nd_degree": {
+      "n": 83,
+      "answered": 27,
+      "correct": 13,
+      "abstained": 56
+     },
+     "burn_3rd_degree": {
+      "n": 40,
+      "answered": 18,
+      "correct": 15,
+      "abstained": 22
+     },
+     "cut": {
+      "n": 46,
+      "answered": 27,
+      "correct": 26,
+      "abstained": 19
+     }
+    }
+   },
+   "rit": {
+    "inscope_answered": 25,
+    "inscope_correct": 24,
+    "inscope_wrong": 1,
+    "feet_labelled": 119,
+    "feet_3rd": 5,
+    "chronic_labelled": 126,
+    "closeups_labelled": 5,
+    "burns_any_burn": 25,
+    "burns_n": 67
+   }
+  },
+  "matched_error": {
+   "threshold": 0.59,
+   "val": {
+    "eligible": 251,
+    "answered": 124,
+    "correct": 105,
+    "coverage": 49.4,
+    "acc_answered": 84.7,
+    "correct_of_eligible": 41.8,
+    "nonwound": 94,
+    "nonwound_labelled": 12,
+    "tierA": 3,
+    "n_3rd": 31,
+    "tierB": 5,
+    "per_class": {
+     "abrasion": {
+      "n": 30,
+      "answered": 16,
+      "correct": 13,
+      "abstained": 14
+     },
+     "bruise": {
+      "n": 25,
+      "answered": 14,
+      "correct": 13,
+      "abstained": 11
+     },
+     "burn_1st_degree": {
+      "n": 67,
+      "answered": 32,
+      "correct": 32,
+      "abstained": 35
+     },
+     "burn_2nd_degree": {
+      "n": 63,
+      "answered": 26,
+      "correct": 16,
+      "abstained": 37
+     },
+     "burn_3rd_degree": {
+      "n": 31,
+      "answered": 18,
+      "correct": 15,
+      "abstained": 13
+     },
+     "cut": {
+      "n": 35,
+      "answered": 18,
+      "correct": 16,
+      "abstained": 17
+     }
+    }
+   },
+   "test": {
+    "eligible": 331,
+    "answered": 147,
+    "correct": 113,
+    "coverage": 44.4,
+    "acc_answered": 76.9,
+    "correct_of_eligible": 34.1,
+    "nonwound": 450,
+    "nonwound_labelled": 59,
+    "tierA": 3,
+    "n_3rd": 40,
+    "tierB": 6,
+    "per_class": {
+     "abrasion": {
+      "n": 41,
+      "answered": 21,
+      "correct": 14,
+      "abstained": 20
+     },
+     "bruise": {
+      "n": 33,
+      "answered": 8,
+      "correct": 6,
+      "abstained": 25
+     },
+     "burn_1st_degree": {
+      "n": 88,
+      "answered": 47,
+      "correct": 40,
+      "abstained": 41
+     },
+     "burn_2nd_degree": {
+      "n": 83,
+      "answered": 27,
+      "correct": 13,
+      "abstained": 56
+     },
+     "burn_3rd_degree": {
+      "n": 40,
+      "answered": 18,
+      "correct": 15,
+      "abstained": 22
+     },
+     "cut": {
+      "n": 46,
+      "answered": 26,
+      "correct": 25,
+      "abstained": 20
+     }
+    }
+   },
+   "rit": {
+    "inscope_answered": 25,
+    "inscope_correct": 24,
+    "inscope_wrong": 1,
+    "feet_labelled": 107,
+    "feet_3rd": 4,
+    "chronic_labelled": 120,
+    "closeups_labelled": 5,
+    "burns_any_burn": 25,
+    "burns_n": 67
+   }
+  }
+ },
+ "RE3_minus_deployed_95ci_at_0.60": {
+  "val": {
+   "acc_answered": [
+    -5.3,
+    7.3
+   ],
+   "coverage": [
+    -8.8,
+    3.8
+   ],
+   "nonwound_pct": [
+    -10.3,
+    1.2
+   ]
+  },
+  "test": {
+   "acc_answered": [
+    -2.6,
+    8.0
+   ],
+   "coverage": [
+    -9.8,
+    0.0
+   ],
+   "nonwound_pct": [
+    -3.5,
+    1.6
+   ]
+  },
+  "rit_feet_labelled_pct": [
+   -11.0,
+   -2.5
+  ]
+ },
+ "promising": {
+  "deployed": {
+   "wrong": 457,
+   "correct": 249,
+   "tierA": 7,
+   "feet": 183
+  },
+  "RE3": {
+   "wrong": 329,
+   "correct": 237,
+   "tierA": 6,
+   "feet": 94
+  },
+  "criteria": {
+   "1_fewer_wrong_labels": true,
+   "2_correct_not_below_minus_5": false,
+   "3_tierA_not_more": true,
+   "4_feet_not_more": true
+  },
+  "promising": false
+ }
+}

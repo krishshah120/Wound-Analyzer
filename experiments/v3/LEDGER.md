@@ -94,3 +94,47 @@ change no model size (summing is arithmetic; X4B has the same architecture).
 ## Budget used
 4 training runs (X3B s1; X4B s1-3), 85.6 min of training, of the 10 runs / ~7 h allowed. X5 not run
 (empty pool). No cloud, no purchases.
+
+## X6a saved-prediction validation (x6_validate.py -> x6_validate.json)
+All saved files are 7-class probability vectors (rows sum to 1), class order identical, rows keyed by
+file name identical; the deployed file equals a fresh name-keyed production run to 4.5e-6. No
+evaluated val/test image (sha256 or decoded pixels) is in any member's training data. BUT all 251 val
+wound photos (+3 val / 22 test non-wound photos) are the members' - and the deployed model's -
+early-stopping set, so val favours them and 22 of test's 450 non-wound photos are not clean either.
+
+## X6 narrow conflicts (x6_t1_conflicts.py -> x6_t1_quarantine.txt)
+Identical decoded pixels with incompatible labels, touching b84_train: 12 groups, 24 training photos
+(2nd 13, 1st 7, 3rd 4), all inside X3's 86. X6C pilot (22.3 min): val AURC 0.172 <= 0.183 ->
+seeds 2-3 run (matched control R_exact_s1: 0.207). Test at the val threshold 72.2% vs control mean 76.4%.
+
+## X6b retrained ensemble RE3 (queue_x6.sh; views_RE3_s*.npz; x6_ensemble.py -> x6_ensemble.json)
+Members = deployed recipe seeds 1-3, retrained with weights saved (17.4 / 14.6 / 11.4 min). Old
+saved-prediction scores NOT carried over. Packaged (x6_package.py -> artifacts/RE3/): TFLite export
+equals Keras on all 1,126 val+test photos (max diff 4.5e-6 / 7.4e-6 / 5.7e-6, 0 decision changes);
+manifest with seeds, sha256, class list, preprocessing, data manifest (artifacts/data_manifest_b84.csv),
+versions (Python 3.12.14, TF 2.21.0, Keras 3.15.1, NumPy 2.5.3, Pillow 12.3.0, ai-edge-litert 2.2.0).
+Complete pipeline, 0.60, browser input (answered / right / non-wound labelled / 3rd shown other):
+               val                     test                     RIT in-scope   RIT feet   RIT burns
+  deployed C0  117 / 100 / 12 / 2      156 / 116 / 56 / 4       23 right       175        23/67
+  deployed C1  126 / 106 / 13 / 2      160 / 119 / 61 / 5       24 right       183        23/67
+  deployed C2  122 / 104 / 13 / 2      160 / 119 / 58 / 5       24 right       183        23/67
+  RE3 C0       117 /  99 /  8 / 3      141 / 109 / 56 / 2       22 right (1 wrong)  88    23/67
+  RE3 C1       120 / 102 /  9 / 3      144 / 111 / 57 / 3       24 right (1 wrong)  94    23/67
+  RE3 C2       119 / 101 /  9 / 3      144 / 111 / 57 / 3       24 right (1 wrong)  92    23/67
+Members alone (C1): RIT feet 202 / 146 / 140; val right 112 / 105 / 98 - the members vary widely,
+the ensemble is below all three on feet.
+Paired 95% CIs, RE3 - deployed (C1, 0.60): val accuracy -5.3..+7.3, coverage -8.8..+3.8; test accuracy
+-2.6..+8.0, coverage -9.8..0.0, non-wound -3.5..+1.6 pts; RIT healthy feet labelled -11.0..-2.5 pts.
+Matched coverage (val 126 answered, threshold 0.5825 - below 0.60, so NOT a candidate operating point):
+val 83.3%, test 149 answered 77.2%, RIT feet 119. Matched error (0.59): val 124 answered 84.7%.
+Declared "promising" test: wrong labels 329 vs 457 (pass); correct 237 vs 249 (fail: > 5 fewer);
+3rd shown other 6 vs 7 (pass); RIT feet 94 vs 183 (pass) -> NOT promising. Artifacts kept, no preview.
+Runtime (runtime.py): 3 members + gate 13.1 ms median, 258 MB, 69.1 MB of files vs 7.0 ms / 166 MB /
+34.6 MB today.
+X6C seeds 2-3 (15.5 / 22.1 min). 3-seed means vs R_exact 1-3 (val accuracy at 46.2% coverage / test at
+the val threshold / val AURC): 83.9 / 75.8 / 0.168 vs 82.2 / 76.4 / 0.183. 3-member ensembles: val
+85.3 vs 82.8 (CI of difference -3.0..+8.9), test 76.3 vs 77.9 (-5.9..+3.4). Rule MC vs deployed
+(>= 88.3): not met -> INCONCLUSIVE, not adopted.
+
+## Budget used (final)
+10 training runs (X3B 1, X4B 3, RE3 3, X6C 3), about 3.3 h of training - the declared maximum of runs.

@@ -1,0 +1,135 @@
+{
+ "set": "RE3",
+ "kind": "ensemble: mean of member probabilities",
+ "class_names": [
+  "abrasion",
+  "bruise",
+  "burn_1st_degree",
+  "burn_2nd_degree",
+  "burn_3rd_degree",
+  "cut",
+  "out_of_scope"
+ ],
+ "preprocessing": "RGB; PIL NEAREST resize to 224x224; float32 x/127.5 - 1 (src/litert_model.load_image)",
+ "decision": "production decide(): unknown if out_of_scope is the top class, gate p(out_of_scope) >= 0.5, or top wound probability < 0.60; centre 70% crop retry accepted at >= 0.80",
+ "gate": {
+  "path": "models/out_of_scope_gate.tflite",
+  "sha256": "863c5c416a578ff3760cc17aff51ac276b79437155c443ef6e894b36ea93c869",
+  "note": "shipped gate, unchanged"
+ },
+ "recipe": "experiments/experiment9.py --alpha 1.4 --label-smoothing 0.1 --train-dir experiments/v2/b84_train --val-dir experiments/v2/b84_val --seed S --save-model ...",
+ "data_manifest": {
+  "path": "experiments/v3/artifacts/data_manifest_b84.csv",
+  "sha256": "c795831dac185871ab09af5c8578fe7a3b6f30d5f788f69c0f0c6db6fabd44bc"
+ },
+ "versions": {
+  "python": "3.12.14",
+  "tensorflow": "2.21.0",
+  "keras": "3.15.1",
+  "numpy": "2.5.3",
+  "pillow": "12.3.0",
+  "ai-edge-litert": "2.2.0"
+ },
+ "hardware": "arm64 macOS-26.6.2-arm64-arm-64bit; CPU training is not bit-deterministic (v2): a rerun with the same seed gives a different model",
+ "members": [
+  {
+   "seed": 1,
+   "tflite": "member_s1.tflite",
+   "tflite_sha256": "66e2b49004a14157d2809a697b9eb519120ec57c727544f5b0cbfda3cd7fe2e4",
+   "keras_path": "experiments/v3/models/RE3_s1.keras",
+   "keras_sha256": "6a8741e06403aca259ced58a65188a345b7b20205824cdf48612c04845a5a8e5",
+   "tflite_vs_keras": {
+    "photos": 1126,
+    "max_prob_diff": 4.5299530029296875e-06,
+    "decision_changes": 0
+   },
+   "epochs": [
+    9,
+    23
+   ],
+   "train_minutes": 17.4,
+   "config": {
+    "name": "RE3",
+    "seed": 1,
+    "label_smoothing": 0.1,
+    "b3_weight": 2.0,
+    "alpha": 1.4,
+    "finetune_lr": 1e-05,
+    "finetune_layers": 100,
+    "mixup": 0.0,
+    "backbone": "mobilenetv2",
+    "train_dir": "/Users/vihaa/Downloads/Wound-Analyzer/.claude/worktrees/silly-wilson-17d01a/experiments/v2/b84_train",
+    "zoom_out": 0.0,
+    "val_dir": "/Users/vihaa/Downloads/Wound-Analyzer/.claude/worktrees/silly-wilson-17d01a/experiments/v2/b84_val",
+    "min_fill": 1.0,
+    "save_model": "/Users/vihaa/Downloads/Wound-Analyzer/.claude/worktrees/silly-wilson-17d01a/experiments/v3/models/RE3_s1.keras"
+   }
+  },
+  {
+   "seed": 2,
+   "tflite": "member_s2.tflite",
+   "tflite_sha256": "8fc5ed932a0bec37ee2c111dba0680e3137afe41466b14d07ce5f72230713e44",
+   "keras_path": "experiments/v3/models/RE3_s2.keras",
+   "keras_sha256": "e189f180ffae96cf6612b47c36eff62df074be2899aa70aa860038462429b376",
+   "tflite_vs_keras": {
+    "photos": 1126,
+    "max_prob_diff": 7.3909759521484375e-06,
+    "decision_changes": 0
+   },
+   "epochs": [
+    8,
+    17
+   ],
+   "train_minutes": 14.6,
+   "config": {
+    "name": "RE3",
+    "seed": 2,
+    "label_smoothing": 0.1,
+    "b3_weight": 2.0,
+    "alpha": 1.4,
+    "finetune_lr": 1e-05,
+    "finetune_layers": 100,
+    "mixup": 0.0,
+    "backbone": "mobilenetv2",
+    "train_dir": "/Users/vihaa/Downloads/Wound-Analyzer/.claude/worktrees/silly-wilson-17d01a/experiments/v2/b84_train",
+    "zoom_out": 0.0,
+    "val_dir": "/Users/vihaa/Downloads/Wound-Analyzer/.claude/worktrees/silly-wilson-17d01a/experiments/v2/b84_val",
+    "min_fill": 1.0,
+    "save_model": "/Users/vihaa/Downloads/Wound-Analyzer/.claude/worktrees/silly-wilson-17d01a/experiments/v3/models/RE3_s2.keras"
+   }
+  },
+  {
+   "seed": 3,
+   "tflite": "member_s3.tflite",
+   "tflite_sha256": "f8cd19e36204e28ef126c522de880f62e6b89aeb89bd078cfcc51f7069a64d95",
+   "keras_path": "experiments/v3/models/RE3_s3.keras",
+   "keras_sha256": "8511a2126129fd5227916bb31f6331f4eaf74426a1669eea4f4d776f87b4e84c",
+   "tflite_vs_keras": {
+    "photos": 1126,
+    "max_prob_diff": 5.662441253662109e-06,
+    "decision_changes": 0
+   },
+   "epochs": [
+    10,
+    15
+   ],
+   "train_minutes": 11.4,
+   "config": {
+    "name": "RE3",
+    "seed": 3,
+    "label_smoothing": 0.1,
+    "b3_weight": 2.0,
+    "alpha": 1.4,
+    "finetune_lr": 1e-05,
+    "finetune_layers": 100,
+    "mixup": 0.0,
+    "backbone": "mobilenetv2",
+    "train_dir": "/Users/vihaa/Downloads/Wound-Analyzer/.claude/worktrees/silly-wilson-17d01a/experiments/v2/b84_train",
+    "zoom_out": 0.0,
+    "val_dir": "/Users/vihaa/Downloads/Wound-Analyzer/.claude/worktrees/silly-wilson-17d01a/experiments/v2/b84_val",
+    "min_fill": 1.0,
+    "save_model": "/Users/vihaa/Downloads/Wound-Analyzer/.claude/worktrees/silly-wilson-17d01a/experiments/v3/models/RE3_s3.keras"
+   }
+  }
+ ]
+}
