@@ -71,3 +71,16 @@ contain no dataset-upload / active-learning block; (b) cost per photo from measu
 Either authorise the Roboflow connector (claude.ai connector settings, or `/mcp` in an interactive
 Claude Code terminal), or put the API key in an environment variable `ROBOFLOW_API_KEY` /
 the file `~/.config/wound-analyzer/roboflow_api_key` (chmod 600) - never in chat or in the repo.
+
+## Addendum - workflow grounded through the Roboflow connector (2026-09-27; no rule above changed)
+- Outer workflow: one input `image`, no parameters; one step, an inner workflow `wound-ebsdw-4atst`
+  bound to model `vihaan-nr-singh-gmail-com/wound-ebsdw-4atst-1-yolo26x-t1`; one output `predictions`.
+- Inner workflow: a single object-detection block (confidence 0.40, IoU 0.3, max 1,000 detections).
+  No dataset-upload, active-learning or notification block; project active learning is disabled.
+  So the workflow does not store uploaded photos (Roboflow's own platform retention not verified).
+- Consequence for section 3: the outer workflow exposes no confidence parameter, so detections
+  below 0.40 are never returned; every tau below 0.40 behaves like 0.40. Recorded as a limitation.
+- Real response shape (workflow_response_shape.json): [{"predictions": {"image": {...},
+  "predictions": [ {class, confidence, x, y, width, height, ...} ]}}] - matches the client's parser.
+- Batch scoring (~3,500 photos) still needs an API key in `~/.config/wound-analyzer/roboflow_api_key`:
+  the connector runs one photo per call through the chat, which does not scale.

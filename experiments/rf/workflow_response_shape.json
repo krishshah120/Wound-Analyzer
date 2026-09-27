@@ -1,0 +1,2 @@
+{"source": "workflows_run via the Roboflow connector, 2026-09-27, one 160 px clean val burn photo (format check only, not a result)",
+ "response": [{"predictions": {"image": {"width": "null", "height": "null"}, "predictions": "list[0] (no detection >= 0.40 on this photo)"}}]}
