@@ -642,3 +642,20 @@ every request hang when the server used TensorFlow. After retraining, run
 versions of `collate_data.py`. `train_model.py` ignores them (they are marked
 `augmented=yes` in the manifest), and re-running `collate_data.py` will
 remove them.
+
+**Roboflow comparison (not in production).** `src/roboflow_client.py` calls the
+Roboflow Workflow `wound-vwound-ebsdw-4atst-1-yolo26x-t1-logic` (workspace
+`vihaan-nr-singh-gmail-com`; the YOLO26 X-Large detector trained on Roboflow project
+`wound-ebsdw-4atst` v1) over Roboflow's serverless REST API, using only the Python
+standard library - the official `inference-sdk` pins numpy < 2.4 and opencv, which
+conflicts with this environment. Set the key in the environment variable
+`ROBOFLOW_API_KEY` or the file `~/.config/wound-analyzer/roboflow_api_key` (never in
+the repo, never in a browser); it is sent only in the `Authorization: Bearer` header.
+Each call sends the photo to Roboflow and uses serverless credits.
+
+```bash
+python experiments/rf/smoke_test.py      # exit 0 = passed, 2 = live check skipped (no key), 1 = failed
+python experiments/rf/eligibility.py     # photos clean for both models -> experiments/rf/eligible.csv
+python experiments/rf/run_roboflow.py    # one call per eligible photo -> roboflow_raw.jsonl (resumable)
+python experiments/rf/compare.py         # comparison fixed in experiments/rf/PROTOCOL.md
+```
