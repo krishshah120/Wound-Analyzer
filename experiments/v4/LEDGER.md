@@ -28,3 +28,17 @@ Shipped gate, possible burn @0.60 vs today: val right 172 vs 106, wrong 14 vs 20
 wrong 27 vs 41, non-wound 120 vs 61 /450; RIT burns 44 vs 23 /67, healthy feet 560 vs 183 /1613,
 chronic 284 vs 124 /1231, everyday 24 right + 3 wrong vs 24 + 0 /48.
 Decision for Vihaan: the rule was ours; he stated he wants more answers and accepts more wrong ones.
+
+## DEPLOYED 2026-09-27 - "possible burn" output (Vihaan's decision after seeing the table above)
+Change: api/predict.py in ~/Downloads/wound-analyzer-vercel - burn probabilities summed into
+possible_burn; decide() otherwise unchanged (0.60, gate 0.5, crop retry 0.80); models unchanged
+(classifier eef2f3d3..., gate 49201744...). Copy + hashes: production_possible_burn/.
+Verified before deploying (verify_backend.py -> verify_backend.json): the modified server code on
+every val/test/RIT photo reproduces op_point_deployed.json @0.60 exactly (val 172/14/65 nw 26; test
+197/27/107 nw 120; RIT everyday 24 right / 3 wrong, burns 44/67, feet 560/1613, chronic 284/1231).
+Preview wound-analyzer-vercel-3fuz4j8qn (identical answers to local on 2 photos) -> production
+wound-analyzer-vercel-imjnkbxko; end-to-end through mrcmiracle.vercel.app/api/wound returns
+possible_burn with the sourced tips. Site text: mrcmiracle.github.io PR #2 (merged, live).
+Rollback (restores the previous production build, 8 days old):
+  cd ~/Downloads/wound-analyzer-vercel && ~/Downloads/mrc-miracle/node_modules/.bin/vercel rollback https://wound-analyzer-vercel-qpgrxqjqx-vihaannrsingh-cmyk.vercel.app
+and restore the code from ~/Downloads/wound-analyzer-artifacts/backend-before-possible-burn-2026-09-27/.
