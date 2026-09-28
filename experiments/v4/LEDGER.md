@@ -42,3 +42,12 @@ possible_burn with the sourced tips. Site text: mrcmiracle.github.io PR #2 (merg
 Rollback (restores the previous production build, 8 days old):
   cd ~/Downloads/wound-analyzer-vercel && ~/Downloads/mrc-miracle/node_modules/.bin/vercel rollback https://wound-analyzer-vercel-qpgrxqjqx-vihaannrsingh-cmyk.vercel.app
 and restore the code from ~/Downloads/wound-analyzer-artifacts/backend-before-possible-burn-2026-09-27/.
+
+## v4b - fewer false alarms (Vihaan, 2026-09-27: "it gives any picture a possible burn label ... I
+## don't want to accept false alarms. deploy healthy skin photos") - rule fixed before computing
+Output stays "possible burn". Options: gate = shipped / G4new (trained with the healthy-skin photos) /
+either (unknown if EITHER gate says out of scope); threshold 0.60, 0.65, ..., 0.95; crop retry unchanged.
+Choice uses development data only: val and the 401 held-out healthy-skin photos (heldout_views.npz).
+Allowed: val non-wound labelled <= 13/94 AND held-out healthy-skin photos labelled <= the count of the
+pre-switch production (6 categories, shipped gate, 0.60) on the same photos. Among allowed, the most
+val wound photos named correctly (tie -> higher threshold). Test and RIT are reported, never used.
