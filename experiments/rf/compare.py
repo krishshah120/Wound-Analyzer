@@ -10,7 +10,9 @@ sys.path.insert(0, f"{WT}/src"); sys.path.insert(0, f"{WT}/experiments/v3")
 import roboflow_client as rc
 from common import NAMES, OOD, W, decide, files, wilson
 ap = argparse.ArgumentParser(); ap.add_argument("--raw", default=f"{RF}/roboflow_raw.jsonl"); ap.add_argument("--out", default=f"{RF}/comparison.json"); a = ap.parse_args()
-rows = [r for r in csv.DictReader(open(f"{RF}/eligible.csv")) if r["eligible"] == "yes"]
+rows, _seen = [], set()
+for r in csv.DictReader(open(f"{RF}/eligible.csv")):   # the RIT manifest repeats 82 byte-identical photos: count each once
+    if r["eligible"] == "yes" and r["path"] not in _seen: rows.append(r); _seen.add(r["path"])
 raw = {}
 for line in open(a.raw):
     rec = json.loads(line); raw[rec["path"]] = rec
@@ -75,6 +77,15 @@ configs = {"deployed@0.60": lambda r: deployed_label(r["path"], 0.60)}
 if tau_sel is not None: configs[f"roboflow@{tau_sel} (selected)"] = (lambda t: lambda r: rf_label(r["path"], t))(tau_sel)
 if tau_cov is not None: configs[f"roboflow@{tau_cov} (matched coverage)"] = (lambda t: lambda r: rf_label(r["path"], t))(tau_cov)
 if t_match is not None: configs[f"deployed@{t_match} (matched to roboflow selected)"] = (lambda t: lambda r: deployed_label(r["path"], t))(t_match)
+# FOLLOW-UP, not in PROTOCOL.md (added after seeing that the protocol's matched-coverage point was
+# unreachable): Roboflow at its most permissive setting (the workflow's 0.40 floor) vs the deployed
+# pipeline made equally selective on the clean val photos.
+rf_floor_ans = rf_dev[0.40]["right"] + rf_dev[0.40]["wrong"]
+dgrid2 = [round(x, 3) for x in np.arange(0.40, 0.951, 0.005)]
+ok2 = [t for t in dgrid2 if (lambda s: s["right"] + s["wrong"])(stats(dev, lambda r: deployed_label(r["path"], t))["all_wound"]) >= rf_floor_ans]
+t_floor = max(ok2) if ok2 else None
+configs["FOLLOW-UP roboflow@0.40 (floor)"] = lambda r: rf_label(r["path"], 0.40)
+if t_floor is not None: configs[f"FOLLOW-UP deployed@{t_floor} (matched to roboflow@0.40 on val)"] = (lambda t: lambda r: deployed_label(r["path"], t))(t_floor)
 if tau_sel is not None:
     configs["agreement (both same category)"] = lambda r: (lambda d, f: d if d == f else "unknown")(deployed_label(r["path"], 0.60), rf_label(r["path"], tau_sel))
 res = dict(n_eligible=len(rows), n_dev=len(dev), n_eval=len(ev), roboflow_errors=len(errors),
@@ -118,3 +129,13 @@ for name, s in res["eval"].items():
     w = s["all_wound"]; print(f"\n{name}: wound photos {w['right']} right / {w['wrong']} wrong / {w['unanswered']} unanswered of {w['n']} (acc when answered {w['acc_answered']}%), burn shown other injury {s['burn_shown_other_injury']}")
     for c, v in s["per_category"].items(): print(f"   {c:14s} {v['right']}/{v['n']} right, {v['wrong']} wrong, {v['unanswered']} unanswered")
     for p, v in s["nonwound"].items(): print(f"   {p:14s} {v['labelled']}/{v['n']} labelled ({v['as_burn']} as burn)")
+# FOLLOW-UP head-to-head at matched selectivity: roboflow@0.40 minus deployed matched on val
+fk = [k for k in configs if k.startswith("FOLLOW-UP deployed@")]
+if fk:
+    a_, b_ = configs["FOLLOW-UP roboflow@0.40 (floor)"], configs[fk[0]]; h2h = {}
+    for k in KINDS:
+        diff = vec(a_, k) - vec(b_, k)
+        h2h[k] = [round(float(x), 1) for x in np.percentile([diff[b].sum() for b in boots], [2.5, 97.5])]
+    res["FOLLOW-UP_roboflow@0.40_minus_" + fk[0].split(" ")[1] + "_95ci_counts"] = h2h
+    json.dump(res, open(a.out, "w"), indent=1)
+    print("\nFOLLOW-UP head-to-head (roboflow@0.40 minus", fk[0].split(" ")[1] + "):", h2h)
