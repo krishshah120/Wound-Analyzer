@@ -95,3 +95,11 @@ Deployed config now: possible burn, two gates, 0.75, no crop retry. Test (browse
 Server verified on every photo (verify_backend_v4c.py): MATCH. Production wound-analyzer-vercel-axnmf5u04;
 public alias confirmed (a photo answered only via the crop now returns unknown). Code: production_two_gates_075_nocrop/.
 Rollback: wound-analyzer-vercel-jop7ssu2o (with crop), imjnkbxko (one gate, 0.60), qpgrxqjqx (before 09-27).
+
+## MRC App session confirmation (2026-09-27)
+Reproduced the close-up figures exactly by calling the deployed _classify(): 172/331 named, 154/172 right
+(merged), 48/450 non-wounds, 3rd-degree 19 possible_burn / 20 unknown / 1 another injury.
+Its own arm's-length set (it pads non-wound photos as well as wounds), deployed config: named 60/331
+(18.1%, 14.4-22.6), right 49/60 (81.7%), non-wounds labelled 12/450 (2.7%). The public model card
+(wound-analyzer-vercel.vercel.app) now quotes these, states that accuracy counts all burns as one type
+and is not comparable with the old 74% (old config merged: 88.1%), and drops strict scoring.
