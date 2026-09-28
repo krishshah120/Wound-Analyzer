@@ -80,3 +80,18 @@ three sets; if no bar qualifies, remove the crop retry. Test (close-up and arm's
 Model card figures (for the MRC App session) are measured with the deployed server code itself on
 data/test and experiments/data_frame50/test, browser-encoded; a burn photo answered "possible_burn"
 counts as right (merged scoring), and the old model is re-scored the same way for a like-for-like line.
+
+## v4c RESULT + DEPLOYED 2026-09-27 (crop_and_card.py -> crop_and_card.json; crop_removal_rit.json)
+Old config reproduces the model card's close-up figures exactly (160 named / 119 right / 61 non-wounds).
+It does NOT reproduce the card's arm's-length figures on data_frame50 (67 / 44 / 61 vs 101 / 69 / 42):
+the card used a different framing set (its non-wound count differs too) - the MRC App session measures it.
+Crop sweep on dev (val close + val arm + held-out healthy), added correct vs added false labels:
+0.80 12 vs 25; 0.85 8 vs 14; 0.90 4 vs 6; 0.95 1 vs 1 -> none reaches 2:1 -> crop retry REMOVED.
+Deployed config now: possible burn, two gates, 0.75, no crop retry. Test (browser):
+  close-ups: named 172/331 (52.0%, 46.6-57.3), right 154/172 (89.5%, 84.1-93.3, merged burn scoring),
+  non-wounds labelled 48/450 (10.7%, 8.1-13.9); 3rd-degree (40): possible_burn 19, another injury 1, unknown 20.
+  Like-for-like: the old config scored the same merged way was right 141/160 (88.1%); strict 119/160 (74%).
+  Held-out healthy 37/401; RIT healthy feet 158/1,613; chronic 115/1,231; burns 35/67; everyday 19 right / 1 wrong.
+Server verified on every photo (verify_backend_v4c.py): MATCH. Production wound-analyzer-vercel-axnmf5u04;
+public alias confirmed (a photo answered only via the crop now returns unknown). Code: production_two_gates_075_nocrop/.
+Rollback: wound-analyzer-vercel-jop7ssu2o (with crop), imjnkbxko (one gate, 0.60), qpgrxqjqx (before 09-27).

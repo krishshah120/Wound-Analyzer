@@ -1,0 +1,18 @@
+{
+ "0.8": {
+  "healthy_heldout": 58,
+  "feet": 202,
+  "chronic": 127,
+  "burns": 36,
+  "everyday": "22r/1w",
+  "everyday_small_in_frame": "9 right"
+ },
+ "None": {
+  "healthy_heldout": 37,
+  "feet": 158,
+  "chronic": 115,
+  "burns": 35,
+  "everyday": "19r/1w",
+  "everyday_small_in_frame": "8 right"
+ }
+}
