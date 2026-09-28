@@ -51,3 +51,21 @@ Choice uses development data only: val and the 401 held-out healthy-skin photos 
 Allowed: val non-wound labelled <= 13/94 AND held-out healthy-skin photos labelled <= the count of the
 pre-switch production (6 categories, shipped gate, 0.60) on the same photos. Among allowed, the most
 val wound photos named correctly (tie -> higher threshold). Test and RIT are reported, never used.
+
+## v4b RESULT + DEPLOYED 2026-09-27 (fewer_false_alarms.py -> fewer_false_alarms.json)
+Rule chose "either@0.75": possible-burn output, unknown if EITHER gate (shipped or G4new) says out of
+scope, confidence >= 0.75, crop retry unchanged (>= 0.80).
+                      before today   live 09-27 AM   chosen
+  val right/wrong/nw  106/20/13      172/14/26       127/8/13
+  held-out healthy    85/401         237/401         58/401
+  test right/wrong/nw 119/41/61      197/27/120      163/19/59
+  RIT feet / chronic  183 / 124      560 / 284       202 / 127    (of 1,613 / 1,231)
+  RIT burns / everyday 23 / 24r0w    44 / 24r3w      36 / 22r1w
+Stricter options measured (not chosen): either@0.85 test 115/8/38, held-out 41, feet 73.
+G4new exported to TFLite (export_g4.py): max diff 4.6e-6 on 1,126 photos, 0 gate flips;
+sha256 e15b336b... Server verified on every val/test/RIT/held-out photo (verify_backend_v4b.py): MATCH.
+Production wound-analyzer-vercel-jop7ssu2o (public alias confirmed: threshold 75, two gates).
+Site: CONFIDENCE_THRESHOLD_PCT 60 -> 75 (mrcmiracle.github.io 8c57e87, wording only).
+Rollback: previous version (possible burn, one gate, 0.60) = wound-analyzer-vercel-imjnkbxko;
+pre-09-27 version = wound-analyzer-vercel-qpgrxqjqx. Code copies: production_possible_burn/,
+production_two_gates_075/, ~/Downloads/wound-analyzer-artifacts/. Models: artifacts/v4-2026-09-27/.
