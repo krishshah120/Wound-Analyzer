@@ -1,0 +1,208 @@
+{
+  "data_dir": "../data/test",
+  "class_names": [
+    "abrasion",
+    "bruise",
+    "burn_1st_degree",
+    "burn_2nd_degree",
+    "burn_3rd_degree",
+    "cut",
+    "out_of_scope"
+  ],
+  "n_in_scope_images": 331,
+  "accuracy": 0.6132930513595166,
+  "accuracy_95ci": [
+    0.5598142033468217,
+    0.6641723025114706
+  ],
+  "balanced_accuracy": 0.6307344145694898,
+  "wound_class_accuracy": 0.649546827794562,
+  "per_class": {
+    "abrasion": {
+      "support": 41,
+      "recall": 0.5609756097560976,
+      "recall_95ci": [
+        0.41040265151757305,
+        0.7011009522789017
+      ],
+      "precision": 0.6052631578947368
+    },
+    "bruise": {
+      "support": 33,
+      "recall": 0.6363636363636364,
+      "recall_95ci": [
+        0.46615872621534094,
+        0.7781303383204013
+      ],
+      "precision": 0.2692307692307692
+    },
+    "burn_1st_degree": {
+      "support": 88,
+      "recall": 0.7727272727272727,
+      "recall_95ci": [
+        0.6748552842973525,
+        0.8477836941176577
+      ],
+      "precision": 0.33170731707317075
+    },
+    "burn_2nd_degree": {
+      "support": 83,
+      "recall": 0.3132530120481928,
+      "recall_95ci": [
+        0.2236124995825663,
+        0.41941572652105236
+      ],
+      "precision": 0.23423423423423423
+    },
+    "burn_3rd_degree": {
+      "support": 40,
+      "recall": 0.675,
+      "recall_95ci": [
+        0.52017458088898,
+        0.7991568303733828
+      ],
+      "precision": 0.20149253731343283
+    },
+    "cut": {
+      "support": 46,
+      "recall": 0.8260869565217391,
+      "recall_95ci": [
+        0.6927636765607748,
+        0.9091431643111074
+      ],
+      "precision": 0.40425531914893614
+    },
+    "out_of_scope": {
+      "support": 450,
+      "recall": 0.23555555555555555,
+      "recall_95ci": [
+        0.19868862582267455,
+        0.27689933261921357
+      ],
+      "precision": 0.8760330578512396
+    }
+  },
+  "confusion_matrix": [
+    [
+      23,
+      6,
+      1,
+      7,
+      0,
+      2,
+      2
+    ],
+    [
+      1,
+      21,
+      7,
+      0,
+      2,
+      2,
+      0
+    ],
+    [
+      0,
+      4,
+      68,
+      11,
+      2,
+      2,
+      1
+    ],
+    [
+      4,
+      1,
+      18,
+      26,
+      21,
+      7,
+      6
+    ],
+    [
+      2,
+      3,
+      2,
+      1,
+      27,
+      1,
+      4
+    ],
+    [
+      0,
+      3,
+      0,
+      3,
+      0,
+      38,
+      2
+    ],
+    [
+      8,
+      40,
+      109,
+      63,
+      82,
+      42,
+      106
+    ]
+  ],
+  "app": {
+    "confidence_threshold": 0.6,
+    "gate_threshold": 0.5,
+    "in_scope_fraction_answered": 0.48036253776435045,
+    "in_scope_accuracy_when_answered": 0.7547169811320755,
+    "in_scope_fraction_rejected_as_out_of_scope": 0.045317220543806644
+  },
+  "out_of_scope": {
+    "n_images": 450,
+    "fraction_confidently_labelled": 0.1511111111111111,
+    "confident_labels": {
+      "burn_3rd_degree": 26,
+      "burn_1st_degree": 25,
+      "burn_2nd_degree": 6,
+      "cut": 6,
+      "bruise": 4,
+      "abrasion": 1
+    }
+  },
+  "burn": {
+    "burn_rows_confusion_matrix": [
+      [
+        0,
+        4,
+        68,
+        11,
+        2,
+        2,
+        1
+      ],
+      [
+        4,
+        1,
+        18,
+        26,
+        21,
+        7,
+        6
+      ],
+      [
+        2,
+        3,
+        2,
+        1,
+        27,
+        1,
+        4
+      ]
+    ],
+    "burn_3rd_recall": 0.675,
+    "burn_3rd_support": 40,
+    "burn_3rd_predicted_as_1st": 2,
+    "burn_3rd_predicted_as_non_burn": 10,
+    "burn_3rd_app_says_1st": 1,
+    "burn_3rd_app_says_other_wound": 3,
+    "burn_3rd_app_says_unknown": 20,
+    "burn_3rd_rejected_as_out_of_scope": 4
+  }
+}

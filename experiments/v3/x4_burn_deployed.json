@@ -1,0 +1,763 @@
+{
+ "val_browser_aurc_merged_task": 0.046,
+ "test_browser_aurc_merged_task": 0.082,
+ "val_browser_after_C0": {
+  "eligible": 251,
+  "answered": 117,
+  "correct": 108,
+  "coverage": 46.6,
+  "acc_answered": 92.3,
+  "correct_of_eligible": 43.0,
+  "nonwound_labelled": 12,
+  "nonwound": 94,
+  "burns": 161,
+  "burns_answered": 69,
+  "burns_as_burn": 66,
+  "burn_shown_other_injury": 3,
+  "other_injury_shown_burn": 2,
+  "deg3_shown_other_injury": 1,
+  "per_class": {
+   "abrasion": {
+    "n": 30,
+    "answered": 15,
+    "correct": 10
+   },
+   "bruise": {
+    "n": 25,
+    "answered": 14,
+    "correct": 14
+   },
+   "burn": {
+    "n": 161,
+    "answered": 69,
+    "correct": 66
+   },
+   "cut": {
+    "n": 35,
+    "answered": 19,
+    "correct": 18
+   }
+  }
+ },
+ "val_browser_after_C1": {
+  "eligible": 251,
+  "answered": 126,
+  "correct": 115,
+  "coverage": 50.2,
+  "acc_answered": 91.3,
+  "correct_of_eligible": 45.8,
+  "nonwound_labelled": 13,
+  "nonwound": 94,
+  "burns": 161,
+  "burns_answered": 74,
+  "burns_as_burn": 69,
+  "burn_shown_other_injury": 5,
+  "other_injury_shown_burn": 2,
+  "deg3_shown_other_injury": 1,
+  "per_class": {
+   "abrasion": {
+    "n": 30,
+    "answered": 16,
+    "correct": 11
+   },
+   "bruise": {
+    "n": 25,
+    "answered": 16,
+    "correct": 16
+   },
+   "burn": {
+    "n": 161,
+    "answered": 74,
+    "correct": 69
+   },
+   "cut": {
+    "n": 35,
+    "answered": 20,
+    "correct": 19
+   }
+  }
+ },
+ "val_browser_summed_C0": {
+  "eligible": 251,
+  "answered": 178,
+  "correct": 166,
+  "coverage": 70.9,
+  "acc_answered": 93.3,
+  "correct_of_eligible": 66.1,
+  "nonwound_labelled": 25,
+  "nonwound": 94,
+  "burns": 161,
+  "burns_answered": 127,
+  "burns_as_burn": 124,
+  "burn_shown_other_injury": 3,
+  "other_injury_shown_burn": 5,
+  "deg3_shown_other_injury": 1,
+  "per_class": {
+   "abrasion": {
+    "n": 30,
+    "answered": 16,
+    "correct": 10
+   },
+   "bruise": {
+    "n": 25,
+    "answered": 14,
+    "correct": 14
+   },
+   "burn": {
+    "n": 161,
+    "answered": 127,
+    "correct": 124
+   },
+   "cut": {
+    "n": 35,
+    "answered": 21,
+    "correct": 18
+   }
+  }
+ },
+ "val_browser_summed_C1": {
+  "eligible": 251,
+  "answered": 186,
+  "correct": 172,
+  "coverage": 74.1,
+  "acc_answered": 92.5,
+  "correct_of_eligible": 68.5,
+  "nonwound_labelled": 26,
+  "nonwound": 94,
+  "burns": 161,
+  "burns_answered": 131,
+  "burns_as_burn": 126,
+  "burn_shown_other_injury": 5,
+  "other_injury_shown_burn": 5,
+  "deg3_shown_other_injury": 1,
+  "per_class": {
+   "abrasion": {
+    "n": 30,
+    "answered": 17,
+    "correct": 11
+   },
+   "bruise": {
+    "n": 25,
+    "answered": 16,
+    "correct": 16
+   },
+   "burn": {
+    "n": 161,
+    "answered": 131,
+    "correct": 126
+   },
+   "cut": {
+    "n": 35,
+    "answered": 22,
+    "correct": 19
+   }
+  }
+ },
+ "val_raw_after_C0": {
+  "eligible": 251,
+  "answered": 116,
+  "correct": 108,
+  "coverage": 46.2,
+  "acc_answered": 93.1,
+  "correct_of_eligible": 43.0,
+  "nonwound_labelled": 16,
+  "nonwound": 94,
+  "burns": 161,
+  "burns_answered": 70,
+  "burns_as_burn": 68,
+  "burn_shown_other_injury": 2,
+  "other_injury_shown_burn": 2,
+  "deg3_shown_other_injury": 0,
+  "per_class": {
+   "abrasion": {
+    "n": 30,
+    "answered": 14,
+    "correct": 10
+   },
+   "bruise": {
+    "n": 25,
+    "answered": 12,
+    "correct": 11
+   },
+   "burn": {
+    "n": 161,
+    "answered": 70,
+    "correct": 68
+   },
+   "cut": {
+    "n": 35,
+    "answered": 20,
+    "correct": 19
+   }
+  }
+ },
+ "val_raw_after_C1": {
+  "eligible": 251,
+  "answered": 127,
+  "correct": 115,
+  "coverage": 50.6,
+  "acc_answered": 90.6,
+  "correct_of_eligible": 45.8,
+  "nonwound_labelled": 18,
+  "nonwound": 94,
+  "burns": 161,
+  "burns_answered": 75,
+  "burns_as_burn": 71,
+  "burn_shown_other_injury": 4,
+  "other_injury_shown_burn": 2,
+  "deg3_shown_other_injury": 0,
+  "per_class": {
+   "abrasion": {
+    "n": 30,
+    "answered": 18,
+    "correct": 12
+   },
+   "bruise": {
+    "n": 25,
+    "answered": 14,
+    "correct": 13
+   },
+   "burn": {
+    "n": 161,
+    "answered": 75,
+    "correct": 71
+   },
+   "cut": {
+    "n": 35,
+    "answered": 20,
+    "correct": 19
+   }
+  }
+ },
+ "val_raw_summed_C0": {
+  "eligible": 251,
+  "answered": 174,
+  "correct": 161,
+  "coverage": 69.3,
+  "acc_answered": 92.5,
+  "correct_of_eligible": 64.1,
+  "nonwound_labelled": 29,
+  "nonwound": 94,
+  "burns": 161,
+  "burns_answered": 123,
+  "burns_as_burn": 121,
+  "burn_shown_other_injury": 2,
+  "other_injury_shown_burn": 7,
+  "deg3_shown_other_injury": 0,
+  "per_class": {
+   "abrasion": {
+    "n": 30,
+    "answered": 17,
+    "correct": 10
+   },
+   "bruise": {
+    "n": 25,
+    "answered": 12,
+    "correct": 11
+   },
+   "burn": {
+    "n": 161,
+    "answered": 123,
+    "correct": 121
+   },
+   "cut": {
+    "n": 35,
+    "answered": 22,
+    "correct": 19
+   }
+  }
+ },
+ "val_raw_summed_C1": {
+  "eligible": 251,
+  "answered": 183,
+  "correct": 166,
+  "coverage": 72.9,
+  "acc_answered": 90.7,
+  "correct_of_eligible": 66.1,
+  "nonwound_labelled": 31,
+  "nonwound": 94,
+  "burns": 161,
+  "burns_answered": 126,
+  "burns_as_burn": 122,
+  "burn_shown_other_injury": 4,
+  "other_injury_shown_burn": 7,
+  "deg3_shown_other_injury": 0,
+  "per_class": {
+   "abrasion": {
+    "n": 30,
+    "answered": 21,
+    "correct": 12
+   },
+   "bruise": {
+    "n": 25,
+    "answered": 14,
+    "correct": 13
+   },
+   "burn": {
+    "n": 161,
+    "answered": 126,
+    "correct": 122
+   },
+   "cut": {
+    "n": 35,
+    "answered": 22,
+    "correct": 19
+   }
+  }
+ },
+ "test_browser_after_C0": {
+  "eligible": 331,
+  "answered": 156,
+  "correct": 138,
+  "coverage": 47.1,
+  "acc_answered": 88.5,
+  "correct_of_eligible": 41.7,
+  "nonwound_labelled": 56,
+  "nonwound": 450,
+  "burns": 211,
+  "burns_answered": 97,
+  "burns_as_burn": 90,
+  "burn_shown_other_injury": 7,
+  "other_injury_shown_burn": 7,
+  "deg3_shown_other_injury": 3,
+  "per_class": {
+   "abrasion": {
+    "n": 41,
+    "answered": 20,
+    "correct": 14
+   },
+   "bruise": {
+    "n": 33,
+    "answered": 14,
+    "correct": 10
+   },
+   "burn": {
+    "n": 211,
+    "answered": 97,
+    "correct": 90
+   },
+   "cut": {
+    "n": 46,
+    "answered": 25,
+    "correct": 24
+   }
+  }
+ },
+ "test_browser_after_C1": {
+  "eligible": 331,
+  "answered": 160,
+  "correct": 141,
+  "coverage": 48.3,
+  "acc_answered": 88.1,
+  "correct_of_eligible": 42.6,
+  "nonwound_labelled": 61,
+  "nonwound": 450,
+  "burns": 211,
+  "burns_answered": 99,
+  "burns_as_burn": 91,
+  "burn_shown_other_injury": 8,
+  "other_injury_shown_burn": 7,
+  "deg3_shown_other_injury": 4,
+  "per_class": {
+   "abrasion": {
+    "n": 41,
+    "answered": 20,
+    "correct": 14
+   },
+   "bruise": {
+    "n": 33,
+    "answered": 16,
+    "correct": 12
+   },
+   "burn": {
+    "n": 211,
+    "answered": 99,
+    "correct": 91
+   },
+   "cut": {
+    "n": 46,
+    "answered": 25,
+    "correct": 24
+   }
+  }
+ },
+ "test_browser_summed_C0": {
+  "eligible": 331,
+  "answered": 218,
+  "correct": 192,
+  "coverage": 65.9,
+  "acc_answered": 88.1,
+  "correct_of_eligible": 58.0,
+  "nonwound_labelled": 112,
+  "nonwound": 450,
+  "burns": 211,
+  "burns_answered": 151,
+  "burns_as_burn": 144,
+  "burn_shown_other_injury": 7,
+  "other_injury_shown_burn": 15,
+  "deg3_shown_other_injury": 3,
+  "per_class": {
+   "abrasion": {
+    "n": 41,
+    "answered": 25,
+    "correct": 14
+   },
+   "bruise": {
+    "n": 33,
+    "answered": 16,
+    "correct": 10
+   },
+   "burn": {
+    "n": 211,
+    "answered": 151,
+    "correct": 144
+   },
+   "cut": {
+    "n": 46,
+    "answered": 26,
+    "correct": 24
+   }
+  }
+ },
+ "test_browser_summed_C1": {
+  "eligible": 331,
+  "answered": 224,
+  "correct": 197,
+  "coverage": 67.7,
+  "acc_answered": 87.9,
+  "correct_of_eligible": 59.5,
+  "nonwound_labelled": 120,
+  "nonwound": 450,
+  "burns": 211,
+  "burns_answered": 155,
+  "burns_as_burn": 147,
+  "burn_shown_other_injury": 8,
+  "other_injury_shown_burn": 15,
+  "deg3_shown_other_injury": 4,
+  "per_class": {
+   "abrasion": {
+    "n": 41,
+    "answered": 25,
+    "correct": 14
+   },
+   "bruise": {
+    "n": 33,
+    "answered": 18,
+    "correct": 12
+   },
+   "burn": {
+    "n": 211,
+    "answered": 155,
+    "correct": 147
+   },
+   "cut": {
+    "n": 46,
+    "answered": 26,
+    "correct": 24
+   }
+  }
+ },
+ "test_raw_after_C0": {
+  "eligible": 331,
+  "answered": 159,
+  "correct": 141,
+  "coverage": 48.0,
+  "acc_answered": 88.7,
+  "correct_of_eligible": 42.6,
+  "nonwound_labelled": 68,
+  "nonwound": 450,
+  "burns": 211,
+  "burns_answered": 98,
+  "burns_as_burn": 92,
+  "burn_shown_other_injury": 6,
+  "other_injury_shown_burn": 8,
+  "deg3_shown_other_injury": 2,
+  "per_class": {
+   "abrasion": {
+    "n": 41,
+    "answered": 20,
+    "correct": 14
+   },
+   "bruise": {
+    "n": 33,
+    "answered": 16,
+    "correct": 11
+   },
+   "burn": {
+    "n": 211,
+    "answered": 98,
+    "correct": 92
+   },
+   "cut": {
+    "n": 46,
+    "answered": 25,
+    "correct": 24
+   }
+  }
+ },
+ "test_raw_after_C1": {
+  "eligible": 331,
+  "answered": 162,
+  "correct": 143,
+  "coverage": 48.9,
+  "acc_answered": 88.3,
+  "correct_of_eligible": 43.2,
+  "nonwound_labelled": 70,
+  "nonwound": 450,
+  "burns": 211,
+  "burns_answered": 100,
+  "burns_as_burn": 93,
+  "burn_shown_other_injury": 7,
+  "other_injury_shown_burn": 8,
+  "deg3_shown_other_injury": 3,
+  "per_class": {
+   "abrasion": {
+    "n": 41,
+    "answered": 20,
+    "correct": 14
+   },
+   "bruise": {
+    "n": 33,
+    "answered": 17,
+    "correct": 12
+   },
+   "burn": {
+    "n": 211,
+    "answered": 100,
+    "correct": 93
+   },
+   "cut": {
+    "n": 46,
+    "answered": 25,
+    "correct": 24
+   }
+  }
+ },
+ "test_raw_summed_C0": {
+  "eligible": 331,
+  "answered": 229,
+  "correct": 204,
+  "coverage": 69.2,
+  "acc_answered": 89.1,
+  "correct_of_eligible": 61.6,
+  "nonwound_labelled": 126,
+  "nonwound": 450,
+  "burns": 211,
+  "burns_answered": 161,
+  "burns_as_burn": 155,
+  "burn_shown_other_injury": 6,
+  "other_injury_shown_burn": 15,
+  "deg3_shown_other_injury": 2,
+  "per_class": {
+   "abrasion": {
+    "n": 41,
+    "answered": 25,
+    "correct": 14
+   },
+   "bruise": {
+    "n": 33,
+    "answered": 17,
+    "correct": 11
+   },
+   "burn": {
+    "n": 211,
+    "answered": 161,
+    "correct": 155
+   },
+   "cut": {
+    "n": 46,
+    "answered": 26,
+    "correct": 24
+   }
+  }
+ },
+ "test_raw_summed_C1": {
+  "eligible": 331,
+  "answered": 234,
+  "correct": 208,
+  "coverage": 70.7,
+  "acc_answered": 88.9,
+  "correct_of_eligible": 62.8,
+  "nonwound_labelled": 134,
+  "nonwound": 450,
+  "burns": 211,
+  "burns_answered": 165,
+  "burns_as_burn": 158,
+  "burn_shown_other_injury": 7,
+  "other_injury_shown_burn": 15,
+  "deg3_shown_other_injury": 3,
+  "per_class": {
+   "abrasion": {
+    "n": 41,
+    "answered": 25,
+    "correct": 14
+   },
+   "bruise": {
+    "n": 33,
+    "answered": 18,
+    "correct": 12
+   },
+   "burn": {
+    "n": 211,
+    "answered": 165,
+    "correct": 158
+   },
+   "cut": {
+    "n": 46,
+    "answered": 26,
+    "correct": 24
+   }
+  }
+ },
+ "x4b_rule": {
+  "val_errors": 12,
+  "involving_burn": 8,
+  "justified": true,
+  "confusions": {
+   "abrasion->bruise": 4,
+   "abrasion->burn": 2,
+   "burn->abrasion": 3,
+   "cut->burn": 3
+  }
+ },
+ "rit_browser_after_C0": {
+  "in_scope": {
+   "n": 48,
+   "answered": 23,
+   "correct": 23,
+   "shown_burn": 0
+  },
+  "burns": {
+   "n": 67,
+   "burn": 23,
+   "other_injury": 1,
+   "unknown": 43,
+   "ci_burn": [
+    24.1,
+    46.3
+   ]
+  },
+  "non_wound": {
+   "lower_limb_feet": {
+    "n": 1613,
+    "labelled": 175,
+    "as_burn": 61
+   },
+   "lower_limb_wounds": {
+    "n": 1313,
+    "labelled": 131,
+    "as_burn": 104
+   },
+   "roboflow_wound_v1": {
+    "n": 22,
+    "labelled": 6,
+    "as_burn": 3
+   }
+  }
+ },
+ "rit_browser_after_C1": {
+  "in_scope": {
+   "n": 48,
+   "answered": 24,
+   "correct": 24,
+   "shown_burn": 0
+  },
+  "burns": {
+   "n": 67,
+   "burn": 23,
+   "other_injury": 1,
+   "unknown": 43,
+   "ci_burn": [
+    24.1,
+    46.3
+   ]
+  },
+  "non_wound": {
+   "lower_limb_feet": {
+    "n": 1613,
+    "labelled": 183,
+    "as_burn": 67
+   },
+   "lower_limb_wounds": {
+    "n": 1313,
+    "labelled": 133,
+    "as_burn": 104
+   },
+   "roboflow_wound_v1": {
+    "n": 22,
+    "labelled": 6,
+    "as_burn": 3
+   }
+  }
+ },
+ "rit_browser_summed_C0": {
+  "in_scope": {
+   "n": 48,
+   "answered": 26,
+   "correct": 23,
+   "shown_burn": 3
+  },
+  "burns": {
+   "n": 67,
+   "burn": 43,
+   "other_injury": 1,
+   "unknown": 23,
+   "ci_burn": [
+    52.2,
+    74.6
+   ]
+  },
+  "non_wound": {
+   "lower_limb_feet": {
+    "n": 1613,
+    "labelled": 543,
+    "as_burn": 429
+   },
+   "lower_limb_wounds": {
+    "n": 1313,
+    "labelled": 301,
+    "as_burn": 274
+   },
+   "roboflow_wound_v1": {
+    "n": 22,
+    "labelled": 11,
+    "as_burn": 8
+   }
+  }
+ },
+ "rit_browser_summed_C1": {
+  "in_scope": {
+   "n": 48,
+   "answered": 27,
+   "correct": 24,
+   "shown_burn": 3
+  },
+  "burns": {
+   "n": 67,
+   "burn": 44,
+   "other_injury": 1,
+   "unknown": 22,
+   "ci_burn": [
+    53.7,
+    75.9
+   ]
+  },
+  "non_wound": {
+   "lower_limb_feet": {
+    "n": 1613,
+    "labelled": 560,
+    "as_burn": 444
+   },
+   "lower_limb_wounds": {
+    "n": 1313,
+    "labelled": 305,
+    "as_burn": 276
+   },
+   "roboflow_wound_v1": {
+    "n": 22,
+    "labelled": 11,
+    "as_burn": 8
+   }
+  }
+ }
+}

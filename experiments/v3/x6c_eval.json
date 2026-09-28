@@ -1,0 +1,119 @@
+{
+ "R_exact_s1": {
+  "val_aurc": 0.207,
+  "test_aurc": 0.259,
+  "val_acc_matched": 80.2,
+  "val_nonwound_matched": 14,
+  "val_tierA_matched": 3,
+  "test_060": {
+   "eligible": 331,
+   "answered": 127,
+   "correct": 97,
+   "coverage": 38.4,
+   "acc_answered": 76.4,
+   "correct_of_eligible": 29.3,
+   "nonwound": 450,
+   "nonwound_labelled": 72,
+   "tierA": 2,
+   "n_3rd": 40,
+   "tierB": 5,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 14,
+     "correct": 9,
+     "abstained": 27
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 8,
+     "correct": 6,
+     "abstained": 25
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 41,
+     "correct": 38,
+     "abstained": 47
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 21,
+     "correct": 4,
+     "abstained": 62
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 20,
+     "correct": 18,
+     "abstained": 20
+    },
+    "cut": {
+     "n": 46,
+     "answered": 23,
+     "correct": 22,
+     "abstained": 23
+    }
+   }
+  }
+ },
+ "X6C_s1": {
+  "val_aurc": 0.172,
+  "test_aurc": 0.252,
+  "val_acc_matched": 84.5,
+  "val_nonwound_matched": 15,
+  "val_tierA_matched": 2,
+  "test_060": {
+   "eligible": 331,
+   "answered": 160,
+   "correct": 116,
+   "coverage": 48.3,
+   "acc_answered": 72.5,
+   "correct_of_eligible": 35.0,
+   "nonwound": 450,
+   "nonwound_labelled": 66,
+   "tierA": 3,
+   "n_3rd": 40,
+   "tierB": 9,
+   "per_class": {
+    "abrasion": {
+     "n": 41,
+     "answered": 16,
+     "correct": 8,
+     "abstained": 25
+    },
+    "bruise": {
+     "n": 33,
+     "answered": 18,
+     "correct": 14,
+     "abstained": 15
+    },
+    "burn_1st_degree": {
+     "n": 88,
+     "answered": 49,
+     "correct": 36,
+     "abstained": 39
+    },
+    "burn_2nd_degree": {
+     "n": 83,
+     "answered": 38,
+     "correct": 23,
+     "abstained": 45
+    },
+    "burn_3rd_degree": {
+     "n": 40,
+     "answered": 11,
+     "correct": 8,
+     "abstained": 29
+    },
+    "cut": {
+     "n": 46,
+     "answered": 28,
+     "correct": 27,
+     "abstained": 18
+    }
+   }
+  }
+ },
+ "continue": true
+}

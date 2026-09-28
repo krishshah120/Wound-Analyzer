@@ -1,0 +1,320 @@
+filename,label,split,similarity_to_out_of_scope,tier,quarantined_from_training
+abrasion_kg1_4.jpg,abrasion,train,0.801,T4 similar only,no
+abrasion_kg1_11.jpg,abrasion,train,0.868,T4 similar only,no
+abrasion_kg1_16.jpg,abrasion,train,0.839,T4 similar only,no
+abrasion_kg1_17.jpg,abrasion,train,0.848,T4 similar only,no
+abrasion_kg1_22.jpg,abrasion,train,0.803,T4 similar only,no
+abrasion_kg1_24.jpg,abrasion,train,0.806,T4 similar only,no
+abrasion_kg1_31.jpg,abrasion,train,0.816,T4 similar only,no
+abrasion_kg1_36.jpg,abrasion,train,0.827,T4 similar only,no
+abrasion_kg1_37.jpg,abrasion,train,0.838,T4 similar only,no
+abrasion_kg1_40.jpg,abrasion,train,0.828,T4 similar only,no
+abrasion_kg1_46.jpg,abrasion,train,0.834,T4 similar only,no
+abrasion_kg1_51.jpg,abrasion,train,0.817,T4 similar only,no
+abrasion_kg1_56.jpg,abrasion,train,0.818,T4 similar only,no
+abrasion_kg1_57.jpg,abrasion,test,0.810,T4 similar only,no
+abrasion_kg1_61.jpg,abrasion,train,0.803,T4 similar only,no
+abrasion_kg1_62.jpg,abrasion,val,0.826,T4 similar only,no
+abrasion_kg1_71.jpg,abrasion,train,0.827,T4 similar only,no
+abrasion_kg1_74.jpg,abrasion,train,0.812,T4 similar only,no
+abrasion_kg1_76.jpg,abrasion,train,0.802,T4 similar only,no
+abrasion_kg1_87.jpg,abrasion,train,0.817,T4 similar only,no
+abrasion_kg1_90.jpg,abrasion,train,0.808,T4 similar only,no
+abrasion_kg1_91.jpg,abrasion,train,0.806,T4 similar only,no
+abrasion_kg1_105.jpg,abrasion,train,0.809,T4 similar only,no
+abrasion_kg1_107.jpg,abrasion,train,0.819,T4 similar only,no
+abrasion_kg1_108.jpg,abrasion,train,0.841,T4 similar only,no
+abrasion_kg1_110.jpg,abrasion,train,0.858,T4 similar only,no
+abrasion_kg1_116.jpg,abrasion,train,0.814,T4 similar only,no
+abrasion_kg1_117.jpg,abrasion,train,0.819,T4 similar only,no
+abrasion_kg1_135.jpg,abrasion,train,0.828,T4 similar only,no
+abrasion_kg1_138.jpg,abrasion,train,0.848,T4 similar only,no
+abrasion_kg1_140.jpg,abrasion,test,0.814,T4 similar only,no
+abrasion_kg1_145.jpg,abrasion,train,0.841,T4 similar only,no
+abrasion_kg1_152.jpg,abrasion,train,0.802,T4 similar only,no
+abrasion_kg1_157.jpg,abrasion,train,0.805,T4 similar only,no
+abrasion_kg1_159.jpg,abrasion,train,0.810,T4 similar only,no
+abrasion_kg1_163.jpg,abrasion,train,0.803,T4 similar only,no
+abrasion_kg1_177.jpg,abrasion,train,0.842,T4 similar only,no
+abrasion_kg1_189.jpg,abrasion,train,0.868,T4 similar only,no
+abrasion_kg1_191.jpg,abrasion,train,0.823,T4 similar only,no
+abrasion_kg1_192.jpg,abrasion,train,0.832,T4 similar only,no
+bruise_kg1_2.jpg,bruise,train,0.807,T4 similar only,no
+bruise_kg1_5.jpg,bruise,train,0.874,T3 caution,no
+bruise_kg1_11.jpg,bruise,train,0.819,T4 similar only,no
+bruise_kg1_13.jpg,bruise,train,0.828,T4 similar only,no
+bruise_kg1_15.jpg,bruise,train,0.847,T4 similar only,no
+bruise_kg1_16.jpg,bruise,train,0.871,T3 caution,no
+bruise_kg1_20.jpg,bruise,train,0.832,T4 similar only,no
+bruise_kg1_22.jpg,bruise,train,0.821,T4 similar only,no
+bruise_kg1_24.jpg,bruise,train,0.866,T4 similar only,no
+bruise_kg1_27.jpg,bruise,train,0.811,T4 similar only,no
+bruise_kg1_29.jpg,bruise,train,0.899,T3 caution,no
+bruise_kg1_34.jpg,bruise,train,0.830,T4 similar only,no
+bruise_kg1_36.jpg,bruise,train,0.806,T4 similar only,no
+bruise_kg1_38.jpg,bruise,train,0.870,T3 caution,no
+bruise_kg1_40.jpg,bruise,train,0.847,T4 similar only,no
+bruise_kg1_41.jpg,bruise,train,0.804,T4 similar only,no
+bruise_kg1_43.jpg,bruise,train,0.894,T3 caution,no
+bruise_kg1_44.jpg,bruise,train,0.824,T4 similar only,no
+bruise_kg1_45.jpg,bruise,train,0.829,T4 similar only,no
+bruise_kg1_46.jpg,bruise,train,0.817,T4 similar only,no
+bruise_kg1_48.jpg,bruise,train,0.840,T4 similar only,no
+bruise_kg1_51.jpg,bruise,train,0.815,T4 similar only,no
+bruise_kg1_58.jpg,bruise,train,0.913,T3 caution,no
+bruise_kg1_60.jpg,bruise,train,0.906,T3 caution,no
+bruise_kg1_66.jpg,bruise,train,0.809,T4 similar only,no
+bruise_kg1_69.jpg,bruise,train,0.805,T4 similar only,no
+bruise_kg1_75.jpg,bruise,train,0.849,T4 similar only,no
+bruise_kg1_85.jpg,bruise,test,0.851,T4 similar only,no
+bruise_kg1_94.jpg,bruise,train,0.820,T4 similar only,no
+bruise_kg1_97.jpg,bruise,train,0.848,T4 similar only,no
+bruise_kg1_100.jpg,bruise,train,0.827,T4 similar only,no
+bruise_kg1_108.jpg,bruise,val,0.899,T3 caution,no
+bruise_kg1_109.jpg,bruise,train,0.830,T4 similar only,no
+bruise_kg1_110.jpg,bruise,train,0.874,T3 caution,no
+bruise_kg1_111.jpg,bruise,train,0.801,T4 similar only,no
+bruise_kg1_112.jpg,bruise,train,0.805,T4 similar only,no
+bruise_kg1_113.jpg,bruise,train,0.828,T4 similar only,no
+bruise_kg1_131.jpg,bruise,train,0.857,T4 similar only,no
+bruise_kg1_132.jpg,bruise,train,0.907,T3 caution,no
+bruise_kg1_134.jpg,bruise,train,0.831,T4 similar only,no
+bruise_kg1_138.jpg,bruise,train,0.801,T4 similar only,no
+bruise_kg1_147.jpg,bruise,train,0.834,T4 similar only,no
+bruise_kg1_150.jpg,bruise,train,0.832,T4 similar only,no
+bruise_kg1_151.jpg,bruise,train,0.874,T3 caution,no
+bruise_kg1_155.jpg,bruise,train,0.834,T4 similar only,no
+bruise_kg1_157.jpg,bruise,train,0.849,T4 similar only,no
+bruise_kg1_158.jpg,bruise,train,0.891,T3 caution,no
+bruise_kg1_160.jpg,bruise,train,0.839,T4 similar only,no
+bruise_kg1_163.jpg,bruise,train,0.810,T4 similar only,no
+bruise_kg1_164.jpg,bruise,train,0.809,T4 similar only,no
+cut_kg1_4.jpg,cut,train,0.811,T4 similar only,no
+cut_kg1_15.jpg,cut,test,0.800,T4 similar only,no
+cut_kg1_33.jpg,cut,train,0.851,T4 similar only,no
+cut_kg1_44.jpg,cut,train,0.800,T4 similar only,no
+cut_kg1_72.jpg,cut,train,0.826,T4 similar only,no
+cut_kg1_132.jpg,cut,train,0.809,T4 similar only,no
+cut_kg1_136.jpg,cut,train,0.801,T4 similar only,no
+cut_kg1_147.jpg,cut,val,0.826,T4 similar only,no
+cut_kg1_156.jpg,cut,train,0.822,T4 similar only,no
+cut_kg1_158.jpg,cut,train,0.807,T4 similar only,no
+cut_kg1_164.jpg,cut,val,0.838,T4 similar only,no
+cut_kg1_169.jpg,cut,train,0.829,T4 similar only,no
+cut_kg1_195.jpg,cut,train,0.818,T4 similar only,no
+burn_1st_degree_kg2_0.jpg,burn_1st_degree,train,0.847,T4 similar only,no
+burn_2nd_degree_kg2_1.jpg,burn_2nd_degree,train,0.869,T4 similar only,no
+burn_1st_degree_kg2_2.jpg,burn_1st_degree,train,0.860,T4 similar only,no
+burn_1st_degree_kg2_9.jpg,burn_1st_degree,train,0.806,T4 similar only,no
+burn_1st_degree_kg2_11.jpg,burn_1st_degree,val,0.807,T4 similar only,no
+burn_2nd_degree_kg2_15.jpg,burn_2nd_degree,train,0.818,T4 similar only,no
+burn_2nd_degree_kg2_20.jpg,burn_2nd_degree,train,0.818,T4 similar only,no
+burn_2nd_degree_kg2_25.jpg,burn_2nd_degree,train,0.809,T4 similar only,no
+burn_1st_degree_kg2_27.jpg,burn_1st_degree,train,0.815,T4 similar only,no
+burn_2nd_degree_kg2_32.jpg,burn_2nd_degree,train,0.804,T4 similar only,no
+burn_1st_degree_kg2_37.jpg,burn_1st_degree,test,0.808,T4 similar only,no
+burn_1st_degree_kg2_41.jpg,burn_1st_degree,train,0.862,T4 similar only,no
+burn_2nd_degree_kg2_42.jpg,burn_2nd_degree,test,0.812,T4 similar only,no
+burn_1st_degree_kg2_49.jpg,burn_1st_degree,train,0.809,T4 similar only,no
+burn_2nd_degree_kg2_80.jpg,burn_2nd_degree,test,0.810,T4 similar only,no
+burn_2nd_degree_kg2_82.jpg,burn_2nd_degree,train,0.842,T4 similar only,no
+burn_3rd_degree_kg2_84.jpg,burn_3rd_degree,train,0.861,T4 similar only,no
+burn_2nd_degree_kg2_86.jpg,burn_2nd_degree,train,0.865,T4 similar only,no
+burn_1st_degree_kg2_88.jpg,burn_1st_degree,train,0.836,T4 similar only,no
+burn_2nd_degree_kg2_89.jpg,burn_2nd_degree,test,0.829,T4 similar only,no
+burn_1st_degree_kg2_90.jpg,burn_1st_degree,train,0.913,T3 caution,no
+burn_2nd_degree_kg2_101.jpg,burn_2nd_degree,train,0.841,T4 similar only,no
+burn_1st_degree_kg2_102.jpg,burn_1st_degree,train,0.861,T4 similar only,no
+burn_2nd_degree_kg2_104.jpg,burn_2nd_degree,train,0.841,T4 similar only,no
+burn_1st_degree_kg2_112.jpg,burn_1st_degree,train,0.809,T4 similar only,no
+burn_1st_degree_kg2_115.jpg,burn_1st_degree,val,0.810,T4 similar only,no
+burn_2nd_degree_kg2_122.jpg,burn_2nd_degree,train,0.910,T3 caution,no
+burn_3rd_degree_kg2_124.jpg,burn_3rd_degree,train,0.838,T4 similar only,no
+burn_1st_degree_kg2_135.jpg,burn_1st_degree,train,0.851,T4 similar only,no
+burn_1st_degree_kg2_150.jpg,burn_1st_degree,train,0.816,T4 similar only,no
+burn_2nd_degree_kg2_151.jpg,burn_2nd_degree,train,0.820,T4 similar only,no
+burn_2nd_degree_kg2_154.jpg,burn_2nd_degree,train,0.948,T1/T2 conflict,yes
+burn_1st_degree_kg2_156.jpg,burn_1st_degree,val,1.000,T3 caution,no
+burn_3rd_degree_kg2_163.jpg,burn_3rd_degree,train,0.803,T4 similar only,no
+burn_2nd_degree_kg2_165.jpg,burn_2nd_degree,train,0.830,T4 similar only,no
+burn_3rd_degree_kg2_168.jpg,burn_3rd_degree,test,0.820,T4 similar only,no
+burn_1st_degree_kg2_171.jpg,burn_1st_degree,train,0.865,T4 similar only,no
+burn_2nd_degree_kg2_178.jpg,burn_2nd_degree,train,0.808,T1/T2 conflict,yes
+burn_1st_degree_kg2_180.jpg,burn_1st_degree,test,0.810,T4 similar only,no
+burn_2nd_degree_kg2_185.jpg,burn_2nd_degree,train,0.808,T4 similar only,no
+burn_2nd_degree_kg2_186.jpg,burn_2nd_degree,train,0.802,T4 similar only,no
+burn_2nd_degree_kg2_189.jpg,burn_2nd_degree,train,0.818,T1/T2 conflict,yes
+burn_2nd_degree_kg2_197.jpg,burn_2nd_degree,train,0.865,T4 similar only,no
+burn_2nd_degree_kg2_198.jpg,burn_2nd_degree,train,0.803,T4 similar only,no
+burn_3rd_degree_kg2_200.jpg,burn_3rd_degree,test,0.810,T4 similar only,no
+burn_1st_degree_kg2_202.jpg,burn_1st_degree,train,0.840,T4 similar only,no
+burn_1st_degree_kg2_215.jpg,burn_1st_degree,train,0.812,T4 similar only,no
+burn_1st_degree_kg2_216.jpg,burn_1st_degree,train,0.811,T4 similar only,no
+burn_1st_degree_kg2_217.jpg,burn_1st_degree,train,0.857,T4 similar only,no
+burn_1st_degree_kg2_225.jpg,burn_1st_degree,train,0.849,T4 similar only,no
+burn_1st_degree_kg2_228.jpg,burn_1st_degree,train,0.811,T4 similar only,no
+burn_1st_degree_kg2_234.jpg,burn_1st_degree,train,0.829,T4 similar only,no
+burn_2nd_degree_kg2_244.jpg,burn_2nd_degree,train,0.849,T4 similar only,no
+burn_1st_degree_kg2_249.jpg,burn_1st_degree,train,0.831,T4 similar only,no
+burn_2nd_degree_kg2_250.jpg,burn_2nd_degree,test,0.817,T4 similar only,no
+burn_2nd_degree_kg2_251.jpg,burn_2nd_degree,test,0.803,T4 similar only,no
+burn_3rd_degree_kg2_252.jpg,burn_3rd_degree,test,0.815,T4 similar only,no
+burn_1st_degree_kg2_264.jpg,burn_1st_degree,val,0.831,T4 similar only,no
+burn_2nd_degree_kg2_266.jpg,burn_2nd_degree,train,0.811,T4 similar only,no
+burn_2nd_degree_kg2_272.jpg,burn_2nd_degree,train,0.834,T4 similar only,no
+burn_2nd_degree_kg2_273.jpg,burn_2nd_degree,train,0.804,T4 similar only,no
+burn_1st_degree_kg2_275.jpg,burn_1st_degree,train,0.832,T4 similar only,no
+burn_1st_degree_kg2_276.jpg,burn_1st_degree,val,0.809,T4 similar only,no
+burn_2nd_degree_kg2_277.jpg,burn_2nd_degree,train,0.836,T4 similar only,no
+burn_2nd_degree_kg2_289.jpg,burn_2nd_degree,train,0.868,T4 similar only,no
+burn_2nd_degree_kg2_290.jpg,burn_2nd_degree,train,0.811,T4 similar only,no
+burn_2nd_degree_kg2_291.jpg,burn_2nd_degree,val,0.841,T4 similar only,no
+burn_1st_degree_kg2_294.jpg,burn_1st_degree,test,0.874,T3 caution,no
+burn_1st_degree_kg2_296.jpg,burn_1st_degree,train,0.808,T4 similar only,no
+burn_1st_degree_kg2_298.jpg,burn_1st_degree,train,0.842,T4 similar only,no
+burn_1st_degree_kg2_308.jpg,burn_1st_degree,train,0.819,T4 similar only,no
+burn_1st_degree_kg2_312.jpg,burn_1st_degree,train,0.856,T4 similar only,no
+burn_2nd_degree_kg2_317.jpg,burn_2nd_degree,train,0.916,T3 caution,no
+burn_2nd_degree_kg2_327.jpg,burn_2nd_degree,train,0.846,T4 similar only,no
+burn_2nd_degree_kg2_342.jpg,burn_2nd_degree,train,0.833,T4 similar only,no
+burn_1st_degree_kg2_349.jpg,burn_1st_degree,train,0.828,T4 similar only,no
+burn_2nd_degree_kg2_351.jpg,burn_2nd_degree,train,0.809,T4 similar only,no
+burn_2nd_degree_kg2_354.jpg,burn_2nd_degree,train,0.875,T3 caution,no
+burn_1st_degree_kg2_355.jpg,burn_1st_degree,test,0.800,T4 similar only,no
+burn_1st_degree_kg2_357.jpg,burn_1st_degree,train,0.869,T1/T2 conflict,yes
+burn_2nd_degree_kg2_373.jpg,burn_2nd_degree,test,0.839,T4 similar only,no
+burn_1st_degree_kg2_380.jpg,burn_1st_degree,train,0.836,T4 similar only,no
+burn_1st_degree_kg2_383.jpg,burn_1st_degree,train,0.821,T4 similar only,no
+burn_1st_degree_kg2_388.jpg,burn_1st_degree,train,0.834,T4 similar only,no
+burn_1st_degree_kg2_390.jpg,burn_1st_degree,test,0.842,T4 similar only,no
+burn_1st_degree_kg2_394.jpg,burn_1st_degree,train,0.804,T4 similar only,no
+burn_1st_degree_kg2_395.jpg,burn_1st_degree,train,0.880,T3 caution,no
+burn_2nd_degree_kg2_397.jpg,burn_2nd_degree,test,0.812,T4 similar only,no
+burn_2nd_degree_kg2_412.jpg,burn_2nd_degree,train,0.853,T4 similar only,no
+burn_2nd_degree_kg2_424.jpg,burn_2nd_degree,train,0.827,T4 similar only,no
+burn_1st_degree_kg2_430.jpg,burn_1st_degree,test,0.917,T3 caution,no
+burn_1st_degree_kg2_431.jpg,burn_1st_degree,train,0.811,T4 similar only,no
+burn_1st_degree_kg2_433.jpg,burn_1st_degree,train,0.818,T4 similar only,no
+burn_1st_degree_kg2_437.jpg,burn_1st_degree,val,0.831,T4 similar only,no
+burn_1st_degree_kg2_439.jpg,burn_1st_degree,train,0.805,T4 similar only,no
+burn_1st_degree_kg2_440.jpg,burn_1st_degree,train,0.895,T3 caution,no
+burn_2nd_degree_kg2_442.jpg,burn_2nd_degree,train,0.812,T4 similar only,no
+burn_1st_degree_kg2_446.jpg,burn_1st_degree,val,1.000,T3 caution,no
+burn_1st_degree_kg2_454.jpg,burn_1st_degree,train,0.846,T4 similar only,no
+burn_2nd_degree_kg2_468.jpg,burn_2nd_degree,train,0.859,T4 similar only,no
+burn_1st_degree_kg2_472.jpg,burn_1st_degree,train,0.918,T3 caution,no
+burn_2nd_degree_kg2_476.jpg,burn_2nd_degree,train,0.841,T4 similar only,no
+burn_1st_degree_kg2_489.jpg,burn_1st_degree,train,0.864,T4 similar only,no
+burn_1st_degree_kg2_491.jpg,burn_1st_degree,train,0.818,T4 similar only,no
+burn_1st_degree_kg2_494.jpg,burn_1st_degree,train,0.886,T1/T2 conflict,yes
+burn_1st_degree_kg2_495.jpg,burn_1st_degree,train,0.867,T4 similar only,no
+burn_1st_degree_kg2_497.jpg,burn_1st_degree,train,0.834,T4 similar only,no
+burn_1st_degree_kg2_501.jpg,burn_1st_degree,test,0.814,T4 similar only,no
+burn_2nd_degree_kg2_503.jpg,burn_2nd_degree,test,0.811,T4 similar only,no
+burn_1st_degree_kg2_506.jpg,burn_1st_degree,train,0.808,T4 similar only,no
+burn_1st_degree_kg2_512.jpg,burn_1st_degree,train,0.894,T3 caution,no
+burn_1st_degree_kg2_520.jpg,burn_1st_degree,train,0.808,T4 similar only,no
+burn_1st_degree_kg2_527.jpg,burn_1st_degree,train,0.807,T4 similar only,no
+burn_1st_degree_kg2_534.jpg,burn_1st_degree,train,0.803,T4 similar only,no
+burn_2nd_degree_kg2_550.jpg,burn_2nd_degree,train,0.808,T4 similar only,no
+burn_2nd_degree_kg2_553.jpg,burn_2nd_degree,train,0.814,T4 similar only,no
+burn_1st_degree_kg2_554.jpg,burn_1st_degree,test,0.806,T4 similar only,no
+burn_2nd_degree_kg2_561.jpg,burn_2nd_degree,val,0.809,T4 similar only,no
+burn_1st_degree_kg2_566.jpg,burn_1st_degree,train,0.848,T1/T2 conflict,yes
+burn_1st_degree_kg2_568.jpg,burn_1st_degree,train,0.813,T4 similar only,no
+burn_1st_degree_kg2_575.jpg,burn_1st_degree,train,0.851,T4 similar only,no
+burn_1st_degree_kg2_581.jpg,burn_1st_degree,train,0.806,T4 similar only,no
+burn_2nd_degree_kg2_585.jpg,burn_2nd_degree,train,0.804,T4 similar only,no
+burn_2nd_degree_kg2_587.jpg,burn_2nd_degree,train,0.804,T4 similar only,no
+burn_2nd_degree_kg2_589.jpg,burn_2nd_degree,test,0.812,T4 similar only,no
+burn_1st_degree_kg2_592.jpg,burn_1st_degree,train,0.869,T4 similar only,no
+burn_1st_degree_kg2_602.jpg,burn_1st_degree,train,0.828,T4 similar only,no
+burn_1st_degree_kg2_607.jpg,burn_1st_degree,train,0.803,T4 similar only,no
+burn_1st_degree_kg2_609.jpg,burn_1st_degree,train,0.859,T4 similar only,no
+burn_1st_degree_kg2_615.jpg,burn_1st_degree,train,0.865,T4 similar only,no
+burn_1st_degree_kg2_621.jpg,burn_1st_degree,train,0.834,T4 similar only,no
+burn_2nd_degree_kg2_627.jpg,burn_2nd_degree,train,0.817,T4 similar only,no
+burn_1st_degree_kg2_636.jpg,burn_1st_degree,train,0.825,T4 similar only,no
+burn_1st_degree_kg2_643.jpg,burn_1st_degree,test,0.832,T4 similar only,no
+burn_1st_degree_kg2_644.jpg,burn_1st_degree,train,0.846,T1/T2 conflict,yes
+burn_1st_degree_kg2_645.jpg,burn_1st_degree,train,0.826,T4 similar only,no
+burn_2nd_degree_kg2_646.jpg,burn_2nd_degree,train,0.814,T4 similar only,no
+burn_1st_degree_kg2_648.jpg,burn_1st_degree,train,0.886,T1/T2 conflict,yes
+burn_1st_degree_kg2_655.jpg,burn_1st_degree,train,0.809,T4 similar only,no
+burn_2nd_degree_kg2_677.jpg,burn_2nd_degree,train,0.848,T1/T2 conflict,yes
+burn_1st_degree_kg2_682.jpg,burn_1st_degree,train,0.811,T4 similar only,no
+burn_1st_degree_kg2_683.jpg,burn_1st_degree,test,0.831,T4 similar only,no
+burn_2nd_degree_kg2_685.jpg,burn_2nd_degree,train,0.806,T4 similar only,no
+burn_1st_degree_kg2_690.jpg,burn_1st_degree,train,0.879,T3 caution,no
+burn_1st_degree_kg2_693.jpg,burn_1st_degree,test,0.845,T4 similar only,no
+burn_2nd_degree_kg2_695.jpg,burn_2nd_degree,train,0.875,T3 caution,no
+burn_1st_degree_kg2_699.jpg,burn_1st_degree,test,0.811,T4 similar only,no
+burn_1st_degree_kg2_718.jpg,burn_1st_degree,train,0.839,T4 similar only,no
+burn_1st_degree_kg2_720.jpg,burn_1st_degree,test,0.825,T4 similar only,no
+burn_1st_degree_kg2_724.jpg,burn_1st_degree,test,0.931,T3 caution,no
+burn_1st_degree_kg2_742.jpg,burn_1st_degree,train,0.839,T4 similar only,no
+burn_1st_degree_kg2_745.jpg,burn_1st_degree,train,0.819,T4 similar only,no
+burn_2nd_degree_kg2_748.jpg,burn_2nd_degree,train,0.814,T4 similar only,no
+burn_2nd_degree_kg2_751.jpg,burn_2nd_degree,train,0.800,T4 similar only,no
+burn_1st_degree_kg2_752.jpg,burn_1st_degree,train,0.818,T1/T2 conflict,yes
+burn_1st_degree_kg2_754.jpg,burn_1st_degree,train,0.846,T4 similar only,no
+burn_2nd_degree_kg2_756.jpg,burn_2nd_degree,train,0.879,T3 caution,no
+burn_2nd_degree_kg2_760.jpg,burn_2nd_degree,train,0.868,T4 similar only,no
+burn_1st_degree_kg2_763.jpg,burn_1st_degree,train,0.824,T4 similar only,no
+burn_1st_degree_kg2_766.jpg,burn_1st_degree,train,0.808,T1/T2 conflict,yes
+burn_1st_degree_kg2_772.jpg,burn_1st_degree,train,0.902,T3 caution,no
+burn_1st_degree_kg2_774.jpg,burn_1st_degree,val,0.829,T4 similar only,no
+burn_2nd_degree_kg2_780.jpg,burn_2nd_degree,train,0.807,T4 similar only,no
+burn_1st_degree_kg2_785.jpg,burn_1st_degree,val,0.802,T4 similar only,no
+burn_2nd_degree_kg2_798.jpg,burn_2nd_degree,train,0.859,T4 similar only,no
+burn_1st_degree_kg2_801.jpg,burn_1st_degree,train,0.811,T4 similar only,no
+burn_1st_degree_kg2_805.jpg,burn_1st_degree,train,0.838,T4 similar only,no
+burn_1st_degree_kg2_807.jpg,burn_1st_degree,test,0.828,T4 similar only,no
+burn_1st_degree_kg2_815.jpg,burn_1st_degree,test,0.818,T4 similar only,no
+burn_1st_degree_kg2_819.jpg,burn_1st_degree,train,0.805,T4 similar only,no
+burn_2nd_degree_kg2_821.jpg,burn_2nd_degree,test,0.808,T4 similar only,no
+burn_2nd_degree_kg2_824.jpg,burn_2nd_degree,train,0.884,T3 caution,no
+burn_2nd_degree_kg2_826.jpg,burn_2nd_degree,val,0.801,T4 similar only,no
+burn_1st_degree_kg2_832.jpg,burn_1st_degree,train,0.800,T1/T2 conflict,yes
+burn_2nd_degree_kg2_836.jpg,burn_2nd_degree,val,0.804,T4 similar only,no
+burn_2nd_degree_kg2_845.jpg,burn_2nd_degree,train,0.834,T4 similar only,no
+burn_2nd_degree_kg2_847.jpg,burn_2nd_degree,train,0.807,T4 similar only,no
+burn_2nd_degree_kg2_849.jpg,burn_2nd_degree,train,0.868,T4 similar only,no
+burn_1st_degree_kg2_851.jpg,burn_1st_degree,train,0.880,T3 caution,no
+burn_1st_degree_kg2_871.jpg,burn_1st_degree,val,0.803,T4 similar only,no
+burn_1st_degree_kg2_875.jpg,burn_1st_degree,train,0.846,T1/T2 conflict,yes
+burn_2nd_degree_kg2_886.jpg,burn_2nd_degree,train,0.873,T3 caution,no
+burn_1st_degree_kg2_888.jpg,burn_1st_degree,test,0.813,T4 similar only,no
+burn_1st_degree_kg2_893.jpg,burn_1st_degree,train,0.807,T4 similar only,no
+burn_2nd_degree_kg2_894.jpg,burn_2nd_degree,train,0.888,T3 caution,no
+burn_3rd_degree_kg2_899.jpg,burn_3rd_degree,val,0.801,T4 similar only,no
+burn_2nd_degree_kg2_904.jpg,burn_2nd_degree,train,0.848,T1/T2 conflict,yes
+burn_1st_degree_kg2_905.jpg,burn_1st_degree,train,0.918,T3 caution,no
+burn_2nd_degree_kg2_906.jpg,burn_2nd_degree,train,0.809,T4 similar only,no
+burn_1st_degree_kg2_907.jpg,burn_1st_degree,train,0.885,T3 caution,no
+burn_1st_degree_kg2_910.jpg,burn_1st_degree,test,0.831,T4 similar only,no
+burn_2nd_degree_kg2_912.jpg,burn_2nd_degree,train,0.842,T4 similar only,no
+burn_1st_degree_kg2_939.jpg,burn_1st_degree,train,0.807,T1/T2 conflict,yes
+burn_1st_degree_kg2_946.jpg,burn_1st_degree,train,0.812,T4 similar only,no
+burn_2nd_degree_kg2_950.jpg,burn_2nd_degree,train,0.857,T4 similar only,no
+burn_2nd_degree_kg2_955.jpg,burn_2nd_degree,val,0.803,T4 similar only,no
+burn_1st_degree_kg2_959.jpg,burn_1st_degree,train,0.846,T4 similar only,no
+burn_1st_degree_kg2_960.jpg,burn_1st_degree,train,0.800,T4 similar only,no
+burn_1st_degree_kg2_961.jpg,burn_1st_degree,train,0.807,T4 similar only,no
+burn_2nd_degree_kg2_973.jpg,burn_2nd_degree,train,0.800,T1/T2 conflict,yes
+burn_2nd_degree_kg2_974.jpg,burn_2nd_degree,train,0.809,T4 similar only,no
+burn_1st_degree_kg2_978.jpg,burn_1st_degree,train,0.832,T4 similar only,no
+burn_2nd_degree_kg2_981.jpg,burn_2nd_degree,train,0.808,T4 similar only,no
+burn_2nd_degree_kg2_983.jpg,burn_2nd_degree,train,0.820,T4 similar only,no
+burn_1st_degree_kg2_985.jpg,burn_1st_degree,train,0.803,T4 similar only,no
+burn_1st_degree_kg2_986.jpg,burn_1st_degree,train,0.828,T4 similar only,no
+burn_3rd_degree_kg2_987.jpg,burn_3rd_degree,train,0.829,T4 similar only,no
+burn_1st_degree_kg2_989.jpg,burn_1st_degree,train,0.825,T4 similar only,no
+burn_1st_degree_kg2_1008.jpg,burn_1st_degree,train,0.801,T4 similar only,no
+burn_2nd_degree_kg2_1013.jpg,burn_2nd_degree,train,0.811,T4 similar only,no
+burn_2nd_degree_kg2_1015.jpg,burn_2nd_degree,train,0.820,T4 similar only,no
+burn_3rd_degree_kg2_1016.jpg,burn_3rd_degree,train,0.829,T4 similar only,no
+burn_1st_degree_kg2_1027.jpg,burn_1st_degree,test,0.802,T4 similar only,no
+burn_1st_degree_kg2_1041.jpg,burn_1st_degree,train,0.818,T4 similar only,no
+burn_1st_degree_kg2_1042.jpg,burn_1st_degree,train,0.839,T4 similar only,no
+burn_2nd_degree_kg2_1051.jpg,burn_2nd_degree,train,0.815,T4 similar only,no

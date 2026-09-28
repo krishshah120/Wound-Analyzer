@@ -1,0 +1,34 @@
+{
+ "val": {
+  "previously_answered_changed": 0,
+  "new_answers_total": 10,
+  "new_wound_right": 6,
+  "new_wound_wrong": 3,
+  "new_nonwound_labelled": 1,
+  "new_3rd_shown_other": 0,
+  "wrong_detail": [
+   "burn_1st_degree->cut",
+   "burn_1st_degree->cut",
+   "burn_2nd_degree->burn_1st_degree"
+  ]
+ },
+ "test": {
+  "previously_answered_changed": 0,
+  "new_answers_total": 9,
+  "new_wound_right": 3,
+  "new_wound_wrong": 1,
+  "new_nonwound_labelled": 5,
+  "new_3rd_shown_other": 1,
+  "wrong_detail": [
+   "burn_3rd_degree->abrasion"
+  ]
+ },
+ "val+test": {
+  "previously_answered_changed": 0,
+  "new_answers_total": 19,
+  "new_wound_right": 9,
+  "new_wound_wrong": 4,
+  "new_nonwound_labelled": 6,
+  "new_3rd_shown_other": 1
+ }
+}
