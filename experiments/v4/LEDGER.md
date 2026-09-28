@@ -69,3 +69,14 @@ Site: CONFIDENCE_THRESHOLD_PCT 60 -> 75 (mrcmiracle.github.io 8c57e87, wording o
 Rollback: previous version (possible burn, one gate, 0.60) = wound-analyzer-vercel-imjnkbxko;
 pre-09-27 version = wound-analyzer-vercel-qpgrxqjqx. Code copies: production_possible_burn/,
 production_two_gates_075/, ~/Downloads/wound-analyzer-artifacts/. Models: artifacts/v4-2026-09-27/.
+
+## v4c - crop-retry bar under the deployed config (raised by the MRC App session; rule fixed before computing)
+Deployed config: possible burn, two gates, 0.75. Crop options: none, or crop answer accepted at
+>= 0.80 / 0.85 / 0.90 / 0.95. Development data: val close-ups (data/val), val arm's-length
+(experiments/data_frame50/val, the framing used for the model card's "31%"), held-out healthy-skin
+photos. Keep the LOWEST bar at which the crop step adds >= 2 correct answers per false label it adds
+(wrong injury names + non-wound photos labelled + healthy-skin photos labelled), pooled over those
+three sets; if no bar qualifies, remove the crop retry. Test (close-up and arm's-length) and RIT reported only.
+Model card figures (for the MRC App session) are measured with the deployed server code itself on
+data/test and experiments/data_frame50/test, browser-encoded; a burn photo answered "possible_burn"
+counts as right (merged scoring), and the old model is re-scored the same way for a like-for-like line.
