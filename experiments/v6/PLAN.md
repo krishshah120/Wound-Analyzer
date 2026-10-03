@@ -41,3 +41,12 @@ Verdict pool (never used to choose): CLEANED test close-ups + 1,008 v5 independe
 "Confirmed" only if right > live (strictly) AND false alarms < live with the paired 95% bootstrap CI of the
 false-alarm difference below 0. Also reported: original (uncleaned) test, test arm's length, per-population,
 and the MRC App arm's-length reconstruction if its builder is provided.
+
+## Addendum (2026-10-03, before any flag or result)
+- experiments/v2/flagged_for_review.csv (319 automatic "resembles an out-of-scope photo" flags, never acted on)
+  already contains burn_1st_degree_kg2_693. flags.csv records, per U flag, whether the photo was already in it;
+  the report states how many U flags were found before ("found again") vs new.
+- Arm's-length set for the verdict: MRC App's reconstruction (~/Downloads/wound-analyzer-artifacts/
+  armslength_reconstruction.py: blurred self-copy background, photo at 0.5 scale, non-wounds padded too,
+  browser-encoded), applied to cleaned test; reported for live and candidate (reported, not a selection input).
+  experiments/data_frame50 is not used for verdicts (its non-wounds are unpadded).
