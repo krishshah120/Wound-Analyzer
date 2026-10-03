@@ -1,0 +1,256 @@
+{
+ "n_photos": 4173,
+ "errors": 0,
+ "populations": {
+  "chronic_wounds": 1216,
+  "faces_heldout": 139,
+  "faces_indep": 392,
+  "healthy_feet": 1508,
+  "other_healthy_skin_heldout": 243,
+  "other_healthy_skin_indep": 88,
+  "other_nonwound": 439,
+  "wound": 148
+ },
+ "results": {
+  "roboflow@0.40": {
+   "wound": {
+    "n": 148,
+    "right": 39,
+    "wrong": 12
+   },
+   "chronic_wounds": {
+    "n": 1216,
+    "labelled": 347,
+    "as_burn": 263
+   },
+   "faces_heldout": {
+    "n": 139,
+    "labelled": 17,
+    "as_burn": 7
+   },
+   "faces_indep": {
+    "n": 392,
+    "labelled": 65,
+    "as_burn": 18
+   },
+   "healthy_feet": {
+    "n": 1508,
+    "labelled": 60,
+    "as_burn": 23
+   },
+   "other_healthy_skin_heldout": {
+    "n": 243,
+    "labelled": 47,
+    "as_burn": 40
+   },
+   "other_healthy_skin_indep": {
+    "n": 88,
+    "labelled": 10,
+    "as_burn": 2
+   },
+   "other_nonwound": {
+    "n": 439,
+    "labelled": 118,
+    "as_burn": 103
+   },
+   "vs_live_ci": {
+    "right": [
+     -59.0,
+     -21.0
+    ],
+    "false_all_nonwound": [
+     168.0,
+     328.0
+    ],
+    "false_faces": [
+     -7.0,
+     55.0
+    ]
+   }
+  },
+  "roboflow@0.82": {
+   "wound": {
+    "n": 148,
+    "right": 4,
+    "wrong": 3
+   },
+   "chronic_wounds": {
+    "n": 1216,
+    "labelled": 22,
+    "as_burn": 15
+   },
+   "faces_heldout": {
+    "n": 139,
+    "labelled": 2,
+    "as_burn": 0
+   },
+   "faces_indep": {
+    "n": 392,
+    "labelled": 4,
+    "as_burn": 0
+   },
+   "healthy_feet": {
+    "n": 1508,
+    "labelled": 3,
+    "as_burn": 1
+   },
+   "other_healthy_skin_heldout": {
+    "n": 243,
+    "labelled": 1,
+    "as_burn": 1
+   },
+   "other_healthy_skin_indep": {
+    "n": 88,
+    "labelled": 1,
+    "as_burn": 0
+   },
+   "other_nonwound": {
+    "n": 439,
+    "labelled": 15,
+    "as_burn": 14
+   },
+   "vs_live_ci": {
+    "right": [
+     -94.0,
+     -56.0
+    ],
+    "false_all_nonwound": [
+     -467.0,
+     -280.0
+    ],
+    "false_faces": [
+     -83.0,
+     -33.0
+    ]
+   }
+  },
+  "live": {
+   "wound": {
+    "n": 148,
+    "right": 79,
+    "wrong": 3
+   },
+   "chronic_wounds": {
+    "n": 1216,
+    "labelled": 113,
+    "as_burn": 109
+   },
+   "faces_heldout": {
+    "n": 139,
+    "labelled": 17,
+    "as_burn": 17
+   },
+   "faces_indep": {
+    "n": 392,
+    "labelled": 44,
+    "as_burn": 44
+   },
+   "healthy_feet": {
+    "n": 1508,
+    "labelled": 150,
+    "as_burn": 123
+   },
+   "other_healthy_skin_heldout": {
+    "n": 243,
+    "labelled": 16,
+    "as_burn": 16
+   },
+   "other_healthy_skin_indep": {
+    "n": 88,
+    "labelled": 21,
+    "as_burn": 21
+   },
+   "other_nonwound": {
+    "n": 439,
+    "labelled": 49,
+    "as_burn": 48
+   }
+  },
+  "candidate mean sum 0.7": {
+   "wound": {
+    "n": 148,
+    "right": 75,
+    "wrong": 2
+   },
+   "chronic_wounds": {
+    "n": 1216,
+    "labelled": 121,
+    "as_burn": 115
+   },
+   "faces_heldout": {
+    "n": 139,
+    "labelled": 9,
+    "as_burn": 9
+   },
+   "faces_indep": {
+    "n": 392,
+    "labelled": 29,
+    "as_burn": 29
+   },
+   "healthy_feet": {
+    "n": 1508,
+    "labelled": 97,
+    "as_burn": 90
+   },
+   "other_healthy_skin_heldout": {
+    "n": 243,
+    "labelled": 10,
+    "as_burn": 10
+   },
+   "other_healthy_skin_indep": {
+    "n": 88,
+    "labelled": 13,
+    "as_burn": 13
+   },
+   "other_nonwound": {
+    "n": 439,
+    "labelled": 45,
+    "as_burn": 44
+   },
+   "vs_live_ci": {
+    "right": [
+     -11.0,
+     3.0
+    ],
+    "false_all_nonwound": [
+     -130.0,
+     -49.0
+    ],
+    "false_faces": [
+     -37.0,
+     -11.0
+    ]
+   }
+  }
+ },
+ "facial_injury_photos": {
+  "data/val/burn_1st_degree/burn_1st_degree_kg2_315.jpg": "not in the clean evaluation set (val is dev, or resembles Roboflow training data)",
+  "data/val/burn_3rd_degree/burn_3rd_degree_kg2_899.jpg": "not in the clean evaluation set (val is dev, or resembles Roboflow training data)",
+  "data/test/burn_1st_degree/burn_1st_degree_kg2_390.jpg": "not in the clean evaluation set (val is dev, or resembles Roboflow training data)",
+  "data/test/burn_1st_degree/burn_1st_degree_kg2_693.jpg": {
+   "roboflow@0.40": "unknown",
+   "roboflow@0.82": "unknown",
+   "live": "possible_burn",
+   "candidate mean sum 0.7": "unknown"
+  },
+  "data/test/burn_1st_degree/burn_1st_degree_kg2_828.jpg": {
+   "roboflow@0.40": "unknown",
+   "roboflow@0.82": "unknown",
+   "live": "possible_burn",
+   "candidate mean sum 0.7": "possible_burn"
+  },
+  "data/test/burn_2nd_degree/burn_2nd_degree_kg2_243.jpg": {
+   "roboflow@0.40": "unknown",
+   "roboflow@0.82": "unknown",
+   "live": "unknown",
+   "candidate mean sum 0.7": "unknown"
+  },
+  "data/test/burn_3rd_degree/burn_3rd_degree_kg2_329.jpg": {
+   "roboflow@0.40": "unknown",
+   "roboflow@0.82": "unknown",
+   "live": "possible_burn",
+   "candidate mean sum 0.7": "possible_burn"
+  },
+  "experiments/v2/rit/images/roboflow_wound_v1_12f06ca6df88332e.jpg": "not in the clean evaluation set (val is dev, or resembles Roboflow training data)"
+ }
+}

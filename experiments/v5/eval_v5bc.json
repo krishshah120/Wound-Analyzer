@@ -1,0 +1,560 @@
+{
+ "live": "deployed sum t0.75",
+ "live_summary": {
+  "dev": {
+   "right": 175,
+   "wrong": 9,
+   "false": 61
+  },
+  "test": {
+   "right": "154/331",
+   "wrong": 18,
+   "nonwound": "48/450"
+  },
+  "test_arm": {
+   "right": "61/331",
+   "wrong": 6,
+   "nonwound": "48/450"
+  },
+  "heldout": {
+   "all": "37/401",
+   "ghost_normal_skin": "3/7",
+   "oily_dry_skin_types": "18/146",
+   "skindisease_unknown_normal": "16/248"
+  },
+  "indep": {
+   "all": "183/1008",
+   "ghost_normal_skin": "18/57",
+   "oily_dry_skin_types": "108/718",
+   "skindisease_unknown_normal": "57/233"
+  },
+  "rit": {
+   "feet": 158,
+   "chronic": 115,
+   "burns": 35,
+   "everyday_right": 19,
+   "everyday_wrong": 1
+  }
+ },
+ "dev_all": {
+  "G4new sum t0.6": {
+   "right": 206,
+   "wrong": 17,
+   "false": 44
+  },
+  "G4new sum t0.65": {
+   "right": 179,
+   "wrong": 8,
+   "false": 41
+  },
+  "G4new sum t0.7": {
+   "right": 157,
+   "wrong": 6,
+   "false": 28
+  },
+  "G4new sum t0.75": {
+   "right": 133,
+   "wrong": 0,
+   "false": 21
+  },
+  "G4new max t0.6": {
+   "right": 105,
+   "wrong": 9,
+   "false": 21
+  },
+  "G4new max t0.65": {
+   "right": 89,
+   "wrong": 4,
+   "false": 14
+  },
+  "G4new max t0.7": {
+   "right": 73,
+   "wrong": 4,
+   "false": 10
+  },
+  "G4new max t0.75": {
+   "right": 64,
+   "wrong": 0,
+   "false": 8
+  },
+  "mean sum t0.6": {
+   "right": 245,
+   "wrong": 12,
+   "false": 66
+  },
+  "mean sum t0.65": {
+   "right": 211,
+   "wrong": 7,
+   "false": 57
+  },
+  "mean sum t0.7": {
+   "right": 180,
+   "wrong": 5,
+   "false": 40
+  },
+  "mean sum t0.75": {
+   "right": 134,
+   "wrong": 3,
+   "false": 32
+  },
+  "mean max t0.6": {
+   "right": 127,
+   "wrong": 4,
+   "false": 22
+  },
+  "mean max t0.65": {
+   "right": 101,
+   "wrong": 1,
+   "false": 17
+  },
+  "mean max t0.7": {
+   "right": 78,
+   "wrong": 1,
+   "false": 15
+  },
+  "mean max t0.75": {
+   "right": 57,
+   "wrong": 1,
+   "false": 15
+  },
+  "N5 sum t0.6": {
+   "right": 208,
+   "wrong": 16,
+   "false": 43
+  },
+  "N5 sum t0.65": {
+   "right": 187,
+   "wrong": 11,
+   "false": 40
+  },
+  "N5 sum t0.7": {
+   "right": 167,
+   "wrong": 5,
+   "false": 36
+  },
+  "N5 sum t0.75": {
+   "right": 149,
+   "wrong": 3,
+   "false": 28
+  },
+  "N5 max t0.6": {
+   "right": 130,
+   "wrong": 10,
+   "false": 21
+  },
+  "N5 max t0.65": {
+   "right": 111,
+   "wrong": 5,
+   "false": 16
+  },
+  "N5 max t0.7": {
+   "right": 93,
+   "wrong": 3,
+   "false": 11
+  },
+  "N5 max t0.75": {
+   "right": 73,
+   "wrong": 2,
+   "false": 11
+  },
+  "RE3_s1 sum t0.6": {
+   "right": 266,
+   "wrong": 32,
+   "false": 97
+  },
+  "RE3_s1 sum t0.65": {
+   "right": 240,
+   "wrong": 19,
+   "false": 81
+  },
+  "RE3_s1 sum t0.7": {
+   "right": 219,
+   "wrong": 11,
+   "false": 69
+  },
+  "RE3_s1 sum t0.75": {
+   "right": 194,
+   "wrong": 7,
+   "false": 56
+  },
+  "RE3_s1 max t0.6": {
+   "right": 172,
+   "wrong": 10,
+   "false": 42
+  },
+  "RE3_s1 max t0.65": {
+   "right": 139,
+   "wrong": 6,
+   "false": 35
+  },
+  "RE3_s1 max t0.7": {
+   "right": 106,
+   "wrong": 4,
+   "false": 26
+  },
+  "RE3_s1 max t0.75": {
+   "right": 79,
+   "wrong": 1,
+   "false": 20
+  }
+ },
+ "eligible": [
+  "G4new sum t0.65",
+  "mean sum t0.65",
+  "mean sum t0.7"
+ ],
+ "chosen": "mean sum t0.7",
+ "control_summary": {
+  "RE3_s1 sum t0.6": {
+   "dev": {
+    "right": 266,
+    "wrong": 32,
+    "false": 97
+   },
+   "test": {
+    "right": "201/331",
+    "wrong": 23,
+    "nonwound": "100/450"
+   },
+   "test_arm": {
+    "right": "124/331",
+    "wrong": 28,
+    "nonwound": "100/450"
+   },
+   "heldout": {
+    "all": "59/401",
+    "ghost_normal_skin": "3/7",
+    "oily_dry_skin_types": "27/146",
+    "skindisease_unknown_normal": "29/248"
+   },
+   "indep": {
+    "all": "235/1008",
+    "ghost_normal_skin": "27/57",
+    "oily_dry_skin_types": "136/718",
+    "skindisease_unknown_normal": "72/233"
+   },
+   "rit": {
+    "feet": 660,
+    "chronic": 240,
+    "burns": 41,
+    "everyday_right": 23,
+    "everyday_wrong": 4
+   }
+  },
+  "RE3_s1 sum t0.65": {
+   "dev": {
+    "right": 240,
+    "wrong": 19,
+    "false": 81
+   },
+   "test": {
+    "right": "190/331",
+    "wrong": 18,
+    "nonwound": "85/450"
+   },
+   "test_arm": {
+    "right": "111/331",
+    "wrong": 23,
+    "nonwound": "85/450"
+   },
+   "heldout": {
+    "all": "51/401",
+    "ghost_normal_skin": "3/7",
+    "oily_dry_skin_types": "22/146",
+    "skindisease_unknown_normal": "26/248"
+   },
+   "indep": {
+    "all": "217/1008",
+    "ghost_normal_skin": "24/57",
+    "oily_dry_skin_types": "125/718",
+    "skindisease_unknown_normal": "68/233"
+   },
+   "rit": {
+    "feet": 545,
+    "chronic": 191,
+    "burns": 38,
+    "everyday_right": 23,
+    "everyday_wrong": 2
+   }
+  },
+  "RE3_s1 sum t0.7": {
+   "dev": {
+    "right": 219,
+    "wrong": 11,
+    "false": 69
+   },
+   "test": {
+    "right": "176/331",
+    "wrong": 16,
+    "nonwound": "71/450"
+   },
+   "test_arm": {
+    "right": "98/331",
+    "wrong": 17,
+    "nonwound": "71/450"
+   },
+   "heldout": {
+    "all": "41/401",
+    "ghost_normal_skin": "3/7",
+    "oily_dry_skin_types": "19/146",
+    "skindisease_unknown_normal": "19/248"
+   },
+   "indep": {
+    "all": "191/1008",
+    "ghost_normal_skin": "20/57",
+    "oily_dry_skin_types": "116/718",
+    "skindisease_unknown_normal": "55/233"
+   },
+   "rit": {
+    "feet": 441,
+    "chronic": 150,
+    "burns": 35,
+    "everyday_right": 20,
+    "everyday_wrong": 2
+   }
+  },
+  "RE3_s1 sum t0.75": {
+   "dev": {
+    "right": 194,
+    "wrong": 7,
+    "false": 56
+   },
+   "test": {
+    "right": "155/331",
+    "wrong": 12,
+    "nonwound": "48/450"
+   },
+   "test_arm": {
+    "right": "70/331",
+    "wrong": 12,
+    "nonwound": "48/450"
+   },
+   "heldout": {
+    "all": "34/401",
+    "ghost_normal_skin": "3/7",
+    "oily_dry_skin_types": "16/146",
+    "skindisease_unknown_normal": "15/248"
+   },
+   "indep": {
+    "all": "153/1008",
+    "ghost_normal_skin": "18/57",
+    "oily_dry_skin_types": "94/718",
+    "skindisease_unknown_normal": "41/233"
+   },
+   "rit": {
+    "feet": 307,
+    "chronic": 112,
+    "burns": 32,
+    "everyday_right": 17,
+    "everyday_wrong": 1
+   }
+  },
+  "RE3_s1 max t0.6": {
+   "dev": {
+    "right": 172,
+    "wrong": 10,
+    "false": 42
+   },
+   "test": {
+    "right": "133/331",
+    "wrong": 12,
+    "nonwound": "57/450"
+   },
+   "test_arm": {
+    "right": "51/331",
+    "wrong": 10,
+    "nonwound": "57/450"
+   },
+   "heldout": {
+    "all": "24/401",
+    "ghost_normal_skin": "2/7",
+    "oily_dry_skin_types": "8/146",
+    "skindisease_unknown_normal": "14/248"
+   },
+   "indep": {
+    "all": "107/1008",
+    "ghost_normal_skin": "17/57",
+    "oily_dry_skin_types": "56/718",
+    "skindisease_unknown_normal": "34/233"
+   },
+   "rit": {
+    "feet": 179,
+    "chronic": 106,
+    "burns": 25,
+    "everyday_right": 23,
+    "everyday_wrong": 2
+   }
+  },
+  "RE3_s1 max t0.65": {
+   "dev": {
+    "right": 139,
+    "wrong": 6,
+    "false": 35
+   },
+   "test": {
+    "right": "119/331",
+    "wrong": 10,
+    "nonwound": "39/450"
+   },
+   "test_arm": {
+    "right": "39/331",
+    "wrong": 8,
+    "nonwound": "39/450"
+   },
+   "heldout": {
+    "all": "19/401",
+    "ghost_normal_skin": "2/7",
+    "oily_dry_skin_types": "6/146",
+    "skindisease_unknown_normal": "11/248"
+   },
+   "indep": {
+    "all": "83/1008",
+    "ghost_normal_skin": "13/57",
+    "oily_dry_skin_types": "44/718",
+    "skindisease_unknown_normal": "26/233"
+   },
+   "rit": {
+    "feet": 126,
+    "chronic": 77,
+    "burns": 23,
+    "everyday_right": 23,
+    "everyday_wrong": 0
+   }
+  },
+  "RE3_s1 max t0.7": {
+   "dev": {
+    "right": 106,
+    "wrong": 4,
+    "false": 26
+   },
+   "test": {
+    "right": "102/331",
+    "wrong": 10,
+    "nonwound": "28/450"
+   },
+   "test_arm": {
+    "right": "32/331",
+    "wrong": 6,
+    "nonwound": "28/450"
+   },
+   "heldout": {
+    "all": "14/401",
+    "ghost_normal_skin": "2/7",
+    "oily_dry_skin_types": "4/146",
+    "skindisease_unknown_normal": "8/248"
+   },
+   "indep": {
+    "all": "62/1008",
+    "ghost_normal_skin": "12/57",
+    "oily_dry_skin_types": "31/718",
+    "skindisease_unknown_normal": "19/233"
+   },
+   "rit": {
+    "feet": 71,
+    "chronic": 51,
+    "burns": 17,
+    "everyday_right": 20,
+    "everyday_wrong": 0
+   }
+  },
+  "RE3_s1 max t0.75": {
+   "dev": {
+    "right": 79,
+    "wrong": 1,
+    "false": 20
+   },
+   "test": {
+    "right": "83/331",
+    "wrong": 8,
+    "nonwound": "21/450"
+   },
+   "test_arm": {
+    "right": "24/331",
+    "wrong": 4,
+    "nonwound": "21/450"
+   },
+   "heldout": {
+    "all": "10/401",
+    "ghost_normal_skin": "1/7",
+    "oily_dry_skin_types": "3/146",
+    "skindisease_unknown_normal": "6/248"
+   },
+   "indep": {
+    "all": "43/1008",
+    "ghost_normal_skin": "8/57",
+    "oily_dry_skin_types": "22/718",
+    "skindisease_unknown_normal": "13/233"
+   },
+   "rit": {
+    "feet": 28,
+    "chronic": 35,
+    "burns": 11,
+    "everyday_right": 17,
+    "everyday_wrong": 0
+   }
+  }
+ },
+ "chosen_summary": {
+  "dev": {
+   "right": 180,
+   "wrong": 5,
+   "false": 40
+  },
+  "test": {
+   "right": "153/331",
+   "wrong": 11,
+   "nonwound": "44/450"
+  },
+  "test_arm": {
+   "right": "62/331",
+   "wrong": 4,
+   "nonwound": "44/450"
+  },
+  "heldout": {
+   "all": "22/401",
+   "ghost_normal_skin": "2/7",
+   "oily_dry_skin_types": "10/146",
+   "skindisease_unknown_normal": "10/248"
+  },
+  "indep": {
+   "all": "118/1008",
+   "ghost_normal_skin": "11/57",
+   "oily_dry_skin_types": "60/718",
+   "skindisease_unknown_normal": "47/233"
+  },
+  "rit": {
+   "feet": 104,
+   "chronic": 123,
+   "burns": 36,
+   "everyday_right": 17,
+   "everyday_wrong": 1
+  }
+ },
+ "verdict_pool": {
+  "right": {
+   "candidate": 206,
+   "live": 208,
+   "diff_ci": [
+    -13.0,
+    9.0
+   ]
+  },
+  "false": {
+   "candidate": 392,
+   "live": 507,
+   "diff_ci": [
+    -191.0,
+    -60.0
+   ]
+  },
+  "wrong": {
+   "candidate": 12,
+   "live": 19,
+   "diff_ci": [
+    -13.0,
+    -2.0
+   ]
+  },
+  "confirmed": false
+ }
+}

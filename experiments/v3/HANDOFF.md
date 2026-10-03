@@ -1,3 +1,6 @@
+> HISTORICAL (2026-10-03): superseded. Latest model-side result: experiments/v5/RESULT.md. Deployment state is owned by the MRC App session's status document.
+
+
 # Wound analyzer - handoff after round v3 (closed 2026-09-27)
 
 ## Production (unchanged this round)
