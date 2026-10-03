@@ -1,0 +1,257 @@
+{
+ "val_curve": [
+  {
+   "threshold": 0.2,
+   "coverage": 94.0,
+   "acc_answered": 66.1,
+   "fpr_nonwound": 42.6
+  },
+  {
+   "threshold": 0.25,
+   "coverage": 94.0,
+   "acc_answered": 66.1,
+   "fpr_nonwound": 42.6
+  },
+  {
+   "threshold": 0.3,
+   "coverage": 90.8,
+   "acc_answered": 68.0,
+   "fpr_nonwound": 39.4
+  },
+  {
+   "threshold": 0.35,
+   "coverage": 86.5,
+   "acc_answered": 69.6,
+   "fpr_nonwound": 37.2
+  },
+  {
+   "threshold": 0.4,
+   "coverage": 77.3,
+   "acc_answered": 74.7,
+   "fpr_nonwound": 34.0
+  },
+  {
+   "threshold": 0.45,
+   "coverage": 66.9,
+   "acc_answered": 78.0,
+   "fpr_nonwound": 25.5
+  },
+  {
+   "threshold": 0.5,
+   "coverage": 61.4,
+   "acc_answered": 79.2,
+   "fpr_nonwound": 24.5
+  },
+  {
+   "threshold": 0.55,
+   "coverage": 54.2,
+   "acc_answered": 78.7,
+   "fpr_nonwound": 20.2
+  },
+  {
+   "threshold": 0.6,
+   "coverage": 46.2,
+   "acc_answered": 85.3,
+   "fpr_nonwound": 17.0
+  },
+  {
+   "threshold": 0.65,
+   "coverage": 39.8,
+   "acc_answered": 88.0,
+   "fpr_nonwound": 13.8
+  },
+  {
+   "threshold": 0.7,
+   "coverage": 36.3,
+   "acc_answered": 86.8,
+   "fpr_nonwound": 11.7
+  },
+  {
+   "threshold": 0.75,
+   "coverage": 29.1,
+   "acc_answered": 87.7,
+   "fpr_nonwound": 8.5
+  },
+  {
+   "threshold": 0.8,
+   "coverage": 22.7,
+   "acc_answered": 87.7,
+   "fpr_nonwound": 5.3
+  },
+  {
+   "threshold": 0.85,
+   "coverage": 17.5,
+   "acc_answered": 86.4,
+   "fpr_nonwound": 2.1
+  },
+  {
+   "threshold": 0.9,
+   "coverage": 11.2,
+   "acc_answered": 92.9,
+   "fpr_nonwound": 2.1
+  },
+  {
+   "threshold": 0.95,
+   "coverage": 4.4,
+   "acc_answered": 100.0,
+   "fpr_nonwound": 1.1
+  }
+ ],
+ "val_calibration": {
+  "ece": 0.078,
+  "bins": [
+   {
+    "bin": "0.1-0.2",
+    "n": 1,
+    "mean_conf": 0.188,
+    "accuracy": 1.0
+   },
+   {
+    "bin": "0.2-0.3",
+    "n": 11,
+    "mean_conf": 0.276,
+    "accuracy": 0.182
+   },
+   {
+    "bin": "0.3-0.4",
+    "n": 36,
+    "mean_conf": 0.36,
+    "accuracy": 0.306
+   },
+   {
+    "bin": "0.4-0.5",
+    "n": 40,
+    "mean_conf": 0.446,
+    "accuracy": 0.575
+   },
+   {
+    "bin": "0.5-0.6",
+    "n": 40,
+    "mean_conf": 0.55,
+    "accuracy": 0.6
+   },
+   {
+    "bin": "0.6-0.7",
+    "n": 28,
+    "mean_conf": 0.639,
+    "accuracy": 0.786
+   },
+   {
+    "bin": "0.7-0.8",
+    "n": 37,
+    "mean_conf": 0.745,
+    "accuracy": 0.838
+   },
+   {
+    "bin": "0.8-0.9",
+    "n": 29,
+    "mean_conf": 0.851,
+    "accuracy": 0.828
+   },
+   {
+    "bin": "0.9-1.0",
+    "n": 29,
+    "mean_conf": 0.944,
+    "accuracy": 0.931
+   }
+  ]
+ },
+ "test_curve": [
+  {
+   "threshold": 0.2,
+   "coverage": 90.9,
+   "acc_answered": 64.8,
+   "fpr_nonwound": 44.2
+  },
+  {
+   "threshold": 0.25,
+   "coverage": 89.7,
+   "acc_answered": 65.0,
+   "fpr_nonwound": 43.3
+  },
+  {
+   "threshold": 0.3,
+   "coverage": 88.5,
+   "acc_answered": 65.2,
+   "fpr_nonwound": 40.0
+  },
+  {
+   "threshold": 0.35,
+   "coverage": 84.9,
+   "acc_answered": 66.5,
+   "fpr_nonwound": 36.2
+  },
+  {
+   "threshold": 0.4,
+   "coverage": 77.6,
+   "acc_answered": 68.5,
+   "fpr_nonwound": 32.2
+  },
+  {
+   "threshold": 0.45,
+   "coverage": 68.3,
+   "acc_answered": 69.5,
+   "fpr_nonwound": 28.2
+  },
+  {
+   "threshold": 0.5,
+   "coverage": 61.6,
+   "acc_answered": 70.1,
+   "fpr_nonwound": 23.1
+  },
+  {
+   "threshold": 0.55,
+   "coverage": 55.9,
+   "acc_answered": 71.9,
+   "fpr_nonwound": 18.4
+  },
+  {
+   "threshold": 0.6,
+   "coverage": 48.0,
+   "acc_answered": 75.5,
+   "fpr_nonwound": 15.1
+  },
+  {
+   "threshold": 0.65,
+   "coverage": 42.0,
+   "acc_answered": 77.0,
+   "fpr_nonwound": 10.4
+  },
+  {
+   "threshold": 0.7,
+   "coverage": 35.6,
+   "acc_answered": 78.8,
+   "fpr_nonwound": 7.6
+  },
+  {
+   "threshold": 0.75,
+   "coverage": 29.6,
+   "acc_answered": 79.6,
+   "fpr_nonwound": 5.3
+  },
+  {
+   "threshold": 0.8,
+   "coverage": 23.3,
+   "acc_answered": 83.1,
+   "fpr_nonwound": 4.4
+  },
+  {
+   "threshold": 0.85,
+   "coverage": 17.5,
+   "acc_answered": 89.7,
+   "fpr_nonwound": 2.4
+  },
+  {
+   "threshold": 0.9,
+   "coverage": 10.0,
+   "acc_answered": 90.9,
+   "fpr_nonwound": 1.8
+  },
+  {
+   "threshold": 0.95,
+   "coverage": 4.2,
+   "acc_answered": 92.9,
+   "fpr_nonwound": 0.4
+  }
+ ]
+}

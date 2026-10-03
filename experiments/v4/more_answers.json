@@ -1,0 +1,146 @@
+{
+ "6class@0.6": {
+  "val": {
+   "n": 251,
+   "answered": 126,
+   "right": 106,
+   "wrong": 20,
+   "nonwound": "13/94",
+   "third_degree_shown_milder": 2
+  },
+  "test": {
+   "n": 331,
+   "answered": 160,
+   "right": 119,
+   "wrong": 41,
+   "nonwound": "61/450",
+   "third_degree_shown_milder": 5
+  },
+  "rit": {
+   "everyday": "24 right, 0 wrong, of 48",
+   "burns_recognised": "23/67",
+   "healthy_feet": "183/1613",
+   "chronic": "133/1313"
+  }
+ },
+ "6class@0.5": {
+  "val": {
+   "n": 251,
+   "answered": 152,
+   "right": 124,
+   "wrong": 28,
+   "nonwound": "19/94",
+   "third_degree_shown_milder": 2
+  },
+  "test": {
+   "n": 331,
+   "answered": 202,
+   "right": 144,
+   "wrong": 58,
+   "nonwound": "100/450",
+   "third_degree_shown_milder": 5
+  },
+  "rit": {
+   "everyday": "29 right, 2 wrong, of 48",
+   "burns_recognised": "32/67",
+   "healthy_feet": "363/1613",
+   "chronic": "227/1313"
+  }
+ },
+ "6class@0.4": {
+  "val": {
+   "n": 251,
+   "answered": 192,
+   "right": 148,
+   "wrong": 44,
+   "nonwound": "25/94",
+   "third_degree_shown_milder": 4
+  },
+  "test": {
+   "n": 331,
+   "answered": 253,
+   "right": 174,
+   "wrong": 79,
+   "nonwound": "132/450",
+   "third_degree_shown_milder": 7
+  },
+  "rit": {
+   "everyday": "33 right, 8 wrong, of 48",
+   "burns_recognised": "43/67",
+   "healthy_feet": "666/1613",
+   "chronic": "386/1313"
+  }
+ },
+ "possible_burn@0.6": {
+  "val": {
+   "n": 251,
+   "answered": 186,
+   "right": 172,
+   "wrong": 14,
+   "nonwound": "26/94",
+   "third_degree_shown_milder": 1
+  },
+  "test": {
+   "n": 331,
+   "answered": 224,
+   "right": 197,
+   "wrong": 27,
+   "nonwound": "120/450",
+   "third_degree_shown_milder": 4
+  },
+  "rit": {
+   "everyday": "24 right, 3 wrong, of 48",
+   "burns_recognised": "44/67",
+   "healthy_feet": "560/1613",
+   "chronic": "305/1313"
+  }
+ },
+ "possible_burn@0.5": {
+  "val": {
+   "n": 251,
+   "answered": 205,
+   "right": 186,
+   "wrong": 19,
+   "nonwound": "29/94",
+   "third_degree_shown_milder": 1
+  },
+  "test": {
+   "n": 331,
+   "answered": 261,
+   "right": 228,
+   "wrong": 33,
+   "nonwound": "153/450",
+   "third_degree_shown_milder": 4
+  },
+  "rit": {
+   "everyday": "29 right, 6 wrong, of 48",
+   "burns_recognised": "49/67",
+   "healthy_feet": "874/1613",
+   "chronic": "433/1313"
+  }
+ },
+ "possible_burn@0.4": {
+  "val": {
+   "n": 251,
+   "answered": 224,
+   "right": 196,
+   "wrong": 28,
+   "nonwound": "33/94",
+   "third_degree_shown_milder": 1
+  },
+  "test": {
+   "n": 331,
+   "answered": 293,
+   "right": 245,
+   "wrong": 48,
+   "nonwound": "173/450",
+   "third_degree_shown_milder": 5
+  },
+  "rit": {
+   "everyday": "32 right, 12 wrong, of 48",
+   "burns_recognised": "52/67",
+   "healthy_feet": "1161/1613",
+   "chronic": "586/1313"
+  }
+ }
+}

@@ -1,0 +1,254 @@
+{
+ "pipeline": "deployed",
+ "n": 3063,
+ "results": {
+  "classifier+gate": {
+   "in_scope": {
+    "eligible": 48,
+    "answered": 23,
+    "correct": 23,
+    "coverage": 47.9,
+    "coverage_ci": [
+     34.5,
+     61.7
+    ],
+    "acc_answered": 100.0,
+    "acc_answered_ci": [
+     85.7,
+     100.0
+    ],
+    "correct_of_eligible": 47.9,
+    "wrong_labels": {},
+    "per_class": {
+     "abrasion": {
+      "n": 3,
+      "answered": 1,
+      "correct": 1
+     },
+     "bruise": {
+      "n": 35,
+      "answered": 20,
+      "correct": 20
+     },
+     "cut": {
+      "n": 10,
+      "answered": 2,
+      "correct": 2
+     }
+    }
+   },
+   "in_scope_by_real_framing": {
+    "<15%": {
+     "n": 32,
+     "answered": 10,
+     "correct": 10,
+     "coverage": 31.2,
+     "coverage_ci": [
+      18.0,
+      48.6
+     ]
+    },
+    "15-40%": {
+     "n": 15,
+     "answered": 12,
+     "correct": 12,
+     "coverage": 80.0,
+     "coverage_ci": [
+      54.8,
+      93.0
+     ]
+    },
+    ">=40%": {
+     "n": 1,
+     "answered": 1,
+     "correct": 1,
+     "coverage": 100.0,
+     "coverage_ci": [
+      20.7,
+      100.0
+     ]
+    }
+   },
+   "burn_degree_unknown": {
+    "n": 67,
+    "any_burn_label": 23,
+    "non_burn_wound_label": 1,
+    "unknown": 43,
+    "non_burn_labels": {
+     "bruise": 1
+    }
+   },
+   "non_wound": {
+    "lower_limb_feet": {
+     "n": 1613,
+     "labelled": 175,
+     "fpr": 10.8,
+     "fpr_ci": [
+      9.4,
+      12.5
+     ],
+     "labels": {
+      "bruise": 110,
+      "burn_1st_degree": 39,
+      "burn_3rd_degree": 12,
+      "burn_2nd_degree": 10,
+      "cut": 4
+     }
+    },
+    "lower_limb_wounds": {
+     "n": 1313,
+     "labelled": 131,
+     "fpr": 10.0,
+     "fpr_ci": [
+      8.5,
+      11.7
+     ],
+     "labels": {
+      "burn_3rd_degree": 65,
+      "burn_1st_degree": 14,
+      "bruise": 13,
+      "burn_2nd_degree": 25,
+      "cut": 14
+     }
+    },
+    "roboflow_wound_v1": {
+     "n": 22,
+     "labelled": 6,
+     "fpr": 27.3,
+     "fpr_ci": [
+      13.2,
+      48.2
+     ],
+     "labels": {
+      "burn_1st_degree": 3,
+      "cut": 3
+     }
+    }
+   }
+  },
+  "production": {
+   "in_scope": {
+    "eligible": 48,
+    "answered": 24,
+    "correct": 24,
+    "coverage": 50.0,
+    "coverage_ci": [
+     36.4,
+     63.6
+    ],
+    "acc_answered": 100.0,
+    "acc_answered_ci": [
+     86.2,
+     100.0
+    ],
+    "correct_of_eligible": 50.0,
+    "wrong_labels": {},
+    "per_class": {
+     "abrasion": {
+      "n": 3,
+      "answered": 1,
+      "correct": 1
+     },
+     "bruise": {
+      "n": 35,
+      "answered": 21,
+      "correct": 21
+     },
+     "cut": {
+      "n": 10,
+      "answered": 2,
+      "correct": 2
+     }
+    }
+   },
+   "in_scope_by_real_framing": {
+    "<15%": {
+     "n": 32,
+     "answered": 11,
+     "correct": 11,
+     "coverage": 34.4,
+     "coverage_ci": [
+      20.4,
+      51.7
+     ]
+    },
+    "15-40%": {
+     "n": 15,
+     "answered": 12,
+     "correct": 12,
+     "coverage": 80.0,
+     "coverage_ci": [
+      54.8,
+      93.0
+     ]
+    },
+    ">=40%": {
+     "n": 1,
+     "answered": 1,
+     "correct": 1,
+     "coverage": 100.0,
+     "coverage_ci": [
+      20.7,
+      100.0
+     ]
+    }
+   },
+   "burn_degree_unknown": {
+    "n": 67,
+    "any_burn_label": 23,
+    "non_burn_wound_label": 1,
+    "unknown": 43,
+    "non_burn_labels": {
+     "bruise": 1
+    }
+   },
+   "non_wound": {
+    "lower_limb_feet": {
+     "n": 1613,
+     "labelled": 183,
+     "fpr": 11.3,
+     "fpr_ci": [
+      9.9,
+      13.0
+     ],
+     "labels": {
+      "bruise": 112,
+      "burn_1st_degree": 45,
+      "burn_3rd_degree": 12,
+      "burn_2nd_degree": 10,
+      "cut": 4
+     }
+    },
+    "lower_limb_wounds": {
+     "n": 1313,
+     "labelled": 133,
+     "fpr": 10.1,
+     "fpr_ci": [
+      8.6,
+      11.9
+     ],
+     "labels": {
+      "burn_3rd_degree": 65,
+      "burn_1st_degree": 14,
+      "bruise": 14,
+      "burn_2nd_degree": 25,
+      "cut": 15
+     }
+    },
+    "roboflow_wound_v1": {
+     "n": 22,
+     "labelled": 6,
+     "fpr": 27.3,
+     "fpr_ci": [
+      13.2,
+      48.2
+     ],
+     "labels": {
+      "burn_1st_degree": 3,
+      "cut": 3
+     }
+    }
+   }
+  }
+ }
+}

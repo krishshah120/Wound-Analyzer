@@ -1,0 +1,165 @@
+{
+ "n_images": 67,
+ "n_overlapping": 67,
+ "overlapping_files": [
+  "roboflow_wound_v1_039087d3ef90701b.jpg",
+  "roboflow_wound_v1_03cc3d3f5c6358e8.jpg",
+  "roboflow_wound_v1_0629e5fe9d7ad8d2.jpg",
+  "roboflow_wound_v1_080b4c0e824b5b0c.jpg",
+  "roboflow_wound_v1_09c43c4eef8c2b28.jpg",
+  "roboflow_wound_v1_0bba6b83449bee5f.jpg",
+  "roboflow_wound_v1_1468fd31a45dc27d.jpg",
+  "roboflow_wound_v1_1476cdadf154f061.jpg",
+  "roboflow_wound_v1_159070566af05037.jpg",
+  "roboflow_wound_v1_1ca1d475efcb4334.jpg",
+  "roboflow_wound_v1_2043a9306b7e8bbc.jpg",
+  "roboflow_wound_v1_217aebee06e27efc.jpg",
+  "roboflow_wound_v1_270a29c8eef94f01.jpg",
+  "roboflow_wound_v1_2d7e8987fd6aacdb.jpg",
+  "roboflow_wound_v1_2e61232bdef83e90.jpg",
+  "roboflow_wound_v1_30869d3563759126.jpg",
+  "roboflow_wound_v1_3097062759366365.jpg",
+  "roboflow_wound_v1_33e91c9b9e0bacc4.jpg",
+  "roboflow_wound_v1_35c0125bdb0030c5.jpg",
+  "roboflow_wound_v1_374711b32241d301.jpg",
+  "roboflow_wound_v1_385db79939185ff0.jpg",
+  "roboflow_wound_v1_41c96e242f10eb3f.jpg",
+  "roboflow_wound_v1_45b6eca00e438bd0.jpg",
+  "roboflow_wound_v1_4804121b86d6c6bd.jpg",
+  "roboflow_wound_v1_57a4dc4c1b07bc66.jpg",
+  "roboflow_wound_v1_597de6292cc21bb5.jpg",
+  "roboflow_wound_v1_5f094773effcbfcd.jpg",
+  "roboflow_wound_v1_5f10f4c0516d31a5.jpg",
+  "roboflow_wound_v1_65d886a5dafdfdca.jpg",
+  "roboflow_wound_v1_6aac8242384fdff1.jpg",
+  "roboflow_wound_v1_732dd46bf3755dd6.jpg",
+  "roboflow_wound_v1_74d2bf8959c35f37.jpg",
+  "roboflow_wound_v1_77a3a29b08c87880.jpg",
+  "roboflow_wound_v1_7dcbd46f2aae2b97.jpg",
+  "roboflow_wound_v1_7dd04c5c6cf470f5.jpg",
+  "roboflow_wound_v1_807bcbdf0412ef97.jpg",
+  "roboflow_wound_v1_80ac035045be8bfb.jpg",
+  "roboflow_wound_v1_82cadc411f27c93f.jpg",
+  "roboflow_wound_v1_89c15096f0708af4.jpg",
+  "roboflow_wound_v1_8a4c8a8469e08196.jpg",
+  "roboflow_wound_v1_8da0b406942fcbe0.jpg",
+  "roboflow_wound_v1_8da6b6207fd8b635.jpg",
+  "roboflow_wound_v1_912a5e6e1971ef27.jpg",
+  "roboflow_wound_v1_946713a5802a1048.jpg",
+  "roboflow_wound_v1_9656386a0f821ca1.jpg",
+  "roboflow_wound_v1_a832e889c6bdef35.jpg",
+  "roboflow_wound_v1_a87e81b1a8cc8153.jpg",
+  "roboflow_wound_v1_a9d7892023780212.jpg",
+  "roboflow_wound_v1_ab7b757bc84833e3.jpg",
+  "roboflow_wound_v1_b1c66657a33f69af.jpg",
+  "roboflow_wound_v1_bbc5c551f620403c.jpg",
+  "roboflow_wound_v1_c3afb56ac7283932.jpg",
+  "roboflow_wound_v1_c412f536da6f3ae7.jpg",
+  "roboflow_wound_v1_c5da39fa1f000a1a.jpg",
+  "roboflow_wound_v1_cfde783cade17e65.jpg",
+  "roboflow_wound_v1_d4b6cae354857783.jpg",
+  "roboflow_wound_v1_dcf1f1f1336952cc.jpg",
+  "roboflow_wound_v1_dd7a152d1ad73071.jpg",
+  "roboflow_wound_v1_dd8f844286bb5e7a.jpg",
+  "roboflow_wound_v1_e635cdb3ecc03e81.jpg",
+  "roboflow_wound_v1_e8d3c41de6ddf481.jpg",
+  "roboflow_wound_v1_ecb5a546b3cabe95.jpg",
+  "roboflow_wound_v1_ed2aabb203c60b3d.jpg",
+  "roboflow_wound_v1_f0de78d8b583ca5d.jpg",
+  "roboflow_wound_v1_f46f8085bfc64317.jpg",
+  "roboflow_wound_v1_fcf9e98eaff3607b.jpg",
+  "roboflow_wound_v1_fe3de82d8315e477.jpg"
+ ],
+ "primary_non_overlapping": {
+  "n": 0,
+  "P0_deployed": {
+   "burn": 0,
+   "burn_pct": 0.0,
+   "burn_ci": null,
+   "other_injury": 0,
+   "unknown": 0
+  },
+  "P1_deployed_summed": {
+   "burn": 0,
+   "burn_pct": 0.0,
+   "burn_ci": null,
+   "other_injury": 0,
+   "unknown": 0
+  },
+  "P2_RE3": {
+   "burn": 0,
+   "burn_pct": 0.0,
+   "burn_ci": null,
+   "other_injury": 0,
+   "unknown": 0
+  },
+  "P3_RE3_summed": {
+   "burn": 0,
+   "burn_pct": 0.0,
+   "burn_ci": null,
+   "other_injury": 0,
+   "unknown": 0
+  }
+ },
+ "secondary_all": {
+  "n": 67,
+  "P0_deployed": {
+   "burn": 23,
+   "burn_pct": 34.3,
+   "burn_ci": [
+    24.1,
+    46.3
+   ],
+   "other_injury": 1,
+   "unknown": 43
+  },
+  "P1_deployed_summed": {
+   "burn": 35,
+   "burn_pct": 52.2,
+   "burn_ci": [
+    40.5,
+    63.7
+   ],
+   "other_injury": 0,
+   "unknown": 32
+  },
+  "P2_RE3": {
+   "burn": 23,
+   "burn_pct": 34.3,
+   "burn_ci": [
+    24.1,
+    46.3
+   ],
+   "other_injury": 2,
+   "unknown": 42
+  },
+  "P3_RE3_summed": {
+   "burn": 34,
+   "burn_pct": 50.7,
+   "burn_ci": [
+    39.1,
+    62.3
+   ],
+   "other_injury": 0,
+   "unknown": 33
+  },
+  "paired_95ci_pct_points": {
+   "P1_deployed_summed-P0_deployed": [
+    9.0,
+    26.9
+   ],
+   "P3_RE3_summed-P2_RE3": [
+    6.0,
+    26.9
+   ],
+   "P2_RE3-P0_deployed": [
+    -10.4,
+    10.4
+   ],
+   "P3_RE3_summed-P1_deployed_summed": [
+    -9.0,
+    4.5
+   ]
+  }
+ }
+}

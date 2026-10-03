@@ -1,12 +1,11 @@
 import os
 import csv
-import random
 import shutil
 import stat
 import time
 import cv2
 import numpy as np
-from PIL import Image, ImageEnhance
+from PIL import Image
 
 # ---------------------------------------------------------------------------
 # Paths - anchored to this script's location so it works no matter what
@@ -45,15 +44,10 @@ BLUR_THRESHOLD = 80.0
 DARK_THRESHOLD = 40.0
 BRIGHT_THRESHOLD = 215.0
 
-# After real data is collected, underrepresented classes get topped up with
-# augmented (rotated/flipped/brightness-jittered/zoomed) copies of their own
-# images, up to the size of the largest class. MAX_AUGMENTATION_MULTIPLIER
-# caps how far any one class gets stretched - e.g. 4 means a class never
-# gets inflated past 4x its real image count, even if the largest class is
-# much bigger than that. This avoids a tiny class becoming mostly synthetic
-# duplicates of a handful of source photos.
-BALANCE_CLASSES = True
-MAX_AUGMENTATION_MULTIPLIER = 4
+# This script only collects REAL images. Class balancing with augmented
+# copies happens in train_model.py AFTER the train/val/test split, on the
+# training side only - augmenting here, before the split, put copies of the
+# same photo into both train and test and inflated the test accuracy.
 
 MANIFEST_PATH = os.path.join(output_dir, "manifest.csv")
 BAD_IMAGES_DIR = os.path.join(output_dir, "bad_images")
@@ -311,124 +305,6 @@ def clean_and_extract_burn(root_dir, dataset_prefix, manifest_writer):
     )
 
 
-def augment_image(img):
-    """
-    Applies a small random combination of realistic augmentations to an
-    already-cleaned image: rotation, a horizontal flip, a slight zoom/crop,
-    and brightness/contrast jitter. Used to generate extra training images
-    for classes that don't have enough real photos, without inventing
-    features that aren't plausible for a real wound photo (no color
-    inversion, no extreme distortion, etc.).
-    """
-    arr = np.array(img)  # img is already RGB by the time this is called
-    height, width = arr.shape[:2]
-
-    # Rotation - reflecting the edges instead of leaving black corners
-    angle = random.uniform(-15, 15)
-    rotation_matrix = cv2.getRotationMatrix2D((width / 2, height / 2), angle, 1.0)
-    arr = cv2.warpAffine(arr, rotation_matrix, (width, height), borderMode=cv2.BORDER_REFLECT_101)
-
-    if random.random() < 0.5:
-        arr = cv2.flip(arr, 1)
-
-    # Slight zoom: crop a random inner region, then resize back up
-    zoom = random.uniform(0.85, 1.0)
-    crop_w, crop_h = int(width * zoom), int(height * zoom)
-    left = random.randint(0, width - crop_w) if width > crop_w else 0
-    top = random.randint(0, height - crop_h) if height > crop_h else 0
-    arr = arr[top:top + crop_h, left:left + crop_w]
-    arr = cv2.resize(arr, (width, height))
-
-    img = Image.fromarray(arr)
-    img = ImageEnhance.Brightness(img).enhance(random.uniform(0.85, 1.15))
-    img = ImageEnhance.Contrast(img).enhance(random.uniform(0.85, 1.15))
-
-    return img
-
-
-def discover_class_folders(root_dir):
-    """
-    Finds every leaf folder under wound_dataset that directly contains
-    images, skipping bad_images/. This treats burn's degree subfolders
-    (burn/1st_degree, burn/2nd_degree, burn/3rd_degree) as their own
-    classes, matching how train_model.py's discover_classes() will later
-    split them for training - so balancing happens at the same granularity
-    the model actually trains on.
-    """
-    classes = {}
-    for current_root, dirs, files in os.walk(root_dir):
-        dirs[:] = [d for d in dirs if d != "bad_images"]
-        if os.path.basename(current_root) == "bad_images":
-            continue
-
-        image_files = [f for f in files if f.lower().endswith((".png", ".jpg", ".jpeg"))]
-        if not image_files:
-            continue
-
-        classes[current_root] = [os.path.join(current_root, f) for f in image_files]
-
-    return classes
-
-
-def balance_classes(manifest_writer):
-    """
-    Tops up underrepresented classes with augmented copies of their own
-    real images, up to the size of the largest class (capped at
-    MAX_AUGMENTATION_MULTIPLIER x that class's real count). Augmented files
-    are named with an "_aug#" suffix and flagged in the manifest, so
-    they're always distinguishable from real photos later.
-    """
-    print("\nBalancing class counts with augmentation:\n")
-
-    class_folders = discover_class_folders(output_dir)
-    if not class_folders:
-        print("No classes found to balance.")
-        return
-
-    counts = {folder: len(paths) for folder, paths in class_folders.items()}
-    target = max(counts.values())
-
-    for folder, image_paths in sorted(class_folders.items()):
-        current_count = len(image_paths)
-        cap = min(target, current_count * MAX_AUGMENTATION_MULTIPLIER)
-        needed = cap - current_count
-
-        rel_path = os.path.relpath(folder, output_dir)
-        display_name = rel_path.replace(os.sep, "_")
-
-        if needed <= 0:
-            print(f"  {display_name}: {current_count} images - no augmentation needed")
-            continue
-
-        # class / burn_degree columns, matching the scheme used elsewhere
-        # in this manifest
-        path_parts = rel_path.split(os.sep)
-        if path_parts[0] == "burn" and len(path_parts) > 1:
-            manifest_class = "burn"
-            manifest_degree = path_parts[1]
-        else:
-            manifest_class = rel_path
-            manifest_degree = ""
-
-        for i in range(needed):
-            source_path = random.choice(image_paths)
-            with Image.open(source_path) as src_img:
-                augmented_img = augment_image(src_img.convert("RGB"))
-
-            source_stem = os.path.splitext(os.path.basename(source_path))[0]
-            new_filename = f"{source_stem}_aug{i}.jpg"
-            dest_path = os.path.join(folder, new_filename)
-            augmented_img.save(dest_path, "JPEG")
-
-            manifest_writer.writerow([
-                new_filename, manifest_class, manifest_degree,
-                os.path.basename(source_path), "yes",
-            ])
-
-        shortfall_note = "" if cap == target else f"  <-- capped at {MAX_AUGMENTATION_MULTIPLIER}x real data, still below the largest class ({target}); consider gathering more real images"
-        print(f"  {display_name}: {current_count} real + {needed} augmented = {cap} total{shortfall_note}")
-
-
 # ---------------------------------------------------------------------------
 # Execution
 # ---------------------------------------------------------------------------
@@ -458,9 +334,6 @@ with open(MANIFEST_PATH, "w", newline="") as manifest_file:
     clean_and_extract(cut_src, "cut", "kg1", manifest_writer)
 
     clean_and_extract_burn(KAGGLE_BURN_DIR, "kg2", manifest_writer)
-
-    if BALANCE_CLASSES:
-        balance_classes(manifest_writer)
 
 print(f"\nManifest written to {MANIFEST_PATH}")
 print("Completed")

@@ -1,0 +1,603 @@
+{
+ "before": {
+  "val": {
+   "right": 106,
+   "wrong": 20,
+   "unanswered": 125,
+   "nonwound": 13
+  },
+  "test": {
+   "right": 119,
+   "wrong": 41,
+   "unanswered": 171,
+   "nonwound": 61
+  },
+  "heldout_healthy": 85,
+  "rit": {
+   "everyday_right": 24,
+   "everyday_wrong": 0,
+   "burns": 23,
+   "feet": 183,
+   "chronic": 124,
+   "closeups": 6
+  }
+ },
+ "live_now": {
+  "val": {
+   "right": 172,
+   "wrong": 14,
+   "unanswered": 65,
+   "nonwound": 26
+  },
+  "test": {
+   "right": 197,
+   "wrong": 27,
+   "unanswered": 107,
+   "nonwound": 120
+  },
+  "heldout_healthy": 237,
+  "rit": {
+   "everyday_right": 24,
+   "everyday_wrong": 3,
+   "burns": 44,
+   "feet": 560,
+   "chronic": 284,
+   "closeups": 11
+  }
+ },
+ "options": {
+  "shipped@0.6": {
+   "val": {
+    "right": 172,
+    "wrong": 14,
+    "unanswered": 65,
+    "nonwound": 26
+   },
+   "test": {
+    "right": 197,
+    "wrong": 27,
+    "unanswered": 107,
+    "nonwound": 120
+   },
+   "heldout_healthy": 237,
+   "rit": {
+    "everyday_right": 24,
+    "everyday_wrong": 3,
+    "burns": 44,
+    "feet": 560,
+    "chronic": 284,
+    "closeups": 11
+   }
+  },
+  "shipped@0.65": {
+   "val": {
+    "right": 158,
+    "wrong": 11,
+    "unanswered": 82,
+    "nonwound": 26
+   },
+   "test": {
+    "right": 188,
+    "wrong": 23,
+    "unanswered": 120,
+    "nonwound": 98
+   },
+   "heldout_healthy": 195,
+   "rit": {
+    "everyday_right": 22,
+    "everyday_wrong": 3,
+    "burns": 42,
+    "feet": 432,
+    "chronic": 228,
+    "closeups": 8
+   }
+  },
+  "shipped@0.7": {
+   "val": {
+    "right": 136,
+    "wrong": 8,
+    "unanswered": 107,
+    "nonwound": 21
+   },
+   "test": {
+    "right": 177,
+    "wrong": 20,
+    "unanswered": 134,
+    "nonwound": 81
+   },
+   "heldout_healthy": 166,
+   "rit": {
+    "everyday_right": 22,
+    "everyday_wrong": 3,
+    "burns": 37,
+    "feet": 307,
+    "chronic": 178,
+    "closeups": 6
+   }
+  },
+  "shipped@0.75": {
+   "val": {
+    "right": 127,
+    "wrong": 8,
+    "unanswered": 116,
+    "nonwound": 18
+   },
+   "test": {
+    "right": 166,
+    "wrong": 19,
+    "unanswered": 146,
+    "nonwound": 67
+   },
+   "heldout_healthy": 139,
+   "rit": {
+    "everyday_right": 22,
+    "everyday_wrong": 2,
+    "burns": 36,
+    "feet": 223,
+    "chronic": 131,
+    "closeups": 5
+   }
+  },
+  "shipped@0.8": {
+   "val": {
+    "right": 114,
+    "wrong": 6,
+    "unanswered": 131,
+    "nonwound": 12
+   },
+   "test": {
+    "right": 146,
+    "wrong": 12,
+    "unanswered": 173,
+    "nonwound": 57
+   },
+   "heldout_healthy": 118,
+   "rit": {
+    "everyday_right": 22,
+    "everyday_wrong": 1,
+    "burns": 34,
+    "feet": 152,
+    "chronic": 91,
+    "closeups": 5
+   }
+  },
+  "shipped@0.85": {
+   "val": {
+    "right": 93,
+    "wrong": 2,
+    "unanswered": 156,
+    "nonwound": 9
+   },
+   "test": {
+    "right": 118,
+    "wrong": 8,
+    "unanswered": 205,
+    "nonwound": 43
+   },
+   "heldout_healthy": 73,
+   "rit": {
+    "everyday_right": 21,
+    "everyday_wrong": 0,
+    "burns": 29,
+    "feet": 76,
+    "chronic": 50,
+    "closeups": 4
+   }
+  },
+  "shipped@0.9": {
+   "val": {
+    "right": 63,
+    "wrong": 1,
+    "unanswered": 187,
+    "nonwound": 6
+   },
+   "test": {
+    "right": 82,
+    "wrong": 6,
+    "unanswered": 243,
+    "nonwound": 23
+   },
+   "heldout_healthy": 41,
+   "rit": {
+    "everyday_right": 17,
+    "everyday_wrong": 0,
+    "burns": 21,
+    "feet": 33,
+    "chronic": 25,
+    "closeups": 4
+   }
+  },
+  "shipped@0.95": {
+   "val": {
+    "right": 30,
+    "wrong": 0,
+    "unanswered": 221,
+    "nonwound": 4
+   },
+   "test": {
+    "right": 30,
+    "wrong": 0,
+    "unanswered": 301,
+    "nonwound": 11
+   },
+   "heldout_healthy": 10,
+   "rit": {
+    "everyday_right": 7,
+    "everyday_wrong": 0,
+    "burns": 8,
+    "feet": 3,
+    "chronic": 7,
+    "closeups": 0
+   }
+  },
+  "g4new@0.6": {
+   "val": {
+    "right": 173,
+    "wrong": 16,
+    "unanswered": 62,
+    "nonwound": 30
+   },
+   "test": {
+    "right": 198,
+    "wrong": 27,
+    "unanswered": 106,
+    "nonwound": 129
+   },
+   "heldout_healthy": 82,
+   "rit": {
+    "everyday_right": 25,
+    "everyday_wrong": 2,
+    "burns": 45,
+    "feet": 595,
+    "chronic": 294,
+    "closeups": 11
+   }
+  },
+  "g4new@0.65": {
+   "val": {
+    "right": 158,
+    "wrong": 13,
+    "unanswered": 80,
+    "nonwound": 28
+   },
+   "test": {
+    "right": 188,
+    "wrong": 23,
+    "unanswered": 120,
+    "nonwound": 109
+   },
+   "heldout_healthy": 73,
+   "rit": {
+    "everyday_right": 23,
+    "everyday_wrong": 2,
+    "burns": 42,
+    "feet": 455,
+    "chronic": 233,
+    "closeups": 9
+   }
+  },
+  "g4new@0.7": {
+   "val": {
+    "right": 137,
+    "wrong": 10,
+    "unanswered": 104,
+    "nonwound": 23
+   },
+   "test": {
+    "right": 178,
+    "wrong": 20,
+    "unanswered": 133,
+    "nonwound": 89
+   },
+   "heldout_healthy": 67,
+   "rit": {
+    "everyday_right": 23,
+    "everyday_wrong": 2,
+    "burns": 38,
+    "feet": 316,
+    "chronic": 181,
+    "closeups": 7
+   }
+  },
+  "g4new@0.75": {
+   "val": {
+    "right": 129,
+    "wrong": 9,
+    "unanswered": 113,
+    "nonwound": 21
+   },
+   "test": {
+    "right": 166,
+    "wrong": 19,
+    "unanswered": 146,
+    "nonwound": 77
+   },
+   "heldout_healthy": 61,
+   "rit": {
+    "everyday_right": 23,
+    "everyday_wrong": 1,
+    "burns": 37,
+    "feet": 228,
+    "chronic": 133,
+    "closeups": 6
+   }
+  },
+  "g4new@0.8": {
+   "val": {
+    "right": 114,
+    "wrong": 7,
+    "unanswered": 130,
+    "nonwound": 16
+   },
+   "test": {
+    "right": 147,
+    "wrong": 12,
+    "unanswered": 172,
+    "nonwound": 66
+   },
+   "heldout_healthy": 58,
+   "rit": {
+    "everyday_right": 23,
+    "everyday_wrong": 1,
+    "burns": 35,
+    "feet": 161,
+    "chronic": 92,
+    "closeups": 5
+   }
+  },
+  "g4new@0.85": {
+   "val": {
+    "right": 93,
+    "wrong": 3,
+    "unanswered": 155,
+    "nonwound": 13
+   },
+   "test": {
+    "right": 118,
+    "wrong": 9,
+    "unanswered": 204,
+    "nonwound": 47
+   },
+   "heldout_healthy": 43,
+   "rit": {
+    "everyday_right": 21,
+    "everyday_wrong": 0,
+    "burns": 29,
+    "feet": 80,
+    "chronic": 49,
+    "closeups": 4
+   }
+  },
+  "g4new@0.9": {
+   "val": {
+    "right": 63,
+    "wrong": 1,
+    "unanswered": 187,
+    "nonwound": 10
+   },
+   "test": {
+    "right": 82,
+    "wrong": 7,
+    "unanswered": 242,
+    "nonwound": 27
+   },
+   "heldout_healthy": 22,
+   "rit": {
+    "everyday_right": 17,
+    "everyday_wrong": 0,
+    "burns": 21,
+    "feet": 35,
+    "chronic": 24,
+    "closeups": 4
+   }
+  },
+  "g4new@0.95": {
+   "val": {
+    "right": 30,
+    "wrong": 0,
+    "unanswered": 221,
+    "nonwound": 4
+   },
+   "test": {
+    "right": 31,
+    "wrong": 0,
+    "unanswered": 300,
+    "nonwound": 14
+   },
+   "heldout_healthy": 7,
+   "rit": {
+    "everyday_right": 7,
+    "everyday_wrong": 0,
+    "burns": 8,
+    "feet": 2,
+    "chronic": 6,
+    "closeups": 0
+   }
+  },
+  "either@0.6": {
+   "val": {
+    "right": 170,
+    "wrong": 14,
+    "unanswered": 67,
+    "nonwound": 19
+   },
+   "test": {
+    "right": 193,
+    "wrong": 27,
+    "unanswered": 111,
+    "nonwound": 106
+   },
+   "heldout_healthy": 79,
+   "rit": {
+    "everyday_right": 24,
+    "everyday_wrong": 2,
+    "burns": 43,
+    "feet": 508,
+    "chronic": 270,
+    "closeups": 9
+   }
+  },
+  "either@0.65": {
+   "val": {
+    "right": 156,
+    "wrong": 11,
+    "unanswered": 84,
+    "nonwound": 19
+   },
+   "test": {
+    "right": 184,
+    "wrong": 23,
+    "unanswered": 124,
+    "nonwound": 88
+   },
+   "heldout_healthy": 70,
+   "rit": {
+    "everyday_right": 22,
+    "everyday_wrong": 2,
+    "burns": 41,
+    "feet": 393,
+    "chronic": 219,
+    "closeups": 7
+   }
+  },
+  "either@0.7": {
+   "val": {
+    "right": 135,
+    "wrong": 8,
+    "unanswered": 108,
+    "nonwound": 15
+   },
+   "test": {
+    "right": 175,
+    "wrong": 20,
+    "unanswered": 136,
+    "nonwound": 71
+   },
+   "heldout_healthy": 64,
+   "rit": {
+    "everyday_right": 22,
+    "everyday_wrong": 2,
+    "burns": 37,
+    "feet": 280,
+    "chronic": 171,
+    "closeups": 5
+   }
+  },
+  "either@0.75": {
+   "val": {
+    "right": 127,
+    "wrong": 8,
+    "unanswered": 116,
+    "nonwound": 13
+   },
+   "test": {
+    "right": 163,
+    "wrong": 19,
+    "unanswered": 149,
+    "nonwound": 59
+   },
+   "heldout_healthy": 58,
+   "rit": {
+    "everyday_right": 22,
+    "everyday_wrong": 1,
+    "burns": 36,
+    "feet": 202,
+    "chronic": 127,
+    "closeups": 4
+   }
+  },
+  "either@0.8": {
+   "val": {
+    "right": 114,
+    "wrong": 6,
+    "unanswered": 131,
+    "nonwound": 10
+   },
+   "test": {
+    "right": 143,
+    "wrong": 12,
+    "unanswered": 176,
+    "nonwound": 51
+   },
+   "heldout_healthy": 56,
+   "rit": {
+    "everyday_right": 22,
+    "everyday_wrong": 1,
+    "burns": 34,
+    "feet": 142,
+    "chronic": 88,
+    "closeups": 4
+   }
+  },
+  "either@0.85": {
+   "val": {
+    "right": 93,
+    "wrong": 2,
+    "unanswered": 156,
+    "nonwound": 8
+   },
+   "test": {
+    "right": 115,
+    "wrong": 8,
+    "unanswered": 208,
+    "nonwound": 38
+   },
+   "heldout_healthy": 41,
+   "rit": {
+    "everyday_right": 21,
+    "everyday_wrong": 0,
+    "burns": 29,
+    "feet": 73,
+    "chronic": 48,
+    "closeups": 3
+   }
+  },
+  "either@0.9": {
+   "val": {
+    "right": 63,
+    "wrong": 1,
+    "unanswered": 187,
+    "nonwound": 6
+   },
+   "test": {
+    "right": 81,
+    "wrong": 6,
+    "unanswered": 244,
+    "nonwound": 19
+   },
+   "heldout_healthy": 22,
+   "rit": {
+    "everyday_right": 17,
+    "everyday_wrong": 0,
+    "burns": 21,
+    "feet": 33,
+    "chronic": 23,
+    "closeups": 3
+   }
+  },
+  "either@0.95": {
+   "val": {
+    "right": 30,
+    "wrong": 0,
+    "unanswered": 221,
+    "nonwound": 4
+   },
+   "test": {
+    "right": 30,
+    "wrong": 0,
+    "unanswered": 301,
+    "nonwound": 9
+   },
+   "heldout_healthy": 7,
+   "rit": {
+    "everyday_right": 7,
+    "everyday_wrong": 0,
+    "burns": 8,
+    "feet": 2,
+    "chronic": 5,
+    "closeups": 0
+   }
+  }
+ },
+ "chosen": "either@0.75"
+}

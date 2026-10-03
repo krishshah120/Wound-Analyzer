@@ -1,0 +1,17 @@
+# Upload only what the Dockerfile uses. Without this, `gcloud run deploy
+# --source .` would upload the datasets and the local Python environment.
+*
+!Dockerfile
+!requirements-server.txt
+!app.py
+!src/
+src/*
+!src/model.py
+!src/litert_model.py
+!models/
+models/*
+!models/wound_model.tflite
+!models/out_of_scope_gate.tflite
+!models/class_names.json
+!templates/
+!templates/**

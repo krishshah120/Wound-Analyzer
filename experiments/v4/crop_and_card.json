@@ -1,0 +1,147 @@
+{
+ "old_config_reproduces_card": {
+  "test_close": {
+   "named": 160,
+   "right": 119,
+   "nonwound": 61
+  },
+  "test_arm": {
+   "named": 67,
+   "right": 44,
+   "nonwound": 61
+  }
+ },
+ "crop_sweep_dev": {
+  "0.8": {
+   "added_right": 12,
+   "added_false": 25,
+   "qualifies": false
+  },
+  "0.85": {
+   "added_right": 8,
+   "added_false": 14,
+   "qualifies": false
+  },
+  "0.9": {
+   "added_right": 4,
+   "added_false": 6,
+   "qualifies": false
+  },
+  "0.95": {
+   "added_right": 1,
+   "added_false": 1,
+   "qualifies": false
+  }
+ },
+ "crop_chosen": "remove",
+ "card_deployed_now_crop_0.80": {
+  "test_close": {
+   "named": "182/331",
+   "named_pct": 55.0,
+   "named_ci": [
+    49.6,
+    60.3
+   ],
+   "right": "163/182",
+   "right_pct": 89.6,
+   "right_ci": [
+    84.3,
+    93.2
+   ],
+   "nonwound": "59/450",
+   "nonwound_pct": 13.1,
+   "nonwound_ci": [
+    10.3,
+    16.5
+   ]
+  },
+  "third_degree_test": {
+   "n": 40,
+   "possible_burn": 19,
+   "other_injury": 2,
+   "unknown": 19
+  },
+  "test_arm": {
+   "named": "78/331",
+   "named_pct": 23.6,
+   "named_ci": [
+    19.3,
+    28.4
+   ],
+   "right": "69/78",
+   "right_pct": 88.5,
+   "right_ci": [
+    79.5,
+    93.8
+   ],
+   "nonwound": "59/450",
+   "nonwound_pct": 13.1,
+   "nonwound_ci": [
+    10.3,
+    16.5
+   ]
+  }
+ },
+ "card_with_chosen_crop": {
+  "test_close": {
+   "named": "172/331",
+   "named_pct": 52.0,
+   "named_ci": [
+    46.6,
+    57.3
+   ],
+   "right": "154/172",
+   "right_pct": 89.5,
+   "right_ci": [
+    84.1,
+    93.3
+   ],
+   "nonwound": "48/450",
+   "nonwound_pct": 10.7,
+   "nonwound_ci": [
+    8.1,
+    13.9
+   ]
+  },
+  "third_degree_test": {
+   "n": 40,
+   "possible_burn": 19,
+   "other_injury": 1,
+   "unknown": 20
+  },
+  "test_arm": {
+   "named": "67/331",
+   "named_pct": 20.2,
+   "named_ci": [
+    16.3,
+    24.9
+   ],
+   "right": "61/67",
+   "right_pct": 91.0,
+   "right_ci": [
+    81.8,
+    95.8
+   ],
+   "nonwound": "48/450",
+   "nonwound_pct": 10.7,
+   "nonwound_ci": [
+    8.1,
+    13.9
+   ]
+  }
+ },
+ "old_config_merged_scoring": {
+  "test_close": {
+   "named": 160,
+   "right_merged": 141,
+   "right_merged_pct": 88.1,
+   "right_strict": 119
+  },
+  "test_arm": {
+   "named": 67,
+   "right_merged": 53,
+   "right_merged_pct": 79.1,
+   "right_strict": 44
+  }
+ }
+}

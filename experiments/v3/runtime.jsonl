@@ -1,0 +1,2 @@
+{"classifiers": 1, "load_s": 0.096, "peak_rss_mb": 165.6, "latency_ms_median": 7.0, "latency_ms_p95": 8.7, "photos": 200, "model_bytes": 34550808, "note": "includes JPEG decode + resize of RIT photos (<= original size)"}
+{"classifiers": 3, "load_s": 0.015, "peak_rss_mb": 257.9, "latency_ms_median": 13.1, "latency_ms_p95": 13.9, "photos": 200, "model_bytes": 69101616, "note": "includes JPEG decode + resize of RIT photos (<= original size)"}

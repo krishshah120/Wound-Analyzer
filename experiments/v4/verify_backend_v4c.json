@@ -1,0 +1,49 @@
+{
+ "server": {
+  "val": {
+   "right": 117,
+   "wrong": 6,
+   "unanswered": 128,
+   "nonwound": 12
+  },
+  "test": {
+   "right": 154,
+   "wrong": 18,
+   "unanswered": 159,
+   "nonwound": 48
+  },
+  "heldout_healthy": 37,
+  "rit": {
+   "everyday_right": 19,
+   "everyday_wrong": 1,
+   "burns": 35,
+   "feet": 158,
+   "chronic": 115,
+   "closeups": 3
+  }
+ },
+ "expected": {
+  "val": {
+   "right": 117,
+   "wrong": 6,
+   "unanswered": 128,
+   "nonwound": 12
+  },
+  "test": {
+   "right": 154,
+   "wrong": 18,
+   "unanswered": 159,
+   "nonwound": 48
+  },
+  "heldout_healthy": 37,
+  "rit": {
+   "everyday_right": 19,
+   "everyday_wrong": 1,
+   "burns": 35,
+   "feet": 158,
+   "chronic": 115,
+   "closeups": 3
+  }
+ },
+ "match": true
+}

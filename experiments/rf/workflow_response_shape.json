@@ -1,0 +1,1 @@
+"list[1] of {'predictions': {'image': {'width': 'int', 'height': 'int'}, 'predictions': \"list[1] of ['class', 'class_id', 'confidence', 'detection_id', 'height', 'parent_id', 'width', 'x', 'y']\"}}"

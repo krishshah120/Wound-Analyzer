@@ -1,0 +1,424 @@
+{
+ "live": "deployed+healthy t0.7",
+ "live_summary": {
+  "dev": {
+   "right": 175,
+   "wrong": 4,
+   "false": 66
+  },
+  "faces": {
+   "v4_faces": "70/864",
+   "a8_faces": "26/205"
+  },
+  "test_clean": {
+   "named": "162/322",
+   "right": 151,
+   "wrong": 11,
+   "nonwound": "44/450"
+  },
+  "test": {
+   "named": "164/331",
+   "right": 153,
+   "wrong": 11,
+   "nonwound": "44/450"
+  },
+  "test_f50_clean": {
+   "named": "66/322",
+   "right": 62,
+   "wrong": 4,
+   "nonwound": "44/450"
+  },
+  "test_arm2_clean": {
+   "named": "45/322",
+   "right": 41,
+   "wrong": 4,
+   "nonwound": "13/450"
+  },
+  "test_arm2": {
+   "named": "47/331",
+   "right": 43,
+   "wrong": 4,
+   "nonwound": "13/450"
+  },
+  "normal_skin": {
+   "heldout": "22/401",
+   "indep": "118/1008",
+   "a8_heldout": "26/205"
+  },
+  "rit": {
+   "feet": 104,
+   "chronic": 123,
+   "burns": 36,
+   "everyday_right": 17,
+   "everyday_wrong": 1
+  }
+ },
+ "flags": 32,
+ "dev_all": {
+  "N6 t0.6": {
+   "right": 212,
+   "wrong": 17,
+   "false": 64
+  },
+  "N6 t0.65": {
+   "right": 198,
+   "wrong": 13,
+   "false": 52
+  },
+  "N6 t0.7": {
+   "right": 183,
+   "wrong": 11,
+   "false": 40
+  },
+  "N6 t0.75": {
+   "right": 150,
+   "wrong": 8,
+   "false": 29
+  },
+  "N6+healthy t0.6": {
+   "right": 212,
+   "wrong": 11,
+   "false": 54
+  },
+  "N6+healthy t0.65": {
+   "right": 188,
+   "wrong": 9,
+   "false": 39
+  },
+  "N6+healthy t0.7": {
+   "right": 164,
+   "wrong": 6,
+   "false": 33
+  },
+  "N6+healthy t0.75": {
+   "right": 134,
+   "wrong": 1,
+   "false": 24
+  },
+  "N6+deployed+healthy t0.6": {
+   "right": 222,
+   "wrong": 13,
+   "false": 76
+  },
+  "N6+deployed+healthy t0.65": {
+   "right": 203,
+   "wrong": 9,
+   "false": 57
+  },
+  "N6+deployed+healthy t0.7": {
+   "right": 176,
+   "wrong": 4,
+   "false": 40
+  },
+  "N6+deployed+healthy t0.75": {
+   "right": 137,
+   "wrong": 1,
+   "false": 29
+  },
+  "N6k t0.6": {
+   "right": 209,
+   "wrong": 14,
+   "false": 53
+  },
+  "N6k t0.65": {
+   "right": 186,
+   "wrong": 10,
+   "false": 47
+  },
+  "N6k t0.7": {
+   "right": 165,
+   "wrong": 8,
+   "false": 44
+  },
+  "N6k t0.75": {
+   "right": 145,
+   "wrong": 0,
+   "false": 34
+  },
+  "N6k+healthy t0.6": {
+   "right": 211,
+   "wrong": 6,
+   "false": 55
+  },
+  "N6k+healthy t0.65": {
+   "right": 184,
+   "wrong": 4,
+   "false": 42
+  },
+  "N6k+healthy t0.7": {
+   "right": 162,
+   "wrong": 1,
+   "false": 34
+  },
+  "N6k+healthy t0.75": {
+   "right": 132,
+   "wrong": 0,
+   "false": 28
+  },
+  "N6k+deployed+healthy t0.6": {
+   "right": 222,
+   "wrong": 12,
+   "false": 83
+  },
+  "N6k+deployed+healthy t0.65": {
+   "right": 199,
+   "wrong": 7,
+   "false": 63
+  },
+  "N6k+deployed+healthy t0.7": {
+   "right": 162,
+   "wrong": 1,
+   "false": 46
+  },
+  "N6k+deployed+healthy t0.75": {
+   "right": 138,
+   "wrong": 0,
+   "false": 30
+  }
+ },
+ "eligible": [
+  "N6+deployed+healthy t0.7"
+ ],
+ "chosen": "N6+deployed+healthy t0.7",
+ "control_summary": {
+  "N6k t0.7": {
+   "dev": {
+    "right": 165,
+    "wrong": 8,
+    "false": 44
+   },
+   "faces": {
+    "v4_faces": "24/864",
+    "a8_faces": "6/205"
+   },
+   "test_clean": {
+    "named": "175/322",
+    "right": 160,
+    "wrong": 15,
+    "nonwound": "66/450"
+   },
+   "test": {
+    "named": "178/331",
+    "right": 162,
+    "wrong": 16,
+    "nonwound": "66/450"
+   },
+   "test_f50_clean": {
+    "named": "53/322",
+    "right": 47,
+    "wrong": 6,
+    "nonwound": "66/450"
+   },
+   "test_arm2_clean": {
+    "named": "41/322",
+    "right": 36,
+    "wrong": 5,
+    "nonwound": "12/450"
+   },
+   "test_arm2": {
+    "named": "41/331",
+    "right": 36,
+    "wrong": 5,
+    "nonwound": "12/450"
+   },
+   "normal_skin": {
+    "heldout": "6/401",
+    "indep": "88/1008",
+    "a8_heldout": "6/205"
+   },
+   "rit": {
+    "feet": 303,
+    "chronic": 171,
+    "burns": 33,
+    "everyday_right": 19,
+    "everyday_wrong": 0
+   }
+  },
+  "N6k+healthy t0.7": {
+   "dev": {
+    "right": 162,
+    "wrong": 1,
+    "false": 34
+   },
+   "faces": {
+    "v4_faces": "20/864",
+    "a8_faces": "7/205"
+   },
+   "test_clean": {
+    "named": "163/322",
+    "right": 152,
+    "wrong": 11,
+    "nonwound": "46/450"
+   },
+   "test": {
+    "named": "166/331",
+    "right": 154,
+    "wrong": 12,
+    "nonwound": "46/450"
+   },
+   "test_f50_clean": {
+    "named": "43/322",
+    "right": 42,
+    "wrong": 1,
+    "nonwound": "46/450"
+   },
+   "test_arm2_clean": {
+    "named": "36/322",
+    "right": 35,
+    "wrong": 1,
+    "nonwound": "13/450"
+   },
+   "test_arm2": {
+    "named": "36/331",
+    "right": 35,
+    "wrong": 1,
+    "nonwound": "13/450"
+   },
+   "normal_skin": {
+    "heldout": "5/401",
+    "indep": "60/1008",
+    "a8_heldout": "7/205"
+   },
+   "rit": {
+    "feet": 127,
+    "chronic": 138,
+    "burns": 33,
+    "everyday_right": 16,
+    "everyday_wrong": 0
+   }
+  },
+  "N6k+deployed+healthy t0.7": {
+   "dev": {
+    "right": 162,
+    "wrong": 1,
+    "false": 46
+   },
+   "faces": {
+    "v4_faces": "51/864",
+    "a8_faces": "9/205"
+   },
+   "test_clean": {
+    "named": "168/322",
+    "right": 154,
+    "wrong": 14,
+    "nonwound": "48/450"
+   },
+   "test": {
+    "named": "171/331",
+    "right": 156,
+    "wrong": 15,
+    "nonwound": "48/450"
+   },
+   "test_f50_clean": {
+    "named": "56/322",
+    "right": 53,
+    "wrong": 3,
+    "nonwound": "48/450"
+   },
+   "test_arm2_clean": {
+    "named": "35/322",
+    "right": 34,
+    "wrong": 1,
+    "nonwound": "13/450"
+   },
+   "test_arm2": {
+    "named": "37/331",
+    "right": 36,
+    "wrong": 1,
+    "nonwound": "13/450"
+   },
+   "normal_skin": {
+    "heldout": "13/401",
+    "indep": "102/1008",
+    "a8_heldout": "9/205"
+   },
+   "rit": {
+    "feet": 130,
+    "chronic": 133,
+    "burns": 32,
+    "everyday_right": 19,
+    "everyday_wrong": 0
+   }
+  }
+ },
+ "chosen_summary": {
+  "dev": {
+   "right": 176,
+   "wrong": 4,
+   "false": 40
+  },
+  "faces": {
+   "v4_faces": "48/864",
+   "a8_faces": "10/205"
+  },
+  "test_clean": {
+   "named": "160/322",
+   "right": 148,
+   "wrong": 12,
+   "nonwound": "48/450"
+  },
+  "test": {
+   "named": "163/331",
+   "right": 150,
+   "wrong": 13,
+   "nonwound": "48/450"
+  },
+  "test_f50_clean": {
+   "named": "59/322",
+   "right": 55,
+   "wrong": 4,
+   "nonwound": "48/450"
+  },
+  "test_arm2_clean": {
+   "named": "39/322",
+   "right": 34,
+   "wrong": 5,
+   "nonwound": "17/450"
+  },
+  "test_arm2": {
+   "named": "39/331",
+   "right": 34,
+   "wrong": 5,
+   "nonwound": "17/450"
+  },
+  "normal_skin": {
+   "heldout": "10/401",
+   "indep": "90/1008",
+   "a8_heldout": "10/205"
+  },
+  "rit": {
+   "feet": 101,
+   "chronic": 126,
+   "burns": 36,
+   "everyday_right": 18,
+   "everyday_wrong": 1
+  }
+ },
+ "verdict_pool": {
+  "right": {
+   "candidate": 202,
+   "live": 204,
+   "diff_ci": [
+    -11.0,
+    7.0
+   ]
+  },
+  "false": {
+   "candidate": 368,
+   "live": 392,
+   "diff_ci": [
+    -69.0,
+    12.0
+   ]
+  },
+  "wrong": {
+   "candidate": 13,
+   "live": 12,
+   "diff_ci": [
+    -2.0,
+    5.0
+   ]
+  },
+  "confirmed": false
+ }
+}

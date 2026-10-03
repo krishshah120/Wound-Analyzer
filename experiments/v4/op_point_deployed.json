@@ -1,0 +1,205 @@
+{
+ "gate": "deployed",
+ "rule": "lowest threshold with val non-wound labelled <= 13/94",
+ "chosen": null,
+ "sweep": {
+  "0.6": {
+   "val": {
+    "n": 251,
+    "answered": 186,
+    "right": 172,
+    "wrong": 14,
+    "unanswered": 65,
+    "nonwound": 26,
+    "nonwound_n": 94,
+    "third_shown_non_burn": 1
+   },
+   "test": {
+    "n": 331,
+    "answered": 224,
+    "right": 197,
+    "wrong": 27,
+    "unanswered": 107,
+    "nonwound": 120,
+    "nonwound_n": 450,
+    "third_shown_non_burn": 4
+   },
+   "rit": {
+    "everyday_right": 24,
+    "everyday_wrong": 3,
+    "everyday_n": 48,
+    "burns_recognised": 44,
+    "burns_n": 67,
+    "feet": 560,
+    "feet_n": 1613,
+    "chronic": 284,
+    "chronic_n": 1231
+   }
+  },
+  "0.55": {
+   "val": {
+    "n": 251,
+    "answered": 195,
+    "right": 178,
+    "wrong": 17,
+    "unanswered": 56,
+    "nonwound": 28,
+    "nonwound_n": 94,
+    "third_shown_non_burn": 1
+   },
+   "test": {
+    "n": 331,
+    "answered": 245,
+    "right": 215,
+    "wrong": 30,
+    "unanswered": 86,
+    "nonwound": 136,
+    "nonwound_n": 450,
+    "third_shown_non_burn": 4
+   },
+   "rit": {
+    "everyday_right": 25,
+    "everyday_wrong": 3,
+    "everyday_n": 48,
+    "burns_recognised": 45,
+    "burns_n": 67,
+    "feet": 702,
+    "feet_n": 1613,
+    "chronic": 344,
+    "chronic_n": 1231
+   }
+  },
+  "0.5": {
+   "val": {
+    "n": 251,
+    "answered": 205,
+    "right": 186,
+    "wrong": 19,
+    "unanswered": 46,
+    "nonwound": 29,
+    "nonwound_n": 94,
+    "third_shown_non_burn": 1
+   },
+   "test": {
+    "n": 331,
+    "answered": 261,
+    "right": 228,
+    "wrong": 33,
+    "unanswered": 70,
+    "nonwound": 153,
+    "nonwound_n": 450,
+    "third_shown_non_burn": 4
+   },
+   "rit": {
+    "everyday_right": 29,
+    "everyday_wrong": 6,
+    "everyday_n": 48,
+    "burns_recognised": 49,
+    "burns_n": 67,
+    "feet": 874,
+    "feet_n": 1613,
+    "chronic": 401,
+    "chronic_n": 1231
+   }
+  },
+  "0.45": {
+   "val": {
+    "n": 251,
+    "answered": 216,
+    "right": 193,
+    "wrong": 23,
+    "unanswered": 35,
+    "nonwound": 32,
+    "nonwound_n": 94,
+    "third_shown_non_burn": 1
+   },
+   "test": {
+    "n": 331,
+    "answered": 282,
+    "right": 238,
+    "wrong": 44,
+    "unanswered": 49,
+    "nonwound": 162,
+    "nonwound_n": 450,
+    "third_shown_non_burn": 5
+   },
+   "rit": {
+    "everyday_right": 32,
+    "everyday_wrong": 10,
+    "everyday_n": 48,
+    "burns_recognised": 50,
+    "burns_n": 67,
+    "feet": 1054,
+    "feet_n": 1613,
+    "chronic": 468,
+    "chronic_n": 1231
+   }
+  },
+  "0.4": {
+   "val": {
+    "n": 251,
+    "answered": 224,
+    "right": 196,
+    "wrong": 28,
+    "unanswered": 27,
+    "nonwound": 33,
+    "nonwound_n": 94,
+    "third_shown_non_burn": 1
+   },
+   "test": {
+    "n": 331,
+    "answered": 293,
+    "right": 245,
+    "wrong": 48,
+    "unanswered": 38,
+    "nonwound": 173,
+    "nonwound_n": 450,
+    "third_shown_non_burn": 5
+   },
+   "rit": {
+    "everyday_right": 32,
+    "everyday_wrong": 12,
+    "everyday_n": 48,
+    "burns_recognised": 52,
+    "burns_n": 67,
+    "feet": 1161,
+    "feet_n": 1613,
+    "chronic": 543,
+    "chronic_n": 1231
+   }
+  }
+ },
+ "today": {
+  "val": {
+   "n": 251,
+   "answered": 126,
+   "right": 106,
+   "wrong": 20,
+   "unanswered": 125,
+   "nonwound": 13,
+   "nonwound_n": 94,
+   "third_shown_non_burn": 2
+  },
+  "test": {
+   "n": 331,
+   "answered": 160,
+   "right": 119,
+   "wrong": 41,
+   "unanswered": 171,
+   "nonwound": 61,
+   "nonwound_n": 450,
+   "third_shown_non_burn": 5
+  },
+  "rit": {
+   "everyday_right": 24,
+   "everyday_wrong": 0,
+   "everyday_n": 48,
+   "burns_recognised": 23,
+   "burns_n": 67,
+   "feet": 183,
+   "feet_n": 1613,
+   "chronic": 124,
+   "chronic_n": 1231
+  }
+ }
+}

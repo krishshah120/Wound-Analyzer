@@ -1,0 +1,508 @@
+{
+ "n_eligible": 3510,
+ "n_dev": 199,
+ "n_eval": 3311,
+ "roboflow_errors": 0,
+ "thresholds": {
+  "deployed_dev": {
+   "n": 109,
+   "right": 44,
+   "wrong": 1,
+   "unanswered": 64,
+   "acc_answered": 97.8
+  },
+  "tau_selected": 0.82,
+  "tau_matched_coverage": null,
+  "deployed_matched_to_roboflow": 0.95
+ },
+ "eval": {
+  "deployed@0.60": {
+   "per_category": {
+    "abrasion": {
+     "n": 1,
+     "right": 0,
+     "wrong": 1,
+     "unanswered": 0
+    },
+    "bruise": {
+     "n": 11,
+     "right": 3,
+     "wrong": 2,
+     "unanswered": 6
+    },
+    "cut": {
+     "n": 17,
+     "right": 4,
+     "wrong": 0,
+     "unanswered": 13
+    },
+    "possible_burn": {
+     "n": 119,
+     "right": 53,
+     "wrong": 1,
+     "unanswered": 65
+    }
+   },
+   "nonwound": {
+    "other_nonwound": {
+     "n": 439,
+     "labelled": 60,
+     "as_burn": 50
+    },
+    "healthy_feet": {
+     "n": 1508,
+     "labelled": 170,
+     "as_burn": 61
+    },
+    "chronic_wounds": {
+     "n": 1216,
+     "labelled": 122,
+     "as_burn": 93
+    }
+   },
+   "all_wound": {
+    "n": 148,
+    "right": 60,
+    "wrong": 4,
+    "unanswered": 84,
+    "acc_answered": 93.8
+   },
+   "burn_shown_other_injury": 1
+  },
+  "roboflow@0.82 (selected)": {
+   "per_category": {
+    "abrasion": {
+     "n": 1,
+     "right": 0,
+     "wrong": 0,
+     "unanswered": 1
+    },
+    "bruise": {
+     "n": 11,
+     "right": 1,
+     "wrong": 3,
+     "unanswered": 7
+    },
+    "cut": {
+     "n": 17,
+     "right": 1,
+     "wrong": 0,
+     "unanswered": 16
+    },
+    "possible_burn": {
+     "n": 119,
+     "right": 2,
+     "wrong": 0,
+     "unanswered": 117
+    }
+   },
+   "nonwound": {
+    "other_nonwound": {
+     "n": 439,
+     "labelled": 15,
+     "as_burn": 14
+    },
+    "healthy_feet": {
+     "n": 1508,
+     "labelled": 3,
+     "as_burn": 1
+    },
+    "chronic_wounds": {
+     "n": 1216,
+     "labelled": 22,
+     "as_burn": 15
+    }
+   },
+   "all_wound": {
+    "n": 148,
+    "right": 4,
+    "wrong": 3,
+    "unanswered": 141,
+    "acc_answered": 57.1
+   },
+   "burn_shown_other_injury": 0
+  },
+  "deployed@0.95 (matched to roboflow selected)": {
+   "per_category": {
+    "abrasion": {
+     "n": 1,
+     "right": 0,
+     "wrong": 0,
+     "unanswered": 1
+    },
+    "bruise": {
+     "n": 11,
+     "right": 0,
+     "wrong": 0,
+     "unanswered": 11
+    },
+    "cut": {
+     "n": 17,
+     "right": 1,
+     "wrong": 0,
+     "unanswered": 16
+    },
+    "possible_burn": {
+     "n": 119,
+     "right": 6,
+     "wrong": 0,
+     "unanswered": 113
+    }
+   },
+   "nonwound": {
+    "other_nonwound": {
+     "n": 439,
+     "labelled": 2,
+     "as_burn": 2
+    },
+    "healthy_feet": {
+     "n": 1508,
+     "labelled": 0,
+     "as_burn": 0
+    },
+    "chronic_wounds": {
+     "n": 1216,
+     "labelled": 1,
+     "as_burn": 1
+    }
+   },
+   "all_wound": {
+    "n": 148,
+    "right": 7,
+    "wrong": 0,
+    "unanswered": 141,
+    "acc_answered": 100.0
+   },
+   "burn_shown_other_injury": 0
+  },
+  "FOLLOW-UP roboflow@0.40 (floor)": {
+   "per_category": {
+    "abrasion": {
+     "n": 1,
+     "right": 0,
+     "wrong": 0,
+     "unanswered": 1
+    },
+    "bruise": {
+     "n": 11,
+     "right": 2,
+     "wrong": 4,
+     "unanswered": 5
+    },
+    "cut": {
+     "n": 17,
+     "right": 5,
+     "wrong": 1,
+     "unanswered": 11
+    },
+    "possible_burn": {
+     "n": 119,
+     "right": 32,
+     "wrong": 7,
+     "unanswered": 80
+    }
+   },
+   "nonwound": {
+    "other_nonwound": {
+     "n": 439,
+     "labelled": 118,
+     "as_burn": 103
+    },
+    "healthy_feet": {
+     "n": 1508,
+     "labelled": 60,
+     "as_burn": 23
+    },
+    "chronic_wounds": {
+     "n": 1216,
+     "labelled": 347,
+     "as_burn": 263
+    }
+   },
+   "all_wound": {
+    "n": 148,
+    "right": 39,
+    "wrong": 12,
+    "unanswered": 97,
+    "acc_answered": 76.5
+   },
+   "burn_shown_other_injury": 7
+  },
+  "FOLLOW-UP deployed@0.735 (matched to roboflow@0.40 on val)": {
+   "per_category": {
+    "abrasion": {
+     "n": 1,
+     "right": 0,
+     "wrong": 0,
+     "unanswered": 1
+    },
+    "bruise": {
+     "n": 11,
+     "right": 2,
+     "wrong": 1,
+     "unanswered": 8
+    },
+    "cut": {
+     "n": 17,
+     "right": 4,
+     "wrong": 0,
+     "unanswered": 13
+    },
+    "possible_burn": {
+     "n": 119,
+     "right": 40,
+     "wrong": 0,
+     "unanswered": 79
+    }
+   },
+   "nonwound": {
+    "other_nonwound": {
+     "n": 439,
+     "labelled": 33,
+     "as_burn": 30
+    },
+    "healthy_feet": {
+     "n": 1508,
+     "labelled": 64,
+     "as_burn": 24
+    },
+    "chronic_wounds": {
+     "n": 1216,
+     "labelled": 48,
+     "as_burn": 39
+    }
+   },
+   "all_wound": {
+    "n": 148,
+    "right": 46,
+    "wrong": 1,
+    "unanswered": 101,
+    "acc_answered": 97.9
+   },
+   "burn_shown_other_injury": 0
+  },
+  "agreement (both same category)": {
+   "per_category": {
+    "abrasion": {
+     "n": 1,
+     "right": 0,
+     "wrong": 0,
+     "unanswered": 1
+    },
+    "bruise": {
+     "n": 11,
+     "right": 1,
+     "wrong": 0,
+     "unanswered": 10
+    },
+    "cut": {
+     "n": 17,
+     "right": 0,
+     "wrong": 0,
+     "unanswered": 17
+    },
+    "possible_burn": {
+     "n": 119,
+     "right": 0,
+     "wrong": 0,
+     "unanswered": 119
+    }
+   },
+   "nonwound": {
+    "other_nonwound": {
+     "n": 439,
+     "labelled": 3,
+     "as_burn": 3
+    },
+    "healthy_feet": {
+     "n": 1508,
+     "labelled": 1,
+     "as_burn": 0
+    },
+    "chronic_wounds": {
+     "n": 1216,
+     "labelled": 0,
+     "as_burn": 0
+    }
+   },
+   "all_wound": {
+    "n": 148,
+    "right": 1,
+    "wrong": 0,
+    "unanswered": 147,
+    "acc_answered": 100.0
+   },
+   "burn_shown_other_injury": 0
+  }
+ },
+ "paired_95ci_counts_vs_deployed@0.60": {
+  "roboflow@0.82 (selected)": {
+   "burn_right": [
+    -67.0,
+    -35.0
+   ],
+   "wound_right": [
+    -73.0,
+    -40.0
+   ],
+   "wound_wrong": [
+    -6.0,
+    5.0
+   ],
+   "fp_other": [
+    -62.0,
+    -28.0
+   ],
+   "fp_feet": [
+    -276.0,
+    -95.0
+   ],
+   "fp_chronic": [
+    -122.0,
+    -77.0
+   ]
+  },
+  "deployed@0.95 (matched to roboflow selected)": {
+   "burn_right": [
+    -62.0,
+    -33.0
+   ],
+   "wound_right": [
+    -69.0,
+    -38.0
+   ],
+   "wound_wrong": [
+    -8.0,
+    -1.0
+   ],
+   "fp_other": [
+    -73.0,
+    -44.0
+   ],
+   "fp_feet": [
+    -279.0,
+    -97.0
+   ],
+   "fp_chronic": [
+    -142.0,
+    -100.0
+   ]
+  },
+  "FOLLOW-UP roboflow@0.40 (floor)": {
+   "burn_right": [
+    -38.0,
+    -4.0
+   ],
+   "wound_right": [
+    -38.0,
+    -3.0
+   ],
+   "wound_wrong": [
+    0.0,
+    16.0
+   ],
+   "fp_other": [
+    34.0,
+    81.0
+   ],
+   "fp_feet": [
+    -173.0,
+    -63.0
+   ],
+   "fp_chronic": [
+    182.0,
+    273.0
+   ]
+  },
+  "FOLLOW-UP deployed@0.735 (matched to roboflow@0.40 on val)": {
+   "burn_right": [
+    -21.0,
+    -6.0
+   ],
+   "wound_right": [
+    -22.0,
+    -7.0
+   ],
+   "wound_wrong": [
+    -7.0,
+    0.0
+   ],
+   "fp_other": [
+    -37.0,
+    -17.0
+   ],
+   "fp_feet": [
+    -179.0,
+    -59.0
+   ],
+   "fp_chronic": [
+    -92.0,
+    -57.0
+   ]
+  },
+  "agreement (both same category)": {
+   "burn_right": [
+    -69.0,
+    -38.0
+   ],
+   "wound_right": [
+    -75.0,
+    -43.0
+   ],
+   "wound_wrong": [
+    -8.0,
+    -1.0
+   ],
+   "fp_other": [
+    -72.0,
+    -42.0
+   ],
+   "fp_feet": [
+    -279.0,
+    -96.0
+   ],
+   "fp_chronic": [
+    -142.0,
+    -101.0
+   ]
+  }
+ },
+ "verdict_selected_point": "no demonstrated advantage / too small to tell",
+ "latency_roboflow_roundtrip_s": {
+  "median": 0.205,
+  "p95": 0.311,
+  "n": 3510,
+  "measured_from": "this Mac over the internet, not Vercel"
+ },
+ "latency_deployed_local_ms": {
+  "median": 7.0,
+  "p95": 8.7,
+  "note": "full frame on this Mac; crop retry doubles it when used; not Vercel"
+ },
+ "FOLLOW-UP_roboflow@0.40_minus_deployed@0.735_95ci_counts": {
+  "burn_right": [
+   -24.0,
+   8.0
+  ],
+  "wound_right": [
+   -23.0,
+   11.0
+  ],
+  "wound_wrong": [
+   4.0,
+   18.0
+  ],
+  "fp_other": [
+   63.0,
+   107.0
+  ],
+  "fp_feet": [
+   -30.0,
+   25.0
+  ],
+  "fp_chronic": [
+   255.0,
+   349.0
+  ]
+ }
+}

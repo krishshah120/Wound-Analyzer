@@ -1,0 +1,33 @@
+split,label,file,flag,reason,in_v2_flagged_for_review
+train,burn_1st_degree,burn_1st_degree_kg2_0.jpg,U,"plain skin texture, no redness",yes
+train,burn_1st_degree,burn_1st_degree_kg2_415.jpg,U,sunscreen drawn on tanned shoulder (stock),no
+train,burn_1st_degree,burn_1st_degree_kg2_425.jpg,U,applying cream to unmarked skin (stock),no
+train,burn_1st_degree,burn_1st_degree_kg2_609.jpg,U,"spider veins only, no injury",yes
+train,burn_1st_degree,burn_1st_degree_kg2_705.jpg,U,sunscreen drawn on tanned back (stock),no
+train,burn_1st_degree,burn_1st_degree_kg2_714.jpg,U,unmarked forearm,no
+train,burn_1st_degree,burn_1st_degree_kg2_721.jpg,U,"hands under a tap (first-aid scene), skin unmarked",no
+train,burn_1st_degree,burn_1st_degree_kg2_727.jpg,U,"dark skin close-up, unmarked",no
+train,burn_1st_degree,burn_1st_degree_kg2_795.jpg,U,"arm being scratched, unmarked (stock)",no
+train,burn_1st_degree,burn_1st_degree_kg2_804.jpg,U,"older hand, unmarked",no
+train,burn_1st_degree,burn_1st_degree_kg2_809.jpg,U,uninjured face (stock),no
+train,burn_1st_degree,burn_1st_degree_kg2_830.jpg,U,"lips pinched, unmarked",no
+train,burn_1st_degree,burn_1st_degree_kg2_90.jpg,U,plain skin texture,yes
+train,burn_1st_degree,burn_1st_degree_kg2_986.jpg,U,"hand touching wrist, unmarked (stock)",yes
+train,burn_1st_degree,burn_1st_degree_kg2_999.jpg,U,"legs on a bed, unmarked",no
+val,abrasion,abrasion_kg1_111.jpg,U,"forearm, no abrasion visible (stock)",no
+val,abrasion,abrasion_kg1_58.jpg,U,"skin close-up with label tape, no abrasion visible",no
+val,burn_1st_degree,burn_1st_degree_kg2_12.jpg,U,unmarked arm (stock),no
+val,burn_1st_degree,burn_1st_degree_kg2_134.jpg,U,"uninjured face, hands on cheeks (stock)",no
+val,burn_1st_degree,burn_1st_degree_kg2_286.jpg,U,"baby feet, unmarked",no
+val,burn_1st_degree,burn_1st_degree_kg2_427.jpg,U,"hands under water (first-aid scene), skin unmarked",no
+val,burn_1st_degree,burn_1st_degree_kg2_51.jpg,U,"forehead, unmarked",no
+val,burn_1st_degree,burn_1st_degree_kg2_673.jpg,U,"neck and collarbone with moles, unmarked",no
+test,abrasion,abrasion_kg1_106.jpg,U,"object against skin, no abrasion visible",no
+test,burn_1st_degree,burn_1st_degree_kg2_341.jpg,U,"hands on abdomen, unmarked",no
+test,burn_1st_degree,burn_1st_degree_kg2_693.jpg,U,uninjured face (stock),yes
+test,burn_1st_degree,burn_1st_degree_kg2_858.jpg,U,"examining a mole with a pen, unmarked",no
+test,burn_1st_degree,burn_1st_degree_kg2_927.jpg,U,bandaged finger - injury not visible,no
+test,burn_2nd_degree,burn_2nd_degree_kg2_157.jpg,U,"examining a mole with a pen, unmarked",no
+test,burn_2nd_degree,burn_2nd_degree_kg2_957.jpg,U,"child's hand held, unmarked",no
+test,burn_3rd_degree,burn_3rd_degree_kg2_174.jpg,U,"clinic scene, no injury visible",no
+test,cut,cut_kg1_185.jpg,U,"skin with watermark, no cut visible in frame",no

@@ -1,0 +1,155 @@
+{
+ "val_images": 345,
+ "val_in_member_training_data": [],
+ "val_in_early_stopping_set_by_class": {
+  "abrasion": 30,
+  "bruise": 25,
+  "burn_1st_degree": 67,
+  "burn_2nd_degree": 63,
+  "burn_3rd_degree": 31,
+  "cut": 35,
+  "out_of_scope": 3
+ },
+ "test_images": 781,
+ "test_in_member_training_data": [],
+ "test_in_early_stopping_set_by_class": {
+  "out_of_scope": 22
+ },
+ "checks": {
+  "deployed": {
+   "val_class_order_matches": true,
+   "val_rows_keyed_by_name_match": true,
+   "val_dtype_shape": "float32 (345, 7)",
+   "val_kind": "probabilities",
+   "val_min_max_rowsum": [
+    0.0001367622026009485,
+    0.9941771030426025,
+    0.9999998211860657,
+    1.000000238418579
+   ],
+   "test_class_order_matches": true,
+   "test_rows_keyed_by_name_match": true,
+   "test_dtype_shape": "float32 (781, 7)",
+   "test_kind": "probabilities",
+   "test_min_max_rowsum": [
+    9.262608364224434e-05,
+    0.9940134882926941,
+    0.9999997615814209,
+    1.000000238418579
+   ],
+   "val_max_abs_diff_vs_named_rerun": 4.5299530029296875e-06,
+   "test_max_abs_diff_vs_named_rerun": 4.112720489501953e-06
+  },
+  "R_exact_a_s42": {
+   "val_class_order_matches": true,
+   "val_rows_keyed_by_name_match": true,
+   "val_dtype_shape": "float32 (345, 7)",
+   "val_kind": "probabilities",
+   "val_min_max_rowsum": [
+    9.334590868093073e-05,
+    0.9793177247047424,
+    0.9999998211860657,
+    1.000000238418579
+   ],
+   "test_class_order_matches": true,
+   "test_rows_keyed_by_name_match": true,
+   "test_dtype_shape": "float32 (781, 7)",
+   "test_kind": "probabilities",
+   "test_min_max_rowsum": [
+    0.00012511781824287027,
+    0.9953861832618713,
+    0.9999998211860657,
+    1.000000238418579
+   ]
+  },
+  "R_exact_b_s42": {
+   "val_class_order_matches": true,
+   "val_rows_keyed_by_name_match": true,
+   "val_dtype_shape": "float32 (345, 7)",
+   "val_kind": "probabilities",
+   "val_min_max_rowsum": [
+    3.4752134524751455e-05,
+    0.9906669855117798,
+    0.9999998211860657,
+    1.0000001192092896
+   ],
+   "test_class_order_matches": true,
+   "test_rows_keyed_by_name_match": true,
+   "test_dtype_shape": "float32 (781, 7)",
+   "test_kind": "probabilities",
+   "test_min_max_rowsum": [
+    2.4413058781647123e-05,
+    0.9943893551826477,
+    0.9999998211860657,
+    1.000000238418579
+   ]
+  },
+  "R_exact_s1": {
+   "val_class_order_matches": true,
+   "val_rows_keyed_by_name_match": true,
+   "val_dtype_shape": "float32 (345, 7)",
+   "val_kind": "probabilities",
+   "val_min_max_rowsum": [
+    7.629423635080457e-05,
+    0.9784001111984253,
+    0.9999998211860657,
+    1.000000238418579
+   ],
+   "test_class_order_matches": true,
+   "test_rows_keyed_by_name_match": true,
+   "test_dtype_shape": "float32 (781, 7)",
+   "test_kind": "probabilities",
+   "test_min_max_rowsum": [
+    2.8544784072437324e-05,
+    0.9966624975204468,
+    0.9999997615814209,
+    1.000000238418579
+   ]
+  },
+  "R_exact_s2": {
+   "val_class_order_matches": true,
+   "val_rows_keyed_by_name_match": true,
+   "val_dtype_shape": "float32 (345, 7)",
+   "val_kind": "probabilities",
+   "val_min_max_rowsum": [
+    8.541598072042689e-05,
+    0.9946023225784302,
+    0.9999998211860657,
+    1.000000238418579
+   ],
+   "test_class_order_matches": true,
+   "test_rows_keyed_by_name_match": true,
+   "test_dtype_shape": "float32 (781, 7)",
+   "test_kind": "probabilities",
+   "test_min_max_rowsum": [
+    4.5395387132884935e-05,
+    0.9975556135177612,
+    0.9999997615814209,
+    1.000000238418579
+   ]
+  },
+  "R_exact_s3": {
+   "val_class_order_matches": true,
+   "val_rows_keyed_by_name_match": true,
+   "val_dtype_shape": "float32 (345, 7)",
+   "val_kind": "probabilities",
+   "val_min_max_rowsum": [
+    8.123004954541102e-05,
+    0.9855427742004395,
+    0.9999998211860657,
+    1.0000001192092896
+   ],
+   "test_class_order_matches": true,
+   "test_rows_keyed_by_name_match": true,
+   "test_dtype_shape": "float32 (781, 7)",
+   "test_kind": "probabilities",
+   "test_min_max_rowsum": [
+    5.390461228671484e-05,
+    0.995195746421814,
+    0.9999998211860657,
+    1.000000238418579
+   ]
+  }
+ },
+ "all_ok": true
+}
