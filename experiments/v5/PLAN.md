@@ -38,3 +38,16 @@ false alarms < live with the paired 95% bootstrap CI of the false-alarm differen
 Score the same 401 held-out + 1,008 independent normal-skin photos with the Roboflow workflow (public
 dataset photos only, as in experiments/rf); report labelled counts per population for Roboflow @0.40 and
 @its follow-up setting vs live and the v5 candidate.
+
+## Addendum v5b/v5c (2026-10-03, after the v5 grid result, before any v5b/v5c result)
+v5 result: 1 of 64 rule candidates eligible on dev (sum, healthy gate 0.4, t 0.70) and NOT confirmed
+(untouched pool: false alarms 592 vs live 507). Decision rules on the existing models do not meet the
+objective. Next, classifiers that have seen faces/everyday photos as "not a wound":
+- v5b (no training): classifier = G4new (the healthy-skin gate is a full 7-class model of the same
+  recipe trained on data/train + 1,609 v4 healthy photos) alone, or mean(deployed, G4new).
+- v5c (training): N5 = the deployed recipe (experiment9.py --alpha 1.4 --label-smoothing 0.1,
+  --train-dir = v2/b84_train + the 1,609 v4 healthy train photos in out_of_scope, --val-dir v2/b84_val),
+  seed 1, one model. Control reported, not selectable: RE3_s1 (same recipe and seed, no healthy photos).
+Each classifier is scored with both live gates (0.5), no crop, burn rule sum | max, t 0.60/0.65/0.70/0.75.
+Selection, eligibility, tie-breaks and the verdict pool are exactly as above (same dev, same live baseline),
+over the v5b + v5c candidates together. If none is confirmed, nothing is recommended for deployment.

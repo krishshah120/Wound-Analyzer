@@ -1,0 +1,433 @@
+{
+ "live": "sum gate0.5 t0.75",
+ "live_summary": {
+  "dev": {
+   "right": 175,
+   "wrong": 9,
+   "false": 61
+  },
+  "test_close": {
+   "right": "154/331",
+   "wrong": 18,
+   "nonwound": "48/450"
+  },
+  "test_arm": {
+   "right": "61/331",
+   "wrong": 6,
+   "nonwound": "48/450"
+  },
+  "heldout": {
+   "all": "37/401",
+   "ghost_normal_skin": "3/7",
+   "oily_dry_skin_types": "18/146",
+   "skindisease_unknown_normal": "16/248"
+  },
+  "indep": {
+   "all": "183/1008",
+   "ghost_normal_skin": "18/57",
+   "oily_dry_skin_types": "108/718",
+   "skindisease_unknown_normal": "57/233"
+  },
+  "rit": {
+   "feet": 158,
+   "chronic": 115,
+   "burns": 35,
+   "everyday_right": 19,
+   "everyday_wrong": 1
+  }
+ },
+ "n_eligible": 1,
+ "chosen": "sum gate0.4 t0.7",
+ "dev_all": {
+  "sum gate0.5 t0.6": {
+   "right": 259,
+   "wrong": 22,
+   "false": 95
+  },
+  "sum gate0.5 t0.65": {
+   "right": 233,
+   "wrong": 15,
+   "false": 86
+  },
+  "sum gate0.5 t0.7": {
+   "right": 196,
+   "wrong": 9,
+   "false": 71
+  },
+  "sum gate0.5 t0.75": {
+   "right": 175,
+   "wrong": 9,
+   "false": 61
+  },
+  "sum gate0.4 t0.6": {
+   "right": 249,
+   "wrong": 21,
+   "false": 61
+  },
+  "sum gate0.4 t0.65": {
+   "right": 225,
+   "wrong": 14,
+   "false": 57
+  },
+  "sum gate0.4 t0.7": {
+   "right": 188,
+   "wrong": 8,
+   "false": 46
+  },
+  "sum gate0.4 t0.75": {
+   "right": 168,
+   "wrong": 8,
+   "false": 44
+  },
+  "sum gate0.3 t0.6": {
+   "right": 228,
+   "wrong": 20,
+   "false": 51
+  },
+  "sum gate0.3 t0.65": {
+   "right": 207,
+   "wrong": 13,
+   "false": 49
+  },
+  "sum gate0.3 t0.7": {
+   "right": 172,
+   "wrong": 8,
+   "false": 39
+  },
+  "sum gate0.3 t0.75": {
+   "right": 153,
+   "wrong": 8,
+   "false": 37
+  },
+  "sum gate0.2 t0.6": {
+   "right": 188,
+   "wrong": 15,
+   "false": 35
+  },
+  "sum gate0.2 t0.65": {
+   "right": 172,
+   "wrong": 10,
+   "false": 34
+  },
+  "sum gate0.2 t0.7": {
+   "right": 143,
+   "wrong": 6,
+   "false": 25
+  },
+  "sum gate0.2 t0.75": {
+   "right": 128,
+   "wrong": 6,
+   "false": 25
+  },
+  "max gate0.5 t0.6": {
+   "right": 151,
+   "wrong": 12,
+   "false": 48
+  },
+  "max gate0.5 t0.65": {
+   "right": 126,
+   "wrong": 8,
+   "false": 40
+  },
+  "max gate0.5 t0.7": {
+   "right": 102,
+   "wrong": 4,
+   "false": 32
+  },
+  "max gate0.5 t0.75": {
+   "right": 84,
+   "wrong": 4,
+   "false": 21
+  },
+  "max gate0.4 t0.6": {
+   "right": 148,
+   "wrong": 11,
+   "false": 33
+  },
+  "max gate0.4 t0.65": {
+   "right": 124,
+   "wrong": 7,
+   "false": 26
+  },
+  "max gate0.4 t0.7": {
+   "right": 100,
+   "wrong": 3,
+   "false": 22
+  },
+  "max gate0.4 t0.75": {
+   "right": 82,
+   "wrong": 3,
+   "false": 17
+  },
+  "max gate0.3 t0.6": {
+   "right": 138,
+   "wrong": 10,
+   "false": 29
+  },
+  "max gate0.3 t0.65": {
+   "right": 118,
+   "wrong": 6,
+   "false": 23
+  },
+  "max gate0.3 t0.7": {
+   "right": 94,
+   "wrong": 3,
+   "false": 20
+  },
+  "max gate0.3 t0.75": {
+   "right": 77,
+   "wrong": 3,
+   "false": 16
+  },
+  "max gate0.2 t0.6": {
+   "right": 116,
+   "wrong": 8,
+   "false": 17
+  },
+  "max gate0.2 t0.65": {
+   "right": 100,
+   "wrong": 6,
+   "false": 13
+  },
+  "max gate0.2 t0.7": {
+   "right": 78,
+   "wrong": 3,
+   "false": 13
+  },
+  "max gate0.2 t0.75": {
+   "right": 70,
+   "wrong": 3,
+   "false": 9
+  },
+  "sum85 gate0.5 t0.6": {
+   "right": 146,
+   "wrong": 11,
+   "false": 43
+  },
+  "sum85 gate0.5 t0.65": {
+   "right": 135,
+   "wrong": 7,
+   "false": 42
+  },
+  "sum85 gate0.5 t0.7": {
+   "right": 122,
+   "wrong": 3,
+   "false": 41
+  },
+  "sum85 gate0.5 t0.75": {
+   "right": 115,
+   "wrong": 3,
+   "false": 41
+  },
+  "sum85 gate0.4 t0.6": {
+   "right": 141,
+   "wrong": 10,
+   "false": 32
+  },
+  "sum85 gate0.4 t0.65": {
+   "right": 130,
+   "wrong": 6,
+   "false": 31
+  },
+  "sum85 gate0.4 t0.7": {
+   "right": 117,
+   "wrong": 2,
+   "false": 31
+  },
+  "sum85 gate0.4 t0.75": {
+   "right": 110,
+   "wrong": 2,
+   "false": 31
+  },
+  "sum85 gate0.3 t0.6": {
+   "right": 131,
+   "wrong": 9,
+   "false": 27
+  },
+  "sum85 gate0.3 t0.65": {
+   "right": 122,
+   "wrong": 5,
+   "false": 26
+  },
+  "sum85 gate0.3 t0.7": {
+   "right": 109,
+   "wrong": 2,
+   "false": 26
+  },
+  "sum85 gate0.3 t0.75": {
+   "right": 102,
+   "wrong": 2,
+   "false": 26
+  },
+  "sum85 gate0.2 t0.6": {
+   "right": 116,
+   "wrong": 7,
+   "false": 17
+  },
+  "sum85 gate0.2 t0.65": {
+   "right": 109,
+   "wrong": 5,
+   "false": 17
+  },
+  "sum85 gate0.2 t0.7": {
+   "right": 97,
+   "wrong": 2,
+   "false": 17
+  },
+  "sum85 gate0.2 t0.75": {
+   "right": 91,
+   "wrong": 2,
+   "false": 17
+  },
+  "sum90 gate0.5 t0.6": {
+   "right": 113,
+   "wrong": 10,
+   "false": 28
+  },
+  "sum90 gate0.5 t0.65": {
+   "right": 102,
+   "wrong": 6,
+   "false": 27
+  },
+  "sum90 gate0.5 t0.7": {
+   "right": 89,
+   "wrong": 2,
+   "false": 26
+  },
+  "sum90 gate0.5 t0.75": {
+   "right": 82,
+   "wrong": 2,
+   "false": 26
+  },
+  "sum90 gate0.4 t0.6": {
+   "right": 109,
+   "wrong": 10,
+   "false": 22
+  },
+  "sum90 gate0.4 t0.65": {
+   "right": 98,
+   "wrong": 6,
+   "false": 21
+  },
+  "sum90 gate0.4 t0.7": {
+   "right": 85,
+   "wrong": 2,
+   "false": 21
+  },
+  "sum90 gate0.4 t0.75": {
+   "right": 78,
+   "wrong": 2,
+   "false": 21
+  },
+  "sum90 gate0.3 t0.6": {
+   "right": 102,
+   "wrong": 9,
+   "false": 21
+  },
+  "sum90 gate0.3 t0.65": {
+   "right": 93,
+   "wrong": 5,
+   "false": 20
+  },
+  "sum90 gate0.3 t0.7": {
+   "right": 80,
+   "wrong": 2,
+   "false": 20
+  },
+  "sum90 gate0.3 t0.75": {
+   "right": 73,
+   "wrong": 2,
+   "false": 20
+  },
+  "sum90 gate0.2 t0.6": {
+   "right": 90,
+   "wrong": 7,
+   "false": 12
+  },
+  "sum90 gate0.2 t0.65": {
+   "right": 83,
+   "wrong": 5,
+   "false": 12
+  },
+  "sum90 gate0.2 t0.7": {
+   "right": 71,
+   "wrong": 2,
+   "false": 12
+  },
+  "sum90 gate0.2 t0.75": {
+   "right": 65,
+   "wrong": 2,
+   "false": 12
+  }
+ },
+ "eligible": {
+  "sum gate0.4 t0.7": {
+   "right": 188,
+   "wrong": 8,
+   "false": 46
+  }
+ },
+ "chosen_summary": {
+  "dev": {
+   "right": 188,
+   "wrong": 8,
+   "false": 46
+  },
+  "test_close": {
+   "right": "160/331",
+   "wrong": 19,
+   "nonwound": "55/450"
+  },
+  "test_arm": {
+   "right": "68/331",
+   "wrong": 9,
+   "nonwound": "55/450"
+  },
+  "heldout": {
+   "all": "24/401",
+   "ghost_normal_skin": "1/7",
+   "oily_dry_skin_types": "12/146",
+   "skindisease_unknown_normal": "11/248"
+  },
+  "indep": {
+   "all": "171/1008",
+   "ghost_normal_skin": "17/57",
+   "oily_dry_skin_types": "87/718",
+   "skindisease_unknown_normal": "67/233"
+  },
+  "rit": {
+   "feet": 215,
+   "chronic": 147,
+   "burns": 36,
+   "everyday_right": 19,
+   "everyday_wrong": 2
+  }
+ },
+ "verdict_pool": {
+  "right": {
+   "candidate": 215,
+   "live": 208,
+   "diff_ci": [
+    -3.0,
+    17.0
+   ]
+  },
+  "false": {
+   "candidate": 592,
+   "live": 507,
+   "diff_ci": [
+    42.0,
+    149.0
+   ]
+  },
+  "wrong": {
+   "candidate": 21,
+   "live": 19,
+   "diff_ci": [
+    0.0,
+    5.0
+   ]
+  },
+  "confirmed": false
+ }
+}
