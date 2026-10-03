@@ -1,0 +1,52 @@
+{
+ "as_sent": {
+  "heldout/ghost_normal_skin": "3/7",
+  "heldout/oily_dry_skin_types": "18/146",
+  "heldout/skindisease_unknown_normal": "16/248",
+  "excluded_resembles_eval/ghost_normal_skin": "18/57",
+  "excluded_resembles_eval/oily_dry_skin_types": "108/718",
+  "excluded_resembles_eval/skindisease_unknown_normal": "57/233",
+  "all_labelled": 220,
+  "as_possible_burn": 220
+ },
+ "rotated_90": {
+  "heldout/ghost_normal_skin": "3/7",
+  "heldout/oily_dry_skin_types": "37/146",
+  "heldout/skindisease_unknown_normal": "24/248",
+  "excluded_resembles_eval/ghost_normal_skin": "13/57",
+  "excluded_resembles_eval/oily_dry_skin_types": "183/718",
+  "excluded_resembles_eval/skindisease_unknown_normal": "47/233",
+  "all_labelled": 307,
+  "as_possible_burn": 303
+ },
+ "mirrored": {
+  "heldout/ghost_normal_skin": "3/7",
+  "heldout/oily_dry_skin_types": "19/146",
+  "heldout/skindisease_unknown_normal": "15/248",
+  "excluded_resembles_eval/ghost_normal_skin": "11/57",
+  "excluded_resembles_eval/oily_dry_skin_types": "111/718",
+  "excluded_resembles_eval/skindisease_unknown_normal": "60/233",
+  "all_labelled": 219,
+  "as_possible_burn": 219
+ },
+ "bilinear_resize": {
+  "heldout/ghost_normal_skin": "3/7",
+  "heldout/oily_dry_skin_types": "18/146",
+  "heldout/skindisease_unknown_normal": "16/248",
+  "excluded_resembles_eval/ghost_normal_skin": "18/57",
+  "excluded_resembles_eval/oily_dry_skin_types": "108/718",
+  "excluded_resembles_eval/skindisease_unknown_normal": "57/233",
+  "all_labelled": 220,
+  "as_possible_burn": 220
+ },
+ "crop_retry_on": {
+  "heldout/ghost_normal_skin": "3/7",
+  "heldout/oily_dry_skin_types": "33/146",
+  "heldout/skindisease_unknown_normal": "22/248",
+  "excluded_resembles_eval/ghost_normal_skin": "24/57",
+  "excluded_resembles_eval/oily_dry_skin_types": "198/718",
+  "excluded_resembles_eval/skindisease_unknown_normal": "63/233",
+  "all_labelled": 343,
+  "as_possible_burn": 339
+ }
+}

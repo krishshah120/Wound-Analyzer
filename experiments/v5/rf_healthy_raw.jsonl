@@ -1,0 +1,862 @@
+{"path": "experiments/v4/new_neg/ghost_normal_skin/53b85c816ceb92ca.jpg", "latency_s": 8.243, "detections": [{"class": "no abnormality", "confidence": 0.412109375, "box": [96.5, 66.0, 75.0, 104.0]}]}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/57df16190c0cd5d8.jpg", "latency_s": 0.485, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/fb7b77771951375f.jpg", "latency_s": 0.441, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/eedea247d137ee90.jpg", "latency_s": 0.314, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/b22a00689bbb3632.jpg", "latency_s": 0.31, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/47a215adcca97ae1.jpg", "latency_s": 0.363, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/418d94a9e732148c.jpg", "latency_s": 0.185, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/134162a9605618dc.jpg", "latency_s": 0.22, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/04e801d26aaa7f8f.jpg", "latency_s": 0.482, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/a8a35ba589624752.jpg", "latency_s": 0.469, "detections": [{"class": "Cut", "confidence": 0.57958984375, "box": [98.0, 102.0, 32.0, 40.0]}]}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/d557c236d633a57a.jpg", "latency_s": 0.481, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/904ddb0fb574ccb3.jpg", "latency_s": 0.321, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/62a0eab48647b0a7.jpg", "latency_s": 0.4, "detections": [{"class": "no abnormality", "confidence": 0.441650390625, "box": [133.0, 172.5, 86.0, 91.0]}]}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/8e8e1953b6866e1b.jpg", "latency_s": 0.352, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/01e57839ca20a510.jpg", "latency_s": 0.352, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/d1b85ae06dc20235.jpg", "latency_s": 0.348, "detections": [{"class": "Cut", "confidence": 0.7255859375, "box": [107.5, 152.0, 31.0, 44.0]}]}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/ffb4b8dbf9ce88e0.jpg", "latency_s": 0.2, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/92c8d36e91a7ab22.jpg", "latency_s": 0.19, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/ab3e7e91474357b6.jpg", "latency_s": 0.33, "detections": [{"class": "no abnormality", "confidence": 0.4853515625, "box": [75.0, 59.0, 38.0, 44.0]}]}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/ffcaac7113ca87c4.jpg", "latency_s": 0.292, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/08fdac421c6ffce9.jpg", "latency_s": 0.293, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/17973f23b48173a5.jpg", "latency_s": 0.338, "detections": [{"class": "Cut", "confidence": 0.42822265625, "box": [91.0, 115.5, 30.0, 17.0]}]}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/890e6a6eb2464aff.jpg", "latency_s": 0.323, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/4cbc33ed7618b49d.jpg", "latency_s": 0.338, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/a10730926aae77a3.jpg", "latency_s": 0.291, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/c3b0147f228c0827.jpg", "latency_s": 0.339, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/b6555acc38834892.jpg", "latency_s": 0.224, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/938b66aa08d4d26e.jpg", "latency_s": 0.182, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/c5308f0eb216aeeb.jpg", "latency_s": 0.205, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/82801fbb8fc0ee44.jpg", "latency_s": 0.353, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/c8b4e98d623f67b8.jpg", "latency_s": 0.313, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/c907bdfd53a38369.jpg", "latency_s": 0.297, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/06de04a3f3132f4f.jpg", "latency_s": 0.323, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/bb358f94fe332b0e.jpg", "latency_s": 0.18, "detections": []}
+{"path": "experiments/v4/new_neg/ghost_normal_skin/4e267cd7548f195d.jpg", "latency_s": 0.226, "detections": [{"class": "Cut", "confidence": 0.52734375, "box": [106.0, 123.0, 40.0, 32.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/50921956fc7f2794.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6a351a5239bca236.jpg", "latency_s": 0.207, "detections": [{"class": "Burn", "confidence": 0.7421875, "box": [63.0, 92.0, 84.0, 98.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b66314084eb5714c.jpg", "latency_s": 0.177, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5a6a83374386a14c.jpg", "latency_s": 0.191, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f96232ee5e58f50e.jpg", "latency_s": 0.19, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/982e1696914a05fb.jpg", "latency_s": 0.18, "detections": [{"class": "Cut", "confidence": 0.728515625, "box": [144.5, 92.5, 47.0, 31.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b5f8f377b1304a2b.jpg", "latency_s": 0.2, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3a4f8a90fb2a4bf9.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6105ea0a9b71ceda.jpg", "latency_s": 0.188, "detections": [{"class": "Cut", "confidence": 0.439697265625, "box": [111.5, 143.0, 49.0, 24.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7f8691e26e88c694.jpg", "latency_s": 0.22, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ad09ad3327635d95.jpg", "latency_s": 0.181, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/57ba1305db734fe6.jpg", "latency_s": 0.264, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2893dc0979c2ea6e.jpg", "latency_s": 0.186, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b0f8f06710c3865b.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5bd954731576ab03.jpg", "latency_s": 0.184, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/09068a0367cc6520.jpg", "latency_s": 0.199, "detections": [{"class": "Blister", "confidence": 0.5029296875, "box": [170.0, 128.5, 42.0, 41.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ffd9bf7b71bccb9e.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b5e5944fefa635ba.jpg", "latency_s": 0.178, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9c43d88d3565d85d.jpg", "latency_s": 0.182, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c6e032330c01eeb0.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7d2e3c6eb13a7818.jpg", "latency_s": 0.179, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/05f1f0133cb6e9de.jpg", "latency_s": 0.191, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/49786edf5fb1be18.jpg", "latency_s": 0.228, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/1e3a5af4a452f4b2.jpg", "latency_s": 0.195, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/06ce443a355c9b37.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/89cd524cd0eac9a8.jpg", "latency_s": 0.193, "detections": [{"class": "Cut", "confidence": 0.80859375, "box": [153.5, 119.5, 47.0, 27.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9afc9a7d6085f1bc.jpg", "latency_s": 0.181, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/fed70e04f54a642f.jpg", "latency_s": 0.203, "detections": [{"class": "no abnormality", "confidence": 0.5927734375, "box": [25.5, 143.5, 51.0, 65.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f6fadd0b543cb120.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e75a50335e5ff4cc.jpg", "latency_s": 0.195, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b72f183ba7bb7e88.jpg", "latency_s": 0.186, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8dcf2c1b329de1b2.jpg", "latency_s": 0.218, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a926f0f9958276ef.jpg", "latency_s": 0.182, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/dc11b082b425d300.jpg", "latency_s": 0.188, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6d4666c327ca038b.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/bb69aa26d5ea9d9c.jpg", "latency_s": 0.205, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7ae5596ca41f65bc.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/71201658374373e6.jpg", "latency_s": 0.166, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2279121f9e4ec5eb.jpg", "latency_s": 0.225, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/97375971adcaf048.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/15e4d34c8aa1ac82.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2364575d67b9f162.jpg", "latency_s": 0.197, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6e7342fbe29447ef.jpg", "latency_s": 0.197, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/20bc503db47f2cc5.jpg", "latency_s": 0.237, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6b53edc7f8cb406a.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6afb32f62b372f09.jpg", "latency_s": 0.325, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/675ed49a9fdc1fcb.jpg", "latency_s": 0.172, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/30af75c566eb8b24.jpg", "latency_s": 0.187, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3801da1b8dce8ecb.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/704c236f9bf72d98.jpg", "latency_s": 0.203, "detections": [{"class": "Burn", "confidence": 0.4736328125, "box": [121.0, 128.5, 58.0, 91.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/42e1b8dc026f4c8d.jpg", "latency_s": 0.335, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6082bc0d791fea8b.jpg", "latency_s": 0.336, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7b0b8bff898f3065.jpg", "latency_s": 0.345, "detections": [{"class": "Cut", "confidence": 0.8359375, "box": [94.5, 132.5, 53.0, 27.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/19cdc4893e019cba.jpg", "latency_s": 0.207, "detections": [{"class": "Cut", "confidence": 0.57373046875, "box": [202.0, 151.0, 44.0, 48.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a1d7b230c297a391.jpg", "latency_s": 0.213, "detections": [{"class": "Bruise", "confidence": 0.5478515625, "box": [82.0, 91.0, 76.0, 90.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ff88ddb2ba559cea.jpg", "latency_s": 0.19, "detections": [{"class": "Burn", "confidence": 0.443603515625, "box": [71.5, 101.5, 49.0, 51.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c3432faa0a5ef46b.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/4eee7d9cf7521d91.jpg", "latency_s": 0.188, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f8bdb01910ac2316.jpg", "latency_s": 0.304, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5f696c53d0e9b8f1.jpg", "latency_s": 0.218, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f3e039eb16ea6649.jpg", "latency_s": 0.223, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ed2248ce49316c6c.jpg", "latency_s": 0.184, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/06c6d92125c7a0fc.jpg", "latency_s": 0.214, "detections": [{"class": "Cut", "confidence": 0.482421875, "box": [95.0, 108.0, 94.0, 50.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9d86b33d29cc055e.jpg", "latency_s": 0.217, "detections": [{"class": "no abnormality", "confidence": 0.640625, "box": [184.5, 85.5, 45.0, 117.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/96993727ab2cacac.jpg", "latency_s": 0.177, "detections": [{"class": "Cut", "confidence": 0.57080078125, "box": [107.0, 132.5, 70.0, 33.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/679e16504f6edb26.jpg", "latency_s": 0.186, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0cc085164c5e1d7d.jpg", "latency_s": 0.3, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c907ebc4eb685806.jpg", "latency_s": 0.175, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9013424ae79da0e6.jpg", "latency_s": 0.315, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9cb1cefe122eb046.jpg", "latency_s": 0.294, "detections": [{"class": "Cut", "confidence": 0.57470703125, "box": [125.5, 149.5, 105.0, 53.0]}, {"class": "Bruise", "confidence": 0.4072265625, "box": [67.5, 66.5, 67.0, 47.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/837782ff74ad318b.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ae46f805f52ddc45.jpg", "latency_s": 0.183, "detections": [{"class": "Cut", "confidence": 0.440673828125, "box": [58.5, 123.5, 49.0, 29.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7f98dc9f7f822e1d.jpg", "latency_s": 0.219, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/436995437e30f1d5.jpg", "latency_s": 0.19, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/279fc5ea5c6b9440.jpg", "latency_s": 0.197, "detections": [{"class": "Cut", "confidence": 0.470703125, "box": [104.0, 117.0, 44.0, 18.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b945b99fc979a7a3.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/84da0745cee71610.jpg", "latency_s": 0.205, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a7d25e69c33eae7c.jpg", "latency_s": 0.212, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b260a3a0d4ed2318.jpg", "latency_s": 0.173, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a03fa07f2c6d4987.jpg", "latency_s": 0.241, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/4a69d86881cee376.jpg", "latency_s": 0.878, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c1f2de93d29ce0b8.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7475d74777544447.jpg", "latency_s": 0.201, "detections": [{"class": "Cut", "confidence": 0.7529296875, "box": [98.0, 136.0, 52.0, 32.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c18d7b97a9f09089.jpg", "latency_s": 0.228, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b9fe02255950d6bf.jpg", "latency_s": 0.232, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b087a07c8de16c98.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/585d40fab0f97e85.jpg", "latency_s": 0.186, "detections": [{"class": "no abnormality", "confidence": 0.67578125, "box": [75.0, 156.5, 70.0, 45.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/69629ae4a63a8e46.jpg", "latency_s": 0.175, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8f1a142accb352c3.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8a6ba6db3a024a20.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b92a9185cc15aa9f.jpg", "latency_s": 0.21, "detections": [{"class": "Burn", "confidence": 0.6259765625, "box": [139.5, 162.0, 115.0, 122.0]}, {"class": "no abnormality", "confidence": 0.4560546875, "box": [111.5, 42.5, 57.0, 61.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/34f153e2b93ca5bf.jpg", "latency_s": 0.179, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e9d76b33374e2766.jpg", "latency_s": 0.191, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8820a58c8e31c6a8.jpg", "latency_s": 0.229, "detections": [{"class": "no abnormality", "confidence": 0.4794921875, "box": [111.0, 139.0, 72.0, 82.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/aa689311b36513c1.jpg", "latency_s": 0.242, "detections": [{"class": "no abnormality", "confidence": 0.5, "box": [119.5, 139.5, 79.0, 85.0]}, {"class": "no abnormality", "confidence": 0.43505859375, "box": [121.0, 149.0, 70.0, 70.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/be05a6b787c92688.jpg", "latency_s": 0.205, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/dcb6da1910c49fb4.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/63f2004044d767fe.jpg", "latency_s": 0.177, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5e7feb22d672c74a.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/eb58c321d7048e2d.jpg", "latency_s": 0.194, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/dc758e382620386e.jpg", "latency_s": 0.201, "detections": [{"class": "Burn", "confidence": 0.5498046875, "box": [124.5, 103.5, 83.0, 107.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/35c1ab775063e5fe.jpg", "latency_s": 0.225, "detections": [{"class": "Cut", "confidence": 0.82958984375, "box": [98.5, 139.0, 69.0, 66.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8f35a13ab1b30194.jpg", "latency_s": 0.184, "detections": [{"class": "Cut", "confidence": 0.444580078125, "box": [105.0, 143.0, 68.0, 66.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/919d2244c6b9e6c9.jpg", "latency_s": 0.174, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/dc95bdce6b6a95b1.jpg", "latency_s": 0.184, "detections": [{"class": "Burn", "confidence": 0.446533203125, "box": [114.5, 124.0, 89.0, 78.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d407d29d8e9fbeee.jpg", "latency_s": 0.224, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/12921722a86bfc1c.jpg", "latency_s": 0.212, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7e6fb3e13c44a613.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e317291284d4e337.jpg", "latency_s": 0.234, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/946d1b33928e3f2a.jpg", "latency_s": 0.205, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7231d8b1339117f3.jpg", "latency_s": 0.197, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9b68d4bc03b8a548.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f8bd01ee1ea80080.jpg", "latency_s": 0.324, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2856b736ae39c403.jpg", "latency_s": 0.303, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ccaf01d76de24934.jpg", "latency_s": 0.188, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/4f2477dcc19fda35.jpg", "latency_s": 0.165, "detections": [{"class": "Cut", "confidence": 0.80029296875, "box": [94.5, 147.5, 39.0, 23.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/502d2b0ff1ae0cab.jpg", "latency_s": 0.176, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/39e80fc07f7ea597.jpg", "latency_s": 0.316, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8767362f46635b58.jpg", "latency_s": 0.319, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8cf1dd35c1c2f72e.jpg", "latency_s": 0.304, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3cea32db93c695dc.jpg", "latency_s": 0.29, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0bcd0957ed4ea72e.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/608c10559dfbee66.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c8f3846ae179513a.jpg", "latency_s": 0.184, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3e1d3cb3257cd084.jpg", "latency_s": 0.195, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/02c241d4a423b84b.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a16817c3f9f3861b.jpg", "latency_s": 0.186, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2c80131608efd5f5.jpg", "latency_s": 0.195, "detections": [{"class": "Cut", "confidence": 0.470703125, "box": [171.5, 120.0, 61.0, 30.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c2e98c2279e5aa11.jpg", "latency_s": 0.18, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3873fc803f8f0bad.jpg", "latency_s": 0.217, "detections": [{"class": "Cut", "confidence": 0.5380859375, "box": [174.0, 114.0, 60.0, 24.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/faa23d3912ba1b90.jpg", "latency_s": 0.188, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f4f9bde604a8b567.jpg", "latency_s": 0.195, "detections": [{"class": "Burn", "confidence": 0.406494140625, "box": [115.5, 94.0, 65.0, 122.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0e36a08c594e78c4.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8dfa3a2cb9880dd9.jpg", "latency_s": 0.237, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d3dccb2e624fdd19.jpg", "latency_s": 0.178, "detections": [{"class": "Cut", "confidence": 0.4140625, "box": [136.0, 115.0, 42.0, 30.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d98b55c9620f2546.jpg", "latency_s": 0.202, "detections": [{"class": "Cut", "confidence": 0.6083984375, "box": [93.0, 115.0, 44.0, 22.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9f16249bfbeb80f8.jpg", "latency_s": 0.337, "detections": [{"class": "no abnormality", "confidence": 0.437744140625, "box": [113.5, 137.5, 67.0, 45.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/172a3254402d50b5.jpg", "latency_s": 0.222, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/dec7b8fc5c3d5e4e.jpg", "latency_s": 0.328, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/86f85ea7730a7652.jpg", "latency_s": 0.178, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b5a9bd5c43bf4dd6.jpg", "latency_s": 0.186, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/012f5d14295cde73.jpg", "latency_s": 0.298, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/1fbcd45291cbb41b.jpg", "latency_s": 0.176, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/10ce144528b1f47a.jpg", "latency_s": 0.217, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/095114b0e3c577cd.jpg", "latency_s": 0.178, "detections": [{"class": "Burn", "confidence": 0.67578125, "box": [110.5, 101.0, 167.0, 96.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/84f3a00ccb936825.jpg", "latency_s": 0.227, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b99c6dc5ea0c6429.jpg", "latency_s": 0.188, "detections": [{"class": "Cut", "confidence": 0.83837890625, "box": [103.0, 97.0, 52.0, 28.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/dea307b186c582b0.jpg", "latency_s": 0.341, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a2d30b0aedaab274.jpg", "latency_s": 0.334, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d3210f1131ce3caa.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/853a183c705ca747.jpg", "latency_s": 0.321, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/581dc4086d285a08.jpg", "latency_s": 0.317, "detections": [{"class": "no abnormality", "confidence": 0.43017578125, "box": [87.5, 108.0, 97.0, 72.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3951ab40b4688385.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ec27463c361d3c6e.jpg", "latency_s": 0.198, "detections": [{"class": "Bruise", "confidence": 0.56103515625, "box": [133.0, 104.5, 50.0, 61.0]}, {"class": "no abnormality", "confidence": 0.419677734375, "box": [70.0, 115.5, 40.0, 37.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0a5978b407608414.jpg", "latency_s": 0.18, "detections": [{"class": "Bruise", "confidence": 0.4892578125, "box": [139.5, 93.5, 53.0, 71.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3a4dc50b0eea9e2c.jpg", "latency_s": 0.309, "detections": [{"class": "Bruise", "confidence": 0.5087890625, "box": [90.0, 110.5, 48.0, 59.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8c31a23e107a3039.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/283d59b64753f36c.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/254c477c1525ce39.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c770c2c2c674db7a.jpg", "latency_s": 0.213, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b6247714a66ae61b.jpg", "latency_s": 0.32, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2acb3c2ec3b201fa.jpg", "latency_s": 0.224, "detections": [{"class": "no abnormality", "confidence": 0.72265625, "box": [128.5, 132.5, 45.0, 39.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/1f2a392be7366103.jpg", "latency_s": 0.324, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0fc8d682d5a5b558.jpg", "latency_s": 0.172, "detections": [{"class": "Cut", "confidence": 0.58154296875, "box": [96.5, 182.0, 91.0, 44.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/803ee929ead097c2.jpg", "latency_s": 0.195, "detections": [{"class": "Cut", "confidence": 0.81640625, "box": [106.5, 182.0, 91.0, 42.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b7931a6eae4d2b13.jpg", "latency_s": 0.229, "detections": [{"class": "Cut", "confidence": 0.66796875, "box": [104.0, 183.0, 90.0, 46.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/71547df5fcdc6ab0.jpg", "latency_s": 0.194, "detections": [{"class": "Cut", "confidence": 0.73046875, "box": [136.5, 106.5, 43.0, 29.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5fdc351226abd935.jpg", "latency_s": 0.191, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e43ebb371588b7cb.jpg", "latency_s": 0.212, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5912b4be5ff8d9f4.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7cd9148c7fe1dd71.jpg", "latency_s": 0.219, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2f05ab062c09b7a7.jpg", "latency_s": 0.33, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f0cee13816de34fb.jpg", "latency_s": 0.185, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c1310fa3cc932c08.jpg", "latency_s": 0.175, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7b0a55f4d16530c8.jpg", "latency_s": 0.183, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c8459170e4a953ec.jpg", "latency_s": 0.208, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/1bbd4e80f2787483.jpg", "latency_s": 0.175, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/58febf2ecb7b31bb.jpg", "latency_s": 0.2, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9f81ce16fff33a79.jpg", "latency_s": 0.214, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/04b2ad4e674f8af6.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/bc5da217f3107b5d.jpg", "latency_s": 0.178, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c9a91f6e185ad6c9.jpg", "latency_s": 0.191, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b162128d0d8b13cc.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/85f9e70a8a8161ce.jpg", "latency_s": 0.175, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c51a33bcb5d4ae04.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/64b35c2599b75f8d.jpg", "latency_s": 0.311, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/457795149eeeaa54.jpg", "latency_s": 0.206, "detections": [{"class": "Burn", "confidence": 0.77783203125, "box": [52.0, 124.5, 104.0, 87.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/bb9968d093fe1f60.jpg", "latency_s": 0.172, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/fba367f7333096f1.jpg", "latency_s": 0.286, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0a5f93b1e7c4cec2.jpg", "latency_s": 0.181, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c69863c930e96fa2.jpg", "latency_s": 0.217, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a66b7165aa60b113.jpg", "latency_s": 0.181, "detections": [{"class": "no abnormality", "confidence": 0.583984375, "box": [123.0, 82.5, 62.0, 57.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/756f512d7945300c.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/dd0b8c2e76808263.jpg", "latency_s": 0.204, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/98cf14f40dcbb43a.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/69a050059fc4c5fd.jpg", "latency_s": 0.2, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/890c59c79233d3d1.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d66c3f7d7bff4ce4.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d328737d2117c598.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/45028684337fb3bd.jpg", "latency_s": 0.239, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d8f1892b070925d5.jpg", "latency_s": 0.175, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0f86d39d5e3049ef.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/142b2aece9162c15.jpg", "latency_s": 0.205, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ce81e726b2f632a6.jpg", "latency_s": 0.195, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a1e52b202d932dc1.jpg", "latency_s": 0.183, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f04959d34054e0d6.jpg", "latency_s": 0.185, "detections": [{"class": "Burn", "confidence": 0.658203125, "box": [114.0, 127.0, 60.0, 52.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5bf151628ff73495.jpg", "latency_s": 0.183, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b37b7aa7c40c7907.jpg", "latency_s": 0.266, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/aa228827ec50db78.jpg", "latency_s": 0.194, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3475240ba6e15e99.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f679d0bd28f721e5.jpg", "latency_s": 0.183, "detections": [{"class": "Burn", "confidence": 0.435791015625, "box": [130.5, 163.0, 53.0, 114.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/03954b1643d1d1d6.jpg", "latency_s": 0.21, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/bf81abe500b1d193.jpg", "latency_s": 0.195, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/084183b8e3dd4c07.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c8d6818805284907.jpg", "latency_s": 0.171, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f6dfd5ad24eb1feb.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/683a6ebfc6a1ebb1.jpg", "latency_s": 0.178, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/450598034df82ab0.jpg", "latency_s": 0.172, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/41b6a8c7460ecc08.jpg", "latency_s": 0.172, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9f11f8ca1fb828d0.jpg", "latency_s": 0.168, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9afd6144d58b1f2b.jpg", "latency_s": 0.182, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ce5ceabef1c97a37.jpg", "latency_s": 0.186, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/09e9dd876edcd4e7.jpg", "latency_s": 0.19, "detections": [{"class": "Cut", "confidence": 0.4755859375, "box": [115.5, 151.0, 43.0, 28.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/49839da2755d3fb0.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/341d735010e80b55.jpg", "latency_s": 0.176, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/28567c349aaf41f5.jpg", "latency_s": 0.193, "detections": [{"class": "Cut", "confidence": 0.60302734375, "box": [104.0, 108.5, 58.0, 31.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5e9a89b8a745829e.jpg", "latency_s": 0.18, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/fbb61a18946d91ff.jpg", "latency_s": 0.194, "detections": [{"class": "Cut", "confidence": 0.7568359375, "box": [146.0, 142.0, 48.0, 28.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3d452a52ab3d12a6.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ae33e1139b47d7ea.jpg", "latency_s": 0.181, "detections": [{"class": "Cut", "confidence": 0.81103515625, "box": [159.0, 154.0, 44.0, 26.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c8a9b4be3809920c.jpg", "latency_s": 0.176, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7241736ccd2b3102.jpg", "latency_s": 0.196, "detections": [{"class": "Burn", "confidence": 0.75927734375, "box": [101.5, 83.0, 55.0, 56.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/bbe419b8e8ca6e31.jpg", "latency_s": 0.213, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/75665c71b523b18e.jpg", "latency_s": 0.204, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5d52227f66f92f30.jpg", "latency_s": 0.307, "detections": [{"class": "Blister", "confidence": 0.4609375, "box": [158.0, 100.0, 28.0, 44.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/79a737fd4b19f5ba.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/73eb2b8bd980ef9d.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/eeeef15c287e5ab3.jpg", "latency_s": 0.219, "detections": [{"class": "Cut", "confidence": 0.8271484375, "box": [109.0, 138.0, 50.0, 28.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e8461f9d44cdcfe7.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d992fca7362a39d0.jpg", "latency_s": 0.184, "detections": [{"class": "Bruise", "confidence": 0.42822265625, "box": [115.0, 124.0, 36.0, 32.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/917527780b916840.jpg", "latency_s": 0.309, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6122b015866892a1.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/71bee9fd4d6d6198.jpg", "latency_s": 0.17, "detections": [{"class": "Burn", "confidence": 0.63525390625, "box": [57.0, 145.0, 64.0, 100.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6ed358a4c4579c30.jpg", "latency_s": 0.196, "detections": [{"class": "Burn", "confidence": 0.76708984375, "box": [51.5, 143.5, 63.0, 95.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e5415a9e06c72e54.jpg", "latency_s": 0.181, "detections": [{"class": "Burn", "confidence": 0.57763671875, "box": [174.5, 137.0, 67.0, 92.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/048e27fca5d0cf16.jpg", "latency_s": 0.2, "detections": [{"class": "Cut", "confidence": 0.440673828125, "box": [124.0, 148.0, 64.0, 32.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/852d92df234a1a4d.jpg", "latency_s": 0.203, "detections": [{"class": "Cut", "confidence": 0.626953125, "box": [128.5, 148.0, 61.0, 30.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a9de5d9918dd3941.jpg", "latency_s": 0.185, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e645abef1effb157.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c2c83779b5f35d01.jpg", "latency_s": 0.17, "detections": [{"class": "no abnormality", "confidence": 0.4970703125, "box": [80.0, 117.5, 140.0, 119.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/16acf9d99b95ea55.jpg", "latency_s": 0.225, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/cbb9c9891c4e4704.jpg", "latency_s": 0.637, "detections": [{"class": "no abnormality", "confidence": 0.80322265625, "box": [128.5, 132.0, 45.0, 38.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/80c034e76415c20a.jpg", "latency_s": 0.286, "detections": [{"class": "no abnormality", "confidence": 0.6591796875, "box": [94.5, 142.0, 37.0, 40.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/1c31622b061829f4.jpg", "latency_s": 0.317, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/533a046f10638f5d.jpg", "latency_s": 0.194, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a9834f3c29315a4f.jpg", "latency_s": 0.301, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/54452b432189e6fb.jpg", "latency_s": 0.847, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2f858e25c04d5e69.jpg", "latency_s": 0.178, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c0fb40f30e3850b6.jpg", "latency_s": 0.176, "detections": [{"class": "Bruise", "confidence": 0.65380859375, "box": [137.5, 87.0, 49.0, 42.0]}, {"class": "Bruise", "confidence": 0.5185546875, "box": [55.5, 91.0, 47.0, 34.0]}, {"class": "Bruise", "confidence": 0.4072265625, "box": [138.0, 88.0, 52.0, 44.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0d1c9b8658b1ddc6.jpg", "latency_s": 0.383, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7071294589d6e3e4.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f9b93b42a9ba9512.jpg", "latency_s": 0.181, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c95b18fce021438b.jpg", "latency_s": 0.185, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/4753569914f823b5.jpg", "latency_s": 0.171, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/aa96ad8c4f1d8246.jpg", "latency_s": 0.18, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a9426da4b5b8ffa4.jpg", "latency_s": 0.31, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5f80893b3053748d.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/905d2336bfab8a90.jpg", "latency_s": 0.195, "detections": [{"class": "Burn", "confidence": 0.452392578125, "box": [143.0, 138.5, 156.0, 171.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/30c2e1e00917855c.jpg", "latency_s": 0.2, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c02ef6277a945bb8.jpg", "latency_s": 0.205, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b359a6e07caaa3f2.jpg", "latency_s": 0.296, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/860c68888772cd22.jpg", "latency_s": 0.176, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/38d85d2755fc4729.jpg", "latency_s": 0.17, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/95a30f187a42e90f.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0648cb76586ccade.jpg", "latency_s": 0.197, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6648080aab3fe288.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/4821b5916e552b0a.jpg", "latency_s": 0.249, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5c359520fd4606e3.jpg", "latency_s": 0.236, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c6a4cae9c8b86b28.jpg", "latency_s": 0.182, "detections": [{"class": "no abnormality", "confidence": 0.46875, "box": [125.5, 100.0, 79.0, 58.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/912323b985706b8a.jpg", "latency_s": 0.166, "detections": [{"class": "no abnormality", "confidence": 0.412109375, "box": [120.5, 98.5, 83.0, 61.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/de13fcbd375332a4.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/86dd5a8fe371c288.jpg", "latency_s": 0.178, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/862c75987d6f8e63.jpg", "latency_s": 0.173, "detections": [{"class": "Cut", "confidence": 0.403564453125, "box": [174.0, 52.5, 58.0, 25.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/907355f268d3fb5a.jpg", "latency_s": 0.171, "detections": [{"class": "Cut", "confidence": 0.71484375, "box": [53.0, 48.0, 60.0, 24.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/90b19f8f946ba11d.jpg", "latency_s": 0.259, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/bd673ad684921f10.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2fef6e96720d5653.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/eeff8dbddab07848.jpg", "latency_s": 0.303, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/32974c3611a384da.jpg", "latency_s": 0.169, "detections": [{"class": "no abnormality", "confidence": 0.57177734375, "box": [103.5, 142.0, 49.0, 58.0]}, {"class": "no abnormality", "confidence": 0.43408203125, "box": [104.0, 135.5, 52.0, 71.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ecaaaef0651cb01d.jpg", "latency_s": 0.374, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/86b81ed881af0e81.jpg", "latency_s": 0.185, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a8bf3f1d83a5945a.jpg", "latency_s": 0.178, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/068c8dbd5a285d31.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/858802f00edab05b.jpg", "latency_s": 0.183, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/63cb368abb44f56f.jpg", "latency_s": 0.19, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0b93b07c60a1d5e9.jpg", "latency_s": 0.178, "detections": [{"class": "no abnormality", "confidence": 0.76953125, "box": [86.0, 57.0, 64.0, 68.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e64a6b6eb15980b2.jpg", "latency_s": 0.198, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c6b71dc069656247.jpg", "latency_s": 0.21, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b2455def3983957b.jpg", "latency_s": 0.208, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b8245b4b48c8d32f.jpg", "latency_s": 0.204, "detections": [{"class": "Bruise", "confidence": 0.4599609375, "box": [99.5, 102.0, 29.0, 32.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/244e5185ea7b08fe.jpg", "latency_s": 0.729, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/58f6a1c1aad90c90.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3c5c6913a169fcbd.jpg", "latency_s": 0.18, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d7815942b0484478.jpg", "latency_s": 0.197, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8be448717f19e45a.jpg", "latency_s": 0.182, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c152aa442b4ad6b0.jpg", "latency_s": 0.225, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9dd73c7e442a847c.jpg", "latency_s": 0.171, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5b3f26a71e7b081e.jpg", "latency_s": 0.186, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/bea603953b5e68b0.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6bce6c0721177e79.jpg", "latency_s": 0.16, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2627afd79ee79cef.jpg", "latency_s": 0.19, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8783a4452dacfbe2.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/066e534a6432b202.jpg", "latency_s": 0.196, "detections": [{"class": "Burn", "confidence": 0.4658203125, "box": [106.5, 41.5, 105.0, 59.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/502a57ea70dc2910.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/67b6afcaf792bd75.jpg", "latency_s": 0.18, "detections": [{"class": "Burn", "confidence": 0.402587890625, "box": [111.5, 145.5, 43.0, 27.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/702cfaddb34dbe8e.jpg", "latency_s": 0.176, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8c006da084bb9603.jpg", "latency_s": 0.218, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/12a8074cb8a117d2.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9d2ff87fd76a64a8.jpg", "latency_s": 0.167, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/795842d09a58b847.jpg", "latency_s": 0.18, "detections": [{"class": "Cut", "confidence": 0.6435546875, "box": [72.5, 149.5, 51.0, 43.0]}, {"class": "Cut", "confidence": 0.5927734375, "box": [73.0, 148.5, 52.0, 43.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5231072c1f68386c.jpg", "latency_s": 0.186, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/892b620849174272.jpg", "latency_s": 0.222, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/16c907ce886c7753.jpg", "latency_s": 0.182, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/1ac836484c76ea6c.jpg", "latency_s": 0.177, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/4efebc01a5125aa8.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a99d60117fee2ace.jpg", "latency_s": 0.186, "detections": [{"class": "Cut", "confidence": 0.51953125, "box": [105.5, 159.0, 83.0, 42.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/efaaacc6f4fec367.jpg", "latency_s": 0.176, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b5a0344073d75a80.jpg", "latency_s": 0.185, "detections": [{"class": "Cut", "confidence": 0.68359375, "box": [79.5, 81.0, 27.0, 32.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/cbc003ad34450b31.jpg", "latency_s": 0.182, "detections": [{"class": "Cut", "confidence": 0.669921875, "box": [146.5, 70.5, 31.0, 27.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5a2da66e310d5c62.jpg", "latency_s": 0.184, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/824ed1c753e25a1a.jpg", "latency_s": 0.22, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/59282b0c821a6c0e.jpg", "latency_s": 0.178, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d77895551fe02da5.jpg", "latency_s": 0.185, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/613a67e38ce2254c.jpg", "latency_s": 0.337, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d5cc5dd7eeaaa3c0.jpg", "latency_s": 0.177, "detections": [{"class": "Cut", "confidence": 0.449462890625, "box": [103.0, 142.5, 40.0, 35.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/81b3c3f88d1ea8ac.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/1ee2d878595c0278.jpg", "latency_s": 0.187, "detections": [{"class": "Burn", "confidence": 0.50390625, "box": [121.5, 92.5, 69.0, 103.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/4d7f890611405a21.jpg", "latency_s": 0.174, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f1b097acd8430df8.jpg", "latency_s": 0.184, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e6e0abfd40a2402f.jpg", "latency_s": 0.298, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/62bfa3a6b52cdc70.jpg", "latency_s": 0.229, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3a389e4615623d94.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2715677dd598de01.jpg", "latency_s": 0.167, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/dd0486c077ee30d3.jpg", "latency_s": 0.287, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f398d02297ffc0fc.jpg", "latency_s": 0.336, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5dbe34846f0e72f5.jpg", "latency_s": 0.195, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/715a1a154c3b0651.jpg", "latency_s": 0.19, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2697fda3f6d4d729.jpg", "latency_s": 0.232, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c16681131ba1c740.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/11ab800d1087ebcf.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ffc85dd655e27399.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/44005e59af07c42d.jpg", "latency_s": 0.164, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9af590eb834f8276.jpg", "latency_s": 0.168, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/eed274b76b5d9e1f.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3db70ce2481a98d8.jpg", "latency_s": 0.188, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/de3526980488a524.jpg", "latency_s": 0.2, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/4967daea4b463f47.jpg", "latency_s": 0.207, "detections": [{"class": "Cut", "confidence": 0.60693359375, "box": [83.5, 150.0, 49.0, 30.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e8f158dcf804ebfb.jpg", "latency_s": 0.181, "detections": [{"class": "no abnormality", "confidence": 0.419677734375, "box": [189.0, 99.5, 68.0, 137.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8e97c75378a56f85.jpg", "latency_s": 0.216, "detections": [{"class": "Cut", "confidence": 0.56689453125, "box": [108.0, 155.0, 44.0, 34.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/925b3b7bc12f7644.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0b6bb05d70bf9074.jpg", "latency_s": 0.217, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/1909019a260557ad.jpg", "latency_s": 0.18, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/50b3d63131491d2e.jpg", "latency_s": 0.161, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/00d03a9808867806.jpg", "latency_s": 0.182, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/982328d5aa62f8a1.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/541d012fb78d565c.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e722626ba049a34f.jpg", "latency_s": 0.198, "detections": [{"class": "no abnormality", "confidence": 0.66796875, "box": [126.5, 158.5, 67.0, 47.0]}, {"class": "no abnormality", "confidence": 0.416748046875, "box": [90.5, 53.0, 79.0, 72.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7c838d58316727ce.jpg", "latency_s": 0.188, "detections": [{"class": "no abnormality", "confidence": 0.75341796875, "box": [142.0, 54.5, 82.0, 71.0]}, {"class": "no abnormality", "confidence": 0.544921875, "box": [70.5, 51.5, 43.0, 79.0]}, {"class": "no abnormality", "confidence": 0.5009765625, "box": [103.0, 156.5, 64.0, 45.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5c824b31d3e7d384.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/18b644abe75fff80.jpg", "latency_s": 0.183, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b46feb20821fdb87.jpg", "latency_s": 0.164, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ff4e176be63cc6d4.jpg", "latency_s": 0.182, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/4ffe2d65af17815c.jpg", "latency_s": 0.179, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e8f5e23eb4d4f911.jpg", "latency_s": 0.175, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d6a39e71a97b2ff8.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/703d8307879c8db9.jpg", "latency_s": 0.271, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/301c1e052d4d8ff1.jpg", "latency_s": 0.178, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6b195d8400598191.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9bc4a12ec506c22e.jpg", "latency_s": 0.184, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/748e8c4863e37eb9.jpg", "latency_s": 0.172, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/69d3cec6d67ed0d0.jpg", "latency_s": 0.208, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a419852b37dd6615.jpg", "latency_s": 0.164, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/26d3e33142475499.jpg", "latency_s": 0.195, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/afc88a2c4a3e7bb3.jpg", "latency_s": 0.173, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7150bea835720fb7.jpg", "latency_s": 0.216, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5e26186c85b590fe.jpg", "latency_s": 0.17, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3339adfddab2881f.jpg", "latency_s": 0.217, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/531004e79a885c28.jpg", "latency_s": 0.184, "detections": [{"class": "Burn", "confidence": 0.455078125, "box": [113.0, 85.0, 202.0, 164.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b348a8a80a242300.jpg", "latency_s": 0.274, "detections": [{"class": "Burn", "confidence": 0.56298828125, "box": [112.0, 93.5, 210.0, 161.0]}, {"class": "Cut", "confidence": 0.43505859375, "box": [113.0, 182.0, 98.0, 48.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ea046b13fc24afe4.jpg", "latency_s": 0.187, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c6fffa44d1131401.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ef64e2ceae46b14f.jpg", "latency_s": 0.168, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/79a89e10504696ae.jpg", "latency_s": 0.168, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/159b091113278999.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f4db7b539712d96d.jpg", "latency_s": 0.188, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/32b86a8d830b26bf.jpg", "latency_s": 0.163, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0e91f2a8b0daa1a0.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/574aa1fadfadf4f6.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8a8b2ffd4c932609.jpg", "latency_s": 0.225, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/dd7ccacb2db83105.jpg", "latency_s": 0.19, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/cb3fc89df125053f.jpg", "latency_s": 0.184, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f4bfbd91dda3a232.jpg", "latency_s": 0.271, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c48a1e1a5f18cccf.jpg", "latency_s": 0.179, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b54efbcbc2742c24.jpg", "latency_s": 0.177, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ae91c6fdabcff913.jpg", "latency_s": 0.191, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e81086350260a0f9.jpg", "latency_s": 0.213, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9bf81940add24c52.jpg", "latency_s": 0.174, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e9a78129bf81dbba.jpg", "latency_s": 0.18, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/455f9124dbde63d8.jpg", "latency_s": 0.19, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/cf91d21a41233dbc.jpg", "latency_s": 0.183, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a36623147318e962.jpg", "latency_s": 0.209, "detections": [{"class": "no abnormality", "confidence": 0.5322265625, "box": [94.0, 111.5, 82.0, 49.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9d149a17aaa46bcf.jpg", "latency_s": 0.209, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5837361a5deaeb4c.jpg", "latency_s": 0.173, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2124bac8132532eb.jpg", "latency_s": 0.19, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/46e4822a64758cde.jpg", "latency_s": 0.188, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3236f2b56514d50c.jpg", "latency_s": 0.309, "detections": [{"class": "no abnormality", "confidence": 0.5478515625, "box": [80.5, 157.0, 75.0, 54.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/83dd4ed6066354b3.jpg", "latency_s": 0.214, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/164ac10fa2774805.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/4b66b2fa6a6e50d3.jpg", "latency_s": 0.214, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c53ffbe361431ef5.jpg", "latency_s": 0.164, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7e8b3e5be477d807.jpg", "latency_s": 0.204, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a6f5ea2a4b63e90c.jpg", "latency_s": 0.325, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/1d22f5ddadce89d1.jpg", "latency_s": 0.296, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/872d607814c6c5a6.jpg", "latency_s": 0.163, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ca8be1f7908012d9.jpg", "latency_s": 0.184, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/04e7a7d6bf6f4b0c.jpg", "latency_s": 0.17, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9b6d37c074c1b4ce.jpg", "latency_s": 0.231, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b1e813aac7576106.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/760d1c12b693d377.jpg", "latency_s": 0.197, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6b0e7e280b39568d.jpg", "latency_s": 0.204, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7687bc637052c90c.jpg", "latency_s": 0.184, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/96fec2987457565a.jpg", "latency_s": 0.693, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/206e09c2222f4bbe.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c864d7d45388247f.jpg", "latency_s": 0.179, "detections": [{"class": "Cut", "confidence": 0.75146484375, "box": [53.0, 106.0, 58.0, 30.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e7e45f2cd58769c8.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ae8c52d1a26571e2.jpg", "latency_s": 0.187, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/90589e6f44680481.jpg", "latency_s": 0.171, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f0b2c1e3ad60b188.jpg", "latency_s": 0.168, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e324d00053f25a81.jpg", "latency_s": 0.195, "detections": [{"class": "Cut", "confidence": 0.74462890625, "box": [48.0, 59.5, 56.0, 71.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/690fb2f1be41fb9e.jpg", "latency_s": 0.162, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0013dcfd5fbfc656.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/1836b5f6dc15862e.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b27fd90ce02c9c0a.jpg", "latency_s": 0.184, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3aa2393164d0da39.jpg", "latency_s": 0.18, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6c95005880ded3a0.jpg", "latency_s": 0.18, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d1c79700dc3f73ac.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/82e66887b8b45ae1.jpg", "latency_s": 0.309, "detections": [{"class": "Cut", "confidence": 0.58984375, "box": [105.0, 135.0, 52.0, 30.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/46ac014afa90080e.jpg", "latency_s": 0.335, "detections": [{"class": "Cut", "confidence": 0.80126953125, "box": [106.0, 131.5, 52.0, 29.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/121a43d7367a0433.jpg", "latency_s": 0.229, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/50068324399f3c8e.jpg", "latency_s": 0.228, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/006756aebdb01485.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/9dcfcbb312fed33c.jpg", "latency_s": 0.209, "detections": [{"class": "Burn", "confidence": 0.67578125, "box": [106.0, 159.0, 72.0, 120.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6e9cc48d17399095.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/e40df98f7885d18c.jpg", "latency_s": 0.203, "detections": [{"class": "Burn", "confidence": 0.810546875, "box": [109.0, 159.5, 74.0, 119.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/46c5ce1b04f180aa.jpg", "latency_s": 0.511, "detections": [{"class": "Cut", "confidence": 0.84521484375, "box": [64.5, 116.5, 55.0, 29.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c690298a2074aaf4.jpg", "latency_s": 0.359, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a3929a2b98f9c06a.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/137fa621d2e7d3fb.jpg", "latency_s": 0.216, "detections": [{"class": "Cut", "confidence": 0.8544921875, "box": [113.0, 139.0, 46.0, 26.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/23b42416bb5c1a69.jpg", "latency_s": 0.218, "detections": [{"class": "Cut", "confidence": 0.5419921875, "box": [104.0, 133.5, 40.0, 25.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d1e7e7473fd6814e.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/373bd1f5ef778c7d.jpg", "latency_s": 0.252, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/43865f7abdaaed8e.jpg", "latency_s": 0.213, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/1be3d988f17bb9d5.jpg", "latency_s": 0.217, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3d89f851712d08d1.jpg", "latency_s": 0.208, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f5dde993cf701f11.jpg", "latency_s": 0.221, "detections": [{"class": "Burn", "confidence": 0.4580078125, "box": [34.0, 104.5, 30.0, 73.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/729054943195cb5d.jpg", "latency_s": 0.322, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f9e0e1ac17368bc7.jpg", "latency_s": 0.249, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2da6907fe0386ab2.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/367e949c6997b6be.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/20a0b9edf51ac1bb.jpg", "latency_s": 0.198, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8bf0b1aa284f196e.jpg", "latency_s": 0.218, "detections": [{"class": "Cut", "confidence": 0.525390625, "box": [135.5, 68.5, 59.0, 25.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/94403c962d07fee7.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/a2c928085b53979a.jpg", "latency_s": 0.208, "detections": [{"class": "Burn", "confidence": 0.81689453125, "box": [126.5, 111.0, 57.0, 56.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/50652ea69b3b3c57.jpg", "latency_s": 0.19, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ce0ca455cbf6634f.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/50956a7b36921f5d.jpg", "latency_s": 0.215, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/619ae1e861303f61.jpg", "latency_s": 0.216, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/33c56f4d65ffce0f.jpg", "latency_s": 0.361, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/1ea6cf243400f3bf.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/6f6a8aeabb59fe81.jpg", "latency_s": 0.204, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c85b448c5923c4db.jpg", "latency_s": 0.2, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b93c11b3f9c07974.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/00932c89fcbb942d.jpg", "latency_s": 0.234, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5e97f4663458d1b4.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0164c44fc8544dab.jpg", "latency_s": 0.215, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/108125b4dadb2554.jpg", "latency_s": 0.216, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/cc03af6364d2b4d7.jpg", "latency_s": 0.192, "detections": [{"class": "no abnormality", "confidence": 0.80126953125, "box": [128.5, 132.5, 45.0, 39.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/014d42f92a23ab7a.jpg", "latency_s": 0.223, "detections": [{"class": "no abnormality", "confidence": 0.474609375, "box": [152.5, 92.0, 81.0, 92.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/add21d4065fb0c47.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/121e0e558dff94d3.jpg", "latency_s": 0.205, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0b859cb12a57efc3.jpg", "latency_s": 0.244, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3844eb8c65331383.jpg", "latency_s": 0.201, "detections": [{"class": "Cut", "confidence": 0.72705078125, "box": [98.5, 137.5, 45.0, 27.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3087af1484a8fa6b.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/823f45ddf8ca2673.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/69ae7a2bc9fdd276.jpg", "latency_s": 1.115, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/aba73cffed55facd.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/20f05bb090ccae7f.jpg", "latency_s": 0.334, "detections": [{"class": "Cut", "confidence": 0.58984375, "box": [108.0, 129.5, 38.0, 33.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b9af2519e10f41bf.jpg", "latency_s": 0.224, "detections": [{"class": "Cut", "confidence": 0.6416015625, "box": [112.0, 172.5, 76.0, 37.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/98f61a29f6d9e88b.jpg", "latency_s": 0.194, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/ce5cc4fe9531d861.jpg", "latency_s": 0.322, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/42d5fb8e8a0a4819.jpg", "latency_s": 0.198, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/943855ffe098be34.jpg", "latency_s": 0.312, "detections": [{"class": "Cut", "confidence": 0.4951171875, "box": [130.5, 127.0, 45.0, 28.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/37709915c2d9fc8b.jpg", "latency_s": 0.19, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5dceb4c234940c1b.jpg", "latency_s": 0.216, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/f1d0122c4c336434.jpg", "latency_s": 0.216, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/033507d0e3b614ce.jpg", "latency_s": 0.188, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/17654a8635a82866.jpg", "latency_s": 0.195, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/1e676212f8c69605.jpg", "latency_s": 0.194, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5b57e1717354a76b.jpg", "latency_s": 0.322, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/d336f21f0a871525.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/8a373ea9cc4720fa.jpg", "latency_s": 0.197, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/fc8ec3bb6c55cdad.jpg", "latency_s": 0.209, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2af7f8f2cbbb3cae.jpg", "latency_s": 0.195, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/b7652057c5b1d9a1.jpg", "latency_s": 0.215, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/208496095922428d.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/5353fefed7609911.jpg", "latency_s": 0.204, "detections": [{"class": "Burn", "confidence": 0.450439453125, "box": [91.0, 88.0, 62.0, 66.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/453980cbaa893c4d.jpg", "latency_s": 0.197, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/2255ba56579fe24c.jpg", "latency_s": 0.22, "detections": [{"class": "no abnormality", "confidence": 0.48046875, "box": [91.5, 18.5, 29.0, 35.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/eb0730a84c8b371c.jpg", "latency_s": 0.201, "detections": [{"class": "Blister", "confidence": 0.56103515625, "box": [170.5, 129.0, 43.0, 42.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/4763470fe93c8944.jpg", "latency_s": 0.198, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/fa3f6776727a01fd.jpg", "latency_s": 0.212, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/3c67d252f53dc498.jpg", "latency_s": 0.208, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/0a1cbb5fc2faa73a.jpg", "latency_s": 0.2, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/54bf335007d0734c.jpg", "latency_s": 0.22, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/4aef3d4094e88d34.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/54f3acf04ab03e0d.jpg", "latency_s": 0.225, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/dc7faeb010c2a42d.jpg", "latency_s": 0.185, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/034cebf6ad14f7bb.jpg", "latency_s": 0.188, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/c72b62f5c2ee90db.jpg", "latency_s": 0.204, "detections": [{"class": "no abnormality", "confidence": 0.5029296875, "box": [111.0, 147.0, 38.0, 40.0]}]}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/7869b9aff01862f6.jpg", "latency_s": 0.225, "detections": []}
+{"path": "experiments/v4/new_neg/oily_dry_skin_types/fd9442b917149c76.jpg", "latency_s": 0.182, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/9cba68c7c69a42d5.jpg", "latency_s": 0.189, "detections": [{"class": "Cut", "confidence": 0.43212890625, "box": [92.5, 160.0, 97.0, 66.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/668482439b31f630.jpg", "latency_s": 0.198, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b21f8c32c6b5b69d.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/0f4effabd3775e51.jpg", "latency_s": 0.215, "detections": [{"class": "Burn", "confidence": 0.4755859375, "box": [120.5, 155.0, 167.0, 96.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/bade225e4dab1f4b.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/36f6eca992d522bb.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e085f85330cd7465.jpg", "latency_s": 0.191, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/d706190c07be8cea.jpg", "latency_s": 0.195, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/48c71b5e4b8c8d9f.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/254cfa31bd789d9c.jpg", "latency_s": 0.204, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/55f5f65b0396f0cc.jpg", "latency_s": 0.184, "detections": [{"class": "no abnormality", "confidence": 0.4609375, "box": [118.5, 104.0, 83.0, 190.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/ac8acf1e1850b15b.jpg", "latency_s": 0.208, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/0c16d2878ebe8b4f.jpg", "latency_s": 0.224, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/77ce77ac6d320414.jpg", "latency_s": 0.227, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b6bbd5ed40f1a332.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b4aafc5f995c6c81.jpg", "latency_s": 0.222, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/805582af75713914.jpg", "latency_s": 0.226, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/0728d94fc731264d.jpg", "latency_s": 0.204, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/dd17e285b674f86a.jpg", "latency_s": 0.226, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/78e68757aeb15bf2.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/d485b031b01e4595.jpg", "latency_s": 0.218, "detections": [{"class": "Burn", "confidence": 0.47265625, "box": [115.5, 145.5, 181.0, 111.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/4cee07e51058ecc3.jpg", "latency_s": 0.203, "detections": [{"class": "Burn", "confidence": 0.73583984375, "box": [105.0, 96.0, 156.0, 166.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/d711b33378286d78.jpg", "latency_s": 0.221, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/7943d4a36db64b75.jpg", "latency_s": 0.188, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/959861db9e20484d.jpg", "latency_s": 0.224, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c5d18587537a139e.jpg", "latency_s": 0.194, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/351b91bb71125a3b.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c64cf810fbd60350.jpg", "latency_s": 0.194, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/baca6e9bc927ef28.jpg", "latency_s": 0.22, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/821bc5173ea99513.jpg", "latency_s": 0.209, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/7c512ce15cc2f501.jpg", "latency_s": 0.231, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/cffc5b86e49ba99a.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/bb608f6b6eb318b7.jpg", "latency_s": 0.252, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/5327c0ea093b83d9.jpg", "latency_s": 0.215, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/d460ca560706a2d3.jpg", "latency_s": 0.2, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/754d28c93aa31bbd.jpg", "latency_s": 0.208, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/78701778744aedac.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/5fa72c9aaa12e6fc.jpg", "latency_s": 0.209, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/285e51ea0bfdcfd7.jpg", "latency_s": 0.186, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/ef04f4a388b692ab.jpg", "latency_s": 0.19, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/14bec0c51ba88c2a.jpg", "latency_s": 0.226, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/d5483339095c5d5b.jpg", "latency_s": 0.209, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/94dd51a2f1d11314.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/2edbb2eee095a42b.jpg", "latency_s": 0.213, "detections": [{"class": "Bruise", "confidence": 0.5166015625, "box": [47.5, 68.0, 39.0, 40.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/52e5aeb00231ed7f.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/628aa452429bfb07.jpg", "latency_s": 0.215, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/9e254496e87ac39e.jpg", "latency_s": 0.215, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/8abdb8dc8424aaee.jpg", "latency_s": 0.21, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/8ac657c49093381c.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/7061a49366ed6238.jpg", "latency_s": 0.188, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/75cf86f30d0bf137.jpg", "latency_s": 1.041, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/5e441163e890925a.jpg", "latency_s": 0.28, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/d00dd3d9723fd758.jpg", "latency_s": 0.93, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/6d0bb61a1d6fbcff.jpg", "latency_s": 0.205, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/2d15e9708753880b.jpg", "latency_s": 0.203, "detections": [{"class": "Burn", "confidence": 0.436767578125, "box": [108.5, 86.0, 37.0, 84.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/18fb4e23124e52d9.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/3140f360f8365924.jpg", "latency_s": 0.226, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/2995f249c50e42af.jpg", "latency_s": 0.237, "detections": [{"class": "Burn", "confidence": 0.7900390625, "box": [130.0, 103.0, 156.0, 164.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/2a4a31dea57d9ae2.jpg", "latency_s": 0.216, "detections": [{"class": "Burn", "confidence": 0.4091796875, "box": [103.5, 134.0, 201.0, 180.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/196b5efde3904855.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/46e58e48bad727ae.jpg", "latency_s": 0.226, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/116137a3d1ed8887.jpg", "latency_s": 0.209, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/8d0a5b47d31247df.jpg", "latency_s": 0.336, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/05ccb2dd23485513.jpg", "latency_s": 0.234, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c01bdac02a38889b.jpg", "latency_s": 0.192, "detections": [{"class": "Burn", "confidence": 0.4130859375, "box": [117.5, 116.0, 149.0, 178.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/6075408716cfcd74.jpg", "latency_s": 0.323, "detections": [{"class": "Cut", "confidence": 0.77685546875, "box": [123.0, 68.5, 70.0, 21.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/454efc91d86c5be2.jpg", "latency_s": 0.209, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/70509795a6d810d0.jpg", "latency_s": 0.249, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/69517da64fed32fe.jpg", "latency_s": 0.197, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/d817298a368ba36d.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/74dc257b3634d014.jpg", "latency_s": 0.224, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c27f9c6556ea556c.jpg", "latency_s": 0.217, "detections": [{"class": "Burn", "confidence": 0.7138671875, "box": [143.0, 117.5, 112.0, 195.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/bacc2582c81ce21b.jpg", "latency_s": 0.2, "detections": [{"class": "Cut", "confidence": 0.537109375, "box": [82.5, 175.0, 77.0, 42.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/7ff620ef8b592db4.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/f474f43f9484a6cf.jpg", "latency_s": 0.187, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e299592a84c40d6e.jpg", "latency_s": 0.21, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/595fed33f701184b.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/5683fb6b3be99f57.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/8df19bff7c98554e.jpg", "latency_s": 0.244, "detections": [{"class": "Burn", "confidence": 0.406494140625, "box": [93.0, 95.0, 90.0, 62.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/7a93583ac3c7afdf.jpg", "latency_s": 0.234, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/4ca7cae63c9b2141.jpg", "latency_s": 0.23, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/6ef623a2a7bed11c.jpg", "latency_s": 0.198, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/030d54e35c3204b7.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/3ae9a53ae35007c2.jpg", "latency_s": 0.219, "detections": [{"class": "Burn", "confidence": 0.4677734375, "box": [147.5, 142.5, 105.0, 159.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/0986c6fb49bafb70.jpg", "latency_s": 0.274, "detections": [{"class": "Burn", "confidence": 0.5419921875, "box": [122.0, 58.5, 68.0, 51.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/289331e7ab9c7997.jpg", "latency_s": 0.213, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/6f6ab87905250a35.jpg", "latency_s": 0.208, "detections": [{"class": "Burn", "confidence": 0.43017578125, "box": [208.5, 117.5, 31.0, 65.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/639d540b1a997623.jpg", "latency_s": 0.202, "detections": [{"class": "Burn", "confidence": 0.515625, "box": [191.0, 145.0, 64.0, 94.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/6feaf32e6f4a30c8.jpg", "latency_s": 0.204, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/3c1d9a95e3f8bc96.jpg", "latency_s": 0.216, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c5ac0c9ea4fef296.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/1f010f70c4e6e82a.jpg", "latency_s": 0.227, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/33b0e7368eec2bae.jpg", "latency_s": 0.207, "detections": [{"class": "Burn", "confidence": 0.53515625, "box": [113.0, 114.5, 56.0, 173.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c76075d174885684.jpg", "latency_s": 0.243, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c9f539cb0a042b5e.jpg", "latency_s": 0.189, "detections": [{"class": "Burn", "confidence": 0.4775390625, "box": [153.0, 143.5, 138.0, 161.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/5deb87bb656be9dd.jpg", "latency_s": 0.205, "detections": [{"class": "Burn", "confidence": 0.416748046875, "box": [97.5, 133.0, 191.0, 116.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b1921bd3ac015c3c.jpg", "latency_s": 0.182, "detections": [{"class": "Burn", "confidence": 0.66650390625, "box": [111.0, 65.0, 84.0, 92.0]}, {"class": "Burn", "confidence": 0.544921875, "box": [112.0, 70.5, 84.0, 113.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/4da52ad202568405.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b0a9dc4055c514a0.jpg", "latency_s": 0.214, "detections": [{"class": "Burn", "confidence": 0.70751953125, "box": [97.0, 128.0, 134.0, 128.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/57a3308260a8f5c7.jpg", "latency_s": 0.204, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/5d870b49fc5b404b.jpg", "latency_s": 0.23, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/d82aac5f5c8f4b3a.jpg", "latency_s": 0.199, "detections": [{"class": "Burn", "confidence": 0.587890625, "box": [32.0, 126.5, 64.0, 141.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/bcd55eef1ab73bcd.jpg", "latency_s": 0.214, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/a9d50822aefd568e.jpg", "latency_s": 0.212, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/853d6a54af0f5223.jpg", "latency_s": 0.247, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/642ec2e155fe4a59.jpg", "latency_s": 0.206, "detections": [{"class": "no abnormality", "confidence": 0.71533203125, "box": [112.5, 138.5, 69.0, 51.0]}, {"class": "no abnormality", "confidence": 0.4873046875, "box": [113.0, 138.5, 70.0, 49.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/24c2e586e1b60183.jpg", "latency_s": 0.247, "detections": [{"class": "Burn", "confidence": 0.414794921875, "box": [71.5, 126.5, 143.0, 185.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/208835108797e182.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b60b67180696ace1.jpg", "latency_s": 0.215, "detections": [{"class": "Burn", "confidence": 0.4794921875, "box": [53.5, 136.0, 103.0, 170.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/06ba4c7118bdf4d3.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/9bef8eec5222a47a.jpg", "latency_s": 0.186, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c4470c472218cb52.jpg", "latency_s": 0.224, "detections": [{"class": "Burn", "confidence": 0.478515625, "box": [97.0, 112.0, 176.0, 198.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b918b3bc557f47eb.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/54f0d3bde63dedcc.jpg", "latency_s": 0.22, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/146bc91188e4bcc0.jpg", "latency_s": 0.198, "detections": [{"class": "Burn", "confidence": 0.587890625, "box": [59.5, 41.5, 83.0, 67.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/421fd6e6d677fc4f.jpg", "latency_s": 0.239, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/f85be3841cd783af.jpg", "latency_s": 0.185, "detections": [{"class": "Burn", "confidence": 0.82373046875, "box": [113.0, 105.0, 180.0, 174.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/7ba84d466515d2c6.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e18c7321e2439b4f.jpg", "latency_s": 0.227, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b0232c7965b8b55d.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/844e3de6d669d76d.jpg", "latency_s": 0.2, "detections": [{"class": "Burn", "confidence": 0.6884765625, "box": [111.0, 140.0, 56.0, 52.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c4c3bdd34c4dd59b.jpg", "latency_s": 0.185, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/60fc1c60437a393b.jpg", "latency_s": 0.204, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/0319324c44f123c8.jpg", "latency_s": 0.209, "detections": [{"class": "Burn", "confidence": 0.7333984375, "box": [136.5, 153.5, 125.0, 95.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/fa82199da5b16ed0.jpg", "latency_s": 0.223, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e7b1b352363e80cd.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c8b139102fc084d5.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/9d1079031530a57e.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/84d865bfb803ecc3.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/a55edff559496ac6.jpg", "latency_s": 0.205, "detections": [{"class": "Burn", "confidence": 0.452392578125, "box": [108.0, 112.5, 56.0, 45.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/f983acbd008008a8.jpg", "latency_s": 0.182, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/6359f1824feb98ae.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c1bc06480cefc178.jpg", "latency_s": 0.204, "detections": [{"class": "Bruise", "confidence": 0.419677734375, "box": [169.5, 157.0, 73.0, 82.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/a9bd985e1b2d3474.jpg", "latency_s": 0.223, "detections": [{"class": "Burn", "confidence": 0.56494140625, "box": [113.5, 132.5, 221.0, 183.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/8b222da3706554a2.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/6ffdb623f48e5b58.jpg", "latency_s": 0.219, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/cfb40d0a74a6ea9d.jpg", "latency_s": 0.219, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/d74886c219ee67bb.jpg", "latency_s": 0.215, "detections": [{"class": "Burn", "confidence": 0.57275390625, "box": [103.0, 118.5, 94.0, 167.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/7451985e8147ddd9.jpg", "latency_s": 0.231, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/8e19ad944ea3f212.jpg", "latency_s": 0.189, "detections": [{"class": "Burn", "confidence": 0.49609375, "box": [93.5, 107.0, 181.0, 158.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/871397ebcbb6a9b6.jpg", "latency_s": 0.184, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/38dcecb3db4e46a1.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/a5b57da095bb8bd6.jpg", "latency_s": 0.19, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/aee99461a36ed7b5.jpg", "latency_s": 0.228, "detections": [{"class": "Burn", "confidence": 0.658203125, "box": [80.5, 63.0, 45.0, 106.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/0e2949920c0b0b7c.jpg", "latency_s": 0.191, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/7098be11a2d0f68e.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/72093ba0bf86e091.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/90a5bcaad7d88a2f.jpg", "latency_s": 0.197, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/3aed9a5d801a69cb.jpg", "latency_s": 0.228, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/94fa391de9d81cd5.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/51084c1379a5eef6.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b7db9975486db467.jpg", "latency_s": 0.204, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/cd5dcaa4baa739ef.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/dbfde3ea55386b0b.jpg", "latency_s": 0.21, "detections": [{"class": "Burn", "confidence": 0.7080078125, "box": [117.0, 116.0, 154.0, 176.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/ac2260725cd192e2.jpg", "latency_s": 0.217, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e0bc3ee6677f38f8.jpg", "latency_s": 0.216, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/cad2cab3a36d7f0b.jpg", "latency_s": 0.199, "detections": [{"class": "Burn", "confidence": 0.63525390625, "box": [66.0, 120.5, 98.0, 95.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/3a6eb1f78b776b9f.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/ba464ede4388e151.jpg", "latency_s": 0.209, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e77a46a869bd6c6d.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/438e1e3e6364be3d.jpg", "latency_s": 0.21, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/10341228a607a914.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/969e5ec18a039ad3.jpg", "latency_s": 0.185, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/ca7480e634890f72.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/5f762d8d0bcefbd2.jpg", "latency_s": 0.2, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/8e7889fe377114df.jpg", "latency_s": 0.193, "detections": [{"class": "Burn", "confidence": 0.64599609375, "box": [154.0, 99.5, 140.0, 127.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e24b0412fa2ff73a.jpg", "latency_s": 0.208, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/99cec1d46c4a8caa.jpg", "latency_s": 0.232, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/0e6ce337297f7032.jpg", "latency_s": 0.184, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/177dde374008ab93.jpg", "latency_s": 0.223, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/2bf609bc996e3994.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/a01801136db8313f.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/6a7166da7c2e980a.jpg", "latency_s": 0.228, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/dcbfa93c5a1044aa.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/d5885075729f01f1.jpg", "latency_s": 0.209, "detections": [{"class": "no abnormality", "confidence": 0.61767578125, "box": [65.0, 174.5, 92.0, 91.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/55b47d3b34268607.jpg", "latency_s": 0.293, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/5530285fb0638025.jpg", "latency_s": 0.21, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e06bee8cb8259c1e.jpg", "latency_s": 0.213, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/326b2d83a5cdeb17.jpg", "latency_s": 0.24, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/ba82fce813b4d2d4.jpg", "latency_s": 0.223, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/2d50f0f50708f6fc.jpg", "latency_s": 0.204, "detections": [{"class": "Cut", "confidence": 0.5419921875, "box": [80.5, 172.5, 97.0, 53.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b194a8fac422cfc4.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/bb174a567037c91e.jpg", "latency_s": 0.222, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/7810979b534adb45.jpg", "latency_s": 0.215, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/422cb70739c3fc35.jpg", "latency_s": 0.197, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/03ad4b3ddd725af4.jpg", "latency_s": 0.211, "detections": [{"class": "no abnormality", "confidence": 0.4130859375, "box": [130.5, 94.5, 89.0, 83.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/494c5cba9b17c258.jpg", "latency_s": 0.194, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e923466b456092d9.jpg", "latency_s": 0.182, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/d2659f242219479c.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/ff3278c8f7b80c78.jpg", "latency_s": 0.197, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e8a46355ad4573dd.jpg", "latency_s": 0.187, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/46541788d46a0f20.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/98d587cee6fd8e37.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/f41cffd4f20e058c.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/d1a5ebb40079c17e.jpg", "latency_s": 0.211, "detections": [{"class": "Abrasions", "confidence": 0.448486328125, "box": [192.5, 63.5, 47.0, 35.0]}, {"class": "Burn", "confidence": 0.415771484375, "box": [75.5, 121.0, 151.0, 162.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/691980739f8f4970.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/20d9f6abc7091e36.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b2ac9d1c7d3c8aee.jpg", "latency_s": 0.333, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/88972c380e2334fa.jpg", "latency_s": 0.196, "detections": [{"class": "Burn", "confidence": 0.4853515625, "box": [124.5, 165.5, 189.0, 117.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/54b4dad9a753370d.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/f09b6e5b0cc70b97.jpg", "latency_s": 0.21, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/fe962b22653e7860.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/eec86ade6caee240.jpg", "latency_s": 0.212, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/211b1707c9eaf122.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/8166f26a7b26a9da.jpg", "latency_s": 0.19, "detections": [{"class": "Cut", "confidence": 0.6689453125, "box": [73.5, 175.0, 101.0, 40.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/8d3af2e26c97d699.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c6c40ddee2ba891e.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/6b7a732f5892af37.jpg", "latency_s": 0.216, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/68ece0b351c600e0.jpg", "latency_s": 0.197, "detections": [{"class": "Cut", "confidence": 0.673828125, "box": [51.0, 159.5, 90.0, 47.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b3cecf85b555516f.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/fb5505efe700b81f.jpg", "latency_s": 0.237, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/bfc5e5abac9d8e04.jpg", "latency_s": 0.211, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/f27b1ed98d7399f4.jpg", "latency_s": 0.195, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/eb14f2fa3448ef69.jpg", "latency_s": 0.207, "detections": [{"class": "Burn", "confidence": 0.79052734375, "box": [120.5, 89.0, 61.0, 58.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c3f162d6c2883627.jpg", "latency_s": 0.188, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/26a00f98c7ae0035.jpg", "latency_s": 0.233, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/847ce132053fa854.jpg", "latency_s": 0.213, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c6c7d6d52b11c35a.jpg", "latency_s": 0.196, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e691de236b0f0f3b.jpg", "latency_s": 0.21, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e9180aac37c6b91d.jpg", "latency_s": 0.222, "detections": [{"class": "Burn", "confidence": 0.4658203125, "box": [96.5, 120.5, 67.0, 87.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e6ef9d9b7b7cdb0f.jpg", "latency_s": 0.203, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/4e223e82fa3ff6ee.jpg", "latency_s": 0.205, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/dd307f0ed1a2ad5d.jpg", "latency_s": 0.191, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/ecca521f087eadf4.jpg", "latency_s": 0.211, "detections": [{"class": "Burn", "confidence": 0.5439453125, "box": [114.5, 105.5, 169.0, 137.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/d5501ae7d465f381.jpg", "latency_s": 0.213, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/55655facadb89de8.jpg", "latency_s": 0.213, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/861dd9e03963e1de.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/33785d2ef14f0dec.jpg", "latency_s": 0.198, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/3bdfe18d32e249de.jpg", "latency_s": 0.21, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/bbdf7be4c947b5fd.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/51563fadafcb5ab3.jpg", "latency_s": 0.22, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e4aa1c5255eadfbf.jpg", "latency_s": 0.22, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/dd425993e01f0888.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b89f7ca75c1c4455.jpg", "latency_s": 0.205, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/13fc8516dff9bc64.jpg", "latency_s": 0.183, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/7400670aa5220ec7.jpg", "latency_s": 0.216, "detections": [{"class": "Burn", "confidence": 0.56396484375, "box": [115.0, 123.5, 66.0, 91.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/cf6249a629fab45f.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/959ddeb6feb5bc18.jpg", "latency_s": 0.212, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/3e91bdb77038c1a2.jpg", "latency_s": 0.194, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/9bd0faec3984f154.jpg", "latency_s": 0.215, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/5664a722cb78266e.jpg", "latency_s": 0.208, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/26b4d27f9e8fd777.jpg", "latency_s": 0.194, "detections": [{"class": "Cut", "confidence": 0.708984375, "box": [121.0, 173.5, 90.0, 51.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/f3393342254b0f11.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/36baa4e4370bc54d.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/be767733cd2fef94.jpg", "latency_s": 0.224, "detections": [{"class": "Burn", "confidence": 0.46484375, "box": [139.0, 158.5, 158.0, 107.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/ec2006025a48de64.jpg", "latency_s": 0.216, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/eed0c2983f5e1ae6.jpg", "latency_s": 0.209, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/14a6d8eed575ef9c.jpg", "latency_s": 0.188, "detections": [{"class": "Cut", "confidence": 0.5185546875, "box": [117.0, 176.5, 98.0, 49.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e14e4cb2d78f4d74.jpg", "latency_s": 0.209, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/f9366049de21b1fe.jpg", "latency_s": 0.203, "detections": [{"class": "Burn", "confidence": 0.55712890625, "box": [172.0, 109.0, 104.0, 212.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/84aa02e34305cb23.jpg", "latency_s": 0.208, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/59c790520089ac66.jpg", "latency_s": 0.189, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/3abf89c04bc3980b.jpg", "latency_s": 0.213, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/a284472dca091389.jpg", "latency_s": 0.204, "detections": [{"class": "Cut", "confidence": 0.8525390625, "box": [114.5, 151.5, 89.0, 45.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/9689c8cd51b9228c.jpg", "latency_s": 0.219, "detections": [{"class": "Burn", "confidence": 0.78271484375, "box": [182.5, 98.0, 81.0, 110.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/30eb3b075c1edc04.jpg", "latency_s": 0.197, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/6ade17a2b895f5e4.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/fa3709ca6fdf3868.jpg", "latency_s": 0.223, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b46331c32337eb84.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/f7e96523bc76f2f0.jpg", "latency_s": 0.192, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/37d25643cf171049.jpg", "latency_s": 0.215, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/354d96fc42d66df1.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/a2d8f0e7aa1a7d6f.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/1ff94b55e414e782.jpg", "latency_s": 0.554, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b94965cf23f04b11.jpg", "latency_s": 0.201, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/59f005da44c7aaf5.jpg", "latency_s": 0.208, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/8b5847ec6d139726.jpg", "latency_s": 0.202, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/5f59a85fbb41195e.jpg", "latency_s": 0.195, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/744a316c40e67cef.jpg", "latency_s": 0.212, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/5ff5157520aa118e.jpg", "latency_s": 0.208, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/e35ea870fb9a70fd.jpg", "latency_s": 0.206, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/a331a1d977fab8e7.jpg", "latency_s": 0.472, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/2bfc1c60bd2d30b8.jpg", "latency_s": 0.181, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/b0c05a60a689703c.jpg", "latency_s": 0.312, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/542eff5664f8a24c.jpg", "latency_s": 0.317, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/4c3101083d6963d0.jpg", "latency_s": 0.331, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/4eaa22ccbf833c11.jpg", "latency_s": 0.357, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/3080071c29c6eb40.jpg", "latency_s": 0.342, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/3c1eecb1a2d6412b.jpg", "latency_s": 0.204, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c76ebebe85f560d9.jpg", "latency_s": 0.185, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/30a6872c8eef9bd4.jpg", "latency_s": 0.362, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/c653cdba1805c389.jpg", "latency_s": 0.199, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/3433d8b9cef6dfb1.jpg", "latency_s": 0.175, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/1e051a9648d6d1c2.jpg", "latency_s": 0.179, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/22436bbddb9ca020.jpg", "latency_s": 0.204, "detections": [{"class": "no abnormality", "confidence": 0.478515625, "box": [107.5, 118.0, 89.0, 160.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/10bfdef03d93811a.jpg", "latency_s": 0.197, "detections": [{"class": "no abnormality", "confidence": 0.5234375, "box": [116.5, 105.0, 83.0, 190.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/0c71aad45c5ef43c.jpg", "latency_s": 0.179, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/18737d3a46a08eca.jpg", "latency_s": 0.188, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/906b16cc39ca5cd3.jpg", "latency_s": 0.186, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/5334ad0652e96811.jpg", "latency_s": 0.193, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/33d36468603c135f.jpg", "latency_s": 0.322, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/ae6aac729e23e5c8.jpg", "latency_s": 0.189, "detections": [{"class": "no abnormality", "confidence": 0.4091796875, "box": [98.5, 93.0, 77.0, 146.0]}]}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/40a8cf5dab562d53.jpg", "latency_s": 0.207, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/29b4fbd9876e0bc5.jpg", "latency_s": 0.215, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/bffd7554f6587624.jpg", "latency_s": 0.2, "detections": []}
+{"path": "experiments/v4/new_neg/skindisease_unknown_normal/1a5652375f422428.jpg", "latency_s": 0.183, "detections": []}
